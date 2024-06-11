@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "siteFont";
+    src: url("../fonts/IRANSansWeb.woff");
+  }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply overflow-y-scroll;
+    direction: rtl;
+    font-family: "siteFont", serif !important;
+    @apply text-gray-800;
+  }
+  @layer components{
+    .sun-menu-hover{
+      hover:bg-gray-300
+    }
+  }  
+ 
