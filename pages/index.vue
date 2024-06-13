@@ -1,56 +1,49 @@
 <template>
   <div>
     <main class="bg-black">
-      <div
-        class="w-full h-[60rem] relative grid grid-cols-12 pr-24 pl-[5.563rem]"
-      >
-        <!-- <div class="absolute h-screen bg-[radial-gradient(circle_at_50%_75%,red,blue)] z-20"></div> -->
-        <div class="col-span-3 z-10">
-          <div
-            class="flex flex-col gap-7 h-full w-full text-white items-start justify-center"
-          >
-            <div class="h-14 w-full text-5xl font-bold">صرافی آرنیتکس</div>
-            <div class="w-full h-32 text-4xl font-medium">
-              بازار بین المللی خرید و فروش ارز دیجیتال
-            </div>
+      <div class="relative w-[95rem] mx-auto">
+        <div class="absolute top-0 left-0 w-[88.75rem] h-[48.125rem]">
+          <img src="~/assets/images/Frame.png" alt="" class="h-full w-full" />
+        </div>
+        <div class="w-full h-[60rem] grid grid-cols-12 pr-24 pl-[5.563rem]">
+          <!-- <div class="absolute">
+          <img src="~/assets/images/Frame.png" alt="" class="">
+        </div> -->
+          <div class="col-span-3 z-10">
             <div
-              class="w-[22.5rem] h-14 relative rounded-md overflow-hidden text-white text-base"
+              class="flex flex-col gap-7 h-full w-full text-white items-start justify-center"
             >
-              <input
-                type="text"
-                class="w-full h-full bg-[#262626] border-2 border-[#676767] focus:ring-0 focus:border-gray-600 text-white placeholder-white"
-                placeholder="شماره همراه یا ایمیل"
-              />
+              <div class="h-14 w-full text-5xl font-bold">صرافی آرنیتکس</div>
+              <div class="w-full h-32 text-4xl font-medium">
+                بازار بین المللی خرید و فروش ارز دیجیتال
+              </div>
               <div
-                class="bg-[#FF7028] absolute left-0 top-0 h-full w-28 flex items-center justify-center rounded-md"
+                class="w-[22.5rem] h-14 relative rounded-md overflow-hidden text-white text-base"
               >
-                ثبت نام
+                <input
+                  type="text"
+                  class="w-full h-full bg-[#262626] border-2 border-[#676767] focus:ring-0 focus:border-gray-600 text-white placeholder-white"
+                  placeholder="شماره همراه یا ایمیل"
+                />
+                <div
+                  class="bg-[#FF7028] absolute left-0 top-0 h-full w-28 flex items-center justify-center rounded-md"
+                >
+                  ثبت نام
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-span-9 z-10 flex items-center justify-end">
-          <div class="w-[18.188rem] h-[32rem]">
-            <div class="aspect-w-40 aspect-h-21 lg:aspect-none">
-              <img
-                src="~/assets/images/Iphone.png"
-                alt="iphone"
-                class="w-full h-full -translate-x-32 translate-y-11"
-              />
-            </div>
-          </div>
-          <div class="w-[36.563rem] h-[39.75rem]">
-            <div class="aspect-w-40 aspect-h-21 lg:aspect-none">
-              <img
-                src="~/assets/images/tablet.png"
-                alt="tablet"
-                class="w-full h-full"
-              />
-            </div>
+          <div class="col-span-9">
+            <div class="w-full h-auto relative"></div>
           </div>
         </div>
       </div>
-      <app-ticker :items="items"></app-ticker>
+
+      <div class="h-auto w-full z-30">
+        <!-- <app-marquee></app-marquee> -->
+        <app-ticker :items="items"></app-ticker>
+      </div>
+
       <div
         class="flex px-[6.25rem] py-20 gap-[5.438rem] w-[95rem] h-[20.625rem] mx-auto"
       >
@@ -84,7 +77,7 @@
         </div>
       </div>
       <div
-        class="flex flex-col h-[38.75rem] bg-[#171717] rounded-[30px] w-[95rem] mx-auto"
+        class="flex flex-col h-[38.75rem] bg-[#171717] rounded-[30px] w-[88.75rem] mx-auto"
       >
         <div
           class="flex px-[4.063rem] pt-[3.125rem] h-full gap-[3.375rem] pb-[#3.313]"
@@ -150,13 +143,13 @@
       </div>
       <!-- ///// -->
       <div
-        class="flex items-cener mt-[6.563rem] mb-10 w-[95rem] px-[7.688rem] mx-auto gap-[21rem]"
+        class="flex items-cener mt-[6.563rem] mb-10 w-[95rem] px-[7.688rem] mx-auto gap-[17rem]"
       >
         <div
           class="w-[10.5rem] h-[3.125rem] bg-[#262626] flex items-cener justify-center py-2 px-2 rounded-[40px]"
         >
           <div class="flex-1">
-            <div class="flex items-center justify-center text-white">تومان</div>
+            <div class="items-center justify-center text-white">تومان</div>
           </div>
           <div class="flex-1">
             <div
@@ -584,7 +577,20 @@
                 چطور شروع کنم و برای شروع معامله چه چیزهایی لازم است ؟
               </h6>
             </template>
-            <p class="text-xs text-white font-light py-8"></p>
+            <p class="text-xs text-white font-light py-8">
+              برای شروع معاملات رمز ارزها، ابتدا تحقیق کنید و مفاهیم پایه‌ای
+              ارزهای دیجیتال و بلاکچین را بیاموزید. سپس یک کیف پول دیجیتال را
+              انتخاب کنید. در یک صرافی معتبر ثبت‌نام و احراز هویت کنید. پس از
+              واریز پول به حساب صرافی، ارزهای دیجیتال معروفی مانند بیت‌کوین و
+              اتریوم را خریداری کرده و به کیف پول خود منتقل کنید. مدیریت ریسک را
+              جدی بگیرید و همیشه مبلغی را سرمایه‌گذاری کنید که می‌توانید از دست
+              بدهید. پیگیری اخبار و تحلیل‌های بازار مهم است. با مبالغ کم شروع
+              کنید و به تدریج معاملات خود را گسترش دهید. منابع آموزشی مانند
+              وبسایت‌های خبری (CoinDesk، CoinTelegraph)، کتاب‌ها (مانند
+              "Mastering Bitcoin") و دوره‌های آنلاین (Coursera، Udemy) می‌توانند
+              مفید باشند. با این روش‌ها و یادگیری مداوم، می‌توانید به تدریج به
+              یک معامله‌گر موفق در بازار ارزهای دیجیتال تبدیل شوید.
+            </p>
           </app-collaps>
         </div>
         <div class="">
@@ -594,7 +600,14 @@
                 کسب درآمد در آرنیتکس چه روش هایی دارد ؟
               </h6>
             </template>
-            <p class="text-xs text-white font-light py-8"></p>
+            <p class="text-xs text-white font-light py-8">
+              کسب درآمد از طریق دعوت دوستان به صرافی‌های ارز دیجیتال یک راه مؤثر
+              است. پس از ثبت‌نام و دریافت لینک معرفی در آرنیتکس، آن را از طریق
+              شبکه‌های اجتماعی، وبسایت‌ها، وبلاگ‌ها، و پیام‌رسان‌ها به اشتراک
+              بگذارید. هر بار که دوستان شما از طریق لینک شما ثبت‌نام کرده و
+              معامله می‌کنند، شما کمیسیونی از کارمزد معاملات آن‌ها دریافت
+              می‌کنید. برای اطلاعات بیشتر به صفحه دعوت از دوستان مراجعه کنید
+            </p>
           </app-collaps>
         </div>
         <div class="">
@@ -604,10 +617,27 @@
                 چگونه بیت‌کوین، تتر و سایر رمزارزها را در آرنیتکس بخرم؟
               </h6>
             </template>
-            <p class="text-xs text-white font-light py-8"></p>
+            <p class="text-xs text-white font-light py-8">
+              وارد وبسایت آرنیتکس شوید و یک حساب کاربری ایجاد کنید. فرآیند
+              ثبت‌نام معمولاً شامل ارائه اطلاعات شخصی و تأیید ایمیل است. آرنیتکس
+              هم مانند بسیاری از صرافی‌ها برای افزایش امنیت و رعایت مقررات، نیاز
+              به احراز هویت دارد. این فرآیند معمولاً شامل چند مرحله میباشد. بعد
+              از تأیید هویت، وارد حساب کاربری خود شوید و به بخش واریز بروید.
+              می‌توانید وجه خود را از طریق روش‌های مختلف مانند انتقال بانکی یا
+              شناسه واریزدار واریز کنید. پس از واریز وجه، به بخش خرید/فروش بروید
+              و ارز مورد نظر خود را انتخاب کنید. برای خرید بیت کوین (BTC)، در
+              بخش خرید، بیت کوین را انتخاب کنید. مقدار بیت کوینی که می‌خواهید
+              بخرید یا مبلغی که می‌خواهید هزینه کنید را وارد کنید و سفارش خود را
+              تأیید کنید. برای خرید تتر (USDT)، در بخش خرید، تتر را انتخاب کنید.
+              مقدار تتری که می‌خواهید بخرید یا مبلغی که می‌خواهید هزینه کنید را
+              وارد کنید و سفارش خود را تأیید کنید. با دنبال کردن این مراحل،
+              می‌توانید به راحتی بیت کوین و تتر را در آرنیتکس خریداری کرده و از
+              آن‌ها بهره‌برداری کنید
+            </p>
           </app-collaps>
         </div>
       </div>
+      <!-- <div class="flex px-48 items-center justify-between py-[6.25rem]"> -->
       <div class="flex px-48 items-center justify-between py-[6.25rem]">
         <div class="flex flex-col gap-4 text-white">
           <h2 class="text-[2.813rem] font-medium">نصب اپلیکیشن آرنیتکس</h2>
@@ -618,25 +648,25 @@
             </h6>
           </div>
 
-          <button class="bg-[#FF7028] w-[10.625rem] h-[3.75rem] text-white rounded-md text-[22px]">
+          <button
+            class="bg-[#FF7028] w-[51.9375remrem] h-[3.75rem] text-white rounded-md text-[22px]"
+          >
             نصب کنید
           </button>
         </div>
 
         <div class="w-[51.938rem] h-[32.5rem]">
           <img
-            src="~/assets/images/isolated_tablet_laptop_and_smartphone_composition 1.png"
+            src="~/assets/images/devices.png"
             alt="tablet-laptop-and-smartphone"
             class="w-full h-full"
           />
         </div>
       </div>
-
     </main>
   </div>
 </template>
 <script setup lang="ts">
-
 import { ChevronDownIcon } from "@heroicons/vue/24/solid";
 const items = [
   {
@@ -653,6 +683,54 @@ const items = [
   },
   {
     icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1.png",
+    name: "بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1.png",
+    name: "بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1.png",
+    name: "بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1.png",
+    name: "بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1",
+    name: "بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1.png",
+    name: "بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1.png",
+    name: "بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1.png",
+    name: "بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1",
     name: "بیت کوین",
     price: 3709047400,
     change: 0.5,

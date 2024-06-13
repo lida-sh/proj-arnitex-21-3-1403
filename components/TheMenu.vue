@@ -1,14 +1,15 @@
 <template>
-  <div
+  <div class="bg-black w-full h-auto">
+    <div
     id="the-menu"
-    class="flex justify-between items-center px-10 py-2.5 bg-[#171717] text-white shadow-lg 3xl:text-sm h-16"
+    class="flex justify-between items-center px-10 py-2.5 bg-[#171717] text-white shadow-lg 3xl:text-sm h-16 w-[95rem] mx-auto"
   >
     <div class="flex items-center">
-      <div class="w-[4.5rem] h-full flex items-center justify-center">
+      <!-- <div class="w-[4.5rem] h-full flex items-center justify-center">
         <img src="~/assets/images/setting.png" alt="setting" class="h-6 w-6" />
-      </div>
+      </div> -->
       <section>
-        <button class="block lg:hidden" @click="toggleMenu">
+        <button class="block lg:hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -37,8 +38,9 @@
           >
             <div
               class="flex items-center justify-center gap-[1.12rem] relative w-[7.375rem]"
+              @click="toggleMenu(index)"
             >
-              <div class="text-sm" @click="toggleSubMenu(index)">
+              <div class="text-sm">
                 {{ item.title }}
               </div>
               <div class="" v-if="item.child">
@@ -59,17 +61,15 @@
               </div>
 
               <div
-                class="absolute inset-x-0 h-0 opacity-0 invisible w-[10.5rem] top-11 overflow-hidden border-x-[0.75px] border-b-[1.25px] rounded-b-lg border-[#676767] text-white z-30"
-                :id="`sub-menu-${index}`"
-                v-if="item.subMenu"
+                class="absolute invisible opacity-0 h-0 right-0 w-[10.5rem] top-11 overflow-hidden border-x-[0.75px] border-b-[1.25px] rounded-b-lg border-[#676767] text-white z-30"
+                :id="`menu-${index}`" :ref="(el) => setChildrenRef(el, index)"
               >
                 <template
-                  v-for="(subMenu, index) in item.subMenu"
-                  :key="`sub-menu-${index}`"
+                  v-for="(subMenu, i) in item.subMenu"
+                  :key="`sub-menu-${i}`"
                 >
                   <div
                     class="w-full h-12 bg-black px-[1.6rem] py-3 bg-opacity-50 backdrop-blur-xl hover:bg-[#343434] text-sm"
-                    :ref="(el) => setChildrenRef(el, index)"
                   >
                     {{ subMenu.title }}
                   </div>
@@ -79,6 +79,14 @@
           </router-link>
         </div>
       </section>
+      <div class="w-[12.5rem] h-[2.625rem] relative">
+      <input
+        type="text"
+        class="h-full w-full rounded-md bg-[#262626] px-4 focus:border-gray-600 focus:ring-0 text-gray-100 border-[#676767]"
+        placeholder="جستجوی رمز ارز"
+      />
+      <img src="~/assets/images/zoom.png" class="absolute top-3 left-4" />
+    </div>
     </div>
 
     <section class="flex items-center">
@@ -100,12 +108,19 @@
       <the-menu-auth></the-menu-auth>
     </section>
   </div>
+  </div>
+  
 </template>
 
 <script setup lang="ts">
-import { useEventListener, useDebounceFn, onClickOutside } from "@vueuse/core";
-import { useRoute } from "vue-router";
-import { useMenu } from "~~/composables/useMenu";
+const target = ref(null);
+const childrenRef = ref<Element[]>([]);
+    const setChildrenRef = (el: Element, index: number) => {
+      if (el) childrenRef.value[index] = el;
+    };
+// import { useEventListener, useDebounceFn, onClickOutside } from "@vueuse/core";
+// import { useRoute } from "vue-router";
+// import { useMenuByRef } from "~~/composables/useMenuByRef";
 import { gsap } from "gsap";
 const links = [
   {
@@ -117,18 +132,187 @@ const links = [
       { title: "فروش", to: "/" },
     ],
   },
-  { title: "معامله", to: "/", child: true },
+  {
+    title: "معامله",
+    to: "/",
+    child: true,
+    subMenu: [
+      { title: "ساده", to: "/" },
+      { title: "پیشرفته", to: "/" },
+      { title: "تعهدی", to: "/" },
+    ],
+  },
   { title: "کپی تریدینگ", to: "/", child: false },
-  { title: "آکادمی", to: "/", child: true },
+  {
+    title: "آکادمی",
+    to: "/",
+    child: true,
+    subMenu: [
+      { title: "اخبار", to: "/" },
+      { title: "مقالات 3 دقیقه ای", to: "/" },
+      { title: "فیلم های آموزشی", to: "/" },
+      { title: "مقالات آموزشی", to: "/" },
+    ],
+  },
 ];
-const childrenRef = ref<Element[]>([]);
-const setChildrenRef = (el: any, index: number) => {
-  if (el) childrenRef.value[index] = el;
+let menu = [false, false, false, false];
+let menu1 = false;
+// start useMenu //
+const menuAnimationArray = ref<any>([]);
+let menuAnimation0: any;
+let menuAnimation1: any;
+let menuAnimation2: any;
+let menuAnimation3: any;
+
+const setAnimation = () => {
+  // for(let i = 0; i< 4; i++){
+  //   let menuAnimation:any
+  //   menuAnimation.gsap.to("#menu-"+i, {
+  //   autoAlpha: 1,
+  //   height: "auto",
+  //   overflow: "hidden",
+  //   paused: true,
+  //   duration: 0.5,
+  // });
+  // menuAnimationArray.value.push(menuAnimation)
+  // }
+  menuAnimation0 = gsap.to("#menu-0", {
+    autoAlpha: 1,
+    height: "auto",
+    overflow: "hidden",
+    paused: true,
+    duration: 0.5,
+  });
+  menuAnimation1 = gsap.to("#menu-1", {
+    autoAlpha: 1,
+    height: "auto",
+    overflow: "hidden",
+    paused: true,
+    duration: 0.5,
+  });
+  menuAnimation2 = gsap.to("#menu-2", {
+    autoAlpha: 1,
+    height: "auto",
+    overflow: "hidden",
+    paused: true,
+    duration: 0.5,
+  });
+  menuAnimation3 = gsap.to("#menu-3", {
+    autoAlpha: 1,
+    height: "auto",
+    overflow: "hidden",
+    paused: true,
+    duration: 0.5,
+  });
 };
-const { target, openMenu, toggleMenu } = useMenu();
+const removeProps = () => {
+  gsap.set("#menu-0", { clearProps: "all" });
+  gsap.set("#menu-1", { clearProps: "all" });
+  gsap.set("#menu-2", { clearProps: "all" });
+  gsap.set("#menu-3", { clearProps: "all" });
+};
+onMounted(async () => {
+  await nextTick();
+  setAnimation();
+});
+const toggleMenu = (index: number) => {
+  // if (menuAnimationArray[index].progress() === 0) {
+  //   menuAnimationArray[index]?.play();
+  //   } else {
+  //     menuAnimationArray[index]?.reverse();
+  //   }
+  if (index == 0) {
+    if (menuAnimation0.progress() === 0) {
+      menuAnimation0?.play();
+      menuAnimation1?.reverse();
+      menuAnimation2?.reverse();
+      menuAnimation3?.reverse();
+    } else {
+      menuAnimation0?.reverse();
+    }
+  }
+  if (index == 1) {
+    if (menuAnimation1.progress() === 0) {
+      menuAnimation1?.play();
+      menuAnimation0?.reverse();
+      menuAnimation2?.reverse();
+      menuAnimation3?.reverse();
+    } else {
+      menuAnimation1?.reverse();
+    }
+  }
+  if (index == 2) {
+    if (menuAnimation2.progress() === 0) {
+      menuAnimation2?.play();
+      menuAnimation0?.reverse();
+      menuAnimation1?.reverse();
+      menuAnimation3?.reverse();
+    } else {
+      menuAnimation2?.reverse();
+    }
+  }
+  if (index == 3) {
+    if (menuAnimation3.progress() === 0) {
+      menuAnimation3?.play();
+      menuAnimation0?.reverse();
+      menuAnimation1?.reverse();
+      menuAnimation2?.reverse();
+    } else {
+      menuAnimation3?.reverse();
+    }
+  }
+};
+//@ts-ignor
+// let ref0:ref
+// ref0.value = document.getElementById("menu-0");
+// const ref1 = document.getElementById("menu-1");
+// const ref2 = document.getElementById("menu-2");
+// const ref3 = document.getElementById("menu-3");
+// onClickOutside(document.getElementById("menu-0"), () => {
+//   menuAnimation0?.reverse();
+// });
+// for(let i = 0; i< 4; i++){
+onClickOutside(childrenRef[0], () => {
+    menuAnimation1?.reverse()
+    menuAnimation2?.reverse()
+    menuAnimation3?.reverse() 
+});
+onClickOutside(childrenRef[1], () => {
+    menuAnimation0?.reverse()
+    menuAnimation2?.reverse()
+    menuAnimation3?.reverse()
+});
+onClickOutside(childrenRef[2], () => {
+    menuAnimation0?.reverse()
+    menuAnimation1?.reverse()
+    menuAnimation3?.reverse()
+});
+onClickOutside(childrenRef[3], () => {
+    menuAnimation0?.reverse()
+    menuAnimation1?.reverse()
+    menuAnimation2?.reverse()
+});
+// onClickOutside(ref2, () => {
+//   menuAnimation0?.reverse();
+// });
+// onClickOutside(ref3, () => {
+//   menuAnimation0?.reverse();
+// });
 
-// sub-menu-functions//
+// const openMenu = (index: number) => {
+//   console.log(index)
+//   if(index == 0){
 
+//     menu1 = true;
+//   }
+
+// for(let i=0; i < menu.length; i++){
+//   menu[i] = false
+// }
+// menu[index] = true
+// console.log(menu)
+// };
+// const { refMenu_0, refMenu_1, refMenu_2, refMenu_3, toggleMenu } = useMenuByRef();
 </script>
 
 <style scoped></style>
