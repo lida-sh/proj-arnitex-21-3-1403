@@ -8,6 +8,7 @@
 
 body {
     @apply overflow-y-scroll;
+    @apply overflow-x-hidden;
     direction: rtl;
     font-family: "siteFont", serif !important;
     @apply text-gray-800;

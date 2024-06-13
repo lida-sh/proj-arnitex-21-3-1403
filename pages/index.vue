@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main class="bg-black">
+    <main class="bg-black -z-1">
       <div class="relative w-[95rem] mx-auto">
         <div class="absolute top-0 left-0 w-[88.75rem] h-[48.125rem]">
           <img src="~/assets/images/Frame.png" alt="" class="h-full w-full" />
@@ -143,7 +143,7 @@
       </div>
       <!-- ///// -->
       <div
-        class="flex items-cener mt-[6.563rem] mb-10 w-[95rem] px-[7.688rem] mx-auto gap-[17rem]"
+        class="flex items-cener mt-[6.563rem] mb-10 w-[95rem] px-[7.688rem] mx-auto gap-[21rem]"
       >
         <div
           class="w-[10.5rem] h-[3.125rem] bg-[#262626] flex items-cener justify-center py-2 px-2 rounded-[40px]"

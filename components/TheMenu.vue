@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black w-full h-auto">
+  <div class="bg-[#171717] w-full h-auto">
     <div
     id="the-menu"
     class="flex justify-between items-center px-10 py-2.5 bg-[#171717] text-white shadow-lg 3xl:text-sm h-16 w-[95rem] mx-auto"
