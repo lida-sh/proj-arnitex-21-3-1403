@@ -1,6 +1,6 @@
 <template>
     <div class="flex w-full min-h-[100vh]">
-        <div class="w-[100%] sm:w-[50%] md:w-[50%] lg:w-[40%] xl:w-[35%] bg-[#171717] sm:bgh">
+        <div class="w-[100%] sm:w-[50%] md:w-[50%] lg:w-[40%] xl:w-[35%] bg-[#171717] sm:bglogin">
             <div
                 class=" px-[30px] sm:px-[40px] md:px-[50px] lg:px-[60px] xl:px-[50px] 2xl:px-[110px] flex flex-col text-[#fff]">
                 <div class=" w-full flex justify-center items-center mt-10">
@@ -83,7 +83,7 @@ export default {
 </script>
 <style scoped>
 @media (min-width: 640px) {
-    .sm\:bgh {
+    .sm\:bglogin {
         background: linear-gradient(0deg, #0b0b0b 0%, #242424 100%);
         ;
     }
