@@ -9,19 +9,19 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  nitro: {
-    devProxy: {
-      '/api': {
-        target: 'https://arnitex.ir',
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': '/api/v1',
-        },
-      },
-    },
-  },
-  axios: {
-    proxy: true,
-  },
+  // nitro: {
+  //   devProxy: {
+  //     '/api': {
+  //       target: 'https://arnitex.ir',
+  //       changeOrigin: true,
+  //       pathRewrite: {
+  //         '^/api': '/api/v1',
+  //       },
+  //     },
+  //   },
+  // },
+  // axios: {
+  //   proxy: true,
+  // },
 });
 

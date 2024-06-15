@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="flex w-full min-h-[100vh]">
         <div class="w-[100%] sm:w-[50%] md:w-[50%] lg:w-[40%] xl:w-[35%] bg-[#171717] sm:bglogin">
             <div
@@ -90,7 +90,7 @@ export default {
 
         async sendOTP() {
       try {
-        const response = await axios.post('accounts/send-otp/', {
+        const response = axios.post('https://arnitex.ir/api/v1/accounts/send-otp/', {
           email: this.email,
         }, {
           headers: {
@@ -126,7 +126,7 @@ export default {
     background: linear-gradient(0deg, #181818 0%, #242424 100%);
     ;
 }
-</style>
+</style> -->
 
 
 
@@ -161,7 +161,7 @@ export default {
 
 
 
-<!-- <script setup>
+<script setup>
 import VOtpInput from "vue3-otp-input";
 </script>
 
@@ -262,11 +262,11 @@ import VOtpInput from "vue3-otp-input";
         </div>
     </div>
 
-</template> -->
+</template>
 
 
 
-<!-- <script>
+<script>
 import axios from 'axios';
 
 export default {
@@ -325,7 +325,7 @@ export default {
         async OTP() {
             this.isUserHasAcc = "otp";
             try {
-                const response = axios.post('/accounts/send-otp/', {
+                const response = axios.post('https://core.ccgram.ir/api/admin/v1/login', {
                     email: this.email,
                 }, {
                     headers: {
@@ -343,7 +343,7 @@ export default {
 
         async handleOnComplete() {
             try {
-                const response = await axios.post('/accounts/register-verify/', {
+                const response = await axios.post('https://arnitex.ir/api/v1/accounts/register-verify/', {
                     email: this.email,
                     password: this.Pass,
                     OTP: this.otp,
@@ -366,12 +366,12 @@ export default {
 
     },
 };
-</script> -->
+</script>
 
 
 
 
-<!-- <style>
+<style>
 @media (min-width: 640px) {
     .sm\:bglogin {
         background: linear-gradient(0deg, #0b0b0b 0%, #242424 100%);
@@ -406,4 +406,4 @@ export default {
     -webkit-appearance: none;
     margin: 0;
 }
-</style> -->
+</style>
