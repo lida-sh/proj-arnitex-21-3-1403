@@ -1,4 +1,4 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+ // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: ['@vueuse/nuxt', "nuxt-marquee"],
   devtools: { enabled: true },
@@ -9,4 +9,19 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-})
+  nitro: {
+    devProxy: {
+      '/api': {
+        target: 'https://arnitex.ir',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/api/v1',
+        },
+      },
+    },
+  },
+  axios: {
+    proxy: true,
+  },
+});
+
