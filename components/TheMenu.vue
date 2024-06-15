@@ -1,13 +1,13 @@
 <template>
-  <div class="bg-[#171717] w-full h-auto">
+  <div class="bg-[#171717] w-screen h-16">
     <div
     id="the-menu"
-    class="flex justify-between items-center px-10 py-2.5 bg-[#171717] text-white shadow-lg 3xl:text-sm h-16 w-[95rem] mx-auto"
+    class="flex justify-between items-center px-[2.87rem] py-2.5 bg-[#171717] text-white shadow-lg text-sm h-full w-"
   >
     <div class="flex items-center">
-      <!-- <div class="w-[4.5rem] h-full flex items-center justify-center">
+      <div class="w-[4.5rem] h-full flex items-center justify-center">
         <img src="~/assets/images/setting.png" alt="setting" class="h-6 w-6" />
-      </div> -->
+      </div>
       <section>
         <button class="block lg:hidden">
           <svg
@@ -82,7 +82,7 @@
       <div class="w-[12.5rem] h-[2.625rem] relative">
       <input
         type="text"
-        class="h-full w-full rounded-md bg-[#262626] px-4 focus:border-gray-600 focus:ring-0 text-gray-100 border-[#676767]"
+        class="h-full w-full rounded-md bg-[#262626] px-4 focus:border-gray-600 focus:ring-0 text-gray-100 border-0"
         placeholder="جستجوی رمز ارز"
       />
       <img src="~/assets/images/zoom.png" class="absolute top-3 left-4" />
@@ -101,14 +101,16 @@
         <template v-else>
           <the-menu-auth></the-menu-auth>
         </template>
-      </client-only> -->
+      </client-only>  -->
       <!-- <router-link class="text-gray-600 font-bold" to="/"
-        >آکادمی لند</router-link
-      > -->
+        >آکادمی لند</router-link -->
+      
       <the-menu-auth></the-menu-auth>
     </section>
   </div>
-  </div>
+  </div> 
+ 
+  
   
 </template>
 

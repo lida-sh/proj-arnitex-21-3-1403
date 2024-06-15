@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main class="bg-black -z-1">
+    <main class="bg-black">
       <div class="relative w-[95rem] mx-auto">
         <div class="absolute top-0 left-0 w-[88.75rem] h-[48.125rem]">
           <img src="~/assets/images/Frame.png" alt="" class="h-full w-full" />
@@ -39,11 +39,13 @@
         </div>
       </div>
 
-      <div class="h-auto w-full z-30">
-        <!-- <app-marquee></app-marquee> -->
-        <app-ticker :items="items"></app-ticker>
-      </div>
-
+      <!-- <div class="h-auto w-screen z-30"> -->
+      <!-- <app-marquee></app-marquee> -->
+      <!-- <app-ticker :items="items"></app-ticker> -->
+      <!-- </div> -->
+      <!-- <Vue3Marquee :clone="true" :loop="0">
+        <span>lida shafiei</span>
+      </Vue3Marquee> -->
       <div
         class="flex px-[6.25rem] py-20 gap-[5.438rem] w-[95rem] h-[20.625rem] mx-auto"
       >
