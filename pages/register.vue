@@ -44,7 +44,10 @@ import VOtpInput from "vue3-otp-input";
                 <div class="mt-[50px]">
                     <div class="flex w-full justify-between items-center">
                         <p class="text-[24px]"> ثبت نام در آرنیتکس</p>
-                        <p class="text-[12px]  text-[#FF7028]"> ورود به آرنیتکس</p>
+                       
+                        <router-link to="/login">
+                            <span class="text-[12px] text-[#FF7028] cursor-pointer"> ورود به آرنیتکس</span>
+                        </router-link>
                     </div>
 
                     <div v-if="isUserHasAcc == 'firstStep'">
@@ -62,11 +65,20 @@ import VOtpInput from "vue3-otp-input";
 
                             <span class="text-[#EA3C53] text-[14px] mt-3" v-if="errorPass">{{ this.errorPass }}</span>
                         </div>
-                        <button @click="sendOTP"
-                        :class="buttonClass"
+                        <button @click="sendOTP" v-if="registerloader == false" :class="buttonClass"
                             class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[20px]">
-                            {{ registerText }}
+                            ثبت نام
                         </button>
+
+                        <div v-else class="bg-[#262626] mt-5   rounded-[8px] ">
+                            <button
+                                class="indicator-loader sm:h-[51px] text-[20px]  rounded-[8px] ">
+                                در حال پردازش ...
+                            </button>
+                        </div>
+
+                        <!-- <div class="indicator-loader">Some text</div> -->
+
                     </div>
 
                     <div v-if="isUserHasAcc == 'otp'">
@@ -74,7 +86,8 @@ import VOtpInput from "vue3-otp-input";
                             <label class="text-[14px] my-2" for="">کد ۵ رقمی به شماره تلفن شما ارسال شد</label>
 
                             <div dir="ltr" class="flex justify-center mt-5 items-center">
-                                <v-otp-input ref="otpInput" input-classes="otp-input"
+                                
+                                <v-otp-input ref="otpInput" input-classes="otp-input w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
                                     :conditionalClass="['one', 'two', 'three', 'four']" inputType="letter-numeric"
                                     :num-inputs="5" v-model:value="bindValue" :should-auto-focus="true"
                                     :should-focus-order="true" @on-change="handleOnChange"
@@ -83,7 +96,7 @@ import VOtpInput from "vue3-otp-input";
 
 
                         </div>
-                        <div class=" w-full flex flex-col h-[40px] justify-center items-end">
+                        <div class=" w-full flex flex-col h-[60px] justify-center items-end">
                             <div class="" v-if="timer > 0">{{ formattedTimer }}</div>
                             <button @click="sendLoginOtpAgain" v-else v-show="showResendButton">
                                 ارسال مجدد کد
@@ -105,9 +118,9 @@ import VOtpInput from "vue3-otp-input";
             </div>
         </div>
 
-        <div class="w-[70%] hidden sm:flex justify-center items-center bg-black">
+        <div class="w-[70%] hidden sm:flex justify-center items-center -z-10 bg-black">
             <div
-                class=" absolute left-2 w-[28.75rem] h-[18.125rem] md:w-[48.75rem] md:h-[28.125rem] lg:w-[58.75rem] lg:h-[33.125rem] xl:w-[68.75rem] xl:h-[38.125rem] 2xl:w-[88.75rem] 2xl:h-[48.125rem]">
+                class=" absolute z-10 left-2 w-[28.75rem] h-[18.125rem] md:w-[48.75rem] md:h-[28.125rem] lg:w-[58.75rem] lg:h-[33.125rem] xl:w-[68.75rem] xl:h-[38.125rem] 2xl:w-[88.75rem] 2xl:h-[48.125rem]">
                 <img src="~/assets/images/Frame.png" alt="" class="h-full w-full" />
             </div>
         </div>
@@ -129,7 +142,8 @@ export default {
             timer: 180,
             timerR: 180,
             errorPass: null,
-            registerText: "ثبت نام"
+            registerloader: false
+            // registerText: "ثبت نام"
         };
     },
     computed: {
@@ -140,11 +154,11 @@ export default {
             return this.formatTimeR(this.timerR);
         },
         buttonClass() {
-      return {
-        'bg-[#262626] text-[#676767] transition ease-in-out': !this.email || !this.Pass,
-        'bg-[#319B54] text-white transition ease-in-out': this.email && this.Pass
-      };
-    }
+            return {
+                'bg-[#262626] text-[#676767] transition ease-in-out': !this.email || !this.Pass,
+                'bg-[#FF7028] text-white transition ease-in-out': this.email && this.Pass
+            };
+        }
     },
     methods: {
 
@@ -237,7 +251,7 @@ export default {
                     console.log(error);
                 });
         },
-        
+
         sendOTP(event) {
             event.preventDefault();
             this.errorPass = null;
@@ -247,7 +261,8 @@ export default {
 
             const cleanedPass = this.Pass.replace(/\s+/g, '');
             if (cleanedPass && cleanedPass.length > 7) {
-                this.registerText = " در حال پردازش ...";
+                // this.registerText = " در حال پردازش ...";
+                this.registerloader = true;
                 let config = {
                     method: "post",
                     maxBodyLength: Infinity,
@@ -330,8 +345,7 @@ export default {
 
 
 .otp-input {
-    width: 40px;
-    height: 50px;
+ 
     padding: 5px;
     margin: 0 10px;
     font-size: 20px;
@@ -345,5 +359,29 @@ export default {
 .otp-input::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+
+
+.indicator-loader {
+    height: 45px;
+    width: 100%;
+    color: #FF7028;
+    background: linear-gradient(90deg, #FF7028 50%, transparent 50%), linear-gradient(90deg, #FF7028 50%, transparent 50%), linear-gradient(0deg, #FF7028 50%, transparent 50%), linear-gradient(0deg, #FF7028 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 25px 3px, 25px 3px, 3px 25px, 3px 0;
+    background-position: 0px 0px, 97px 42px, 0px 42px, 97px 10px;
+
+    animation: border-dance 4s infinite linear;
+}
+
+@keyframes border-dance {
+    0% {
+        background-position: 0px 0px, 197px 42px, 0px 197px, 42px 0px;
+    }
+
+    100% {
+        background-position: 197px 0px, 0px 42px, 0px 0px, 42px 197px;
+    }
 }
 </style>
