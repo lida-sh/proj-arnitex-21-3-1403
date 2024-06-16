@@ -282,6 +282,7 @@ export default {
                     })
                     .catch((error) => {
                         console.log(error);
+                        this.registerloader = false;
                         this.registerText = " ثبت نام";
                     });
             } else {
