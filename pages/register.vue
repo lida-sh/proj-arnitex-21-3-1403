@@ -237,14 +237,9 @@ export default {
                     console.log(error);
                 });
         },
-
-
-
-
+        
         sendOTP(event) {
             event.preventDefault();
-            
-             
             this.errorPass = null;
             let data = JSON.stringify({
                 email: this.email,
