@@ -60,7 +60,9 @@
                 </div>
                 <div class="flex mt-2 gap-8 w-full justify-center items-center">
                     <p class="text-[14px] text-[#676767]">حساب کاربری ندارید ؟</p>
-                    <p class="text-[16px] sm:text-[13px] md:text-[16px] text-[#FF7028] cursor-pointer">ثبت نام کنید</p>
+                    <router-link to="/register">
+                        <p class="text-[16px] sm:text-[13px] md:text-[16px] text-[#FF7028] cursor-pointer">ثبت نام کنید</p>
+                    </router-link>
                 </div>
             </div>
         </div>

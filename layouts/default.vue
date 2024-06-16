@@ -1,6 +1,6 @@
 <template>
     <div>
-      <!-- <the-menu></the-menu> -->
+      <the-menu></the-menu>
       <slot></slot>
       <the-footer v-if="showFooter"></the-footer>
     </div>
