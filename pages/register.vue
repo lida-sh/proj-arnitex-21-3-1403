@@ -55,20 +55,25 @@ import VOtpInput from "vue3-otp-input";
                         </div>
                         <div class="mt-[20px] flex flex-col">
                             <label class="text-[16px] my-2" for=""> رمز عبور</label>
-                            <input type="text" v-model="Pass" placeholder="رمز عبور خود را وارد کنید"
+
+                            <input type="text" :class="{ 'error-border': errorPass }" v-model="Pass"
+                                placeholder="رمز عبور خود را وارد کنید"
                                 class="bg-[#262626] h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
+
+                            <span class="text-[#EA3C53] text-[14px] mt-3" v-if="errorPass">{{ this.errorPass }}</span>
                         </div>
-                        <button @click="OTP"
-                            class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[22px]">
-                            ثبت نام
+                        <button @click="sendOTP"
+                        :class="buttonClass"
+                            class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[20px]">
+                            {{ registerText }}
                         </button>
                     </div>
 
                     <div v-if="isUserHasAcc == 'otp'">
-                        <div class="mt-[20px] flex flex-col">
+                        <div class="mt-[20px] flex flex-col w-full">
                             <label class="text-[14px] my-2" for="">کد ۵ رقمی به شماره تلفن شما ارسال شد</label>
 
-                            <div dir="ltr" class="flex justify-center items-center">
+                            <div dir="ltr" class="flex justify-center mt-5 items-center">
                                 <v-otp-input ref="otpInput" input-classes="otp-input"
                                     :conditionalClass="['one', 'two', 'three', 'four']" inputType="letter-numeric"
                                     :num-inputs="5" v-model:value="bindValue" :should-auto-focus="true"
@@ -76,14 +81,23 @@ import VOtpInput from "vue3-otp-input";
                                     @on-complete="handleOnComplete" />
                             </div>
 
-                        </div>
-                      
 
+                        </div>
+                        <div class=" w-full flex flex-col h-[40px] justify-center items-end">
+                            <div class="" v-if="timer > 0">{{ formattedTimer }}</div>
+                            <button @click="sendLoginOtpAgain" v-else v-show="showResendButton">
+                                ارسال مجدد کد
+                            </button>
+                        </div>
 
                         <button @click="OTP"
                             class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[22px]">
                             ادامه
                         </button>
+
+                        <span
+                            class="text-[#008DAC] text-[12px] sm:text-[14px] relative top-3 items-center flex justify-center">بعد
+                            از تکمیل نوشتار اطلاعات به طور خودکار کد بررسی شود</span>
                     </div>
 
                 </div>
@@ -93,14 +107,13 @@ import VOtpInput from "vue3-otp-input";
 
         <div class="w-[70%] hidden sm:flex justify-center items-center bg-black">
             <div
-                class=" absolute  left-2 w-[28.75rem] h-[18.125rem] md:w-[48.75rem] md:h-[28.125rem] lg:w-[58.75rem] lg:h-[33.125rem] xl:w-[68.75rem] xl:h-[38.125rem] 2xl:w-[88.75rem] 2xl:h-[48.125rem]">
+                class=" absolute left-2 w-[28.75rem] h-[18.125rem] md:w-[48.75rem] md:h-[28.125rem] lg:w-[58.75rem] lg:h-[33.125rem] xl:w-[68.75rem] xl:h-[38.125rem] 2xl:w-[88.75rem] 2xl:h-[48.125rem]">
                 <img src="~/assets/images/Frame.png" alt="" class="h-full w-full" />
             </div>
         </div>
     </div>
 
 </template>
-
 
 
 <script>
@@ -110,54 +123,192 @@ export default {
     data() {
         return {
             isUserHasAcc: "firstStep",
+            showResendButton: false,
             email: null,
             Pass: null,
+            timer: 180,
+            timerR: 180,
+            errorPass: null,
+            registerText: "ثبت نام"
         };
     },
+    computed: {
+        formattedTimer() {
+            return this.formatTime(this.timer);
+        },
+        formattedTimerR() {
+            return this.formatTimeR(this.timerR);
+        },
+        buttonClass() {
+      return {
+        'bg-[#262626] text-[#676767] transition ease-in-out': !this.email || !this.Pass,
+        'bg-[#319B54] text-white transition ease-in-out': this.email && this.Pass
+      };
+    }
+    },
     methods: {
-        async OTP() {
-            
-            try {
-                const response = axios.post('https://core.ccgram.ir/api/admin/v1/login', {
-                    email: this.email,
-                }, {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
-                this.data = response.data;
-                console.log('Response:', response.data);
-                this.isUserHasAcc = "otp";
 
-            } catch (err) {
-                this.error = 'Failed to send data';
-                console.error('Error:', err);
+        resetTimer(event) {
+            event.preventDefault();
+            this.timer = 120;
+            this.showResendButton = false;
+            if (this.timer > 0) {
+                this.startTimer();
+            }
+        },
+        resetTimerR(event) {
+            event.preventDefault();
+            this.timerR = 120;
+            this.showResendButtonR = false;
+            if (this.timerR > 0) {
+                this.startTimerR();
+            }
+        },
+        startTimer() {
+            if (this.intervalId) {
+                clearInterval(this.intervalId);
+            }
+            this.intervalId = setInterval(() => {
+                if (this.timer > 0) {
+                    this.timer--;
+                } else {
+                    this.showResendButton = true;
+                    clearInterval(this.intervalId);
+                }
+            }, 1000);
+        },
+        startTimerR() {
+            if (this.intervalIdR) {
+                clearInterval(this.intervalIdR);
+            }
+            this.intervalIdR = setInterval(() => {
+                if (this.timerR > 0) {
+                    this.timerR--;
+                } else {
+                    this.showResendButtonR = true;
+                    clearInterval(this.intervalIdR);
+                }
+            }, 1000);
+        },
+        formatTime(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+            const formattedSeconds =
+                remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds;
+            return `${formattedMinutes}:${formattedSeconds}`;
+        },
+        formatTimeR(seconds) {
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+            const formattedSeconds =
+                remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds;
+            return `${formattedMinutes}:${formattedSeconds}`;
+        },
+
+        sendLoginOtpAgain() {
+            this.timer = 180;
+            this.showResendButton = false;
+            if (this.timer > 0) {
+                this.startTimer();
+            }
+            let data = JSON.stringify({
+                email: this.email,
+            });
+            let config = {
+                method: "post",
+                maxBodyLength: Infinity,
+                url: "https://arnitex.ir/api/v1/accounts/send-otp/",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                data: data,
+            };
+            axios
+                .request(config)
+                .then((response) => {
+                    console.log(response);
+                    this.isUserHasAcc = "otp";
+                    this.startTimer();
+
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
+
+
+
+
+        sendOTP(event) {
+            event.preventDefault();
+            
+             
+            this.errorPass = null;
+            let data = JSON.stringify({
+                email: this.email,
+            });
+
+            const cleanedPass = this.Pass.replace(/\s+/g, '');
+            if (cleanedPass && cleanedPass.length > 7) {
+                this.registerText = " در حال پردازش ...";
+                let config = {
+                    method: "post",
+                    maxBodyLength: Infinity,
+                    url: "https://arnitex.ir/api/v1/accounts/send-otp/",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    data: data,
+                };
+                axios
+                    .request(config)
+                    .then((response) => {
+                        console.log(response);
+                        this.isUserHasAcc = "otp";
+                        this.startTimer();
+
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                        this.registerText = " ثبت نام";
+                    });
+            } else {
+                this.errorPass = ' رمز عبور  باید بیشتر از 8 کارکتر باشد ';
             }
         },
 
-        async handleOnComplete() {
-            try {
-                const response = axios.post('https://arnitex.ir/api/v1/accounts/register-verify/', {
-                    email: this.email,
-                    password: this.Pass,
-                    OTP: this.otp,
-                }, {
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
+        handleOnComplete() {
+            let data = JSON.stringify({
+                email: this.email,
+                password1: this.Pass,
+                password2: this.Pass,
+                otp: this.otp,
+            });
+
+            let config = {
+                method: "post",
+                maxBodyLength: Infinity,
+                url: "https://arnitex.ir/api/v1/accounts/register-verify/",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                data: data,
+            };
+
+            axios
+                .request(config)
+                .then((response) => {
+                    console.log(response);
+                    console.log(this.Pass);
+                    // this.isUserHasAcc = "otp";
+
+                })
+                .catch((error) => {
+                    console.log(error);
                 });
-
-                this.data = response.data;
-                console.log('Response:', response.data);
-            } catch (err) {
-                this.error = 'Failed to send data';
-                console.error('Error:', err);
-            }
         }
-
-
-
-
     },
 };
 </script>
@@ -166,6 +317,10 @@ export default {
 
 
 <style>
+.error-border {
+    border-color: #EA3C53;
+}
+
 @media (min-width: 640px) {
     .sm\:bglogin {
         background: linear-gradient(0deg, #0b0b0b 0%, #242424 100%);
@@ -191,10 +346,6 @@ export default {
     text-align: center;
 }
 
-/* Background colour of an input field with value */
-/* .otp-input.is-complete {
-  background-color: #e4e4e4;
-} */
 .otp-input::-webkit-inner-spin-button,
 .otp-input::-webkit-outer-spin-button {
     -webkit-appearance: none;
