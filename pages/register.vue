@@ -44,14 +44,14 @@ import VOtpInput from "vue3-otp-input";
                 <div class="mt-[50px]">
                     <div class="flex w-full justify-between items-center">
                         <p class="text-[24px]"> ثبت نام در آرنیتکس</p>
-                       
+
                         <router-link to="/login">
                             <span class="text-[12px] text-[#FF7028] cursor-pointer"> ورود به آرنیتکس</span>
                         </router-link>
                     </div>
 
-                    <div v-if="isUserHasAcc == 'firstStep'">
-                        <div class="mt-[20px] flex flex-col">
+                    <form v-if="isUserHasAcc == 'firstStep'" class=" pt-5 pb-[90px]">
+                        <div class="flex flex-col">
                             <label class="text-[16px] my-2" for="">شماره همراه یا ایمیل</label>
                             <input v-model="email" type="text" placeholder="شماره همراه یا ایمیل خود را وارد کنید"
                                 class="bg-[#262626] h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
@@ -71,27 +71,23 @@ import VOtpInput from "vue3-otp-input";
                         </button>
 
                         <div v-else class="bg-[#262626] mt-5   rounded-[8px] ">
-                            <button
-                                class="indicator-loader sm:h-[51px] text-[20px]  rounded-[8px] ">
+                            <button class="indicator-loader sm:h-[51px] text-[20px]  rounded-[8px] ">
                                 در حال پردازش ...
                             </button>
                         </div>
-
-                        <!-- <div class="indicator-loader">Some text</div> -->
-
-                    </div>
+                    </form>
 
                     <div v-if="isUserHasAcc == 'otp'">
                         <div class="mt-[20px] flex flex-col w-full">
                             <label class="text-[14px] my-2" for="">کد ۵ رقمی به شماره تلفن شما ارسال شد</label>
 
                             <div dir="ltr" class="flex justify-center mt-5 items-center">
-                                
-                                <v-otp-input ref="otpInput" input-classes="otp-input w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
-                                    :conditionalClass="['one', 'two', 'three', 'four']" inputType="letter-numeric"
-                                    :num-inputs="5" v-model:value="bindValue" :should-auto-focus="true"
-                                    :should-focus-order="true" @on-change="handleOnChange"
-                                    @on-complete="handleOnComplete" />
+
+                                <v-otp-input ref="otpInput"
+                                    input-classes="otp-input w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
+                                    :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5"
+                                    v-model:value="bindValue" :should-auto-focus="true" :should-focus-order="true"
+                                    @on-change="handleOnChange"   @on-complete="handleOnComplete" />
                             </div>
 
 
@@ -118,10 +114,10 @@ import VOtpInput from "vue3-otp-input";
             </div>
         </div>
 
-        <div class="w-[70%] hidden sm:flex justify-center items-center -z-10 bg-black">
+        <div class="w-[70%] hidden relative sm:flex justify-center items-center -z-10 bg-black">
             <div
-                class=" absolute z-10 left-2 w-[28.75rem] h-[18.125rem] md:w-[48.75rem] md:h-[28.125rem] lg:w-[58.75rem] lg:h-[33.125rem] xl:w-[68.75rem] xl:h-[38.125rem] 2xl:w-[88.75rem] 2xl:h-[48.125rem]">
-                <img src="~/assets/images/Frame.png" alt="" class="h-full w-full" />
+                class=" absolute z-10 left-2 w-[28.75rem] h-[18.125rem] md:w-[48.75rem] md:h-[28.125rem] lg:w-[58.75rem] lg:h-[33.125rem] xl:w-[68.75rem] xl:h-[38.125rem]  2xl:w-[84.75rem] 2xl:h-[43.125rem]">
+                <img src="~/assets/images/Frame.png" alt="" class="h-full bg-cover w-full" />
             </div>
         </div>
     </div>
@@ -135,10 +131,11 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            isUserHasAcc: "firstStep",
+            isUserHasAcc: "otp",
             showResendButton: false,
             email: null,
             Pass: null,
+            otp: null,
             timer: 180,
             timerR: 180,
             errorPass: null,
@@ -170,14 +167,6 @@ export default {
                 this.startTimer();
             }
         },
-        resetTimerR(event) {
-            event.preventDefault();
-            this.timerR = 120;
-            this.showResendButtonR = false;
-            if (this.timerR > 0) {
-                this.startTimerR();
-            }
-        },
         startTimer() {
             if (this.intervalId) {
                 clearInterval(this.intervalId);
@@ -191,28 +180,7 @@ export default {
                 }
             }, 1000);
         },
-        startTimerR() {
-            if (this.intervalIdR) {
-                clearInterval(this.intervalIdR);
-            }
-            this.intervalIdR = setInterval(() => {
-                if (this.timerR > 0) {
-                    this.timerR--;
-                } else {
-                    this.showResendButtonR = true;
-                    clearInterval(this.intervalIdR);
-                }
-            }, 1000);
-        },
         formatTime(seconds) {
-            const minutes = Math.floor(seconds / 60);
-            const remainingSeconds = seconds % 60;
-            const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-            const formattedSeconds =
-                remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds;
-            return `${formattedMinutes}:${formattedSeconds}`;
-        },
-        formatTimeR(seconds) {
             const minutes = Math.floor(seconds / 60);
             const remainingSeconds = seconds % 60;
             const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
@@ -346,7 +314,7 @@ export default {
 
 
 .otp-input {
- 
+
     padding: 5px;
     margin: 0 10px;
     font-size: 20px;
