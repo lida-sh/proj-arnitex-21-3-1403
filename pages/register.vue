@@ -131,7 +131,7 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            isUserHasAcc: "otp",
+            isUserHasAcc: "firstStep",
             showResendButton: false,
             email: null,
             Pass: null,
