@@ -50,9 +50,10 @@ import VOtpInput from "vue3-otp-input";
                     </div>
                     <div class="mt-[20px] flex flex-col">
                         <label class="text-[16px] my-2" for=""> رمز عبور</label>
-                        <input type="text" :class="{ 'error-border': errorPass }" v-model="Password" placeholder="رمز عبور خود را وارد کنید"
+                        <input type="text" :class="{ 'error-border': errorPass }" v-model="Password"
+                            placeholder="رمز عبور خود را وارد کنید"
                             class="bg-[#262626] h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
-                            <span class="text-[#EA3C53] text-[14px] mt-3" v-if="errorPass">{{ this.errorPass }}</span>
+                        <span class="text-[#EA3C53] text-[14px] mt-3" v-if="errorPass">{{ this.errorPass }}</span>
                     </div>
 
                     <button @click="sendOTP" v-if="registerloader == false" :class="buttonClass"
@@ -83,8 +84,8 @@ import VOtpInput from "vue3-otp-input";
                             <v-otp-input ref="otpInput"
                                 input-classes="otp-input w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
                                 :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5"
-                                v-model:value="bindValue" :should-auto-focus="true" :should-focus-order="true"
-                                @on-change="handleOnChange" @on-complete="handleOnComplete" />
+                                :should-auto-focus="true" :should-focus-order="true" @on-change="handleOnChange"
+                                @on-complete="handleOnComplete" />
                         </div>
 
                     </div>
@@ -131,6 +132,8 @@ import VOtpInput from "vue3-otp-input";
 </template>
 
 <script>
+import { ref } from 'vue';
+import { useAuthStore } from '~/stores/auth';
 import axios from 'axios';
 
 export default {
@@ -142,6 +145,7 @@ export default {
             Password: null,
             timer: 180,
             errorPass: null,
+            otp: null,
             registerloader: false
         };
     },
@@ -256,11 +260,13 @@ export default {
             }
         },
 
-        handleOnComplete() {
+        handleOnComplete(value) {
+            this.optcode = value;
+            console.log(this.optcode);
             let data = JSON.stringify({
                 email: this.Username,
                 password: this.Password,
-                otp: this.otp,
+                otp: this.optcode,
             });
 
             let config = {
@@ -272,12 +278,15 @@ export default {
                 },
                 data: data,
             };
-
             axios
                 .request(config)
                 .then((response) => {
                     console.log(response);
-                    console.log(this.Password);
+                    let access = response.data.access;
+                    const authStore = useAuthStore();
+                    authStore.setToken(access);
+                    console.log('Token saved:', access);
+                    // console.log(access);
 
                 })
                 .catch((error) => {

@@ -86,8 +86,8 @@ import VOtpInput from "vue3-otp-input";
                                 <v-otp-input ref="otpInput"
                                     input-classes="otp-input w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
                                     :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5"
-                                    v-model:value="bindValue" :should-auto-focus="true" :should-focus-order="true"
-                                    @on-change="handleOnChange"   @on-complete="handleOnComplete" />
+                                    :should-auto-focus="true" :should-focus-order="true" @on-change="handleOnChange"
+                                    @on-complete="handleOnComplete" />
                             </div>
 
 
@@ -139,8 +139,8 @@ export default {
             timer: 180,
             timerR: 180,
             errorPass: null,
-            registerloader: false
-            // registerText: "ثبت نام"
+            registerloader: false,
+            otp: ''
         };
     },
     computed: {
@@ -229,7 +229,6 @@ export default {
 
             const cleanedPass = this.Pass.replace(/\s+/g, '');
             if (cleanedPass && cleanedPass.length > 7) {
-                // this.registerText = " در حال پردازش ...";
                 this.registerloader = true;
                 let config = {
                     method: "post",
@@ -258,12 +257,19 @@ export default {
             }
         },
 
-        handleOnComplete() {
+        // handleOnChange(value) {
+        //     console.log('OTP on change:', value);
+        //     this.otp = value;
+        // },
+
+        handleOnComplete(value) {
+            this.opt = value;
+            console.log(this.opt);
             let data = JSON.stringify({
                 email: this.email,
                 password1: this.Pass,
                 password2: this.Pass,
-                otp: this.otp,
+                otp: this.opt,
             });
 
             let config = {
@@ -280,8 +286,8 @@ export default {
                 .request(config)
                 .then((response) => {
                     console.log(response);
-                    console.log(this.Pass);
-                    // this.isUserHasAcc = "otp";
+                    let access = response.data.access;
+                    console.log(access);
 
                 })
                 .catch((error) => {
