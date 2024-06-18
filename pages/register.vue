@@ -2,6 +2,7 @@
 import VOtpInput from "vue3-otp-input";
 </script>
 
+
 <template>
     <div class="flex w-full min-h-[100vh]">
         <div class="w-[100%] sm:w-[50%] md:w-[50%] lg:w-[40%] xl:w-[35%] bg-[#171717] sm:bglogin">
@@ -158,7 +159,7 @@ export default {
         }
     },
     methods: {
-
+        //Timer
         resetTimer(event) {
             event.preventDefault();
             this.timer = 120;
@@ -189,6 +190,7 @@ export default {
             return `${formattedMinutes}:${formattedSeconds}`;
         },
 
+        // ResendOtp
         sendLoginOtpAgain() {
             this.timer = 180;
             this.showResendButton = false;
@@ -256,11 +258,6 @@ export default {
                 this.errorPass = ' رمز عبور  باید بیشتر از 8 کارکتر باشد ';
             }
         },
-
-        // handleOnChange(value) {
-        //     console.log('OTP on change:', value);
-        //     this.otp = value;
-        // },
 
         handleOnComplete(value) {
             this.opt = value;
