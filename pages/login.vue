@@ -69,8 +69,51 @@ import VOtpInput from "vue3-otp-input";
 
                 </form>
 
+                <dialog id="my_modal_2" class="modal">
+                    <div class="modal-box p-[30px] sm:p-[50px] bg-[#171717] sm:bglogin w-[360px] sm:w-[500px] rounded-[8px] h-[430px] sm:h-[500px]">
+                        <div v-if="isUserHasAccMob == 'otpMob'">
+                            <div class="flex w-full justify-between items-center">
+                                <p class="text-[24px]">ورود به آرنیتکس</p>
+                                <span class="text-[12px] text-[#FF7028] cursor-pointer">ویرایش شماره همراه</span>
+                            </div>
+                            <div class="mt-[20px] flex flex-col w-full">
+                                <label class="text-[14px] my-2" for="">کد ۵ رقمی به شماره تلفن شما ارسال شد</label>
 
-                <div v-if="isUserHasAcc == 'otp'" class="mt-[50px]">
+                                <div dir="ltr" class="flex justify-center mt-5 items-center">
+
+                                    <v-otp-input ref="otpInput"
+                                        input-classes="otp-input w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
+                                        :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5"
+                                        :should-auto-focus="true" :should-focus-order="true"
+                                        @on-complete="handleOnComplete" />
+                                </div>
+
+                            </div>
+                            <div class=" w-full flex flex-col h-[60px] justify-center items-end">
+                                <div class="text-[#FF7028]" v-if="timer > 0">{{ formattedTimer }}</div>
+                                <button class="text-[#FF7028]" @click="sendLoginOtpAgain" v-else v-show="showResendButton">
+                                    ارسال مجدد کد
+                                </button>
+                            </div>
+
+                            <button @click="OTP"
+                                class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[22px]">
+                                ادامه
+                            </button>
+
+                            <span
+                                class="text-[#008DAC] text-[12px] sm:text-[14px] relative top-3 items-center flex justify-center">بعد
+                                از تکمیل نوشتار اطلاعات به طور خودکار کد بررسی شود</span>
+                        </div>
+
+                    </div>
+                    <form method="dialog" class="modal-backdrop">
+                        <button>close</button>
+                    </form>
+                </dialog>
+
+
+                <!-- <div v-if="isUserHasAcc == 'otp'" class="mt-[50px]">
 
                     <div class="flex w-full justify-between items-center">
                         <p class="text-[24px]">ورود به آرنیتکس</p>
@@ -104,11 +147,11 @@ import VOtpInput from "vue3-otp-input";
                     <span
                         class="text-[#008DAC] text-[12px] sm:text-[14px] relative top-3 items-center flex justify-center">بعد
                         از تکمیل نوشتار اطلاعات به طور خودکار کد بررسی شود</span>
-                </div>
+                </div> -->
 
                 <div v-if="isUserHasAcc == 'firstStep'">
                     <div class="w-full h-[100px] flex flex-col justify-center items-center">
-                        <span class="text-[14px] cursor-pointer text-[#FF7028]">رمز عبور خود را فراموش کردم</span>
+                        <span class="text-[14px] cursor-pointer text-[#FF7028]" @click="forgotpassword">رمز عبور خود را فراموش کردم</span>
                     </div>
                     <div class="flex mt-2 pb-10 gap-8 w-full justify-center items-center">
                         <p class="text-[14px] text-[#676767]">حساب کاربری ندارید ؟</p>
@@ -140,6 +183,7 @@ export default {
     data() {
         return {
             isUserHasAcc: "firstStep",
+            isUserHasAccMob: "firstStep",
             showResendButton: false,
             Username: null,
             Password: null,
@@ -215,7 +259,7 @@ export default {
                 .request(config)
                 .then((response) => {
                     console.log(response);
-                    this.isUserHasAcc = "otp";
+                    // this.isUserHasAcc = "otp";
                     this.startTimer();
                 })
                 .catch((error) => {
@@ -246,8 +290,14 @@ export default {
                     .request(config)
                     .then((response) => {
                         console.log(response);
-                        this.isUserHasAcc = "otp";
                         this.startTimer();
+                        this.registerloader = false;
+                        this.isUserHasAccMob = "otpMob";
+                        const modal = document.getElementById('my_modal_2');
+                        if (modal) {
+                            modal.showModal();
+                        }
+
 
                     })
                     .catch((error) => {
@@ -292,6 +342,10 @@ export default {
                 .catch((error) => {
                     console.log(error);
                 });
+        },
+        forgotpassword(){
+            this.isUserHasAcc = "forgot";
+            
         }
     },
 };

@@ -81,7 +81,7 @@ import VOtpInput from "vue3-otp-input";
 
 
                     <dialog id="my_modal_2" class="modal">
-                        <div class="modal-box bg-[#171717] sm:bglogin w-[500px] rounded-[8px] h-[400px]">
+                        <div class="modal-box p-[50px] bg-[#171717] sm:bglogin w-[500px] rounded-[8px] h-[400px]">
                             <div class="">
                                 <div class="mt-[20px] flex flex-col w-full">
                                     <label class="text-[14px] text-[#fff] my-2" for="">کد ۵ رقمی به شماره تلفن شما ارسال
@@ -97,8 +97,8 @@ import VOtpInput from "vue3-otp-input";
                                     </div>
                                 </div>
                                 <div class=" w-full flex flex-col h-[60px] justify-center items-end">
-                                    <div class="" v-if="timer > 0">{{ formattedTimer }}</div>
-                                    <button @click="sendLoginOtpAgain" v-else v-show="showResendButton">
+                                    <div class="text-[#FF7028]" v-if="timer > 0">{{ formattedTimer }}</div>
+                                    <button class="text-[#FF7028]" @click="sendLoginOtpAgain" v-else v-show="showResendButton">
                                         ارسال مجدد کد
                                     </button>
                                 </div>
@@ -292,6 +292,7 @@ export default {
                     .then((response) => {
                         console.log(response);
                         this.isUserHasAcc = "otp";
+                        this.registerloader = false;
                         this.startTimer();
 
                         const modal = document.getElementById('my_modal_2');
