@@ -51,7 +51,7 @@ import VOtpInput from "vue3-otp-input";
                         </router-link>
                     </div>
 
-                    <form v-if="isUserHasAcc == 'firstStep'" class=" pt-5 pb-[90px]">
+                    <form class=" pt-5 pb-[90px]">
                         <div class="flex flex-col">
                             <label class="text-[16px] my-2" for="">شماره همراه یا ایمیل</label>
                             <input v-model="email" type="text" placeholder="شماره همراه یا ایمیل خود را وارد کنید"
@@ -78,37 +78,83 @@ import VOtpInput from "vue3-otp-input";
                         </div>
                     </form>
 
-                    <div v-if="isUserHasAcc == 'otp'">
-                        <div class="mt-[20px] flex flex-col w-full">
-                            <label class="text-[14px] my-2" for="">کد ۵ رقمی به شماره تلفن شما ارسال شد</label>
 
-                            <div dir="ltr" class="flex justify-center mt-5 items-center">
 
-                                <v-otp-input ref="otpInput"
-                                    input-classes="otp-input w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
-                                    :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5"
-                                    :should-auto-focus="true" :should-focus-order="true" @on-change="handleOnChange"
-                                    @on-complete="handleOnComplete" />
+                    <dialog id="my_modal_2" class="modal">
+                        <div class="modal-box bg-[#171717] sm:bglogin w-[500px] rounded-[8px] h-[400px]">
+                            <div class="">
+                                <div class="mt-[20px] flex flex-col w-full">
+                                    <label class="text-[14px] text-[#fff] my-2" for="">کد ۵ رقمی به شماره تلفن شما ارسال
+                                        شد</label>
+
+                                    <div dir="ltr" class="flex justify-center mt-5 items-center">
+
+                                        <v-otp-input ref="otpInput"
+                                            input-classes="otp-input w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
+                                            :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5"
+                                            :should-auto-focus="true" :should-focus-order="true"
+                                            @on-change="handleOnChange" @on-complete="handleOnComplete" />
+                                    </div>
+                                </div>
+                                <div class=" w-full flex flex-col h-[60px] justify-center items-end">
+                                    <div class="" v-if="timer > 0">{{ formattedTimer }}</div>
+                                    <button @click="sendLoginOtpAgain" v-else v-show="showResendButton">
+                                        ارسال مجدد کد
+                                    </button>
+                                </div>
+
+                                <button @click="OTP"
+                                    class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[22px]">
+                                    ادامه
+                                </button>
+
+                                <span
+                                    class="text-[#008DAC] text-[12px] sm:text-[14px] relative top-3 items-center flex justify-center">بعد
+                                    از تکمیل نوشتار اطلاعات به طور خودکار کد بررسی شود</span>
+                            </div>
+                        </div>
+                        <form method="dialog" class="modal-backdrop">
+                            <button>close</button>
+                        </form>
+                    </dialog>
+
+                    <!-- Open the modal using ID.showModal() method -->
+                    <!-- <button class="btn"  >open modal</button> -->
+                    <!-- <dialog id="my_modal_2" class="bg-[#171717] sm:bglogin w-[500px] rounded-[8px] h-[400px] px-[50px]">
+                        <div>
+                            <div class="mt-[20px] flex flex-col w-full">
+                                <label class="text-[14px] text-[#fff] my-2" for="">کد ۵ رقمی به شماره تلفن شما ارسال شد</label>
+
+                                <div dir="ltr" class="flex justify-center mt-5 items-center">
+
+                                    <v-otp-input ref="otpInput"
+                                        input-classes="otp-input w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
+                                        :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5"
+                                        :should-auto-focus="true" :should-focus-order="true" @on-change="handleOnChange"
+                                        @on-complete="handleOnComplete" />
+                                </div>
+
+
+                            </div>
+                            <div class=" w-full flex flex-col h-[60px] justify-center items-end">
+                                <div class="" v-if="timer > 0">{{ formattedTimer }}</div>
+                                <button @click="sendLoginOtpAgain" v-else v-show="showResendButton">
+                                    ارسال مجدد کد
+                                </button>
                             </div>
 
-
-                        </div>
-                        <div class=" w-full flex flex-col h-[60px] justify-center items-end">
-                            <div class="" v-if="timer > 0">{{ formattedTimer }}</div>
-                            <button @click="sendLoginOtpAgain" v-else v-show="showResendButton">
-                                ارسال مجدد کد
+                            <button @click="OTP"
+                                class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[22px]">
+                                ادامه
                             </button>
+
+                            <span
+                                class="text-[#008DAC] text-[12px] sm:text-[14px] relative top-3 items-center flex justify-center">بعد
+                                از تکمیل نوشتار اطلاعات به طور خودکار کد بررسی شود</span>
                         </div>
+                    </dialog> -->
 
-                        <button @click="OTP"
-                            class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[22px]">
-                            ادامه
-                        </button>
 
-                        <span
-                            class="text-[#008DAC] text-[12px] sm:text-[14px] relative top-3 items-center flex justify-center">بعد
-                            از تکمیل نوشتار اطلاعات به طور خودکار کد بررسی شود</span>
-                    </div>
 
                 </div>
 
@@ -247,6 +293,11 @@ export default {
                         console.log(response);
                         this.isUserHasAcc = "otp";
                         this.startTimer();
+
+                        const modal = document.getElementById('my_modal_2');
+                        if (modal) {
+                            modal.showModal();
+                        }
 
                     })
                     .catch((error) => {
