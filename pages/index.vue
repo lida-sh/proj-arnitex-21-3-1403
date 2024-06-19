@@ -735,14 +735,9 @@
 </template>
 <script setup lang="ts">
 import { ChevronDownIcon } from "@heroicons/vue/24/solid";
-
-
-import { useAuthStore } from "@/stores/auth";
-const authStore = useAuthStore();
-
-const token = authStore.getToken;
-console.log("Token:", token);
-
+import {gsap} from "gsap"
+import ScrollTrigger from "gsap/ScrollTrigger";
+const sliderTab = false
 const items = [
   {
     icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1.png",
