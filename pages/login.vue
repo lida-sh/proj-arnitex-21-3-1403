@@ -69,8 +69,13 @@ import VOtpInput from "vue3-otp-input";
 
                 </form>
 
+                <form v-if="isUserHasAcc == 'forget'" class="mt-[50px]">
+                    <forgetpassword></forgetpassword>
+                </form>
+
                 <dialog id="my_modal_2" class="modal">
-                    <div class="modal-box p-[30px] sm:p-[50px] bg-[#171717] sm:bglogin w-[360px] sm:w-[500px] rounded-[8px] h-[430px] sm:h-[500px]">
+                    <div
+                        class="modal-box p-[30px] sm:p-[50px] bg-[#171717] sm:bglogin w-[360px] sm:w-[500px] rounded-[8px] h-[430px] sm:h-[500px]">
                         <div v-if="isUserHasAccMob == 'otpMob'">
                             <div class="flex w-full justify-between items-center">
                                 <p class="text-[24px]">ورود به آرنیتکس</p>
@@ -91,7 +96,8 @@ import VOtpInput from "vue3-otp-input";
                             </div>
                             <div class=" w-full flex flex-col h-[60px] justify-center items-end">
                                 <div class="text-[#FF7028]" v-if="timer > 0">{{ formattedTimer }}</div>
-                                <button class="text-[#FF7028]" @click="sendLoginOtpAgain" v-else v-show="showResendButton">
+                                <button class="text-[#FF7028]" @click="sendLoginOtpAgain" v-else
+                                    v-show="showResendButton">
                                     ارسال مجدد کد
                                 </button>
                             </div>
@@ -151,7 +157,8 @@ import VOtpInput from "vue3-otp-input";
 
                 <div v-if="isUserHasAcc == 'firstStep'">
                     <div class="w-full h-[100px] flex flex-col justify-center items-center">
-                        <span class="text-[14px] cursor-pointer text-[#FF7028]" @click="forgotpassword">رمز عبور خود را فراموش کردم</span>
+                        <span class="text-[14px] cursor-pointer text-[#FF7028]" @click="forgetpassword">رمز عبور خود را
+                            فراموش کردم</span>
                     </div>
                     <div class="flex mt-2 pb-10 gap-8 w-full justify-center items-center">
                         <p class="text-[14px] text-[#676767]">حساب کاربری ندارید ؟</p>
@@ -343,9 +350,9 @@ export default {
                     console.log(error);
                 });
         },
-        forgotpassword(){
-            this.isUserHasAcc = "forgot";
-            
+        forgetpassword() {
+            this.isUserHasAcc = "forget";
+
         }
     },
 };
