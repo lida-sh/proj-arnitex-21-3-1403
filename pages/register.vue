@@ -81,7 +81,7 @@ import VOtpInput from "vue3-otp-input";
 
 
                     <dialog id="my_modal_2" class="modal">
-                        <div class="modal-box  sm:p-[50px] bg-[#171717] sm:bglogin w-[330px] sm:w-[500px] rounded-[36px] h-[430px] sm:h-[500px]">
+                        <div class="modal-box  sm:p-[50px] bg-[#171717] sm:bglogin w-[350px] sm:w-[500px] rounded-[36px] h-[430px] sm:h-[500px]">
                             <div class="">
                                 <div class="mt-[20px] flex flex-col w-full">
                                     <label class="text-[14px] text-[#fff] my-2" for="">کد ۵ رقمی به شماره تلفن شما ارسال

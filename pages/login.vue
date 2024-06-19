@@ -75,7 +75,7 @@ import VOtpInput from "vue3-otp-input";
 
                 <dialog id="my_modal_2" class="modal">
                     <div
-                        class="modal-box  sm:p-[50px] bg-[#171717] sm:bglogin w-[320px] sm:w-[500px] rounded-[36px] h-[430px] sm:h-[500px]">
+                        class="modal-box  sm:p-[50px] bg-[#171717] sm:bglogin w-[350px] sm:w-[500px] rounded-[36px] h-[430px] sm:h-[500px]">
                         <div v-if="isUserHasAccMob == 'otpMob'">
                             <div class="flex w-full justify-between items-center">
                                 <p class="text-[24px]">ورود به آرنیتکس</p>

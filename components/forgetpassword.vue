@@ -48,7 +48,7 @@ import VOtpInput from "vue3-otp-input";
                         class="bg-[#262626] h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
                 </div>
 
-                <button @click="changepageModal" :class="buttonClassPass"
+                <button @click="changepageModal"
                     class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[22px]">
                     ادامه
                 </button>
@@ -257,8 +257,11 @@ export default {
                     });
             }
         },
-        changepageModal() {
-            this.newPasswordAcc = "otp";
+        changepageModal(event) {
+            event.preventDefault();
+            if (this.newPassword == this.newPassword2){
+                this.newPasswordAcc = "otp";
+            }
         }
     },
 };
