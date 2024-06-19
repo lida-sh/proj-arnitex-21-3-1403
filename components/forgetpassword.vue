@@ -30,9 +30,6 @@ import VOtpInput from "vue3-otp-input";
         <span class="text-[#FFA928] text-[14px] text-center w-[320px] sm:text-[14px] relative top-3">بعد
             بعد از تغییر رمز عبور، امکان برداشت ریالی و رمز ارز را تا 24 ساعت نخواهید داشت</span>
     </div>
-
-
-
     <dialog id="my_modal_2" class="modal">
         <div
             class="modal-box p-[30px] sm:p-[50px] bg-[#171717] sm:bglogin w-[360px] sm:w-[500px] rounded-[8px] h-[430px] sm:h-[500px]">
@@ -40,7 +37,6 @@ import VOtpInput from "vue3-otp-input";
                 <p class="text-[24px]">بازنشانی رمز عبور</p>
                 <span class="text-[12px] text-[#FF7028] cursor-pointer">ویرایش شماره همراه</span>
             </div>
-
             <div v-if="newPasswordAcc == 'newPassword'">
                 <div class="mt-[20px] flex flex-col">
                     <label class="text-[16px] my-2" for="">رمز عبور جدید</label>
@@ -57,9 +53,6 @@ import VOtpInput from "vue3-otp-input";
                     ادامه
                 </button>
             </div>
-
-
-
             <div v-if="newPasswordAcc == 'otp'">
                 <div class="mt-[20px] flex flex-col w-full">
                     <label class="text-[14px] my-2" for="">کد ۵ رقمی به شماره تلفن شما ارسال شد</label>
@@ -87,18 +80,12 @@ import VOtpInput from "vue3-otp-input";
                     class="text-[#008DAC] text-[12px] sm:text-[14px] relative top-3 items-center flex justify-center">بعد
                     از تکمیل نوشتار اطلاعات به طور خودکار کد بررسی شود</span>
             </div>
-
         </div>
         <form method="dialog" class="modal-backdrop">
             <button>close</button>
         </form>
     </dialog>
-
-
-
-
 </template>
-
 
 
 <script>
@@ -109,14 +96,11 @@ import axios from 'axios';
 export default {
     data() {
         return {
-            isUserHasAcc: "firstStep",
-            isUserHasAccMob: "firstStep",
             newPasswordAcc: "firstStep",
             showResendButton: false,
             Username: null,
             Password: null,
             timer: 180,
-            errorPass: null,
             otp: null,
             registerloader: false,
             newPassword: null,
@@ -133,12 +117,6 @@ export default {
                 'bg-[#FF7028] text-white transition ease-in-out': this.Username
             };
         },
-        buttonClass() {
-            return {
-                'bg-[#262626] text-[#676767] transition ease-in-out': !this.Username,
-                'bg-[#FF7028] text-white transition ease-in-out': this.Username
-            };
-        }
     },
     methods: {
 
@@ -267,10 +245,7 @@ export default {
                     .request(config)
                     .then((response) => {
                         console.log(response);
-                        let access = response.data.access;
-                        const authStore = useAuthStore();
-                        authStore.setToken(access);
-                        console.log('Token saved:', access);
+                        // let access = response.data.access;
                         // console.log(access);
                         setTimeout(() => {
                             window.location.reload();
@@ -281,10 +256,6 @@ export default {
                         console.log(error);
                     });
             }
-        },
-        forgetpassword() {
-            this.isUserHasAcc = "forget";
-
         },
         changepageModal() {
             this.newPasswordAcc = "otp";
