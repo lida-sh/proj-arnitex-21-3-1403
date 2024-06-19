@@ -1,29 +1,36 @@
 @font-face {
-    font-family: "siteFont";
-    src: url("../fonts/IRANSansWeb.woff");
-  }
+  font-family: "siteFont";
+  src: url("../fonts/IRANSansWeb.woff");
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-    /* @apply overflow-y-scroll; */
-    @apply overflow-x-hidden;
-    direction: rtl;
-    font-family: "siteFont", serif !important;
-    @apply text-gray-800;
+  @apply overflow-y-scroll;
+  @apply overflow-x-hidden;
+  direction: rtl;
+  font-family: "siteFont", serif !important;
+  @apply text-gray-800;
+}
+@layer components {
+  .sun-menu-hover {
+    hover: bg-gray-300;
   }
-  @layer components{
-    .sun-menu-hover{
-      hover:bg-gray-300
-    }
-  }  
-  @layer utilities {
-    .bg-custom-radial-end {
-      background: radial-gradient(50% 50% at 50% 50%, rgba(255, 112, 40, 0.25) 0.01%, rgba(255, 112, 40, 0.00) 100%);
-    }
-    .bg-custom-radial-start {
-      background: radial-gradient(50% 50% at 50% 50%, rgba(255, 112, 40, 0.15) 0.01%, rgba(255, 112, 40, 0.00) 100%)
-    }
+}
+@layer utilities {
+  .bg-custom-radial-end {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(255, 112, 40, 0.25) 0.01%,
+      rgba(255, 112, 40, 0) 100%
+    );
   }
- 
+  .bg-custom-radial-start {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(255, 112, 40, 0.15) 0.01%,
+      rgba(255, 112, 40, 0) 100%
+    );
+  }
+}
