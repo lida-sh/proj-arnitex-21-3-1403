@@ -36,6 +36,10 @@ export default {
       21: "21",
     },
     extend: {
+      backgroundImage: {
+        'custom-radial-end': 'radial-gradient(50% 50% at 50% 50%, rgba(255, 112, 40, 0.25) 0.01%, rgba(255, 112, 40, 0.00) 100%)',
+        'custom-radial-start': 'radial-gradient(50% 50% at 50% 50%, rgba(255, 112, 40, 0.15) 0.01%, rgba(255, 112, 40, 0.00) 100%)',
+      },
       gridTemplateColumns: {
         // Simple 16 column grid
         '14': 'repeat(14, minmax(0, 1fr))',

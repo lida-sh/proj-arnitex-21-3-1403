@@ -1,5 +1,5 @@
 <template>
-  <div class="container-marquee z-100 text-white">
+  <div class="container-marquee">
     <div class="ticker-wrap">
       <div class="ticker">
         <div class="ticker__item">Letterpress chambray brunch.</div>

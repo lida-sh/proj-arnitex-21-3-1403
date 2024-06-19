@@ -1,7 +1,7 @@
 <template>
-  <div class="bg-black w-full h-[36.938rem]">
+  <div class="bg-gradient-to-b from-[#262626] to-[#171717] w-full h-[36.938rem]">
     <div
-      class="w-[95rem] mx-auto h-full grid grid-cols-14 bg-gradient-to-b from-[#262626] to-[#171717] z-10 px-[6.25rem] py-[3.125rem]"
+      class="w-[95rem] mx-auto h-full grid grid-cols-14  z-10 px-[6.25rem] py-[3.125rem]"
     >
       <div class="col-span-4">
         <div class="flex flex-col gap-10">

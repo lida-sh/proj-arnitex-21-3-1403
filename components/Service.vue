@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col space-y-4 bg-[#404040] rounded-box shadow-[0.25px_-2px_2px_rgba(103,103,103,100)] p-4 h-40 w-[16.563rem] items-center justify-center"
+    class="flex flex-col space-y-4 bg-[#262626] rounded-box sm:shadow-[0.25px_-2px_2px_rgba(103,103,103,100)] p-4 h-[10.625rem] w-[16.563rem] items-center justify-center"
   >
     <div class="w-[4.375rem] h-[4.375rem] text-[#E4E4E4]">
       <slot name="icon"></slot>
