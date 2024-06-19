@@ -1,9 +1,6 @@
 <template>
-  <div
-    class="min-w-24 relative transition duration-1000 flex gap-12 items-center"
-  >
-    
-    <div class="flex items-center">
+  <div class="relative transition duration-1000 flex gap-4 lg:gap-12  items-center">
+    <div class="hidden lg:flex lg:items-center">
       <div class="flex ml-10">
         <svg
           width="20"
@@ -18,7 +15,7 @@
           />
         </svg>
       </div>
-      <div class="flex">
+      <div class="lg:items-center">
         <svg
           width="20"
           height="20"
@@ -33,20 +30,26 @@
         </svg>
       </div>
     </div>
-
-    <div
-      class="flex items-center justify-center w-36 h-[2.625rem] bg-[#FF7028] rounded-md p-3.5"
-    >
-      <div class="flex items-center justify-center pl-3">ثبت نام</div>
-      <div class="border-r border-white flex items-center justify-center pr-3">
-        ورود
+    <div class="h-[2.125rem] px-5 lg:px-0 lg:h-auto border-l border-[#676767] lg:border-l-0">
+      <div
+        class="flex items-center justify-center w-[6.6875rem] h-full lg:w-36 lg:h-[2.625rem] bg-[#FF7028] rounded-md px-3 py- lg:p-3.5 text-xs lg:text-base"
+      >
+        <div class="flex items-center justify-center pl-3">ثبت نام</div>
+        <div
+          class="border-r border-white flex items-center justify-center pr-3"
+        >
+          ورود
+        </div>
       </div>
     </div>
-    <div class="flex items-center justify-center border-r border-gray-100 pr-6">
-      <a href="/" class="w-[7.5rem] h-4">
+
+    <div
+      class="flex items-center justify-center lg:border-r lg:border-[#676767] lg:pr-6 pl-[0.44rem] lg:pl-0"
+    >
+      <a href="/" class="hidden lg:block lg:w-[7.5rem] lg:h-4">
         <img src="~assets/images/arnitex.png" class="" />
       </a>
-      <div class="w-[4.5rem] h-full flex items-center justify-center">
+      <div class="w-16 lg:w-[4.5rem] h-full flex items-center justify-center">
         <img src="~/assets/images/logo.png" class="w-8 h-7" />
       </div>
     </div>

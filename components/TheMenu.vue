@@ -1,96 +1,160 @@
 <template>
-  <div class="bg-[#171717] w-screen h-16">
+  <div class="bg-[#171717] w-screen h-14 sm:h-16 relative">
     <div
-    id="the-menu"
-    class="flex justify-between items-center px-[2.87rem] py-2.5 bg-[#171717] text-white shadow-lg text-sm h-full w-"
-  >
-    <div class="flex items-center">
-      <div class="w-[4.5rem] h-full flex items-center justify-center">
+      id="the-menu"
+      class="flex justify-between items-center px-[1.44rem] sm:px-[2.87rem] py-2.5 bg-[#171717] text-white shadow-lg text-sm h-full w-full"
+    >
+      <div class="flex items-center w-auto lg:w-[47.5rem]">
+        <!-- <div class="w-[4.5rem] h-full flex items-center justify-center">
         <img src="~/assets/images/setting.png" alt="setting" class="h-6 w-6" />
-      </div>
-      <section>
-        <button class="block lg:hidden">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="w-6 h-6"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-            />
-          </svg>
-        </button>
-
-        <div
-          ref="target"
-          class="absolute rounded-box border shadow-lg mt-3 z-20 inset-x-10 h-0 invisible lg:visible flex flex-col lg:flex-row items-center bg-white divide-y divide-gray-200 lg:space-x-2 lg:space-x-reverse lg:divide-none lg:static lg:bg-transparent lg:rounded-none lg:shadow-none lg:border-none lg:mt-0 lg:h-auto"
-        >
-          <router-link
-            v-for="(item, index) in links"
-            :key="`menu-${index}`"
-            :to="item.to"
-            class="w-full lg:w-auto py-3 pr-4"
-          >
-            <div
-              class="flex items-center justify-center gap-[1.12rem] relative w-[7.375rem]"
-              @click="toggleMenu(index)"
+      </div> -->
+        <section class="w-auto">
+          <button class="block lg:hidden" @click="toggleMenu">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
             >
-              <div class="text-sm">
-                {{ item.title }}
-              </div>
-              <div class="" v-if="item.child">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </button>
+          <div
+            ref="target"
+            class="absolute shadow-lg z-20 right-0 top-0 h-[36.625rem] w-auto invisible lg:visible flex flex-col lg:flex-row items-center bg-[#171717] lg:space-x-2 lg:space-x-reverse lg:divide-none lg:static lg:bg-transparent lg:rounded-none lg:shadow-none lg:border-none lg:mt-0 lg:h-auto"
+          >
+            <div class="flex">
+              <div
+                class="w-[4.375rem] h-[3.5rem] flex items-center justify-center lg:hidden"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="18"
+                  viewBox="0 0 24 18"
                   fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2.5"
-                  stroke="currentColor"
-                  class="size-3"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                  <rect
+                    x="4.22168"
+                    y="-0.191406"
+                    width="24"
+                    height="2"
+                    rx="1"
+                    transform="rotate(45 4.22168 -0.191406)"
+                    fill="#D9D9D9"
+                  />
+                  <rect
+                    x="11"
+                    y="8"
+                    width="2"
+                    height="2"
+                    rx="1"
+                    fill="#D9D9D9"
+                  />
+                  <rect
+                    x="2.80762"
+                    y="16.7773"
+                    width="24"
+                    height="2"
+                    rx="1"
+                    transform="rotate(-45 2.80762 16.7773)"
+                    fill="#D9D9D9"
                   />
                 </svg>
               </div>
-
-              <div
-                class="absolute invisible opacity-0 h-0 right-0 w-[10.5rem] top-11 overflow-hidden border-x-[0.75px] border-b-[1.25px] rounded-b-lg border-[#676767] text-white z-30"
-                :id="`menu-${index}`" :ref="(el) => setChildrenRef(el, index)"
-              >
-                <template
-                  v-for="(subMenu, i) in item.subMenu"
-                  :key="`sub-menu-${i}`"
+              <div class="flex gap-[0.38rem] pl-[1.25rem] py-[0.44rem]">
+                <div
+                  class="flex items-center justify-center h-[2.625rem] w-[12.5rem] relative lg:hidden"
                 >
-                  <div
-                    class="w-full h-12 bg-black px-[1.6rem] py-3 bg-opacity-50 backdrop-blur-xl hover:bg-[#343434] text-sm"
-                  >
-                    {{ subMenu.title }}
-                  </div>
-                </template>
+                  <input
+                    type="text"
+                    class="h-full w-full rounded-md bg-[#262626] px-4 focus:border-gray-600 focus:ring-0 text-gray-100 border-0"
+                    placeholder="جستجوی رمز ارز"
+                  />
+                  <img
+                    src="~/assets/images/zoom.png"
+                    class="h-5 w-5 absolute top-3 left-4"
+                  />
+                </div>
               </div>
             </div>
-          </router-link>
-        </div>
-      </section>
-      <div class="w-[12.5rem] h-[2.625rem] relative">
-      <input
-        type="text"
-        class="h-full w-full rounded-md bg-[#262626] px-4 focus:border-gray-600 focus:ring-0 text-gray-100 border-0"
-        placeholder="جستجوی رمز ارز"
-      />
-      <img src="~/assets/images/zoom.png" class="absolute top-3 left-4" />
-    </div>
-    </div>
 
-    <section class="flex items-center">
-      <!-- <client-only>
+            <router-link
+              v-for="(item, index) in links"
+              :key="`menu-${index}`"
+              :to="item.to"
+              class="w-full lg:w-auto py-3 pr-4"
+            >
+              <div
+                class="flex items-center justify-center gap-[1.12rem] relative w-[7.375rem] hover:text-[#FF7028]"
+                @click="toggleSubMenu(index)"
+              >
+                <div class="text-sm">
+                  {{ item.title }}
+                </div>
+                <div class="" v-if="item.child">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="2.5"
+                    stroke="currentColor"
+                    class="size-3"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
+                  </svg>
+                </div>
+
+                <div
+                :class="{'max-h-96':(menu[index]&&item.child)}"
+                  class="absolute right-0 w-[10.5rem] top-11 overflow-hidden bg-[#171717] rounded-b-[0.625rem] text-white z-30"
+                  :id="`menu-${index}`"
+                  v-if="menu[index] && item.child"
+                  
+
+                >
+                  <template
+                    v-for="(subMenu, i) in item.subMenu"
+                    :key="`sub-menu-${i}`"
+                  >
+                    <div
+                      class="w-full h-12 bg-black px-[1.6rem] py-3 bg-opacity-50 backdrop-blur-xl hover:bg-[#343434] text-sm hover:text-[#FF7028]"
+                    >
+                      {{ subMenu.title }}
+                    </div>
+                  </template>
+                </div>
+              </div>
+            </router-link>
+          </div>
+        </section>
+        <div
+          class="flex items-center h-14 w-14 justify-center lg:mr-0 lg:w-[12.5rem] lg:h-[2.625rem] relative mr-[1.94rem]"
+        >
+          <input
+            type="text"
+            class="hidden lg:block lg:h-full lg:w-full lg:rounded-md lg:bg-[#262626] lg:px-4 lg:focus:border-gray-600 lg:focus:ring-0 lg:text-gray-100 border-0 placeholder:text-sm"
+            placeholder="جستجوی رمز ارز"
+          />
+          <img
+            src="~/assets/images/zoom.png"
+            class="h-5 w-5 relative lg:absolute lg:top-3 lg:left-4"
+          />
+        </div>
+      </div>
+
+      <section class="">
+        <!-- <client-only>
         <button
           v-if="!authStore.isLoggedIn"
           class="btn btn-link lg:ml-4 no-animation"
@@ -102,28 +166,24 @@
           <the-menu-auth></the-menu-auth>
         </template>
       </client-only>  -->
-      <!-- <router-link class="text-gray-600 font-bold" to="/"
+        <!-- <router-link class="text-gray-600 font-bold" to="/"
         >آکادمی لند</router-link -->
-      
-      <the-menu-auth></the-menu-auth>
-    </section>
+
+        <the-menu-auth></the-menu-auth>
+      </section>
+    </div>
   </div>
-  </div> 
- 
-  
-  
 </template>
 
 <script setup lang="ts">
-const target = ref(null);
-const childrenRef = ref<Element[]>([]);
-    const setChildrenRef = (el: Element, index: number) => {
-      if (el) childrenRef.value[index] = el;
-    };
+// const childrenRef = ref<Element[]>([]);
+// const setChildrenRef = (el: Element, index: number) => {
+//   if (el) childrenRef.value[index] = el;
+// };
 // import { useEventListener, useDebounceFn, onClickOutside } from "@vueuse/core";
 // import { useRoute } from "vue-router";
 // import { useMenuByRef } from "~~/composables/useMenuByRef";
-import { gsap } from "gsap";
+
 const links = [
   {
     title: "خرید آسان",
@@ -157,164 +217,30 @@ const links = [
     ],
   },
 ];
-let menu = [false, false, false, false];
-let menu1 = false;
-// start useMenu //
-const menuAnimationArray = ref<any>([]);
-let menuAnimation0: any;
-let menuAnimation1: any;
-let menuAnimation2: any;
-let menuAnimation3: any;
-
-const setAnimation = () => {
-  // for(let i = 0; i< 4; i++){
-  //   let menuAnimation:any
-  //   menuAnimation.gsap.to("#menu-"+i, {
-  //   autoAlpha: 1,
-  //   height: "auto",
-  //   overflow: "hidden",
-  //   paused: true,
-  //   duration: 0.5,
-  // });
-  // menuAnimationArray.value.push(menuAnimation)
-  // }
-  menuAnimation0 = gsap.to("#menu-0", {
-    autoAlpha: 1,
-    height: "auto",
-    overflow: "hidden",
-    paused: true,
-    duration: 0.5,
-  });
-  menuAnimation1 = gsap.to("#menu-1", {
-    autoAlpha: 1,
-    height: "auto",
-    overflow: "hidden",
-    paused: true,
-    duration: 0.5,
-  });
-  menuAnimation2 = gsap.to("#menu-2", {
-    autoAlpha: 1,
-    height: "auto",
-    overflow: "hidden",
-    paused: true,
-    duration: 0.5,
-  });
-  menuAnimation3 = gsap.to("#menu-3", {
-    autoAlpha: 1,
-    height: "auto",
-    overflow: "hidden",
-    paused: true,
-    duration: 0.5,
-  });
-};
-const removeProps = () => {
-  gsap.set("#menu-0", { clearProps: "all" });
-  gsap.set("#menu-1", { clearProps: "all" });
-  gsap.set("#menu-2", { clearProps: "all" });
-  gsap.set("#menu-3", { clearProps: "all" });
-};
-onMounted(async () => {
-  await nextTick();
-  setAnimation();
-});
-const toggleMenu = (index: number) => {
-  // if (menuAnimationArray[index].progress() === 0) {
-  //   menuAnimationArray[index]?.play();
-  //   } else {
-  //     menuAnimationArray[index]?.reverse();
-  //   }
-  if (index == 0) {
-    if (menuAnimation0.progress() === 0) {
-      menuAnimation0?.play();
-      menuAnimation1?.reverse();
-      menuAnimation2?.reverse();
-      menuAnimation3?.reverse();
-    } else {
-      menuAnimation0?.reverse();
+const menu = ref<boolean[]>([]);
+const toggleSubMenu = (index: number) => {
+  if (menu.value[index] === false) {
+    for (let i = 0; i <= 4; i++) {
+      menu.value[i] = false;
     }
-  }
-  if (index == 1) {
-    if (menuAnimation1.progress() === 0) {
-      menuAnimation1?.play();
-      menuAnimation0?.reverse();
-      menuAnimation2?.reverse();
-      menuAnimation3?.reverse();
-    } else {
-      menuAnimation1?.reverse();
-    }
-  }
-  if (index == 2) {
-    if (menuAnimation2.progress() === 0) {
-      menuAnimation2?.play();
-      menuAnimation0?.reverse();
-      menuAnimation1?.reverse();
-      menuAnimation3?.reverse();
-    } else {
-      menuAnimation2?.reverse();
-    }
-  }
-  if (index == 3) {
-    if (menuAnimation3.progress() === 0) {
-      menuAnimation3?.play();
-      menuAnimation0?.reverse();
-      menuAnimation1?.reverse();
-      menuAnimation2?.reverse();
-    } else {
-      menuAnimation3?.reverse();
+    menu.value[index] = true;
+  } else {
+    for (let i = 0; i <= 4; i++) {
+      menu.value[i] = false;
     }
   }
 };
-//@ts-ignor
-// let ref0:ref
-// ref0.value = document.getElementById("menu-0");
-// const ref1 = document.getElementById("menu-1");
-// const ref2 = document.getElementById("menu-2");
-// const ref3 = document.getElementById("menu-3");
-// onClickOutside(document.getElementById("menu-0"), () => {
-//   menuAnimation0?.reverse();
-// });
-// for(let i = 0; i< 4; i++){
-onClickOutside(childrenRef[0], () => {
-    menuAnimation1?.reverse()
-    menuAnimation2?.reverse()
-    menuAnimation3?.reverse() 
-});
-onClickOutside(childrenRef[1], () => {
-    menuAnimation0?.reverse()
-    menuAnimation2?.reverse()
-    menuAnimation3?.reverse()
-});
-onClickOutside(childrenRef[2], () => {
-    menuAnimation0?.reverse()
-    menuAnimation1?.reverse()
-    menuAnimation3?.reverse()
-});
-onClickOutside(childrenRef[3], () => {
-    menuAnimation0?.reverse()
-    menuAnimation1?.reverse()
-    menuAnimation2?.reverse()
-});
-// onClickOutside(ref2, () => {
-//   menuAnimation0?.reverse();
-// });
-// onClickOutside(ref3, () => {
-//   menuAnimation0?.reverse();
-// });
-
-// const openMenu = (index: number) => {
-//   console.log(index)
-//   if(index == 0){
-
-//     menu1 = true;
-//   }
-
-// for(let i=0; i < menu.length; i++){
-//   menu[i] = false
-// }
-// menu[index] = true
-// console.log(menu)
+// const closeMenu = (index: number) => {
+//   console.log(index);
 // };
-// const { refMenu_0, refMenu_1, refMenu_2, refMenu_3, toggleMenu } = useMenuByRef();
+
+onBeforeMount(() => {
+  for (let i = 0; i <= 4; i++) {
+    menu.value[i] = false;
+  }
+});
+
+const { target, toggleMenu, closeMenu, openMenu } = useMenu();
 </script>
 
 <style scoped></style>

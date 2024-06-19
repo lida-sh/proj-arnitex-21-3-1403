@@ -17,6 +17,8 @@
   </div>
 </template>
 <script setup lang="ts">
+// const props = defineProps<{
+//   item: { icon: string; name: string; price: number; change: number }}>();
 const props = defineProps<{
-  item: { icon: string; name: string; price: number; change: number }}>();
+  item: { name: string; price: number; change: number }}>();
 </script>

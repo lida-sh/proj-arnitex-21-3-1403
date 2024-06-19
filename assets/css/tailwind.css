@@ -18,4 +18,12 @@ body {
       hover:bg-gray-300
     }
   }  
+  @layer utilities {
+    .bg-custom-radial-end {
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255, 112, 40, 0.25) 0.01%, rgba(255, 112, 40, 0.00) 100%);
+    }
+    .bg-custom-radial-start {
+      background: radial-gradient(50% 50% at 50% 50%, rgba(255, 112, 40, 0.15) 0.01%, rgba(255, 112, 40, 0.00) 100%)
+    }
+  }
  
