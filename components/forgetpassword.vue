@@ -32,7 +32,7 @@ import VOtpInput from "vue3-otp-input";
     </div>
     <dialog id="my_modal_2" class="modal">
         <div
-            class="modal-box p-[30px] sm:p-[50px] bg-[#171717] sm:bglogin w-[360px] sm:w-[500px] rounded-[8px] h-[430px] sm:h-[500px]">
+            class="modal-box p-[30px] sm:p-[50px] bg-[#171717] sm:bglogin w-[360px] sm:w-[500px] rounded-[36spx] h-[430px] sm:h-[500px]">
             <div class="flex w-full justify-between items-center">
                 <p class="text-[24px]">بازنشانی رمز عبور</p>
                 <span class="text-[12px] text-[#FF7028] cursor-pointer">ویرایش شماره همراه</span>
