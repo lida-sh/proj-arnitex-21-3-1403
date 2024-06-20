@@ -55,14 +55,14 @@ import VOtpInput from "vue3-otp-input";
                         <div class="flex flex-col">
                             <label class="text-[16px] my-2" for="">شماره همراه یا ایمیل</label>
                             <input v-model="email" type="text" placeholder="شماره همراه یا ایمیل خود را وارد کنید"
-                                class="bg-[#262626] h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
+                                class="bg-[#262626] h-[58px] p-3 focus:ring-0 focus:border-gray-600 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
                         </div>
                         <div class="mt-[20px] flex flex-col">
                             <label class="text-[16px] my-2" for=""> رمز عبور</label>
 
                             <input type="text" :class="{ 'error-border': errorPass }" v-model="Pass"
                                 placeholder="رمز عبور خود را وارد کنید"
-                                class="bg-[#262626] h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
+                                class="bg-[#262626] h-[58px] p-3 border-solid focus:ring-0 focus:border-gray-600 border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
 
                             <span class="text-[#EA3C53] text-[14px] mt-3" v-if="errorPass">{{ this.errorPass }}</span>
                         </div>

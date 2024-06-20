@@ -12,7 +12,7 @@ import VOtpInput from "vue3-otp-input";
     <div class="mt-[20px] flex flex-col">
         <label class="text-[16px] my-2" for="">شماره همراه یا ایمیل</label>
         <input v-model="Username" type="text" placeholder="شماره همراه یا ایمیل خود را وارد کنید"
-            class="bg-[#262626] h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
+            class="bg-[#262626] h-[58px] focus:ring-0 focus:border-gray-600 p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
     </div>
 
     <button @click="sendOTP" v-if="registerloader == false" :class="buttonClass"
@@ -41,11 +41,11 @@ import VOtpInput from "vue3-otp-input";
                 <div class="mt-[20px] flex flex-col">
                     <label class="text-[16px] my-2" for="">رمز عبور جدید</label>
                     <input v-model="newPassword" type="text" placeholder="رمز عبور جدید خود را وارد نمایید"
-                        class="bg-[#262626] h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
+                        class="bg-[#262626] focus:ring-0 focus:border-gray-600 h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
                 </div>
                 <div class="mt-[25px] flex flex-col">
                     <input v-model="newPassword2" type="text" placeholder="تکرار رمز عبور جدید"
-                        class="bg-[#262626] h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
+                        class="bg-[#262626] focus:ring-0 focus:border-gray-600 h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
                 </div>
 
                 <button @click="changepageModal"
@@ -59,7 +59,7 @@ import VOtpInput from "vue3-otp-input";
 
                     <div dir="ltr" class="flex justify-center mt-5 items-center">
 
-                        <v-otp-input ref="otpInput" input-classes="otp-input w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
+                        <v-otp-input ref="otpInput" input-classes="otp-input w-[45px] h-[60px] sm:w-[54px] sm:h-[70px] focus:ring-0 focus:border-gray-600"
                             :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5"
                             :should-auto-focus="true" :should-focus-order="true" @on-complete="handleOnComplete" />
                     </div>
@@ -90,7 +90,7 @@ import VOtpInput from "vue3-otp-input";
 
 <script>
 import { ref } from 'vue';
-import { useAuthStore } from '~/stores/auth';
+// import { useAuthStore } from '~/stores/auth';
 import axios from 'axios';
 
 export default {

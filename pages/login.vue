@@ -142,7 +142,7 @@ import VOtpInput from "vue3-otp-input";
 
 <script>
 import { ref } from 'vue';
-import { useAuthStore } from '~/stores/auth';
+// import { useAuthStore } from '~/stores/auth';
 import axios from 'axios';
 
 export default {
@@ -297,8 +297,8 @@ export default {
                 .then((response) => {
                     console.log(response);
                     let access = response.data.access;
-                    const authStore = useAuthStore();
-                    authStore.setToken(access);
+                    // const authStore = useAuthStore();
+                    // authStore.setToken(access);
                     console.log('Token saved:', access);
                     // console.log(access);
 
