@@ -56,7 +56,7 @@ import VOtpInput from "vue3-otp-input";
                         <span class="text-[#EA3C53] text-[14px] mt-3" v-if="errorPass">{{ this.errorPass }}</span>
                     </div>
 
-                    <button @click="sendOTP" v-if="registerloader == false" :class="buttonClass"
+                    <button @click="sendOTP" v-if="registerloader == false" :class="buttonActive"
                         class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[20px]">
                         ادامه
                     </button>
@@ -85,7 +85,6 @@ import VOtpInput from "vue3-otp-input";
                                 <label class="text-[14px] my-2" for="">کد ۵ رقمی به شماره تلفن شما ارسال شد</label>
 
                                 <div dir="ltr" class="flex justify-center mt-5 items-center">
-
                                     <v-otp-input ref="otpInput"
                                         input-classes="otp-input w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
                                         :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5"
@@ -102,7 +101,7 @@ import VOtpInput from "vue3-otp-input";
                                 </button>
                             </div>
 
-                            <button @click="OTP"
+                            <button
                                 class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[22px]">
                                 ادامه
                             </button>
@@ -142,7 +141,7 @@ import VOtpInput from "vue3-otp-input";
 
 <script>
 import { ref } from 'vue';
-// import { useAuthStore } from '~/stores/auth';
+import { useAuthStore } from '~/stores/auth';
 import axios from 'axios';
 
 export default {
@@ -163,12 +162,12 @@ export default {
         formattedTimer() {
             return this.formatTime(this.timer);
         },
-        buttonClass() {
+        buttonActive() {
             return {
                 'bg-[#262626] text-[#676767] transition ease-in-out': !this.Username || !this.Password,
                 'bg-[#FF7028] text-white transition ease-in-out': this.Username && this.Password
             };
-        }
+        },
     },
     methods: {
         resetTimer(event) {
@@ -297,8 +296,8 @@ export default {
                 .then((response) => {
                     console.log(response);
                     let access = response.data.access;
-                    // const authStore = useAuthStore();
-                    // authStore.setToken(access);
+                    const authStore = useAuthStore();
+                    authStore.setToken(access);
                     console.log('Token saved:', access);
                     // console.log(access);
 
