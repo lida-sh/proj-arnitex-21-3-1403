@@ -155,11 +155,11 @@
             class="hidden lg:block lg:w-[25.5rem] lg:h-0.5 bg-[#FF7028]"
           ></div>
           <div class="relative">
-            <button class="bg-[#FF7028] w-[13.5rem] h-14 text-white rounded-md">
+            <button class="bg-[#FF7028] w-[13.5rem] h-14 text-white rounded-md z-20 relative">
               شروع معامله
             </button>
             <div
-              class="absolute h-96 w-96 bg-custom-radial-end puls -left-24 -top-40 -z-20"
+              class="absolute h-96 w-96 bg-custom-radial-end puls -left-24 -top-40"
             ></div>
           </div>
 
@@ -511,12 +511,12 @@
           </h6>
           <div class="relative">
             <button
-              class="w-[13.5rem] h-[3.75rem] rounded-lg bg-[#FF7028] text-white z-20"
+              class="w-[13.5rem] h-[3.75rem] rounded-lg bg-[#FF7028] text-white relative z-20"
             >
               دعوت دوستان
             </button>
             <div
-              class="absolute h-96 w-96 bg-custom-radial-end puls -left-28 -top-48 -z-20"
+              class="absolute h-96 w-96 bg-custom-radial-end puls -left-28 -top-48"
             ></div>
           </div>
         </div>
@@ -526,7 +526,7 @@
           <img
             src="~/assets/images/Group 26086268.png"
             alt=""
-            class="w-[24.6875rem] h-[20.6875rem]"
+            class="w-[24.6875rem] h-[20.6875rem] relative z-20"
           />
           <div
             class="absolute h-[34.375rem] w-[34.375rem] bg-custom-radial-end puls"
@@ -623,12 +623,12 @@
             </h6>
             <div class="relative">
               <button
-                class="bg-[#FF7028] w-[10.625rem] h-[3.75rem] text-white rounded-md"
+                class="bg-[#FF7028] w-[10.625rem] h-[3.75rem] text-white rounded-md relative z-20"
               >
                 بیشتر
               </button>
               <div
-                class="absolute h-96 w-96 bg-custom-radial-end puls -left-28 -top-48 -z-20"
+                class="absolute h-96 w-96 bg-custom-radial-end puls -left-28 -top-48"
               ></div>
             </div>
           </div>
@@ -772,12 +772,12 @@
           </div>
           <div class="relative">
             <button
-              class="bg-[#FF7028] w-[10.625rem] h-[3.75rem] text-white rounded-md text-[22px]"
+              class="bg-[#FF7028] w-[10.625rem] h-[3.75rem] text-white rounded-md text-[22px] relative z-20"
             >
               نصب کنید
             </button>
             <div
-              class="absolute h-96 w-96 bg-custom-radial-end puls -right-24 -top-48 -z-20"
+              class="absolute h-96 w-96 bg-custom-radial-end puls -right-24 -top-48"
             ></div>
           </div>
         </div>
