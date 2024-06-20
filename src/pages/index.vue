@@ -93,10 +93,10 @@
         </div>
       </div>
       <div
-        class="flex flex-col lg:h-[38.75rem] bg-[#171717] lg:rounded-[30px] lg:w-[88.75rem] mx-auto"
+        class="flex flex-col lg:h-[38.75rem] lg:w-[95rem] lg:px-[6.25rem] mx-auto"
       >
         <div
-          class="flex flex-col lg:flex-row px-[2.44rem] lg:px-[4.063rem] pt-[2.5rem] lg:pt-[3.125rem] h-full gap-[3.375rem] pb-[#3.313]"
+          class="flex flex-col lg:flex-row bg-[#171717] lg:px-[4.063rem] lg:rounded-[30px] pt-[2.5rem] lg:pt-[3.125rem] h-full gap-[3.375rem] pb-[#3.313]"
         >
           <div
             class="flex-1 bg-gradient-to-b lg:bg-transparent lg:hover:bg-gradient-to-b from-[#262626] lg:from-0% lg:hover:from-[#262626] to-[#171717] lg:to-0% lg:hover:to-[#171717] rounded-2xl shadow-[0.25px_-2px_2px_rgba(103,103,103,100)] lg:shadow-none lg:hover:shadow-[0.25px_-2px_2px_rgba(103,103,103,100)] hover:-translate-y-5 transition-all duration-3000"
@@ -167,7 +167,7 @@
       </div>
       <!-- ///// -->
       <div
-        class="flex flex-col lg:flex-row items-cener mt-[6.563rem] mb-10 lg:w-[95rem] lg:px-[7.688rem] lg:mx-auto lg:gap-[21rem]"
+        class="flex flex-col lg:flex-row items-cener mt-[6.563rem] mb-10 lg:w-[95rem] lg:px-[6.25rem] lg:mx-auto lg:gap-[21rem]"
       >
         <div
           class="w-[20.5rem] lg:w-[10.5rem] h-[3.125rem] lg:h-[3.125rem] bg-[#262626] flex items-cener justify-center py-[0.75rem] lg:py-2 px-[3.69rem] lg:px-2 rounded-[40px]"
@@ -214,7 +214,7 @@
             class="h-20 w-full bg-[#262626] grid grid-cols-6 lg:grid-cols-12 px-1 lg:px-24 text-white opacity-50"
           >
             <div class="col-span-1 flex items-center justify-center">
-              <span class="">نام</span>
+              <span class="">نام ارز دیجیتال</span>
             </div>
             <div
               class="col-span-3 flex items-center justify-center text-base text-white font-light gap-2"
@@ -241,14 +241,18 @@
             ></div>
           </div>
           <div
-            class="h-20 w-full bg-[#262626] grid grid-cols-6 lg:grid-cols-12 px-[1.63rem] lg:px-24"
+            class="h-20 w-full bg-[#262626] grid grid-cols-6 lg:grid-cols-12 lg:px-9"
           >
-            <div class="col-span-1 flex items-center justify-center">
+            <div class="col-span-1 w-full flex items-center justify-center gap-1">
               <img
                 src="~/assets/images/btc.png"
                 alt=""
                 class="w-[3.125rem] h-[3.125rem]"
               />
+              <div class="flex flex-col w-full">
+                <p class="text-xs text-white">بیت کوین</p>
+                <p class="text-[#676767] text-xs"></p>
+              </div>
             </div>
             <div
               class="col-span-3 flex items-center justify-center text-base text-white font-light gap-2"
@@ -282,7 +286,47 @@
               </button>
             </div>
           </div>
-          <div class="h-20 w-full bg-[#262626] grid grid-cols-12 px-24">
+          <div class="h-20 w-full bg-[#262626] grid grid-cols-12 px-9">
+            <div class="col-span-1 flex items-center justify-center gap-1">
+              <img
+                src="~/assets/images/btc.png"
+                alt=""
+                class="w-[3.125rem] h-[3.125rem]"
+              />
+            </div>
+            <div
+              class="col-span-3 flex items-center justify-center text-base text-white font-light gap-2"
+            >
+              <span class="">۳,۹۹۳,۰۰۰,۰۰۰</span>
+              <span class="">IRT</span>
+            </div>
+            <div
+              class="col-span-2 flex items-center justify-center text-base text-red-500 font-light"
+            >
+              <span class="">۰.۵۹٪ -</span>
+            </div>
+            <div
+              class="col-span-2 flex items-center justify-center text-base text-white font-light"
+            >
+              <span class="">۷.۲۲۹۲۴۶</span>
+              <span class="">BTC</span>
+            </div>
+            <div
+              class="col-span-2 flex items-center justify-center text-base text-green-600 font-light"
+            >
+              <img src="~/assets/images/nemodar-1.png" alt="" class="" />
+            </div>
+            <div
+              class="col-span-2 flex items-center justify-center text-base text-white font-light"
+            >
+              <button
+                class="w-full h-11 bg-transparent border-[#676767] border rounded-lg shadow shadow-[#676767] hover:bg-[#319B54] hover:shadow-[#319B54] transition-all duration-3000"
+              >
+                خرید و فروش
+              </button>
+            </div>
+          </div>
+          <div class="h-20 w-full bg-[#262626] grid grid-cols-12 px-9">
             <div class="col-span-1 flex items-center justify-center">
               <img
                 src="~/assets/images/btc.png"
@@ -322,7 +366,7 @@
               </button>
             </div>
           </div>
-          <div class="h-20 w-full bg-[#262626] grid grid-cols-12 px-24">
+          <div class="h-20 w-full bg-[#262626] grid grid-cols-12 px-9">
             <div class="col-span-1 flex items-center justify-center">
               <img
                 src="~/assets/images/btc.png"
@@ -362,47 +406,7 @@
               </button>
             </div>
           </div>
-          <div class="h-20 w-full bg-[#262626] grid grid-cols-12 px-24">
-            <div class="col-span-1 flex items-center justify-center">
-              <img
-                src="~/assets/images/btc.png"
-                alt=""
-                class="w-[3.125rem] h-[3.125rem]"
-              />
-            </div>
-            <div
-              class="col-span-3 flex items-center justify-center text-base text-white font-light gap-2"
-            >
-              <span class="">۳,۹۹۳,۰۰۰,۰۰۰</span>
-              <span class="">IRT</span>
-            </div>
-            <div
-              class="col-span-2 flex items-center justify-center text-base text-red-500 font-light"
-            >
-              <span class="">۰.۵۹٪ -</span>
-            </div>
-            <div
-              class="col-span-2 flex items-center justify-center text-base text-white font-light"
-            >
-              <span class="">۷.۲۲۹۲۴۶</span>
-              <span class="">BTC</span>
-            </div>
-            <div
-              class="col-span-2 flex items-center justify-center text-base text-green-600 font-light"
-            >
-              <img src="~/assets/images/nemodar-1.png" alt="" class="" />
-            </div>
-            <div
-              class="col-span-2 flex items-center justify-center text-base text-white font-light"
-            >
-              <button
-                class="w-full h-11 bg-transparent border-[#676767] border rounded-lg shadow shadow-[#676767] hover:bg-[#319B54] hover:shadow-[#319B54] transition-all duration-3000"
-              >
-                خرید و فروش
-              </button>
-            </div>
-          </div>
-          <div class="h-20 w-full bg-[#262626] grid grid-cols-12 px-24">
+          <div class="h-20 w-full bg-[#262626] grid grid-cols-12 px-9">
             <div class="col-span-1 flex items-center justify-center">
               <img
                 src="~/assets/images/btc.png"
@@ -481,7 +485,7 @@
       <div class="w-full flex items-center justify-center">
         <h4 class="text-white text-3xl font-medium">چرا آرنیتکس</h4>
       </div>
-      <div class="grid grid-cols-12 px-28 gap-8 py-24 w-[95rem] mx-auto">
+      <div class="grid grid-cols-12 px-[6.25rem] gap-8 py-24 w-[95rem] mx-auto">
         <div class="col-span-6">
           <div
             class="flex items-center justify-center w-full h-full gap-20 p-20 bg-[#171717] rounded-box"
@@ -618,7 +622,7 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col px-28 gap-4 w-full mx-auto">
+      <div class="flex flex-col px-[6.25rem] gap-4 w-[95rem] mx-auto">
         <h6 class="text-lg text-white font-medium">سوالات متداول</h6>
         <div class="w-full">
           <app-collaps>
@@ -703,7 +707,7 @@
         </div>
       </div>
       <!-- <div class="flex px-48 items-center justify-between py-[6.25rem]"> -->
-      <div class="flex px-48 items-center justify-between py-[6.25rem]">
+      <div class="flex w-[95rem] px-[6.25rem] items-center justify-between py-[6.25rem] mx-auto">
         <div class="flex flex-col gap-4 text-white">
           <h2 class="text-[2.813rem] font-medium">نصب اپلیکیشن آرنیتکس</h2>
           <div class="w-[29.875rem] mb-[3.125rem]">
