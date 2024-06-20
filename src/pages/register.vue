@@ -97,7 +97,7 @@ import VOtpInput from "vue3-otp-input";
                                     </div>
                                 </div>
                                 <div class=" w-full flex flex-col h-[60px] justify-center items-end">
-                                    <div class="text-[#FF7028]" v-if="timer > 0">{{ formattedTimer }}</div>
+                                    <div v-if="timer > 0">{{ formattedTimer }}</div>
                                     <button class="text-[#FF7028]" @click="sendLoginOtpAgain" v-else v-show="showResendButton">
                                         ارسال مجدد کد
                                     </button>

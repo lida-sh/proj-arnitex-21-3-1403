@@ -15,7 +15,7 @@ import VOtpInput from "vue3-otp-input";
             class="bg-[#262626] h-[58px] focus:ring-0 focus:border-gray-600 p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
     </div>
 
-    <button @click="sendOTP" v-if="registerloader == false" :class="buttonClass"
+    <button @click="sendOTP" v-if="registerloader == false" :class="buttonActive"
         class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[20px]">
         ادامه
     </button>
@@ -48,7 +48,7 @@ import VOtpInput from "vue3-otp-input";
                         class="bg-[#262626] focus:ring-0 focus:border-gray-600 h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
                 </div>
 
-                <button @click="changepageModal"
+                <button @click="changepageModal" :class="buttonActive"
                     class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[22px]">
                     ادامه
                 </button>
@@ -66,7 +66,7 @@ import VOtpInput from "vue3-otp-input";
 
                 </div>
                 <div class=" w-full flex flex-col h-[60px] justify-center items-end">
-                    <div class="text-[#FF7028]" v-if="timer > 0">{{ formattedTimer }}</div>
+                    <div v-if="timer > 0">{{ formattedTimer }}</div>
                     <button class="text-[#FF7028]" @click="sendLoginOtpAgain" v-else v-show="showResendButton">
                         ارسال مجدد کد
                     </button>
@@ -111,7 +111,13 @@ export default {
         formattedTimer() {
             return this.formatTime(this.timer);
         },
-        buttonClass() {
+        buttonActive() {
+            return {
+                'bg-[#262626] text-[#676767] transition ease-in-out': !this.Username,
+                'bg-[#FF7028] text-white transition ease-in-out': this.Username
+            };
+        },
+        buttonActiveNewPass() {
             return {
                 'bg-[#262626] text-[#676767] transition ease-in-out': !this.Username,
                 'bg-[#FF7028] text-white transition ease-in-out': this.Username
