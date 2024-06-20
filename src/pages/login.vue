@@ -70,7 +70,7 @@ import VOtpInput from "vue3-otp-input";
                 </form>
 
                 <form v-if="isUserHasAcc == 'forget'" class="mt-[50px]">
-                    <ForgetPassword></ForgetPassword>
+                    <forgetpassword></forgetpassword>
                 </form>
 
                 <dialog id="my_modal_2" class="modal">
