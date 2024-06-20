@@ -7,7 +7,7 @@
     </div>
     <div class="text-white text-center flex flex-col gap-1">
       <h6 class="font-medium text-base block">{{ title }}</h6>
-      <P class="text-xs font-medium block">{{ description }}</P>
+      <p class="text-xs font-medium block">{{ description }}</p>
     </div>
   </div>
 </template>
