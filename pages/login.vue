@@ -46,13 +46,13 @@ import VOtpInput from "vue3-otp-input";
                     <div class="mt-[20px] flex flex-col">
                         <label class="text-[16px] my-2" for="">شماره همراه یا ایمیل</label>
                         <input v-model="Username" type="text" placeholder="شماره همراه یا ایمیل خود را وارد کنید"
-                            class="bg-[#262626] h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
+                            class="bg-[#262626] focus:ring-0 focus:border-gray-600 h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
                     </div>
                     <div class="mt-[20px] flex flex-col">
                         <label class="text-[16px] my-2" for=""> رمز عبور</label>
                         <input type="text" :class="{ 'error-border': errorPass }" v-model="Password"
                             placeholder="رمز عبور خود را وارد کنید"
-                            class="bg-[#262626] h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
+                            class="bg-[#262626] focus:ring-0 focus:border-gray-600 h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
                         <span class="text-[#EA3C53] text-[14px] mt-3" v-if="errorPass">{{ this.errorPass }}</span>
                     </div>
 
@@ -75,7 +75,7 @@ import VOtpInput from "vue3-otp-input";
 
                 <dialog id="my_modal_2" class="modal">
                     <div
-                        class="modal-box  sm:p-[50px] bg-[#171717] sm:bglogin w-[320px] sm:w-[500px] rounded-[36px] h-[430px] sm:h-[500px]">
+                        class="modal-box  sm:p-[50px] bg-[#171717] sm:bglogin w-[350px] sm:w-[500px] rounded-[36px] h-[430px] sm:h-[500px]">
                         <div v-if="isUserHasAccMob == 'otpMob'">
                             <div class="flex w-full justify-between items-center">
                                 <p class="text-[24px]">ورود به آرنیتکس</p>
@@ -106,10 +106,6 @@ import VOtpInput from "vue3-otp-input";
                                 class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[22px]">
                                 ادامه
                             </button>
-
-                            <span
-                                class="text-[#008DAC] text-[12px] sm:text-[14px] relative top-3 items-center flex justify-center">بعد
-                                از تکمیل نوشتار اطلاعات به طور خودکار کد بررسی شود</span>
                         </div>
 
                     </div>
@@ -146,7 +142,7 @@ import VOtpInput from "vue3-otp-input";
 
 <script>
 import { ref } from 'vue';
-import { useAuthStore } from '~/stores/auth';
+// import { useAuthStore } from '~/stores/auth';
 import axios from 'axios';
 
 export default {
@@ -301,8 +297,8 @@ export default {
                 .then((response) => {
                     console.log(response);
                     let access = response.data.access;
-                    const authStore = useAuthStore();
-                    authStore.setToken(access);
+                    // const authStore = useAuthStore();
+                    // authStore.setToken(access);
                     console.log('Token saved:', access);
                     // console.log(access);
 
