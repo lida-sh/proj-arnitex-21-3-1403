@@ -15,9 +15,7 @@
               <div class="h-14 w-full text-[2.8125rem] lg:text-5xl font-bold">
                 صرافی آرنیتکس
               </div>
-              <div
-                class="w-[20.5rem]  h-32 text-[2rem] lg:text-4xl font-medium"
-              >
+              <div class="w-[20.5rem] h-32 text-[2rem] lg:text-4xl font-medium">
                 بازار بین المللی خرید و فروش ارز دیجیتال
               </div>
               <div
@@ -33,17 +31,16 @@
                 >
                   ثبت نام
                 </div>
-                
               </div>
             </div>
-            <div class="absolute w-[34.375rem] h-[34.375rem] bg-custom-radial-end puls top-72 -left-52"></div>
+            <div
+              class="absolute w-[34.375rem] h-[34.375rem] bg-custom-radial-end puls top-72 -left-52 -z-10"
+            ></div>
           </div>
           <!-- <div class="hidden lg:col-span-9">
             <div class="w-full h-auto relative"></div>
           </div> -->
-          <div
-            class="flex items-center justify-end relative"
-          >
+          <div class="flex items-center justify-end relative">
             <img
               src="~/assets/images/123.png"
               alt=""
@@ -54,14 +51,18 @@
               alt=""
               class="lg:hidden block h-[11.80863rem] w-[11.80863rem]"
             />
-            <div class="absolute lg:w-full lg:h-full bg-custom-radial-end -top-10 -left-52 -z-1"></div>
-            <div class="absolute lg:w-full lg:h-full bg-custom-radial-end -top-10  left-0 -z-1"></div>
+            <div
+              class="absolute lg:w-full lg:h-full bg-custom-radial-end -top-10 -left-52 -z-1"
+            ></div>
+            <div
+              class="absolute lg:w-full lg:h-full bg-custom-radial-end -top-10 left-0 -z-1"
+            ></div>
           </div>
         </div>
       </div>
       <app-ticker :items="items"></app-ticker>
       <div
-        class="flex flex-col sm:flex-row px-[6.25rem]  py-[3.75rem] sm:py-20 gap-[3.75rem] sm:gap-[5.438rem] sm:w-[95rem] sm:h-[20.625rem] mx-auto"
+        class="flex flex-col sm:flex-row px-[6.25rem] py-[3.75rem] sm:py-20 gap-[3.75rem] sm:gap-[5.438rem] sm:w-[95rem] sm:h-[20.625rem] mx-auto"
       >
         <div class="flex-1">
           <Service title="کارمزد 0%">
@@ -155,13 +156,15 @@
           ></div>
           <div class="relative">
             <button class="bg-[#FF7028] w-[13.5rem] h-14 text-white rounded-md">
-            شروع معامله
-          </button>
-            <div class="absolute h-96 w-96 bg-custom-radial-end puls -left-24 -top-40 z-20"></div>
+              شروع معامله
+            </button>
+            <div
+              class="absolute h-96 w-96 bg-custom-radial-end puls -left-24 -top-40 -z-20"
+            ></div>
           </div>
-          
+
           <div
-            class="hidden lg:block lg:w-[25.5rem] lg:h-0.5 bg-[#FF7028]"
+            class="hidden lg:block lg:w-[25.5rem] lg:h-0.5 bg-[#FF7028] "
           ></div>
         </div>
       </div>
@@ -217,7 +220,7 @@
               <span class="">نام ارز دیجیتال</span>
             </div>
             <div
-              class="col-span-3 flex items-center justify-center text-base text-white font-light gap-2"
+              class="col-span-3 flex items-center justify-center text-base text-white font-light pr-8"
             >
               <span class="">آخرین قیمت (تومان)</span>
             </div>
@@ -241,18 +244,22 @@
             ></div>
           </div>
           <div
-            class="h-20 w-full bg-[#262626] grid grid-cols-6 lg:grid-cols-12 lg:px-9"
+            class="h-20 w-full bg-[#262626] grid grid-cols-6 lg:grid-cols-14 lg:px-9"
           >
-            <div class="col-span-1 w-full flex items-center justify-center gap-1">
+            <div
+              class="col-span-1 w-full h-full flex items-center justify-center gap-4"
+            >
               <img
                 src="~/assets/images/btc.png"
                 alt=""
                 class="w-[3.125rem] h-[3.125rem]"
               />
-              <div class="flex flex-col w-full">
-                <p class="text-xs text-white">بیت کوین</p>
-                <p class="text-[#676767] text-xs"></p>
-              </div>
+            </div>
+            <div
+              class="col-span-1 flex flex-col items-center justify-center w-full gap-1"
+            >
+              <p class="text-xs text-white font-thin block">بیت کوین</p>
+              <p class="text-[#676767] text-xs font-thin">(BTC)</p>
             </div>
             <div
               class="col-span-3 flex items-center justify-center text-base text-white font-light gap-2"
@@ -272,7 +279,7 @@
               <span class="">BTC</span>
             </div>
             <div
-              class="hidden lg:flex col-span-2 items-center justify-center text-base text-green-600 font-light"
+              class="hidden lg:flex col-span-3 items-center justify-center text-base text-green-600 font-light"
             >
               <img src="~/assets/images/nemodar-1.png" alt="" class="" />
             </div>
@@ -286,13 +293,23 @@
               </button>
             </div>
           </div>
-          <div class="h-20 w-full bg-[#262626] grid grid-cols-12 px-9">
-            <div class="col-span-1 flex items-center justify-center gap-1">
+          <div
+            class="h-20 w-full bg-[#262626] grid grid-cols-6 lg:grid-cols-14 lg:px-9"
+          >
+            <div
+              class="col-span-1 w-full h-full flex items-center justify-center gap-4"
+            >
               <img
                 src="~/assets/images/btc.png"
                 alt=""
                 class="w-[3.125rem] h-[3.125rem]"
               />
+            </div>
+            <div
+              class="col-span-1 flex flex-col items-center justify-center w-full gap-1"
+            >
+              <p class="text-xs text-white font-thin block">بیت کوین</p>
+              <p class="text-[#676767] text-xs font-thin">(BTC)</p>
             </div>
             <div
               class="col-span-3 flex items-center justify-center text-base text-white font-light gap-2"
@@ -306,18 +323,18 @@
               <span class="">۰.۵۹٪ -</span>
             </div>
             <div
-              class="col-span-2 flex items-center justify-center text-base text-white font-light"
+              class="hidden lg:flex col-span-2 items-center justify-center text-base text-white font-light"
             >
               <span class="">۷.۲۲۹۲۴۶</span>
               <span class="">BTC</span>
             </div>
             <div
-              class="col-span-2 flex items-center justify-center text-base text-green-600 font-light"
+              class="hidden lg:flex col-span-3 items-center justify-center text-base text-green-600 font-light"
             >
               <img src="~/assets/images/nemodar-1.png" alt="" class="" />
             </div>
             <div
-              class="col-span-2 flex items-center justify-center text-base text-white font-light"
+              class="hidden lg:flex col-span-2 items-center justify-center text-base text-white font-light"
             >
               <button
                 class="w-full h-11 bg-transparent border-[#676767] border rounded-lg shadow shadow-[#676767] hover:bg-[#319B54] hover:shadow-[#319B54] transition-all duration-3000"
@@ -326,13 +343,23 @@
               </button>
             </div>
           </div>
-          <div class="h-20 w-full bg-[#262626] grid grid-cols-12 px-9">
-            <div class="col-span-1 flex items-center justify-center">
+          <div
+            class="h-20 w-full bg-[#262626] grid grid-cols-6 lg:grid-cols-14 lg:px-9"
+          >
+            <div
+              class="col-span-1 w-full h-full flex items-center justify-center gap-4"
+            >
               <img
                 src="~/assets/images/btc.png"
                 alt=""
                 class="w-[3.125rem] h-[3.125rem]"
               />
+            </div>
+            <div
+              class="col-span-1 flex flex-col items-center justify-center w-full gap-1"
+            >
+              <p class="text-xs text-white font-thin block">بیت کوین</p>
+              <p class="text-[#676767] text-xs font-thin">(BTC)</p>
             </div>
             <div
               class="col-span-3 flex items-center justify-center text-base text-white font-light gap-2"
@@ -346,18 +373,18 @@
               <span class="">۰.۵۹٪ -</span>
             </div>
             <div
-              class="col-span-2 flex items-center justify-center text-base text-white font-light"
+              class="hidden lg:flex col-span-2 items-center justify-center text-base text-white font-light"
             >
               <span class="">۷.۲۲۹۲۴۶</span>
               <span class="">BTC</span>
             </div>
             <div
-              class="col-span-2 flex items-center justify-center text-base text-green-600 font-light"
+              class="hidden lg:flex col-span-3 items-center justify-center text-base text-green-600 font-light"
             >
               <img src="~/assets/images/nemodar-1.png" alt="" class="" />
             </div>
             <div
-              class="col-span-2 flex items-center justify-center text-base text-white font-light"
+              class="hidden lg:flex col-span-2 items-center justify-center text-base text-white font-light"
             >
               <button
                 class="w-full h-11 bg-transparent border-[#676767] border rounded-lg shadow shadow-[#676767] hover:bg-[#319B54] hover:shadow-[#319B54] transition-all duration-3000"
@@ -366,13 +393,23 @@
               </button>
             </div>
           </div>
-          <div class="h-20 w-full bg-[#262626] grid grid-cols-12 px-9">
-            <div class="col-span-1 flex items-center justify-center">
+          <div
+            class="h-20 w-full bg-[#262626] grid grid-cols-6 lg:grid-cols-14 lg:px-9"
+          >
+            <div
+              class="col-span-1 w-full h-full flex items-center justify-center gap-4"
+            >
               <img
                 src="~/assets/images/btc.png"
                 alt=""
                 class="w-[3.125rem] h-[3.125rem]"
               />
+            </div>
+            <div
+              class="col-span-1 flex flex-col items-center justify-center w-full gap-1"
+            >
+              <p class="text-xs text-white font-thin block">بیت کوین</p>
+              <p class="text-[#676767] text-xs font-thin">(BTC)</p>
             </div>
             <div
               class="col-span-3 flex items-center justify-center text-base text-white font-light gap-2"
@@ -386,18 +423,18 @@
               <span class="">۰.۵۹٪ -</span>
             </div>
             <div
-              class="col-span-2 flex items-center justify-center text-base text-white font-light"
+              class="hidden lg:flex col-span-2 items-center justify-center text-base text-white font-light"
             >
               <span class="">۷.۲۲۹۲۴۶</span>
               <span class="">BTC</span>
             </div>
             <div
-              class="col-span-2 flex items-center justify-center text-base text-green-600 font-light"
+              class="hidden lg:flex col-span-3 items-center justify-center text-base text-green-600 font-light"
             >
               <img src="~/assets/images/nemodar-1.png" alt="" class="" />
             </div>
             <div
-              class="col-span-2 flex items-center justify-center text-base text-white font-light"
+              class="hidden lg:flex col-span-2 items-center justify-center text-base text-white font-light"
             >
               <button
                 class="w-full h-11 bg-transparent border-[#676767] border rounded-lg shadow shadow-[#676767] hover:bg-[#319B54] hover:shadow-[#319B54] transition-all duration-3000"
@@ -406,13 +443,23 @@
               </button>
             </div>
           </div>
-          <div class="h-20 w-full bg-[#262626] grid grid-cols-12 px-9">
-            <div class="col-span-1 flex items-center justify-center">
+          <div
+            class="h-20 w-full bg-[#262626] grid grid-cols-6 lg:grid-cols-14 lg:px-9"
+          >
+            <div
+              class="col-span-1 w-full h-full flex items-center justify-center gap-4"
+            >
               <img
                 src="~/assets/images/btc.png"
                 alt=""
                 class="w-[3.125rem] h-[3.125rem]"
               />
+            </div>
+            <div
+              class="col-span-1 flex flex-col items-center justify-center w-full gap-1"
+            >
+              <p class="text-xs text-white font-thin block">بیت کوین</p>
+              <p class="text-[#676767] text-xs font-thin">(BTC)</p>
             </div>
             <div
               class="col-span-3 flex items-center justify-center text-base text-white font-light gap-2"
@@ -426,21 +473,21 @@
               <span class="">۰.۵۹٪ -</span>
             </div>
             <div
-              class="col-span-2 flex items-center justify-center text-base text-white font-light"
+              class="hidden lg:flex col-span-2 items-center justify-center text-base text-white font-light"
             >
               <span class="">۷.۲۲۹۲۴۶</span>
               <span class="">BTC</span>
             </div>
             <div
-              class="col-span-2 flex items-center justify-center text-base text-green-600 font-light"
+              class="hidden lg:flex col-span-3 items-center justify-center text-base text-green-600 font-light"
             >
               <img src="~/assets/images/nemodar-1.png" alt="" class="" />
             </div>
             <div
-              class="col-span-2 flex items-center justify-center text-base text-white font-light"
+              class="hidden lg:flex col-span-2 items-center justify-center text-base text-white font-light"
             >
               <button
-                class="w-full h-11 bg-transparent border-[#676767] border rounded-lg shadow shadow-[#676767] hover:bg-[#319B54] hover:shadow-[#319B54]"
+                class="w-full h-11 bg-transparent border-[#676767] border rounded-lg shadow shadow-[#676767] hover:bg-[#319B54] hover:shadow-[#319B54] transition-all duration-3000"
               >
                 خرید و فروش
               </button>
@@ -464,22 +511,26 @@
           </h6>
           <div class="relative">
             <button
-            class="w-[13.5rem] h-[3.75rem] rounded-lg bg-[#FF7028] text-white z-20"
-          >
-            دعوت دوستان
-          </button>
-            <div class="absolute h-96 w-96 bg-custom-radial-end puls -left-28 -top-48 z-20"></div>
+              class="w-[13.5rem] h-[3.75rem] rounded-lg bg-[#FF7028] text-white z-20"
+            >
+              دعوت دوستان
+            </button>
+            <div
+              class="absolute h-96 w-96 bg-custom-radial-end puls -left-28 -top-48 -z-20"
+            ></div>
           </div>
-          
-
         </div>
-        <div class="flex items-center justify-center relative w-auto h-full aspect-video">
+        <div
+          class="flex items-center justify-center relative w-auto h-full aspect-video"
+        >
           <img
             src="~/assets/images/Group 26086268.png"
             alt=""
             class="w-[24.6875rem] h-[20.6875rem]"
           />
-          <div class="absolute h-[34.375rem] w-[34.375rem] bg-custom-radial-end puls"></div>
+          <div
+            class="absolute h-[34.375rem] w-[34.375rem] bg-custom-radial-end puls"
+          ></div>
         </div>
       </div>
       <div class="w-full flex items-center justify-center">
@@ -572,13 +623,14 @@
             </h6>
             <div class="relative">
               <button
-              class="bg-[#FF7028] w-[10.625rem] h-[3.75rem] text-white rounded-md"
-            >
-              بیشتر
-            </button>
-              <div class="absolute h-96 w-96 bg-custom-radial-end puls -left-28 -top-48 z-20"></div>
+                class="bg-[#FF7028] w-[10.625rem] h-[3.75rem] text-white rounded-md"
+              >
+                بیشتر
+              </button>
+              <div
+                class="absolute h-96 w-96 bg-custom-radial-end puls -left-28 -top-48 -z-20"
+              ></div>
             </div>
-            
           </div>
         </div>
         <div class="col-span-6 mt-32">
@@ -707,7 +759,9 @@
         </div>
       </div>
       <!-- <div class="flex px-48 items-center justify-between py-[6.25rem]"> -->
-      <div class="flex w-[95rem] px-[6.25rem] items-center justify-between py-[6.25rem] mx-auto">
+      <div
+        class="flex w-[95rem] px-[6.25rem] items-center justify-between py-[6.25rem] mx-auto"
+      >
         <div class="flex flex-col gap-4 text-white">
           <h2 class="text-[2.813rem] font-medium">نصب اپلیکیشن آرنیتکس</h2>
           <div class="w-[29.875rem] mb-[3.125rem]">
@@ -718,16 +772,19 @@
           </div>
           <div class="relative">
             <button
-            class="bg-[#FF7028] w-[10.625rem] h-[3.75rem] text-white rounded-md text-[22px]"
-          >
-            نصب کنید
-          </button>
-          <div class="absolute h-96 w-96 bg-custom-radial-end puls -right-24 -top-48 z-20"></div>
+              class="bg-[#FF7028] w-[10.625rem] h-[3.75rem] text-white rounded-md text-[22px]"
+            >
+              نصب کنید
+            </button>
+            <div
+              class="absolute h-96 w-96 bg-custom-radial-end puls -right-24 -top-48 -z-20"
+            ></div>
           </div>
-          
         </div>
-        
-        <div class="w-[51.938rem] h-[32.5rem] aspect-auto relative bg-custom-radial-end pulse">
+
+        <div
+          class="w-[51.938rem] h-[32.5rem] aspect-auto relative bg-custom-radial-end pulse"
+        >
           <img
             src="~/assets/images/devices.png"
             alt="tablet-laptop-and-smartphone"
@@ -741,9 +798,9 @@
 </template>
 <script setup lang="ts">
 import { ChevronDownIcon } from "@heroicons/vue/24/solid";
-import {gsap} from "gsap"
+import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-const sliderTab = false
+const sliderTab = false;
 const items = [
   {
     icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1.png",
@@ -836,28 +893,27 @@ const items = [
     change: 0.5,
   },
 ];
-let animation:any;
-const setAnimation = ()=>{
-   animation = gsap.to(".puls",{
-       scale:1.5,
-       ease: "power4.out",
-       duration: 2,
-       paused: true,
-       repeat:-1,
-       yoyo: true,
-       scrollTrigger: ".puls"
-   })
-}
-onMounted(()=>{
-  setAnimation()
-  animation.play()
-  
-})
+let animation: any;
+const setAnimation = () => {
+  animation = gsap.to(".puls", {
+    scale: 1.5,
+    ease: "power4.out",
+    duration: 2,
+    paused: true,
+    repeat: -1,
+    yoyo: true,
+    scrollTrigger: ".puls",
+  });
+};
+onMounted(() => {
+  setAnimation();
+  animation.play();
+});
 
-const start_anim = ()=>{
-  console.log("start")
-  animation.play()
-}
+const start_anim = () => {
+  console.log("start");
+  animation.play();
+};
 </script>
 <style>
 .home-header {
