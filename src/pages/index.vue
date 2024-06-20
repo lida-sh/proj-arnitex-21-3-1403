@@ -622,12 +622,12 @@
           </div>
         </div>
       </div>
-      <div class="flex flex-col px-[6.25rem] gap-4 w-[95rem] mx-auto">
+      <div class="flex flex-col px-[6.25rem] gap-[1.875rem] w-[95rem] mx-auto">
         <h6 class="text-lg text-white font-medium">سوالات متداول</h6>
         <div class="w-full">
           <app-collaps>
             <template #title>
-              <h6 class="text-sm text-white font-normal">
+              <h6 class="text-xl text-white font-medium">
                 قیمت رمز ارز ها را از کجا ببینم ؟
               </h6>
             </template>
@@ -642,7 +642,7 @@
         <div class="">
           <app-collaps>
             <template #title>
-              <h6 class="text-sm text-white font-normal">
+              <h6 class="text-xl text-white font-normal">
                 چطور شروع کنم و برای شروع معامله چه چیزهایی لازم است ؟
               </h6>
             </template>
@@ -665,7 +665,7 @@
         <div class="">
           <app-collaps>
             <template #title>
-              <h6 class="text-sm text-white font-normal">
+              <h6 class="text-xl text-white font-normal">
                 کسب درآمد در آرنیتکس چه روش هایی دارد ؟
               </h6>
             </template>
@@ -682,7 +682,7 @@
         <div class="">
           <app-collaps>
             <template #title>
-              <h6 class="text-sm text-white font-normal">
+              <h6 class="text-xl text-white font-normal">
                 چگونه بیت‌کوین، تتر و سایر رمزارزها را در آرنیتکس بخرم؟
               </h6>
             </template>

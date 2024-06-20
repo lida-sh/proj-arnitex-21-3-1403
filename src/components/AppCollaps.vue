@@ -1,45 +1,20 @@
 <template>
-  <div
-    class="py-3 px-3.5 flex justify-between cursor-pointer rounded transition-all bg-[#171717]"
-    @click="toggle"
-    v-bind="$attrs"
-  >
+  <div class="py-[1.875rem] px-[4.5rem] flex rounded-2xl relative z-20 justify-between cursor-pointer  transition-all bg-[#171717]"
+    @click="toggle" v-bind="$attrs">
     <slot name="title" :is-open="isOpen" />
-    <svg
-      v-if="withTitleIcon&&!isOpen"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="currentColor"
-      class="size-4 mr-3 text-white"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="m19.5 8.25-7.5 7.5-7.5-7.5"
-      />
+    <svg v-if="withTitleIcon && !isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+      stroke-width="1.5" stroke="currentColor" class="size-4 mr-3 text-white">
+      <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
     </svg>
-    <svg
-      v-if="withTitleIcon&&isOpen"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke-width="1.5"
-      stroke="currentColor"
-      class="size-4 mr-3 text-white"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="m4.5 15.75 7.5-7.5 7.5 7.5"
-      />
+    <svg v-if="withTitleIcon && isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+      stroke-width="1.5" stroke="currentColor" class="size-4 mr-3 text-white">
+      <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
     </svg>
 
     <!-- <div class="mr-3 text-white" v-if="withTitleIcon">
         </div> -->
   </div>
-  <div ref="target" class="px-[4.5rem] h-0 overflow-y-hidden bg-[#262626]">
+  <div ref="target" class="px-[4.5rem] relative z-10 mt-[-14px]  h-0 overflow-y-hidden rounded-b-lg bg-[#262626]">
     <slot></slot>
   </div>
 </template>
