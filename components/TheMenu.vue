@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-[#171717] w-screen h-14 sm:h-16 relative">
+  <div class="bg-[#171717] w-full h-14 sm:h-16 relative">
     <div
       id="the-menu"
       class="flex justify-between items-center px-[1.44rem] sm:px-[2.87rem] py-2.5 bg-[#171717] text-white shadow-lg text-sm h-full w-full"
     >
-      <div class="flex items-center w-auto lg:w-[47.5rem]">
+      <div class="flex items-center w-auto">
         <!-- <div class="w-[4.5rem] h-full flex items-center justify-center">
         <img src="~/assets/images/setting.png" alt="setting" class="h-6 w-6" />
       </div> -->
@@ -27,7 +27,7 @@
           </button>
           <div
             ref="target"
-            class="absolute shadow-lg z-20 right-0 top-0 h-[36.625rem] w-auto invisible lg:visible flex flex-col lg:flex-row items-center bg-[#171717] lg:space-x-2 lg:space-x-reverse lg:divide-none lg:static lg:bg-transparent lg:rounded-none lg:shadow-none lg:border-none lg:mt-0 lg:h-auto"
+            class="absolute shadow-lg z-20 right-0 top-0 px-0 h-[36.625rem] w-auto invisible lg:visible flex flex-col lg:flex-row items-center bg-[#171717] lg:static lg:bg-transparent lg:rounded-none lg:shadow-none lg:border-none lg:mt-0 lg:h-auto text-sm"
           >
             <div class="flex">
               <div
@@ -89,12 +89,13 @@
               v-for="(item, index) in links"
               :key="`menu-${index}`"
               :to="item.to"
-              class="w-full lg:w-auto py-3 pr-4"
+              class="w-full lg:w-auto py-3 pr-0 lg:pr-4 "
             >
               <div
-                class="flex items-center justify-center gap-[1.12rem] relative w-[7.375rem] hover:text-[#FF7028]"
+                class="flex flex-col lg:flex-row pt-[0.5rem] lg:items-center justify-center relative w-auto lg:w-[5.938rem] hover:text-[#FF7028]" :class="{'text-[#FF7028] bg-[#343434] lg:bg-transparent':menu[index]}"
                 @click="toggleSubMenu(index)"
               >
+              <div class="flex gap-[1.12rem] px-[1.243rem] lg:px-0 py-3">
                 <div class="text-sm">
                   {{ item.title }}
                 </div>
@@ -114,10 +115,12 @@
                     />
                   </svg>
                 </div>
+              </div>
+                
 
                 <div
                 :class="{'max-h-96':(menu[index]&&item.child)}"
-                  class="absolute right-0 w-[10.5rem] top-11 overflow-hidden bg-[#171717] rounded-b-[0.625rem] text-white z-30"
+                  class="relative lg:absolute lg:right-0 w-full lg:h-auto lg:w-[12.5rem] lg:top-12 overflow-hidden mt-[0.625rem] bg-[#262626] lg:bg-[#171717] lg:rounded-b-[0.625rem] text-white z-30"
                   :id="`menu-${index}`"
                   v-if="menu[index] && item.child"
                   
@@ -128,7 +131,7 @@
                     :key="`sub-menu-${i}`"
                   >
                     <div
-                      class="w-full h-12 bg-black px-[1.6rem] py-3 bg-opacity-50 backdrop-blur-xl hover:bg-[#343434] text-sm hover:text-[#FF7028]"
+                      class="w-full h-12 bg-black px-[1.6rem] py-3 bg-opacity-50 backdrop-blur-xl lg:hover:bg-[#343434] text-sm hover:text-[#FF7028]"
                     >
                       {{ subMenu.title }}
                     </div>
@@ -188,11 +191,8 @@ const links = [
   {
     title: "خرید آسان",
     to: "/",
-    child: true,
-    subMenu: [
-      { title: "خرید", to: "/" },
-      { title: "فروش", to: "/" },
-    ],
+    child: false,
+
   },
   {
     title: "معامله",
@@ -214,6 +214,17 @@ const links = [
       { title: "مقالات 3 دقیقه ای", to: "/" },
       { title: "فیلم های آموزشی", to: "/" },
       { title: "مقالات آموزشی", to: "/" },
+    ],
+  },
+  {
+    title: "سایر",
+    to: "/",
+    child: true,
+    subMenu: [
+      { title: "ماشین حساب دیجیتال", to: "/" },
+      { title: "راهنمای سایت", to: "/" },
+      { title: "کارمزدها", to: "/" },
+      { title: "دعوت از دوستان", to: "/" },
     ],
   },
 ];

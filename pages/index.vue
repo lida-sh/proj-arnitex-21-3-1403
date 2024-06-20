@@ -3,12 +3,12 @@
     <main class="bg-black">
       <div class="w-screen lg:w-[95rem] lg:mx-auto">
         <div
-          class="relative w-full h-full lg:h-[60rem] grid grid-cols-1 lg:grid-cols-12 lg:pr-24 lg:pl-[5.563rem] px-4 py-6"
+          class="relative w-full h-full lg:h-[60rem] lg:flex lg:justify-between lg:pr-24 lg:pl-[5.563rem] px-4 py-6"
         >
           <!-- <div class="absolute">
           <img src="~/assets/images/Frame.png" alt="" class="">
         </div> -->
-          <div class="lg:col-span-3 z-10 relative">
+          <div class="flex flex-col z-10 relative">
             <div
               class="flex flex-col gap-3 lg:gap-7 h-full w-full text-white items-start justify-center"
             >
@@ -16,7 +16,7 @@
                 صرافی آرنیتکس
               </div>
               <div
-                class="w-[20.5rem] lg:w-full h-32 text-[2rem] lg:text-4xl font-medium"
+                class="w-[20.5rem]  h-32 text-[2rem] lg:text-4xl font-medium"
               >
                 بازار بین المللی خرید و فروش ارز دیجیتال
               </div>
@@ -38,28 +38,30 @@
             </div>
             <div class="absolute w-[34.375rem] h-[34.375rem] bg-custom-radial-end puls top-72 -left-52"></div>
           </div>
-          <div class="hidden lg:col-span-9">
+          <!-- <div class="hidden lg:col-span-9">
             <div class="w-full h-auto relative"></div>
-          </div>
+          </div> -->
           <div
-            class="static flex items-center justify-center w-full h-[11.343rem] lg:absolute lg:top-0 lg:w-[88.75rem] lg:h-[48.125rem] lg:-left-[31.25rem] my-6"
+            class="flex items-center justify-end relative"
           >
             <img
-              src="~/assets/images/Frame 26085521.png"
+              src="~/assets/images/123.png"
               alt=""
-              class="hidden lg:block lg:h-full lg:w-full"
+              class="hidden lg:block w-[46.938rem] h-[41.25rem] z-30"
             />
             <img
               src="~/assets/images/Group 26086262.png"
               alt=""
               class="lg:hidden block h-[11.80863rem] w-[11.80863rem]"
             />
+            <div class="absolute lg:w-full lg:h-full bg-custom-radial-end -top-10 -left-52 -z-1"></div>
+            <div class="absolute lg:w-full lg:h-full bg-custom-radial-end -top-10  left-0 -z-1"></div>
           </div>
         </div>
       </div>
       <app-ticker :items="items"></app-ticker>
       <div
-        class="flex flex-col sm:flex-row px-12 sm:px-[6.25rem] py-[3.75rem] sm:py-20 gap-[3.75rem] sm:gap-[5.438rem] sm:w-[95rem] sm:h-[20.625rem] mx-auto"
+        class="flex flex-col sm:flex-row px-[6.25rem]  py-[3.75rem] sm:py-20 gap-[3.75rem] sm:gap-[5.438rem] sm:w-[95rem] sm:h-[20.625rem] mx-auto"
       >
         <div class="flex-1">
           <Service title="کارمزد 0%">
