@@ -38,13 +38,14 @@ import VOtpInput from "vue3-otp-input";
         <span class="text-[12px] text-[#FF7028] cursor-pointer">ویرایش شماره همراه</span>
       </div>
       <div v-if="newPasswordAcc == 'newPassword'">
-        <div class="mt-[20px] flex flex-col">
+        <div class="mt-[20px] relative flex flex-col">
           <label class="text-[16px] my-2" for="">رمز عبور جدید</label>
-          <input v-model="newPassword" type="text" placeholder="رمز عبور جدید خود را وارد نمایید"
+          <input v-model="newPassword" :type="PasswordType" placeholder="رمز عبور جدید خود را وارد نمایید"
             class="bg-[#262626] focus:ring-0 focus:border-gray-600 h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
+            <span class=" absolute text-[14px] left-3 cursor-pointer top-[60px]" @click="switchVisibility">s</span>
         </div>
         <div class="mt-[25px] flex flex-col">
-          <input v-model="newPassword2" type="text" placeholder="تکرار رمز عبور جدید"
+          <input v-model="newPassword2" :type="PasswordType" type="text" placeholder="تکرار رمز عبور جدید"
             class="bg-[#262626] focus:ring-0 focus:border-gray-600 h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
         </div>
 
@@ -98,6 +99,7 @@ export default {
   mixins: [Timer],
   data() {
     return {
+      PasswordType: "Password",
       newPasswordAcc: "firstStep",
       showResendButton: false,
       Username: null,
@@ -123,6 +125,11 @@ export default {
     },
   },
   methods: {
+
+    switchVisibility(){
+      this.PasswordType = this.PasswordType === "Password" ? "text" : "Password";
+    },
+ 
     // ResendOtp
     sendLoginOtpAgain() {
       this.timer = 180;
