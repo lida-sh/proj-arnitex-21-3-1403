@@ -1,18 +1,11 @@
 <template>
-  <div class="py-[1.875rem] px-[4.5rem] flex rounded-2xl relative z-20 justify-between cursor-pointer  transition-all bg-[#171717]"
+  <div
+    class="py-[1.875rem] px-[4.5rem] flex rounded-2xl relative z-20 justify-between cursor-pointer items-center transition-all card-bg"
     @click="toggle" v-bind="$attrs">
-    <slot name="title" :is-open="isOpen" />
-    <svg v-if="withTitleIcon && !isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-      stroke-width="1.5" stroke="currentColor" class="size-4 mr-3 text-white">
-      <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-    </svg>
-    <svg v-if="withTitleIcon && isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-      stroke-width="1.5" stroke="currentColor" class="size-4 mr-3 text-white">
-      <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-    </svg>
+    <slot name="title" :is-open="isOpen"></slot>
+    <IconsCollapseArrowDown v-if="withTitleIcon && !isOpen"></IconsCollapseArrowDown>
+    <IconsCollapseArrowUp v-if="withTitleIcon && isOpen"></IconsCollapseArrowUp>
 
-    <!-- <div class="mr-3 text-white" v-if="withTitleIcon">
-        </div> -->
   </div>
   <div ref="target" class="px-[4.5rem] relative z-10 mt-[-14px]  h-0 overflow-y-hidden rounded-b-lg bg-[#262626]">
     <slot></slot>
