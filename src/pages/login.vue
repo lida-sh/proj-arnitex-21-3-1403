@@ -143,8 +143,10 @@ import VOtpInput from "vue3-otp-input";
 import { ref } from 'vue';
 import { useAuthStore } from '~/stores/auth';
 import axios from 'axios';
+import Timer from '../components/Timer';
 
 export default {
+    mixins: [Timer],
     data() {
         return {
             isUserHasAcc: "firstStep",
@@ -152,16 +154,13 @@ export default {
             showResendButton: false,
             Username: null,
             Password: null,
-            timer: 180,
+            // timer: 180,
             errorPass: null,
             otp: null,
             registerloader: false
         };
     },
     computed: {
-        formattedTimer() {
-            return this.formatTime(this.timer);
-        },
         buttonActive() {
             return {
                 'bg-[#262626] text-[#676767] transition ease-in-out': !this.Username || !this.Password,
@@ -170,36 +169,6 @@ export default {
         },
     },
     methods: {
-        resetTimer(event) {
-            event.preventDefault();
-            this.timer = 120;
-            this.showResendButton = false;
-            if (this.timer > 0) {
-                this.startTimer();
-            }
-        },
-        startTimer() {
-            if (this.intervalId) {
-                clearInterval(this.intervalId);
-            }
-            this.intervalId = setInterval(() => {
-                if (this.timer > 0) {
-                    this.timer--;
-                } else {
-                    this.showResendButton = true;
-                    clearInterval(this.intervalId);
-                }
-            }, 1000);
-        },
-        formatTime(seconds) {
-            const minutes = Math.floor(seconds / 60);
-            const remainingSeconds = seconds % 60;
-            const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-            const formattedSeconds =
-                remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds;
-            return `${formattedMinutes}:${formattedSeconds}`;
-        },
-
         // ResendOtp
         sendLoginOtpAgain() {
             this.timer = 180;

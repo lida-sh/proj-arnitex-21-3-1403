@@ -107,8 +107,6 @@ import VOtpInput from "vue3-otp-input";
                                     class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[22px]">
                                     ادامه
                                 </button>
-
-                                
                             </div>
                         </div>
                         <form method="dialog" class="modal-backdrop">
@@ -134,8 +132,9 @@ import VOtpInput from "vue3-otp-input";
 
 <script>
 import axios from 'axios';
-
+import Timer from '../components/Timer';
 export default {
+    mixins: [Timer],
     data() {
         return {
             isUserHasAcc: "firstStep",
@@ -143,20 +142,12 @@ export default {
             email: null,
             Pass: null,
             otp: null,
-            timer: 180,
-            timerR: 180,
             errorPass: null,
             registerloader: false,
             otp: ''
         };
     },
     computed: {
-        formattedTimer() {
-            return this.formatTime(this.timer);
-        },
-        formattedTimerR() {
-            return this.formatTimeR(this.timerR);
-        },
         buttonClass() {
             return {
                 'bg-[#262626] text-[#676767] transition ease-in-out': !this.email || !this.Pass,
@@ -165,37 +156,6 @@ export default {
         }
     },
     methods: {
-        //Timer
-        resetTimer(event) {
-            event.preventDefault();
-            this.timer = 120;
-            this.showResendButton = false;
-            if (this.timer > 0) {
-                this.startTimer();
-            }
-        },
-        startTimer() {
-            if (this.intervalId) {
-                clearInterval(this.intervalId);
-            }
-            this.intervalId = setInterval(() => {
-                if (this.timer > 0) {
-                    this.timer--;
-                } else {
-                    this.showResendButton = true;
-                    clearInterval(this.intervalId);
-                }
-            }, 1000);
-        },
-        formatTime(seconds) {
-            const minutes = Math.floor(seconds / 60);
-            const remainingSeconds = seconds % 60;
-            const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-            const formattedSeconds =
-                remainingSeconds < 10 ? `0${remainingSeconds}` : remainingSeconds;
-            return `${formattedMinutes}:${formattedSeconds}`;
-        },
-
         // ResendOtp
         sendLoginOtpAgain() {
             this.timer = 180;
@@ -327,9 +287,7 @@ export default {
     ;
 }
 
-
 .otp-input {
-
     padding: 5px;
     margin: 0 10px;
     font-size: 20px;

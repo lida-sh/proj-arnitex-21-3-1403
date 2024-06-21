@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   modules: ['@vueuse/nuxt', "nuxt-marquee","@pinia/nuxt",'@nuxtjs/tailwindcss'],
    srcDir: 'src/',
-  devtools: { enabled: true },
+  devtools: { enabled: false },
   css: ['~/assets/css/tailwind.css'],
   postcss: {
     plugins: {
