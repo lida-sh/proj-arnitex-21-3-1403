@@ -14,12 +14,11 @@
   
   
   <script>
+  import { onMounted } from 'vue';
+  
   export default {
-    mounted() {
-      this.loadTradingViewWidget();
-    },
-    methods: {
-      loadTradingViewWidget() {
+    setup() {
+      const loadTradingViewWidget = () => {
         const script = document.createElement('script');
         script.type = 'text/javascript';
         script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js';
@@ -62,10 +61,16 @@
           "locale": "en"
         });
         document.querySelector('.tradingview-widget-container__widget').appendChild(script);
-      }
+      };
+  
+      onMounted(() => {
+        loadTradingViewWidget();
+      });
     }
   };
   </script>
+
+
   <style>
   swiper-container {
     width: 100%;
