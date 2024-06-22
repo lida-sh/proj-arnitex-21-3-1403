@@ -7,6 +7,7 @@
       <HomeHeroSection></HomeHeroSection>
       <HomeTickerBanner></HomeTickerBanner>
       <HomeFeaturesSection></HomeFeaturesSection>
+      <HomeRealtimeCryptoPrice></HomeRealtimeCryptoPrice>
       <HomeReferral></HomeReferral>
       <HomeOurAdvantages></HomeOurAdvantages>
       <HomeFAQ></HomeFAQ>

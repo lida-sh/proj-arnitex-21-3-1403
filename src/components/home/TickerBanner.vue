@@ -50,6 +50,7 @@ const items = [
     class="justify-end h-[2.75rem] flex w-screen bg-[#303030] py-2"
     direction="right"
     :speed="30"
+    :autoFill="true"
     :pauseOnHover="true"
   >
     <div
