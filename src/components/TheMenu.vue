@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[#171717] w-full h-14 sm:h-16 relative">
+  <div class="bg-[#171717] w-full h-14 sm:h-16 relative z-50">
     <div
       id="the-menu"
       class="flex justify-between items-center px-[1.44rem] sm:px-[2.87rem] py-2.5 bg-[#171717] text-white shadow-lg text-sm h-full w-full"
@@ -142,16 +142,16 @@
           </div>
         </section>
         <div
-          class="flex items-center h-14 w-14 justify-center lg:mr-0 lg:w-[12.5rem] lg:h-[2.625rem] relative mr-[1.94rem]"
+          class="flex items-center h-14 w-14 justify-center xl:mr-0 xl:w-[12.5rem] xl:h-[2.625rem] relative mr-[1.94rem]"
         >
           <input
             type="text"
-            class="hidden lg:block lg:h-full lg:w-full lg:rounded-md lg:bg-[#262626] lg:px-4 lg:focus:border-gray-600 lg:focus:ring-0 lg:text-gray-100 border-0 placeholder:text-sm"
+            class="hidden xl:block xl:h-full xl:w-full xl:rounded-md xl:bg-[#262626] xl:px-4 xl:focus:border-gray-600 xl:focus:ring-0 xl:text-gray-100 border-0 placeholder:text-sm"
             placeholder="جستجوی رمز ارز"
           />
           <img
             src="~/assets/images/zoom.png"
-            class="h-5 w-5 relative lg:absolute lg:top-3 lg:left-4"
+            class="h-5 w-5 relative xl:absolute xl:top-3 xl:left-4"
           />
         </div>
       </div>
