@@ -2,7 +2,7 @@
     <div>
       <the-menu></the-menu>
       <slot></slot>
-      <the-footer v-if="showFooter"></the-footer>
+      <FooterMainFooter v-if="showFooter"></FooterMainFooter>
     </div>
   </template>
   
