@@ -23,10 +23,10 @@
 
     <div class="w-[51.938rem] h-[32.5rem] aspect-auto relative">
       <img src="~/assets/images/devices.png" alt="tablet-laptop-and-smartphone" class="w-full h-auto relative z-20" />
-      <di
+      <div
         class="absolute h-[50rem] w-[60rem] -translate-x-1/2 z-[1] -translate-y-1/2 left-1/2 top-1/2 pointer-events-none">
         <UiPulsShadow></UiPulsShadow>
-      </di>
+      </div>
     </div>
   </div>
 </template>
