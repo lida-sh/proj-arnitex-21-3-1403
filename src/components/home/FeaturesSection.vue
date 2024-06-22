@@ -1,21 +1,5 @@
 <script setup>
-import gsap from "gsap";
-let animation;
-const setAnimation = () => {
-  animation = gsap.to(".puls", {
-    scale: 1.5,
-    ease: "power4.out",
-    duration: 2,
-    paused: true,
-    repeat: -1,
-    yoyo: true,
-    scrollTrigger: ".puls",
-  });
-};
-onMounted(() => {
-  setAnimation();
-  animation.play();
-});
+
 </script>
 
 <template>
@@ -101,7 +85,9 @@ onMounted(() => {
         <div class="hidden lg:block lg:w-[25.5rem] lg:h-0.5 bg-[#FF7028]"></div>
       </div>
     </div>
-    <div class="absolute h-96 w-96 bg-custom-radial-end puls -translate-x-1/2 z-[1] translate-y-1/2 left-1/2 bottom-20 pointer-events-none"></div>
+    <div class="absolute h-96 w-96 -translate-x-1/2 z-[1] translate-y-1/2 left-1/2 bottom-20 pointer-events-none">
+      <UiPulsShadow></UiPulsShadow>
+    </div>
   </section>
 
 </template>
