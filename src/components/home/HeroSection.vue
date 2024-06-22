@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <section class="overflow-hidden block">
+  <section class="block">
 
     <div class="w-screen lg:w-[95rem] lg:mx-auto">
       <div class="relative w-full h-full lg:h-[60rem] lg:flex lg:justify-between lg:pr-24 lg:pl-[5.563rem] px-4 py-6">

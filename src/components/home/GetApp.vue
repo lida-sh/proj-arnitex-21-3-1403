@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section class="overflow-hidden block">
+  <section class="block">
     <div class="flex w-[95rem] px-[6.25rem] items-center justify-between py-[6.25rem] mx-auto">
       <div class="flex flex-col gap-4 text-white">
         <h2 class="text-[2.813rem] font-normal">نصب اپلیکیشن آرنیتکس</h2>

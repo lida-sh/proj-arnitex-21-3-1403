@@ -3,7 +3,7 @@
 
 <template>
   <div>
-    <main class="bg-black">
+    <main class="bg-black overflow-hidden">
       <HomeHeroSection></HomeHeroSection>
       <HomeFeaturesSection></HomeFeaturesSection>
       <HomeRealtimeCryptoPrice></HomeRealtimeCryptoPrice>

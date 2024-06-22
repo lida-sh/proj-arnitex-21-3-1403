@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section class="overflow-hidden block">
+  <section class="block">
     <div class="flex justify-between w-[95rem] h-[38.25rem] pr-[6.25rem] pl-[4.81rem] mx-auto">
       <div class="flex flex-col justify-center items-start w-auto h-full  text-white">
         <h2 class="text-[2.25rem] font-normal mb-7">با دعوت از دوستان خود کسب درآمد کنید</h2>
