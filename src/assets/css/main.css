@@ -75,6 +75,22 @@
   font-display: swap;
 }
 
+:root {
+  --white: #ffffff;
+  --Light-Grey: #343434;
+  --black: #000;
+  --black-mute: #676767;
+  --mid-grey:#262626;
+  --dark-grey: #171717;
+  --hell-grey: #0E0E0E;
+  --gradient-deep-grey: linear-gradient(0deg, #171717 0%, #262626 100%);
+  --red: #EA3C53;
+  --green: #5CBC76;
+  --green-shade-1: #319B54;
+  --error: #FFA928;
+  --primary: #FF7028;
+} 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -110,5 +126,5 @@ body {
 
 .card-bg {
   background: linear-gradient(0deg, #171717 0%, #262626 100%);
-  border-top: 1px solid rgba(103, 103, 103, 1)
+  border-top: 1px solid rgba(103, 103, 103, 1);
 }

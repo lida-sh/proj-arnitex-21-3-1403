@@ -45,36 +45,29 @@ const items = [
 ];
 </script>
 
-<template>
-  <NuxtMarquee
-    class="justify-end h-[2.75rem] flex w-screen bg-[#303030] py-2"
-    direction="right"
-    :speed="30"
-    :autoFill="true"
-    :pauseOnHover="true"
-  >
-    <div
-      v-for="item in items"
-      :key="item.name"
-      dir="rtl"
-      class="h-full w-[18.5625rem] flex items-center justify-center border-r border-gray-300 px-2 gap-2"
-    >
-      <div class="h-7 w-7 flex items-center justify-center">
-        <img
-          src="/assets/images/bitcoin-btc-logo-1.png"
-          alt="coin"
-          class="w-full h-full"
-        />
-      </div>
-      <span class="text-base text-white font-normal" dir="rtl">
-        {{ item.name }}
-      </span>
-      <span class="text-sm text-white font-normal">3709047400</span>
-      <span class="text-sm text-[#5CBC76] font-normal">(0.5 +)</span>
-    </div>
-  </NuxtMarquee>
-</template>
 
+<template>
+  <section class="z-50 fixed bottom-0 left-0 right-0">
+    <NuxtMarquee class="justify-end h-[2.75rem] flex w-screen bg-[#303030] py-2" direction="right" :speed="30"
+      :autoFill="true" :pauseOnHover="true">
+      <div v-for="item in items" :key="item.name" dir="rtl"
+        class="h-full w-[18.5625rem] flex items-center justify-center border-r border-gray-300 px-2 gap-2">
+        <div class="h-7 w-7 flex items-center justify-center">
+          <img src="/assets/images/bitcoin-btc-logo-1.png" alt="coin" class="w-full h-full" />
+        </div>
+        <span class="text-base text-white font-normal" dir="rtl">
+          {{ item.name }}
+        </span>
+        <span class="text-sm text-white font-normal">3709047400</span>
+        <span class="text-sm text-[#5CBC76] font-normal">(0.5 +)</span>
+      </div>
+    </NuxtMarquee>
+
+ 
+  </section>
+
+</template>
+ 
 <style>
 swiper-container {
   width: 100%;
