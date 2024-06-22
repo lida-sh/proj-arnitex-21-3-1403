@@ -49,14 +49,13 @@
 				<div class="w-[13.375rem] h-52 flex items-center justify-center rounded-box">
 					<img src="~/assets/images/book.png" alt="" class="w-full h-auto" />
 				</div>
-				<h6 class="text-lg text-white font-medium">
+				<h6 class="text-white font-normal text-2xl">
 					مقالات 3 دقیقه ای برای شروع
 				</h6>
 				<div class="relative">
 					<button class="bg-[#FF7028] w-[10.625rem] h-[3.75rem] text-white rounded-md relative z-20">
 						بیشتر
 					</button>
-					<div class="absolute h-96 w-96 bg-custom-radial-end puls -left-28 -top-48"></div>
 				</div>
 			</div>
 		</div>
