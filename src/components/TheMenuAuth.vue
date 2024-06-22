@@ -16,6 +16,13 @@
         </svg>
       </div>
     </div>
+    <div class="flex xl:hidden items-center justify-center">
+      <img
+            src="~/assets/images/zoom.png"
+            class="h-5 w-5"
+          />
+    </div>
+    
     <div class="h-[2.125rem] px-[2.125rem] xl:px-0 xl:h-auto border-l border-[#676767] xl:border-l-0 ">
       <div
         class="items-center justify-center hidden xl:flex xl:w-36 xl:h-[2.625rem] bg-[#FF7028] rounded-md px-3 py- xl:p-3.5 text-xs xl:text-base">
@@ -25,7 +32,7 @@
         </div>
       </div>
       <div class="flex items-center justify-center h-full xl:hidden">
-        <img src="~/assets/images/bell.png" class="w-5 h-[1.375rem]" />
+        <img src="~/assets/images/Bell.png" class="w-5 h-[1.375rem]" />
       </div>
     </div>
     
