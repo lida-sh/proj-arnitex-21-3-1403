@@ -9,7 +9,7 @@
         <img src="~/assets/images/setting.png" alt="setting" class="h-6 w-6" />
       </div> -->
         <section class="w-auto">
-          <button class="block lg:hidden" @click="toggleMenu">
+          <button class="block xl:hidden" @click="toggleMenu">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -27,11 +27,11 @@
           </button>
           <div
             ref="target"
-            class="absolute shadow-lg z-20 right-0 top-0 px-0 h-[36.625rem] w-auto invisible lg:visible flex flex-col lg:flex-row items-center bg-[#171717] lg:static lg:bg-transparent lg:rounded-none lg:shadow-none lg:border-none lg:mt-0 lg:h-auto text-sm"
+            class="absolute shadow-lg -right-96 top-0 px-0 h-screen w-auto xl:visible flex flex-col xl:flex-row items-center bg-[#171717] xl:static xl:bg-transparent xl:rounded-none xl:shadow-none xl:border-none xl:mt-0 xl:h-auto text-sm z-50"
           >
-            <div class="flex">
+            <div class="flex bg-[#171717]">
               <div
-                class="w-[4.375rem] h-[3.5rem] flex items-center justify-center lg:hidden"
+                class="w-[4.375rem] h-[3.5rem] flex items-center justify-center xl:hidden" @click="closeMenu"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@
               </div>
               <div class="flex gap-[0.38rem] pl-[1.25rem] py-[0.44rem]">
                 <div
-                  class="flex items-center justify-center h-[2.625rem] w-[12.5rem] relative lg:hidden"
+                  class="flex items-center justify-center h-[2.625rem] w-[12.5rem] relative xl:hidden"
                 >
                   <input
                     type="text"
@@ -89,13 +89,13 @@
               v-for="(item, index) in links"
               :key="`menu-${index}`"
               :to="item.to"
-              class="w-full lg:w-auto py-3 pr-0 lg:pr-4 "
+              class="w-full xl:w-auto pr-0 xl:pr-4 bg-[#171717] xl:bg-transparent"
             >
               <div
-                class="flex flex-col lg:flex-row pt-[0.5rem] lg:items-center justify-center relative w-auto lg:w-[5.938rem] hover:text-[#FF7028]" :class="{'text-[#FF7028] bg-[#343434] lg:bg-transparent':menu[index]}"
+                class="flex flex-col xl:flex-row pt-[0.5rem] xl:items-center justify-center relative w-auto xl:w-[5.938rem] hover:text-[#FF7028]" :class="{'text-[#FF7028] bg-[#343434] xl:bg-transparent':menu[index]}"
                 @click="toggleSubMenu(index)"
               >
-              <div class="flex gap-[1.12rem] px-[1.243rem] lg:px-0 py-3">
+              <div class="flex items-center gap-[0.8rem] px-[1.243rem] xl:px-0 py-3">
                 <div class="text-sm">
                   {{ item.title }}
                 </div>
@@ -120,7 +120,7 @@
 
                 <div
                 :class="{'max-h-96':(menu[index]&&item.child)}"
-                  class="relative lg:absolute lg:right-0 w-full lg:h-auto lg:w-[12.5rem] lg:top-12 overflow-hidden mt-[0.625rem] bg-[#262626] lg:bg-[#171717] lg:rounded-b-[0.625rem] text-white z-30"
+                  class="relative xl:absolute xl:right-0 w-full xl:h-auto xl:w-[12.5rem] xl:top-12 overflow-hidden mt-[0.625rem] bg-[#262626] xl:bg-[#171717] xl:rounded-b-[0.625rem] text-white z-50"
                   :id="`menu-${index}`"
                   v-if="menu[index] && item.child"
                   
@@ -131,7 +131,7 @@
                     :key="`sub-menu-${i}`"
                   >
                     <div
-                      class="w-full h-12 bg-black px-[1.6rem] py-3 bg-opacity-50 backdrop-blur-xl lg:hover:bg-[#343434] text-sm hover:text-[#FF7028]"
+                      class="w-full h-12 bg-black px-[1.6rem] py-3 bg-opacity-50 backdrop-blur-xl xl:hover:bg-[#343434] text-sm hover:text-[#FF7028]"
                     >
                       {{ subMenu.title }}
                     </div>
@@ -142,16 +142,16 @@
           </div>
         </section>
         <div
-          class="flex items-center h-14 w-14 justify-center xl:mr-0 xl:w-[12.5rem] xl:h-[2.625rem] relative mr-[1.94rem]"
+          class="hidden 2xl:flex items-center justify-center xl:mr-0 w-[12.5rem] h-[2.625rem] relative mr-[1.94rem]"
         >
           <input
             type="text"
-            class="hidden xl:block xl:h-full xl:w-full xl:rounded-md xl:bg-[#262626] xl:px-4 xl:focus:border-gray-600 xl:focus:ring-0 xl:text-gray-100 border-0 placeholder:text-sm"
+            class="h-full w-full rounded-md bg-[#262626] px-4 focus:border-gray-600 focus:ring-0 text-gray-100 border-0 placeholder:text-sm"
             placeholder="جستجوی رمز ارز"
           />
           <img
             src="~/assets/images/zoom.png"
-            class="h-5 w-5 relative xl:absolute xl:top-3 xl:left-4"
+            class="h-5 w-5 absolute top-3 left-4"
           />
         </div>
       </div>
