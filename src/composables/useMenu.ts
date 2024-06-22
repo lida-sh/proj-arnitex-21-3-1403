@@ -7,9 +7,8 @@ export const useMenu = ()=>{
     let menuAnimation:any
     const setAnimation = ()=>{
         menuAnimation = gsap.to(unref(target),{
-            autoAlpha: 1,
-            height: "auto",
-            overflow: "hidden",
+            autoAlpha:1,
+            right:0,
             paused:true,
             duration: 0.5
         })
