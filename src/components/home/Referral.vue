@@ -17,7 +17,9 @@
     </div>
     <div class="flex items-center justify-center relative w-auto h-full aspect-video">
       <img src="~/assets/images/Group 26086268.png" alt="" class="w-[24.6875rem] h-[20.6875rem] relative z-20" />
-      <div class="absolute h-[34.375rem] w-[34.375rem] bg-custom-radial-end puls"></div>
+      <div class="absolute h-[34.375rem] w-[34.375rem]">
+        <UiPulsShadow></UiPulsShadow>
+      </div>
     </div>
   </div>
 </template>
