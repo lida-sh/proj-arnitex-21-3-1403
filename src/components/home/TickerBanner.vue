@@ -1,6 +1,54 @@
+<script setup>
+const items = [
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1.png",
+    name: "1بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1.png",
+    name: "2بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1",
+    name: "3بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1.png",
+    name: "4بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1.png",
+    name: "5بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1.png",
+    name: "6بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+  {
+    icon: "http://localhost:3000/assets/images/bitcoin-btc-logo-1",
+    name: "7 بیت کوین",
+    price: 3709047400,
+    change: 0.5,
+  },
+];
+</script>
+
+
 <template>
   <section class="z-50 fixed bottom-0 left-0 right-0">
-    <!-- <NuxtMarquee class="justify-end h-[2.75rem] flex w-screen bg-[#303030] py-2" direction="right" :speed="30"
+    <NuxtMarquee class="justify-end h-[2.75rem] flex w-screen bg-[#303030] py-2" direction="right" :speed="30"
       :autoFill="true" :pauseOnHover="true">
       <div v-for="item in items" :key="item.name" dir="rtl"
         class="h-full w-[18.5625rem] flex items-center justify-center border-r border-gray-300 px-2 gap-2">
@@ -13,74 +61,13 @@
         <span class="text-sm text-white font-normal">3709047400</span>
         <span class="text-sm text-[#5CBC76] font-normal">(0.5 +)</span>
       </div>
-    </NuxtMarquee> -->
+    </NuxtMarquee>
 
-    <div class="tradingview-widget-container  ">
-      <div class="tradingview-widget-container__widget"></div>
-      <div class="tradingview-widget-copyright">
-        <a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank" class=" hidden">
-          <span class="blue-text">Track all markets on TradingView</span>
-        </a>
-      </div>
-    </div>
+ 
   </section>
 
 </template>
-
-
-<script>
-export default {
-  mounted() {
-    this.loadTradingViewWidget();
-  },
-  methods: {
-    loadTradingViewWidget() {
-      const script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js';
-      script.async = true;
-      script.innerHTML = JSON.stringify({
-        "symbols": [
-          {
-            "description": "BTC",
-            "proName": "BINANCE:BTCUSD"
-          },
-          {
-            "description": "SOL",
-            "proName": "BINANCE:SOLUSD"
-          },
-          {
-            "description": "ETH",
-            "proName": "BINANCE:ETHUSDT"
-          },
-          {
-            "description": "AVAX",
-            "proName": "BINANCE:AVAXUSDT"
-          },
-          {
-            "description": "DOGE",
-            "proName": "BINANCE:DOGEUSDT"
-          },
-          {
-            "description": "BNB",
-            "proName": "BINANCE:BNBUSDT"
-          },
-          {
-            "description": "MATIC",
-            "proName": "BINANCE:MATICUSDT"
-          }
-        ],
-        "showSymbolLogo": true,
-        "isTransparent": true,
-        "displayMode": "regular",
-        "colorTheme": "dark",
-        "locale": "en"
-      });
-      document.querySelector('.tradingview-widget-container__widget').appendChild(script);
-    }
-  }
-};
-</script>
+ 
 <style>
 swiper-container {
   width: 100%;

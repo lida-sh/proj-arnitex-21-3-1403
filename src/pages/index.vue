@@ -11,7 +11,8 @@
       <HomeOurAdvantages></HomeOurAdvantages>
       <HomeFAQ></HomeFAQ>
       <HomeGetApp></HomeGetApp>
-      <HomeTickerBanner></HomeTickerBanner>
+      <!-- <HomeTickerBanner></HomeTickerBanner> -->
+      <HomeTickerTradingviewWidget></HomeTickerTradingviewWidget>
     </main>
   </div>
 </template>
