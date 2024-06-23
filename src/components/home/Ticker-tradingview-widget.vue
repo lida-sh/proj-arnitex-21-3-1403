@@ -1,5 +1,5 @@
 <template>
-  <section class="z-50 fixed bottom-0 overflow-x-hidden w-full left-0 right-0">
+  <section class="z-50 relative xl:fixed bottom-0 overflow-x-hidden w-full left-0 right-0">
     <div class="tradingview-widget-container bg-black">
       <div class="tradingview-widget-container__widget"></div>
       <div class="tradingview-widget-copyright">
