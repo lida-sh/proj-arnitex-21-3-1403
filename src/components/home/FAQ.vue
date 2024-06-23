@@ -23,23 +23,6 @@ const list = [
 </script>
 
 <template>
-	<!-- <section class="flex flex-col px-[6.25rem] gap-[1.875rem] w-[95rem] mx-auto">
-		<h6 class="text-lg text-white font-medium">سوالات متداول</h6>
-		<div v-for="item in list" :key="item.title" class="w-full">
-			<app-collaps>
-				<template #title>
-					<h6 class="text-xl text-white font-medium">
-						{{ item.title }}
-					</h6>
-				</template>
-				<div v-html="item.content" class="text-base leading-7  text-white font-light py-8"></div>
-			</app-collaps>
-		</div>
-	</section> -->
-
-
-
-
 	<section class="flex flex-col items-center md:items-start px-4 gap-[1.875rem] max-w-[25rem] md:max-w-[95rem] md:px-[6.25rem] mx-auto">
 		<h6 class="text-[28px] md:text-xl text-white font-medium">سوالات متداول</h6>
 		<div v-for="item in list" :key="item.title" class="w-full">
@@ -53,8 +36,6 @@ const list = [
 			</app-collaps>
 		</div>
 	</section>
-
-
 </template>
 
 <style scoped>
