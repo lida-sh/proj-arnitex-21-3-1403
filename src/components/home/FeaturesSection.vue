@@ -131,6 +131,7 @@
     transition: ease-in 0.15s;
     transition-property: top, box-shadow;
     max-width: 18.75rem;
+    background: unset;
  
   }
 
