@@ -1,6 +1,6 @@
 <template>
   <div
-    class="py-[1.875rem] px-[1.5rem] md:px-[4.5rem] flex rounded-2xl relative z-20 justify-between cursor-pointer items-center transition-all card-bg"
+    class="py-[1.875rem] px-[1.5rem] md:px-[4.5rem] gap-3 flex rounded-2xl relative z-20 justify-between cursor-pointer items-center transition-all card-bg"
     @click="toggle" v-bind="$attrs">
     <slot name="title" :is-open="isOpen"></slot>
     <IconsCollapseArrowDown v-if="withTitleIcon && !isOpen"></IconsCollapseArrowDown>
