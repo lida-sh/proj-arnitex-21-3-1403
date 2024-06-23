@@ -27,7 +27,7 @@
           </button>
           <div
             ref="target"
-            class="absolute shadow-lg -right-96 top-0 px-0 h-screen w-auto invisible xl:visible flex flex-col xl:flex-row items-center bg-[#171717] xl:static xl:bg-transparent xl:rounded-none xl:shadow-none xl:border-none xl:mt-0 xl:h-auto text-sm z-50"
+            class="fixed shadow-lg -right-96 top-0 px-0 h-screen w-auto  xl:visible flex flex-col xl:flex-row items-center bg-[#171717] xl:static xl:bg-transparent xl:rounded-none xl:shadow-none xl:border-none xl:mt-0 xl:h-auto text-sm z-50"
           >
             <div class="flex bg-[#171717]">
               <div
