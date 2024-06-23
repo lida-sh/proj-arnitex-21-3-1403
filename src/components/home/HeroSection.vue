@@ -53,7 +53,7 @@
             </figure>
 
           </div>
-          <div class="absolute lg:w-full lg:h-full top-0 left-0 -z-1">
+          <div class="absolute w-full h-full top-0 left-0 -z-1">
             <UiPulsShadow></UiPulsShadow>
           </div>
           <!-- <img src="~/assets/images/Group 26086262.png" alt=""
