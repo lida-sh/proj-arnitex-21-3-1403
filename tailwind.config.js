@@ -71,9 +71,9 @@ export default {
   variants: {
     extend: {},
   },
-  corePlugins: {
-    aspectRatio: false,
-  },
+  // corePlugins: {
+  //   aspectRatio: false,
+  // },
   plugins: [require("daisyui"),
   require('@tailwindcss/typography'),
   require('@tailwindcss/aspect-ratio'),
