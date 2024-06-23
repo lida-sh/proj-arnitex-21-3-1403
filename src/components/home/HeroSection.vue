@@ -45,11 +45,11 @@
           <img class="w-full h-full" loading="lazy" :src="data.src" />
         </figure>
       </div> -->
-        <div class="flex items-center justify-center mt-[1.104rem] lg:justify-end relative z-50">
+        <div class="flex items-center justify-center mt-[1.104rem] lg:justify-end relative z-30">
           <div class="aspect-video">
             <figure class="">
               <img src="~/assets/images/123.png" alt=""
-                class="relative w-[18.188rem] sm:w-full lg:w-[46.938rem] h-auto z-50" />
+                class="relative w-[18.188rem] sm:w-full lg:w-[46.938rem] h-auto z-30" />
             </figure>
 
           </div>
