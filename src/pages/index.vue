@@ -5,6 +5,7 @@
   <div>
     <main class="bg-black overflow-hidden">
       <HomeHeroSection></HomeHeroSection>
+      <HomeTickerTradingviewWidget></HomeTickerTradingviewWidget>
       <HomeFeaturesSection></HomeFeaturesSection>
       <HomeRealtimeCryptoPrice></HomeRealtimeCryptoPrice>
       <HomeReferral></HomeReferral>
@@ -12,7 +13,6 @@
       <HomeFAQ></HomeFAQ>
       <HomeGetApp></HomeGetApp>
       <!-- <HomeTickerBanner></HomeTickerBanner> -->
-      <HomeTickerTradingviewWidget></HomeTickerTradingviewWidget>
     </main>
   </div>
 </template>
