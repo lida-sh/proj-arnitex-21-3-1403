@@ -36,53 +36,55 @@
   </div>
 
 
-  <section class="lg:h-[38.75rem] relative lg:w-[95rem]  mx-auto lg:px-[6.25rem]">
+  <section class="relative max-w-[82.5rem] mx-auto ">
 
     <div class="flex flex-col lg:rounded-[30px] bg-opacity-50 bg-[#171717] relative z-10">
       <div
-        class="flex flex-col lg:flex-row  lg:px-[4.063rem]  pt-[2.5rem] lg:pt-[3.125rem] h-full gap-[3.375rem] pb-[#3.313]">
-        <div
-          class="flex-1 bg-gradient-to-b lg:bg-transparent lg:hover:bg-gradient-to-b from-[#262626] lg:from-0% lg:hover:from-[#262626] to-[#171717] lg:to-0% lg:hover:to-[#171717] rounded-2xl shadow-[0.25px_-2px_2px_rgba(103,103,103,100)] lg:shadow-none lg:hover:shadow-[0.25px_-2px_2px_rgba(103,103,103,100)] hover:-translate-y-5 transition-all duration-3000">
-          <service-plus title="خرید و فروش آسان" description="خرید و فروش بیش از 130 توکن">
-            <template #icon>
-              <img src="~/assets/images/خرید و فروش آنی.png" alt="wage" />
-            </template>
-          </service-plus>
+        class="grid grid-cols-1 md:grid-cols-2 2xl:flex 2xl:flex-row px-[2.438rem] lg:px-[2.25rem] pt-[2.5rem] lg:pt-[3.125rem] h-full gap-[2.5rem] pb-[#3.313]">
+        <div class="flex-1 feature-item-container">
+          <div class="feature-item">
+            <service-plus title="خرید و فروش آسان" description="خرید و فروش بیش از 130 توکن">
+              <template #icon>
+                <img src="~/assets/images/easy-buying-and-selling.svg" alt="خرید و فروش آسان" />
+              </template>
+            </service-plus>
+          </div>
         </div>
-        <div
-          class="flex-1 bg-gradient-to-b lg:bg-transparent lg:hover:bg-gradient-to-b from-[#262626] lg:from-0% lg:hover:from-[#262626] to-[#171717] lg:to-0% lg:hover:to-[#171717] rounded-2xl shadow-[0.25px_-2px_2px_rgba(103,103,103,100)] lg:shadow-none lg:hover:shadow-[0.25px_-2px_2px_rgba(103,103,103,100)] hover:-translate-y-5 transition-all duration-3000">
-          <service-plus title="معامله تعهدی" description="باز کردن موقعیت لانگ و شورت">
-            <template #icon>
-              <img src="~/assets/images/معامله تعهدی.png" alt="wage" />
-            </template>
-          </service-plus>
+        <div class="flex-1 feature-item-container">
+          <div class="feature-item">
+            <service-plus title="معامله تعهدی" description="باز کردن موقعیت لانگ و شورت">
+              <template #icon>
+                <img src="~/assets/images/accrual-transaction.svg" alt="wage" />
+              </template>
+            </service-plus>
+          </div>
         </div>
-        <div
-          class="flex-1 bg-gradient-to-b lg:bg-transparent lg:hover:bg-gradient-to-b from-[#262626] lg:from-0% lg:hover:from-[#262626] to-[#171717] lg:to-0% lg:hover:to-[#171717] rounded-2xl shadow-[0.25px_-2px_2px_rgba(103,103,103,100)] lg:shadow-none lg:hover:shadow-[0.25px_-2px_2px_rgba(103,103,103,100)] hover:-translate-y-5 transition-all duration-3000">
-          <service-plus title="معامله پیشرفته" description="کپی برداری از استراتژی تریدرهای حرفه ای">
-            <template #icon>
-              <img src="~/assets/images/کپی تریدینگ.png" alt="wage" />
-            </template>
-          </service-plus>
+        <div class="flex-1 feature-item-container">
+          <div class="feature-item">
+            <service-plus title="معامله پیشرفته" description="کپی برداری از استراتژی تریدرهای حرفه ای">
+              <template #icon>
+                <img src="~/assets/images/advanced-transaction.svg" alt="wage" />
+              </template>
+            </service-plus>
+          </div>
         </div>
-        <div
-          class="flex-1 bg-gradient-to-b lg:bg-transparent lg:hover:bg-gradient-to-b from-[#262626] lg:from-0% lg:hover:from-[#262626] to-[#171717] lg:to-0% lg:hover:to-[#171717] rounded-2xl shadow-[0.25px_-2px_2px_rgba(103,103,103,100)] lg:shadow-none lg:hover:shadow-[0.25px_-2px_2px_rgba(103,103,103,100)] hover:-translate-y-5 transition-all duration-3000">
-          <service-plus title="معامله ساده" description="سفارش گذاری با قیمت ثابت . حد و ضرر و...">
-            <template #icon>
-              <img src="~/assets/images/معامله اسپات.png" alt="wage" />
-            </template>
-          </service-plus>
+        <div class="flex-1 feature-item-container">
+          <div class="feature-item">
+            <service-plus title="معامله ساده" description="سفارش گذاری با قیمت ثابت . حد و ضرر و...">
+              <template #icon>
+                <img src="~/assets/images/simple-transaction.svg" alt="wage" />
+              </template>
+            </service-plus>
+          </div>
         </div>
       </div>
 
       <div class="w-full h-[3.75rem] flex items-center justify-center lg:px-[10.75rem] py-[5.563rem] gap-20">
-        <div class="hidden lg:block lg:w-[25.5rem] lg:h-0.5 bg-[#FF7028]"></div>
         <div class="relative">
           <button class="bg-[#FF7028] w-[13.5rem] h-14 text-white rounded-md z-20 relative">
             شروع معامله
           </button>
         </div>
-        <div class="hidden lg:block lg:w-[25.5rem] lg:h-0.5 bg-[#FF7028]"></div>
       </div>
     </div>
     <div class="absolute h-96 w-96 -translate-x-1/2 z-[1] translate-y-1/2 left-1/2 bottom-20 pointer-events-none">
@@ -92,4 +94,55 @@
 
 </template>
 
-<style scoped></style>
+<style scoped>
+.feature-item {
+  top: 0;
+  position: relative;
+  border-radius: 16px;
+  box-sizing: content-box;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 0.5px;
+  border-top-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  transition: ease-in 0.15s;
+  transition-property: top, box-shadow;
+  max-width: 18.75rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: #676767;
+  box-shadow: 0px 9px 20px 12px #00000029;
+  background: linear-gradient(0deg, #171717 0%, #262626 100%);
+
+}
+
+@media screen and (min-width: 767px) {
+  .feature-item {
+    position: relative;
+    border-radius: 16px;
+    box-sizing: content-box;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0.5px;
+    border-top-width: 2px;
+    border-color: transparent;
+    top: 0;
+    transition: ease-in 0.15s;
+    transition-property: top, box-shadow;
+    max-width: 18.75rem;
+ 
+  }
+
+  .feature-item-container:hover .feature-item {
+    background: linear-gradient(0deg, #171717 0%, #262626 100%);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-top-width: 2px;
+    border-color: #676767;
+    box-shadow: 0px 9px 20px 12px #00000029;
+    top: -20px;
+  }
+}
+</style>

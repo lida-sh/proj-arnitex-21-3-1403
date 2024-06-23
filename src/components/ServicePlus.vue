@@ -6,8 +6,8 @@
       <slot name="icon"></slot>
     </div>
     <div class="text-white text-center flex flex-col gap-1">
-      <h6 class="font-medium text-base block">{{ title }}</h6>
-      <p class="text-xs font-medium block">{{ description }}</p>
+      <h6 class="font-normal text-[1.5rem] leading-[2.563rem] block">{{ title }}</h6>
+      <p class="text-[0.875rem] leading-[1.813rem] mt-1 font-bold block">{{ description }}</p>
     </div>
   </div>
 </template>
