@@ -114,7 +114,6 @@
   border-color: #676767;
   box-shadow: 0px 9px 20px 12px #00000029;
   background: linear-gradient(0deg, #171717 0%, #262626 100%);
-
 }
 
 @media screen and (min-width: 767px) {
@@ -132,7 +131,6 @@
     transition-property: top, box-shadow;
     max-width: 18.75rem;
     background: unset;
- 
   }
 
   .feature-item-container:hover .feature-item {
