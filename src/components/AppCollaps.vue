@@ -1,13 +1,13 @@
 <template>
   <div
-    class="py-[1.875rem] px-[4.5rem] flex rounded-2xl relative z-20 justify-between cursor-pointer items-center transition-all card-bg"
+    class="py-[1.875rem] px-[1.5rem] md:px-[4.5rem] flex rounded-2xl relative z-20 justify-between cursor-pointer items-center transition-all card-bg"
     @click="toggle" v-bind="$attrs">
     <slot name="title" :is-open="isOpen"></slot>
     <IconsCollapseArrowDown v-if="withTitleIcon && !isOpen"></IconsCollapseArrowDown>
     <IconsCollapseArrowUp v-if="withTitleIcon && isOpen"></IconsCollapseArrowUp>
 
   </div>
-  <div ref="target" class="px-[4.5rem] relative z-10 mt-[-14px]  h-0 overflow-y-hidden rounded-b-lg bg-[#262626]">
+  <div ref="target" class="px-[1rem] md:px-[4.5rem] relative z-10 mt-[-14px]  h-0 overflow-y-hidden rounded-b-lg bg-[#262626]">
     <slot></slot>
   </div>
 </template>
