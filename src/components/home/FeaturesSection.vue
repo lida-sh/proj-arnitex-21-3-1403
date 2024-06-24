@@ -188,6 +188,7 @@ export default {
     transition-property: top, box-shadow;
     max-width: 18.75rem;
     background: unset;
+    box-shadow:unset;
   }
 
   .feature-item-container:hover .feature-item {
