@@ -27,19 +27,21 @@ export default {
 </script>
 
 <template>
-  <div
-    class="flex flex-row w-full py-[3.75rem] sm:py-20  max-w-[82.5rem]  mx-auto">
+  <div class="flex flex-row w-full py-[3.75rem] sm:py-20  max-w-[82.5rem]  mx-auto">
 
-    <swiper :slidesPerView="'auto'" :spaceBetween="20" :freeMode="true" :modules="modules" class="mySwiper" :slidesOffsetBefore="20" :slidesOffsetAfter="20" :breakpoints="{
-       '1024': {slidesPerView:4,
-        slidesOffsetBefore: 0,
-        slidesOffsetAfter:0,
-        cssMode:true,
-        spaceBetween:87
-       },
+    <swiper :slidesPerView="'auto'" :spaceBetween="20" :freeMode="true" :modules="modules" class="mySwiper"
+      :slidesOffsetBefore="20" :slidesOffsetAfter="20" :breakpoints="{
 
-       
-    }">
+         1024: {slidesPerView:4,
+          slidesOffsetBefore: 0,
+          slidesOffsetAfter:0,
+          cssMode:true,
+          spaceBetween:87
+
+         },
+        
+
+      }">
       <swiper-slide>
         <Service title="کارمزد 0%">
           <template #icon>
@@ -215,17 +217,20 @@ export default {
   width: 100%;
   height: 100%;
 }
-.swiper-wrapper{
+
+.swiper-wrapper {
   width: 100%;
   height: 100%;
 }
-.mySwiper{
+
+.mySwiper {
   width: 100%;
 }
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-background: unset;
+  background: unset;
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
