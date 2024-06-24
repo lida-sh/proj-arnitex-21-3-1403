@@ -27,19 +27,17 @@ export default {
 </script>
 
 <template>
-  <div
-    class="flex flex-row w-full py-[3.75rem] sm:py-20  max-w-[82.5rem]  mx-auto">
-
-    <swiper :slidesPerView="'auto'" :spaceBetween="20" :freeMode="true" :modules="modules" class="mySwiper" :slidesOffsetBefore="20" :slidesOffsetAfter="20" :breakpoints="{
-       '1024': {slidesPerView:4,
-        slidesOffsetBefore: 0,
-        slidesOffsetAfter:0,
-        cssMode:true,
-        spaceBetween:87
-       },
-
-       
-    }">
+  <div class="flex flex-row w-full py-[3.75rem] sm:py-20  max-w-[82.5rem]  mx-auto features-slider" >
+    <swiper :slidesPerView="'auto'" :spaceBetween="20" :freeMode="true" :modules="modules" class="mySwiper"
+      :slidesOffsetBefore="20" :slidesOffsetAfter="20" :breakpoints="{
+        '1536': {
+          slidesPerView: 4,
+          spaceBetween:70,
+          slidesOffsetBefore: 0,
+          slidesOffsetAfter: 0,
+          freeMode: false,
+        },
+      }">
       <swiper-slide>
         <Service title="کارمزد 0%">
           <template #icon>
@@ -197,7 +195,7 @@ export default {
     transition-property: top, box-shadow;
     max-width: 18.75rem;
     background: unset;
-    box-shadow:unset;
+    box-shadow: unset;
   }
 
   .feature-item-container:hover .feature-item {
@@ -211,22 +209,28 @@ export default {
     top: -20px;
   }
 }
+</style>
 
-.swiper-container {
+<style>
+.features-slider .swiper-container {
   width: 100%;
   height: 100%;
 }
-.swiper-wrapper{
+
+.features-slider .swiper-wrapper {
   width: 100%;
   height: 100%;
+  justify-content: space-between;
 }
-.mySwiper{
+
+.features-slider .mySwiper {
   width: 100%;
 }
+
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-background: unset;
+  background: unset;
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -240,9 +244,10 @@ background: unset;
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+  width: auto;
 }
 
-.swiper-slide img {
+.features-slider .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
