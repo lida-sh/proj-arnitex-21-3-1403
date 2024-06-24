@@ -21,8 +21,9 @@
             </div>
             <div
               class="w-[20.5rem] lg:w-[22.5rem] h-14 mt-[3.75rem] lg:mt-[1.75rem] relative rounded-md text-white text-base">
+
               <input type="text"
-                class="w-full h-full bg-[#262626] border-2 border-[#676767] focus:ring-0 focus:border-gray-600 text-white placeholder-white z-20"
+                class="w-full h-full bg-[#262626] border-2 border-[#676767] focus:ring-0 focus:border-gray-600 text-white placeholder-white z-50"
                 placeholder="شماره همراه یا ایمیل" />
               <div
                 class="bg-[#FF7028] absolute left-0 top-0 h-full w-28 flex items-center justify-center rounded-md z-20">

@@ -216,14 +216,12 @@ export default {
   width: 100%;
   height: 100%;
 }
-
-.features-slider .swiper-wrapper {
+.swiper-wrapper{
   width: 100%;
   height: 100%;
   justify-content: space-between;
 }
-
-.features-slider .mySwiper {
+.mySwiper{
   width: 100%;
 }
 
