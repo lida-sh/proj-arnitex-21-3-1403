@@ -124,7 +124,7 @@ export default {
 		</div>
 	</div>
 	<div class="grid grid-cols-1 lg:grid-cols-2 c-container pb-24 gap-8">
-		<div class=" mt-[4.375rem] lg:mt-32">
+		<div class="mt-0 lg:mt-32">
 			<div class="flex flex-col items-center justify-center w-full h-[30.375rem] gap-8 rounded-box">
 				<div class="w-[13.375rem] h-52 flex items-center justify-center rounded-box">
 					<img src="~/assets/images/book.png" alt="" class="w-full h-auto" />

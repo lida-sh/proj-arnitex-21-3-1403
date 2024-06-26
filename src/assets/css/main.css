@@ -132,3 +132,13 @@ body {
   background: linear-gradient(0deg, #171717 0%, #262626 100%);
   border-top: 1px solid rgba(103, 103, 103, 1);
 }
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}

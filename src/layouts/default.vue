@@ -1,6 +1,6 @@
 <template>
     <div>
-      <the-menu></the-menu>
+      <HeaderSticky></HeaderSticky>
       <slot></slot>
       <FooterMainFooter v-if="showFooter"></FooterMainFooter>
     </div>

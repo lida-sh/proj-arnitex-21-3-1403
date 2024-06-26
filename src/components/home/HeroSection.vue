@@ -4,7 +4,7 @@
 <template>
   <section class="block">
 
-    <div class="w-screen max-w-[95rem] mx-auto">
+    <div class="w-screen max-w-[95rem] mt-[4rem] mx-auto">
       <div
         class="relative w-full h-auto gap-[1.104rem] lg:flex lg:justify-between lg:pr-24 lg:pl-[5.563rem] px-4 mx-auto  py-10 sm:max-w-[38rem] lg:max-w-full">
         <!-- <div class="absolute">
