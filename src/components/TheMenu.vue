@@ -2,7 +2,7 @@
   <div class="bg-[#171717] w-full h-14 sm:h-16 relative z-[1000]">
     <div
       id="the-menu"
-      class="flex justify-between items-center px-0 sm:px-[2.87rem] py-2.5 bg-[#171717] text-white shadow-lg text-sm h-full w-full"
+      class="flex justify-between items-center max-w-[110rem] mx-auto px-0 sm:px-[2.87rem] py-2.5 bg-[#171717] text-white shadow-lg text-sm h-full w-full"
     >
       <div class="flex items-center w-auto">
         <!-- <div class="w-[4.5rem] h-full flex items-center justify-center">

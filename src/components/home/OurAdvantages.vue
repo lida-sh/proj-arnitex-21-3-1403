@@ -202,10 +202,4 @@ export default {
 	width: auto;
 }
 
-.features-slider .swiper-slide img {
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
 </style>

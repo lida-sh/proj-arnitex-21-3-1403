@@ -41,27 +41,28 @@ export default {
       <swiper-slide>
         <Service title="کارمزد 0%">
           <template #icon>
-            <img src="~/assets/images/0.png" alt="wage" />
+            <img src="~/assets/images/no-fee.svg" alt="wage" />
           </template>
         </Service>
       </swiper-slide>
       <swiper-slide>
         <Service title="درآمد با دعوت دوستان">
           <template #icon>
-            <img src="~/assets/images/Money.png" alt="wage" />
+            <!-- <img src="~/assets/images/earn-by-inviting-friends.svg" alt="wage" /> -->
+            <img class="w-auto h-full" src="~/assets/images/Money.png" alt="wage" />
           </template>
         </Service>
       </swiper-slide><swiper-slide>
         <Service title="بات معامله گر">
           <template #icon>
-            <img src="~/assets/images/bot.png" alt="wage" />
+            <img src="~/assets/images/trader-bot.svg" alt="wage" />
           </template>
         </Service>
       </swiper-slide>
       <swiper-slide>
         <Service title="پشتیبانی 24 ساعته">
           <template #icon>
-            <img src="~/assets/images/Support.png" alt="wage" />
+            <img src="~/assets/images/full-support.svg" alt="wage" />
           </template>
         </Service>
       </swiper-slide>
@@ -245,10 +246,4 @@ export default {
   width: auto;
 }
 
-.features-slider .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 </style>
