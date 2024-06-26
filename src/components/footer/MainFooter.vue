@@ -117,7 +117,7 @@ const data = {
 
 <template>
   <footer class="bg-gradient-to-b z-[49] relative from-[#262626] to-[#171717] w-full pb-4">
-    <div class="w-full mx-auto h-full z-10 px-[1rem] lg:px-[2rem] xl:px-[4.25rem] 2xl:px-[6.25rem] max-w-[25rem] lg:max-w-[95rem] py-[3.125rem]">
+    <div class="c-container py-[3.125rem] pb-[8rem] lg:pb-unset z-10">
       <FooterNav :data="data" class="hidden lg:block"></FooterNav>
       <FooterNavMob :data="data" class="lg:hidden block"></FooterNavMob>
 

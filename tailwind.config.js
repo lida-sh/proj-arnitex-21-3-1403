@@ -50,6 +50,9 @@ export default {
       boxShadow: {
         '2xl': '0.25 0.25px 2px 0.5px rgba(103, 103, 103, 100)',
       },
+      utils:{
+        'a': 'w-full mx-auto h-full z-10 px-[1rem] lg:px-[2rem] xl:px-[4.25rem] 2xl:px-[6.25rem] max-w-[25rem] lg:max-w-[95rem] py-[3.125rem]',
+      },
       typography: {
         xs: {
           css: {

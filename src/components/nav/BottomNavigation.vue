@@ -84,7 +84,7 @@ const moveActiveTo = (index) => {
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="login" @click="moveActiveTo(5)" :class="{ 'bottom-nav-link-selected': isActive(5) }"
+              <NuxtLink to="/" @click="moveActiveTo(5)" :class="{ 'bottom-nav-link-selected': isActive(5) }"
                 class="nav-link">
                 <IconsBottomNavigationProfile></IconsBottomNavigationProfile>
                 <span class="nav-link-text">پروفایل</span>
