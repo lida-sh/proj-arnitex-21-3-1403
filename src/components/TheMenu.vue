@@ -2,14 +2,14 @@
   <div class="bg-[#171717] w-full h-14 sm:h-16 relative z-[1000]">
     <div
       id="the-menu"
-      class="flex justify-between items-center px-[1.44rem] sm:px-[2.87rem] py-2.5 bg-[#171717] text-white shadow-lg text-sm h-full w-full"
+      class="flex justify-between items-center px-0 sm:px-[2.87rem] py-2.5 bg-[#171717] text-white shadow-lg text-sm h-full w-full"
     >
       <div class="flex items-center w-auto">
         <!-- <div class="w-[4.5rem] h-full flex items-center justify-center">
         <img src="~/assets/images/setting.png" alt="setting" class="h-6 w-6" />
       </div> -->
         <section class="w-auto">
-          <button class="block xl:hidden" @click="toggleMenu">
+          <button class="block xl:hidden py-[1.25rem] px-[1.438rem]" @click="toggleMenu">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

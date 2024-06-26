@@ -17,11 +17,7 @@
       </div>
     </div>
     <div class="flex xl:hidden items-center justify-center">
-      <img
-            src="~/assets/images/zoom.png"
-            class="h-5 w-5"
-          />
-    </div>
+      <IconsHeaderMobSearch></IconsHeaderMobSearch>  </div>
     
     <div class="h-[2.125rem] px-[2.125rem] xl:px-0 xl:h-auto border-l border-[#676767] xl:border-l-0 ">
       <div
@@ -32,7 +28,7 @@
         </div>
       </div>
       <div class="flex items-center justify-center h-full xl:hidden">
-        <img src="~/assets/images/Bell.png" class="w-5 h-[1.375rem]" />
+        <IconsHeaderMobNotification></IconsHeaderMobNotification>
       </div>
     </div>
     
@@ -41,9 +37,9 @@
       <a href="/" class="hidden 2xl:block xl:w-[7.5rem] xl:h-4">
         <img src="~assets/images/arnitex.png" class="" />
       </a>
-      <div class="w-16 xl:w-[4.5rem] h-full flex items-center justify-center">
-        <img src="~/assets/images/logo.png" class="w-8 h-7" />
-      </div>
+      <NuxtLink to="/" class="w-16 px-[1.25rem] py-[1.063rem] xl:w-[4.5rem] h-full flex items-center justify-center">
+        <IconsHeaderMobLogo></IconsHeaderMobLogo>
+      </NuxtLink>
     </div>
 
     <!-- <chevron-down-icon class="w-4 h-4 mr-1"></chevron-down-icon> -->
