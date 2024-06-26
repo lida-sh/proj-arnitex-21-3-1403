@@ -2,7 +2,7 @@
 
 <template>
   <section class="block mb-[6.25rem] xl:mb-0">
-    <div class="flex flex-col-reverse xl:flex-row justify-between xl:h-[38.25rem] px-[1rem] lg:px-[2rem] xl:px-[4.25rem] 2xl:px-[6.25rem] py-[6.25rem] max-w-[25rem] lg:max-w-[95rem] mx-auto">
+    <div class="flex flex-col-reverse xl:flex-row justify-between xl:h-[38.25rem] c-container py-[6.25rem] mx-auto">
       <div class="flex flex-col justify-center text-center xl:text-align-unset items-center w-auto xl:items-start h-full text-white">
         <h2 class="text-[2.25rem] leading-[4.063rem] font-normal mb-[0.938rem] xl:mb-7">با دعوت از دوستان خود کسب درآمد کنید</h2>
         <h6 class="text[1.375rem] leading-[2.313rem] font-semibold mb-[3.438rem] xl:mb-9">

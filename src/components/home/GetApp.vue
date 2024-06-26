@@ -3,7 +3,7 @@
 <template>
   <section class="block">
     <div
-      class="flex flex-col-reverse xl:flex-row max-w-[42rem] xl:max-w-[95rem] px-[2rem] xl:px-[6.25rem] items-center justify-between py-[6.25rem] mx-auto">
+      class="flex flex-col-reverse xl:flex-row items-center justify-between c-container py-[6.25rem]">
       <div class="items-center xl:items-start text-center xl:text-start flex flex-col gap-4 text-white">
         <h2 class="hidden xl:block text-[2.813rem] font-normal">نصب اپلیکیشن آرنیتکس</h2>
         <div class="max-w-[29.875rem] mb-[2.5rem] xl:mb-[3.125rem] mt-[2.5rem] xl:mt-0">

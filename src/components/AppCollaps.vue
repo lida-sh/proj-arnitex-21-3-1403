@@ -63,7 +63,7 @@ export default defineComponent({
     const debouncedFn = useDebounceFn(() => {
       animation.progress(0).invalidate();
     }, 500);
-    useEventListener("resize", debouncedFn);
+    // useEventListener("resize", debouncedFn);
     return { target, toggle, isOpen };
   },
 });

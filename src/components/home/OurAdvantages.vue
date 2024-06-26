@@ -123,7 +123,7 @@ export default {
 			</div>
 		</div>
 	</div>
-	<div class="grid grid-cols-1 lg:grid-cols-2 px-4 sm:px-[6.25rem] gap-8 pb-24 max-w-[95rem] mx-auto">
+	<div class="grid grid-cols-1 lg:grid-cols-2 c-container pb-24 gap-8">
 		<div class=" mt-[4.375rem] lg:mt-32">
 			<div class="flex flex-col items-center justify-center w-full h-[30.375rem] gap-8 rounded-box">
 				<div class="w-[13.375rem] h-52 flex items-center justify-center rounded-box">

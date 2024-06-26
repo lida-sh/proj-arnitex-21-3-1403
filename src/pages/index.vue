@@ -1,6 +1,9 @@
 <script setup lang="ts">
+useHead
+  ({
+    title: 'آرنیتکس | صفحه اصلی',
+  })
 </script>
-
 <template>
   <div>
     <main class="bg-black overflow-hidden">
@@ -12,6 +15,7 @@
       <HomeOurAdvantages></HomeOurAdvantages>
       <HomeFAQ></HomeFAQ>
       <HomeGetApp></HomeGetApp>
+      <NavBottomNavigation class="block lg:hidden"></NavBottomNavigation>
       <!-- <HomeTickerBanner></HomeTickerBanner> -->
     </main>
   </div>
