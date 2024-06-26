@@ -135,7 +135,7 @@ const data = {
             </div>
             <div
               class="w-[3.75rem] h-[1.875rem] border-0 lg:border-l ml-0 lg:ml-[1.625rem] flex items-center justify-center">
-              <UiThemMoonFooter></UiThemMoonFooter>
+              <UiThemeToggle></UiThemeToggle>
             </div>
           </div>
 

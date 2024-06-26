@@ -4,9 +4,9 @@ import VOtpInput from "vue3-otp-input";
 <template>
   <div class="flex w-full justify-between items-center">
     <p class="text-[24px]">بازنشانی رمز عبور</p>
-    <router-link to="/login">
+    <a href="/login">
       <span class="text-[12px] text-[#FF7028] cursor-pointer" @Click="">صفحه ی ورود</span>
-    </router-link>
+    </a>
   </div>
 
   <div class="mt-[20px] flex flex-col">

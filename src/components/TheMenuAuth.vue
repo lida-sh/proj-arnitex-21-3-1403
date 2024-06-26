@@ -11,23 +11,28 @@
       <UiThemeToggle></UiThemeToggle>
     </div>
     <div class="flex xl:hidden items-center justify-center">
-      <IconsHeaderMobSearch></IconsHeaderMobSearch>  </div>
-    
+      <IconsHeaderMobSearch></IconsHeaderMobSearch>
+    </div>
+
     <div class="h-[2.125rem] px-[2.125rem] xl:px-0 xl:h-auto border-l border-[#676767] xl:border-l-0 ">
       <div
-        class="items-center justify-center hidden xl:flex xl:w-36 xl:h-[2.625rem] bg-[#FF7028] rounded-md px-3 py- xl:p-3.5 text-xs xl:text-base">
-        <div class="flex items-center justify-center pl-3">ثبت نام</div>
-        <div class="border-r border-white flex items-center justify-center pr-3">
-          ورود
-        </div>
+        class="justify-center hidden xl:flex xl:w-36 xl:h-[2.625rem] bg-[#FF7028] rounded-md text-xs xl:text-base">
+        <NuxtLink class="flex items-center ps-3 xl:ps-3.5" to="/register">
+          <div class="flex items-center justify-center pl-3">ثبت نام</div>
+        </NuxtLink>
+        <NuxtLink class="flex items-center pe-3 xl:pe-3.5" to="/login">
+          <div class="border-r border-white flex items-center justify-center pr-3">
+            ورود
+          </div>
+        </NuxtLink>
       </div>
       <div class="flex items-center justify-center h-full xl:hidden">
         <IconsHeaderMobNotification></IconsHeaderMobNotification>
       </div>
     </div>
-    
+
     <div class="flex items-center justify-center xl:border-r xl:border-[#676767] xl:pr-6 pl-[0.44rem] xl:pl-0">
-      
+
       <a href="/" class="hidden 2xl:block xl:w-[7.5rem] xl:h-4">
         <img src="~assets/images/arnitex.png" class="" />
       </a>

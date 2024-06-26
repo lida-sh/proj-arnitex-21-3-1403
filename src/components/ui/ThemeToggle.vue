@@ -23,6 +23,7 @@ const state = ref('night')
   display: block;
   position: relative;
   height: 1.25rem;
+  width: 1.25rem;
 }
 
 .btn-container>* {
