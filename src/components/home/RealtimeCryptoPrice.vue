@@ -37,14 +37,14 @@
   <div class="px-0 lg:px-[6.25rem] w-full lg:w-[95rem] mx-auto mt-[2.5rem]">
     <div v-if="Cryptocurrency == 'Tether'"
       class="h-[41.125rem] bg-gradient-to-b from-[#171717] to-[#262626] rounded-none lg:rounded-[1.875rem] flex flex-col gap-[0.625rem] overflow-hidden">
-      <div class="h-20 w-full bg-[#262626] grid grid-cols-6 lg:grid-cols-12 px-1 lg:px-24 text-white opacity-50">
+      <div class="h-20 w-full bg-[#262626] grid grid-cols-2 lg:grid-cols-12 px-1 lg:px-24 text-white opacity-50">
         <div class="col-span-1 flex items-center justify-center">
-          <span class="">نام ارز دیجیتال</span>
+          <span class="text-xs font-bold lg:text-base">نام ارز دیجیتال</span>
         </div>
-        <div class="col-span-3 flex items-center justify-center text-base text-white font-light pr-8">
-          <span class="">آخرین قیمت ( تتر)</span>
+        <div class="col-span-1 lg:col-span-3 flex items-center justify-center text-base text-white font-light pr-8">
+          <span class="text-xs font-bold lg:text-base">آخرین قیمت ( تتر)</span>
         </div>
-        <div class="col-span-2 flex items-center justify-center text-base font-light">
+        <div class="hidden lg:col-span-2 lg:flex items-center justify-center text-base font-light">
           <span class="">تغییر ۲۴h</span>
         </div>
         <div class="hidden lg:flex lg:col-span-2 items-center justify-center text-base text-white font-light">
@@ -55,19 +55,19 @@
         </div>
         <div class="hidden lg:flex col-span-2 items-center justify-center text-base text-white font-light"></div>
       </div>
-      <div class="h-20 w-full bg-[#262626] grid grid-cols-6 lg:grid-cols-14 lg:px-9">
-        <div class="col-span-1 w-full h-full flex items-center justify-center gap-4">
+      <div class="h-20 w-full bg-[#262626] grid grid-cols-6 lg:grid-cols-14 px-6 py-[0.938rem] lg:px-9">
+        <div class="col-span-1 w-full h-full flex items-center justify-center gap-4 ">
           <img src="~/assets/images/btc.png" alt="" class="w-[3.125rem] h-[3.125rem]" />
         </div>
-        <div class="col-span-1 flex flex-col items-center justify-center w-full gap-1">
+        <div class="col-span-2 lg:col-span-1 flex flex-col items-center justify-center w-full gap-1">
           <p class="text-xs text-white font-thin block">بیت کوین</p>
           <p class="text-[#676767] text-xs font-thin">(BTC)</p>
         </div>
         <div class="col-span-3 flex items-center justify-center text-base text-white font-light gap-2">
-          <span class="">۳,۹۹۳,۰۰۰,۰۰۰</span>
-          <span class="">IRT</span>
+          <span class="text-base">۳,۹۹۳,۰۰۰,۰۰۰</span>
+          <span class="text-base">IRT</span>
         </div>
-        <div class="col-span-2 flex items-center justify-center text-base text-red-500 font-light">
+        <div class="hidden lg:col-span-2 lg:flex items-center justify-center text-base text-red-500 font-light">
           <span class="">۰.۵۹٪ -</span>
         </div>
         <div class="hidden lg:flex col-span-2 items-center justify-center text-base text-white font-light">
