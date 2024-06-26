@@ -27,7 +27,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex flex-row w-full py-[3.75rem] sm:py-20  max-w-[82.5rem]  mx-auto features-slider" >
+  <div class="flex flex-row w-full py-[2.5rem] 2xl:py-[3.75rem] sm:py-20 max-w-[82.5rem] mx-auto features-slider" >
     <swiper :slidesPerView="'auto'" :spaceBetween="20" :freeMode="true" :modules="modules" class="mySwiper"
       :slidesOffsetBefore="20" :slidesOffsetAfter="20" :breakpoints="{
         '1536': {
@@ -41,27 +41,28 @@ export default {
       <swiper-slide>
         <Service title="کارمزد 0%">
           <template #icon>
-            <img src="~/assets/images/0.png" alt="wage" />
+            <img src="~/assets/images/no-fee.svg" alt="wage" />
           </template>
         </Service>
       </swiper-slide>
       <swiper-slide>
         <Service title="درآمد با دعوت دوستان">
           <template #icon>
-            <img src="~/assets/images/Money.png" alt="wage" />
+            <!-- <img src="~/assets/images/earn-by-inviting-friends.svg" alt="wage" /> -->
+            <img class="w-auto h-full" src="~/assets/images/Money.png" alt="wage" />
           </template>
         </Service>
       </swiper-slide><swiper-slide>
         <Service title="بات معامله گر">
           <template #icon>
-            <img src="~/assets/images/bot.png" alt="wage" />
+            <img src="~/assets/images/trader-bot.svg" alt="wage" />
           </template>
         </Service>
       </swiper-slide>
       <swiper-slide>
         <Service title="پشتیبانی 24 ساعته">
           <template #icon>
-            <img src="~/assets/images/Support.png" alt="wage" />
+            <img src="~/assets/images/full-support.svg" alt="wage" />
           </template>
         </Service>
       </swiper-slide>
@@ -102,9 +103,9 @@ export default {
 
   <section class="relative max-w-[82.5rem] mx-auto ">
 
-    <div class="flex flex-col lg:rounded-[30px] bg-opacity-50 bg-[#171717] relative z-10">
+    <div class="flex flex-col lg:rounded-[30px] bg-opacity-50 pb-[5rem] lg:pb-[4.688rem] bg-[#171717] relative z-10">
       <div
-        class="grid grid-cols-1 md:grid-cols-2 2xl:flex 2xl:flex-row px-[2.438rem] lg:px-[2.25rem] pt-[2.5rem] lg:pt-[3.125rem] h-full gap-[2.5rem] pb-[#3.313]">
+        class="grid grid-cols-1 md:grid-cols-2 2xl:flex 2xl:flex-row px-[2.438rem] lg:px-[2.25rem] pt-[2.5rem] lg:pt-[3.125rem] h-full gap-[2.5rem]   -[3.313rem]">
         <div class="flex-1 feature-item-container">
           <div class="feature-item">
             <service-plus title="خرید و فروش آسان" description="خرید و فروش بیش از 130 توکن">
@@ -143,7 +144,7 @@ export default {
         </div>
       </div>
 
-      <div class="w-full h-[3.75rem] flex items-center justify-center lg:px-[10.75rem] py-[5.563rem] gap-20">
+      <div class="w-full h-[3.75rem] flex items-center justify-center lg:px-[10.75rem] pt-[5.563rem] gap-20">
         <div class="relative">
           <button class="bg-[#FF7028] w-[13.5rem] h-14 text-white rounded-md z-20 relative">
             شروع معامله
@@ -245,10 +246,4 @@ export default {
   width: auto;
 }
 
-.features-slider .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 </style>

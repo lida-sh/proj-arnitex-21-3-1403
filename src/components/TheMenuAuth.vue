@@ -8,20 +8,10 @@
             fill="white" />
         </svg>
       </div>
-      <div class="">
-        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M6.92399 0.0122561C7.20484 -0.0452426 7.51028 0.104337 7.63779 0.360998C7.73488 0.540577 7.72946 0.758488 7.65654 0.945567C7.11192 2.49136 7.00858 4.18799 7.35818 5.78879C7.65904 7.18834 8.30366 8.51206 9.21998 9.61161C10.2017 10.7978 11.4964 11.7207 12.9365 12.264C14.8729 13.0032 17.068 13.0369 19.0244 12.3528C19.2107 12.2782 19.4265 12.257 19.6115 12.3478C19.9074 12.4774 20.072 12.8395 19.9695 13.1474C19.0919 15.6977 17.1422 17.8464 14.7083 19.0006C12.7948 19.9176 10.5922 20.2155 8.50368 19.8447C6.57271 19.5122 4.74426 18.611 3.30791 17.2777C2.25325 16.3044 1.39945 15.1111 0.83649 13.7898C-0.272335 11.2445 -0.279002 8.24581 0.817739 5.69504C1.92906 3.05552 4.20005 0.913068 6.92399 0.0122561ZM1.7553 7.01209C1.2261 8.67038 1.1986 10.4837 1.67696 12.1574C2.13241 13.7707 3.05331 15.2481 4.30173 16.3673C5.93559 17.8456 8.13115 18.6826 10.3355 18.6614C12.1218 18.6551 13.9015 18.0952 15.3696 17.0773C16.5276 16.2806 17.4889 15.204 18.1539 13.9665C17.1576 14.164 16.1325 14.2186 15.1212 14.1198C12.681 13.889 10.3355 12.757 8.64869 10.9766C7.61945 9.88786 6.83231 8.57205 6.35937 7.15C5.78933 5.45004 5.67682 3.60092 6.03018 1.84346C4.00796 2.9276 2.4391 4.82131 1.7553 7.01209Z"
-            fill="white" />
-        </svg>
-      </div>
+      <UiThemeToggle></UiThemeToggle>
     </div>
     <div class="flex xl:hidden items-center justify-center">
-      <img
-            src="~/assets/images/zoom.png"
-            class="h-5 w-5"
-          />
-    </div>
+      <IconsHeaderMobSearch></IconsHeaderMobSearch>  </div>
     
     <div class="h-[2.125rem] px-[2.125rem] xl:px-0 xl:h-auto border-l border-[#676767] xl:border-l-0 ">
       <div
@@ -32,7 +22,7 @@
         </div>
       </div>
       <div class="flex items-center justify-center h-full xl:hidden">
-        <img src="~/assets/images/Bell.png" class="w-5 h-[1.375rem]" />
+        <IconsHeaderMobNotification></IconsHeaderMobNotification>
       </div>
     </div>
     
@@ -41,9 +31,9 @@
       <a href="/" class="hidden 2xl:block xl:w-[7.5rem] xl:h-4">
         <img src="~assets/images/arnitex.png" class="" />
       </a>
-      <div class="w-16 xl:w-[4.5rem] h-full flex items-center justify-center">
-        <img src="~/assets/images/logo.png" class="w-8 h-7" />
-      </div>
+      <NuxtLink to="/" class="w-16 px-[1.25rem] py-[1.063rem] xl:w-[4.5rem] h-full flex items-center justify-center">
+        <IconsHeaderMobLogo></IconsHeaderMobLogo>
+      </NuxtLink>
     </div>
 
     <!-- <chevron-down-icon class="w-4 h-4 mr-1"></chevron-down-icon> -->

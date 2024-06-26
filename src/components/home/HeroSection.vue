@@ -4,7 +4,7 @@
 <template>
   <section class="block">
 
-    <div class="w-screen max-w-[95rem] mx-auto">
+    <div class="w-screen max-w-[95rem] mt-[4rem] mx-auto">
       <div
         class="relative w-full h-auto gap-[1.104rem] lg:flex lg:justify-between lg:pr-24 lg:pl-[5.563rem] px-4 mx-auto  py-10 sm:max-w-[38rem] lg:max-w-full">
         <!-- <div class="absolute">
@@ -20,16 +20,16 @@
               بازار بین المللی خرید و فروش ارز دیجیتال
             </div>
             <div
-              class="w-[20.5rem] lg:w-[22.5rem] h-14 mt-[3.75rem] lg:mt-[1.75rem] relative rounded-md text-white text-base">
+              class="w-[20.5rem] lg:w-[22.5rem] h-14 mt-[3.75rem] lg:mt-[1.75rem] rounded-md text-white relative text-base">
 
               <input type="text"
-                class="w-full h-full bg-[#262626] border-2 border-[#676767] focus:ring-0 focus:border-gray-600 text-white placeholder-white z-50"
+                class="w-full h-full bg-[#262626] rounded-lg border-2 border-[#676767] focus:ring-0 focus:border-gray-600 text-white relative placeholder-white z-10"
                 placeholder="شماره همراه یا ایمیل" />
-              <div
-                class="bg-[#FF7028] absolute left-0 top-0 h-full w-28 flex items-center justify-center rounded-md z-20">
+              <button
+                class="bg-[#FF7028] absolute left-0 top-0 h-full w-28 flex items-center justify-center rounded-lg z-20">
                 ثبت نام
-              </div>
-              <div class="absolute w-[34.375rem] h-[34.375rem] left-12 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50">
+              </button>
+              <div class="absolute w-[34.375rem] h-[34.375rem] left-12 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
                 <UiPulsShadow></UiPulsShadow>
               </div>
             </div>
@@ -46,7 +46,7 @@
           <img class="w-full h-full" loading="lazy" :src="data.src" />
         </figure>
       </div> -->
-        <div class="flex items-center justify-center mt-[1.104rem] lg:justify-end relative z-30">
+        <div class="flex items-center justify-center mt-[2rem] lg:mt-[unset] lg:justify-end relative z-30">
           <div class="aspect-video">
             <figure class="">
               <img src="~/assets/images/123.png" alt=""

@@ -21,10 +21,10 @@ export const useMenu = ()=>{
         setAnimation()
     })
     //@ts-ignore
-    useEventListener('resize',useDebounceFn(()=>{
-        removeProps()
-        setAnimation()
-    }),500)
+    // useEventListener('resize',useDebounceFn(()=>{
+    //     removeProps()
+    //     setAnimation()
+    // }),500)
     const toggleMenu = ()=>{
         if(menuAnimation.progress() === 0){
             menuAnimation?.play()
