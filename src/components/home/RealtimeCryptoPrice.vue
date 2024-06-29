@@ -220,7 +220,7 @@
           <span class="">نام ارز دیجیتال</span>
         </div>
         <div class="col-span-1 lg:col-span-2 flex items-center justify-center ">
-          <span class="">آخرین قیمت ( تتر)</span>
+          <span class="">آخرین قیمت (  تومان)</span>
         </div>
         <div class="hidden lg:col-span-2 lg:flex items-center justify-center">
           <span class="">تغییر ۲۴h</span>
