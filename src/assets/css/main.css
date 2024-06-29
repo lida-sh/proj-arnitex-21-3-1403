@@ -110,6 +110,7 @@ body {
   .sun-menu-hover {
     hover: bg-gray-300;
   }
+ 
 }
 @layer utilities {
   .bg-custom-radial-end {
@@ -126,6 +127,7 @@ body {
       rgba(255, 112, 40, 0) 100%
     );
   }
+  
 }
 
 .card-bg {

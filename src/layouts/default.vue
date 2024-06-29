@@ -1,12 +1,18 @@
 <template>
-    <div>
+  <div>
+    <section class="flex flex-col min-h-screen">
       <HeaderSticky></HeaderSticky>
-      <slot></slot>
+      <div class="flex flex-col flex-1">
+        <NuxtPage></NuxtPage>
+      </div>
+      
       <FooterMainFooter v-if="showFooter"></FooterMainFooter>
-    </div>
-  </template>
-  
-  <script lang="ts" setup>
+    </section>
+
+  </div>
+</template>
+
+<script lang="ts" setup>
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
