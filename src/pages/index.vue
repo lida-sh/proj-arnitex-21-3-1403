@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 useHead
   ({
     title: 'آرنیتکس | صفحه اصلی',
@@ -6,7 +7,8 @@ useHead
 </script>
 <template>
   <div>
-    <main class="bg-black overflow-hidden">
+    <main class="bg-black overflow-hidden pt-[64px]">
+      <HomeUserDashboard></HomeUserDashboard>
       <HomeHeroSection></HomeHeroSection>
       <HomeTickerTradingviewWidget></HomeTickerTradingviewWidget>
       <HomeFeaturesSection></HomeFeaturesSection>
