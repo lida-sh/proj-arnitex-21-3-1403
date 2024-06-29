@@ -106,6 +106,9 @@ body {
 .c-container {
   @apply w-full mx-auto h-full px-[1rem] lg:px-[2rem] xl:px-[4.25rem] 2xl:px-[6.25rem] max-w-[30rem] lg:max-w-[95rem];
 }
+.c-container-sm-full {
+  @apply w-full mx-auto h-full lg:px-[2rem] xl:px-[4.25rem] 2xl:px-[6.25rem] max-w-[30rem] lg:max-w-[95rem];
+}
 @layer components {
   .sun-menu-hover {
     hover: bg-gray-300;
