@@ -1,11 +1,12 @@
 <template>
-	<div class="bg-[#171717] w-full mt-[8.125rem] pt-9 pb-6">
-		<h2 class="text-[36px] font-normal text-white text-center ">کپی تریدینگ: “به اشتراک گذاشتن ایده‌ها، رسیدن به موفقیت"</h2>
-		<div class="flex flex-row w-full py-[2.5rem] 2xl:py-[3.75rem] sm:py-20 max-w-[82.5rem] mx-auto features-slider">
-			<swiper :slidesPerView="'auto'" :spaceBetween="20" :freeMode="true" :modules="modules" class="mySwiper"
-				:slidesOffsetBefore="20" :slidesOffsetAfter="20" :breakpoints="{
+	<div class="bg-transparent xl:bg-[#171717]  w-full mt-[8.125rem] pt-9 pb-6 ">
+		<h2 class="hidden xl:block text-[36px] font-normal text-white text-center ">کپی تریدینگ: “به اشتراک گذاشتن
+			ایده‌ها، رسیدن به موفقیت"</h2>
+		<div class="flex flex-row w-full py-[1.5rem] 2xl:py-[3.75rem]  mx-auto">
+			<swiper :slidesPerView="'auto'" :spaceBetween="8" :freeMode="true" :modules="modules" :centeredSlides="true"
+				class="trading_swipper" :slidesOffsetBefore="20" :slidesOffsetAfter="20" :breakpoints="{
 					'1536': {
-						// spaceBetween: 70,
+						spaceBetween: 20,
 						slidesOffsetBefore: 0,
 						slidesOffsetAfter: 0,
 						freeMode: false,
@@ -31,8 +32,11 @@
 				</swiper-slide>
 			</swiper>
 		</div>
-		<div class="flex justify-center">
-			<button class="w-[11.438rem] h-[3.938rem] bg-[#8C8C8C] rounded-full text-black">بیشتر</button>
+		<div class="flex justify-center items-center flex-col px-9 gap-3">
+			<h2 class="text-base font-normal text-white text-center xl:hidden">کپی تریدینگ: “به اشتراک گذاشتن ایده‌ها،
+				رسیدن به موفقیت"</h2>
+			<button
+				class="w-20 xl:w-[11.438rem] h-8 xl:h-[3.938rem] bg-[#8C8C8C] rounded-full text-black text-[11px] xl:text-[22px]">بیشتر</button>
 		</div>
 	</div>
 </template>
@@ -65,22 +69,23 @@ export default {
 };
 </script>
 <style>
-.features-slider .swiper-container {
+.trading_swipper .swiper-container {
 	width: 100%;
 	height: 100%;
 }
 
-.swiper-wrapper {
+.trading_swipper .swiper-wrapper {
 	width: 100%;
 	height: 100%;
 	justify-content: space-between;
 }
 
-.mySwiper {
+.trading_swipper {
 	width: 100%;
+	justify-content: center;
 }
 
-.swiper-slide {
+.trading_swipper .swiper-slide {
 	text-align: center;
 	/* font-size: 18px; */
 	background: unset;
@@ -99,26 +104,47 @@ export default {
 	align-items: center;
 	width: auto;
 	opacity: .5;
-	transform: scale(.84);
+
 	box-shadow: none;
+	transition: all 200ms linear;
 
 }
 
-.swiper-slide-active {
-	transform: scale(1.2);
+@media only screen and (max-width: 1280px) {
+
+	.trading_swipper .swiper-slide-active {
+		opacity: 1 !important;
+	}
+
+
+	.trading_swipper.swiper-slide.swiper-slide-active {
+		opacity: 1 !important;
+	}
+
+
 }
 
-.swiper-backface-hidden .swiper-slide {
-	transform: scale(.84) translateZ(0);
-}
+@media only screen and (min-width: 1280px) {
+	.trading_swipper .swiper-slide {
+		transform: scale(.84);
+	}
 
-.swiper-slide.swiper-slide-active {
-	transform: scale(1) !important;
-	opacity: 1 !important;
-}
+	.trading_swipper .swiper-slide-active {
+		transform: scale(1.2);
+		opacity: 1 !important;
+	}
 
-.swiper-backface-hidden .swiper-slide.swiper-slide-active {
-	transform: scale(1) translateZ(0) !important;
-}
+	.trading_swipper .swiper-backface-hidden .swiper-slide {
+		transform: scale(.84) translateZ(0);
+	}
 
+	.trading_swipper.swiper-slide.swiper-slide-active {
+		transform: scale(1) !important;
+		opacity: 1 !important;
+	}
+
+	.trading_swipper.swiper-backface-hidden .swiper-slide.swiper-slide-active {
+		transform: scale(1) translateZ(0) !important;
+	}
+}
 </style>
