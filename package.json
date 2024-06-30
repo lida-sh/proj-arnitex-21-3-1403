@@ -17,6 +17,7 @@
     "@vueuse/nuxt": "^10.11.0",
     "apexcharts": "^3.49.2",
     "axios": "^1.7.2",
+    "chart.js": "^4.4.3",
     "gsap": "^3.12.5",
     "nuxt": "^3.12.2",
     "nuxt-marquee": "^1.0.4",

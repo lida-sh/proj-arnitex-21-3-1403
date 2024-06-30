@@ -9,6 +9,9 @@ export default defineNuxtConfig({
   srcDir: "src/",
   devtools: { enabled: false },
   css: ["~/assets/css/main.css"],
+  build: {
+    transpile: ['chart.js']
+  },
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -20,7 +23,9 @@ export default defineNuxtConfig({
       path: "~/components",
     },
   ],
-  plugins: ["~/plugins/auth.js"],
+  plugins: ["~/plugins/auth.js",
+    // '~/plugins/chart.js'
+  ],
   app: {
     head: {
       link: [
