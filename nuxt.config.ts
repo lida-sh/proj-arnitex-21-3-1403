@@ -21,9 +21,12 @@ export default defineNuxtConfig({
     },
   ],
   build: {
-    transpile: ["vue-sonner"],
+    transpile: ["vue-sonner", "chart.js"],
   },
-  plugins: ["~/plugins/auth.js"],
+  plugins: [
+    "~/plugins/auth.js",
+    // '~/plugins/chart.js'
+  ],
   app: {
     head: {
       link: [
