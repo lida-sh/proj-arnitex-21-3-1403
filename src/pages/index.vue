@@ -13,6 +13,7 @@ useHead
       <HomeTickerTradingviewWidget></HomeTickerTradingviewWidget>
       <HomeFeaturesSection></HomeFeaturesSection>
       <HomeRealtimeCryptoPrice></HomeRealtimeCryptoPrice>
+      <HomeCopyTrading></HomeCopyTrading>
       <HomeReferral></HomeReferral>
       <HomeOurAdvantages></HomeOurAdvantages>
       <HomeFAQ></HomeFAQ>
