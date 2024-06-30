@@ -8,7 +8,7 @@ useHead
 <template>
   <div>
     <main class="bg-black overflow-hidden pt-[64px]">
-      <HomeUserDashboard></HomeUserDashboard>
+      <!-- <HomeUserDashboard></HomeUserDashboard> -->
       <HomeHeroSection></HomeHeroSection>
       <HomeTickerTradingviewWidget></HomeTickerTradingviewWidget>
       <HomeFeaturesSection></HomeFeaturesSection>

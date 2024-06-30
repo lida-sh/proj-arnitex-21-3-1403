@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <section dir="rtl" class="text-white flex flex-col mt-[2.75rem] lg:mt-[6.25rem] lg:flex-row px-0 c-container-sm-full">
+  <section dir="rtl" class="text-white flex flex-col mt-[2.75rem] lg:mt-[6.25rem] lg:flex-row px-0 c-container-sm-full gap-[7.5rem]">
     <div class="flex-1">
       <div class="flex flex-col">
         <h3 class="font-semibold text-[1.375rem] px-[1rem] lg:px-0 text-[#676767]">موجودی کل :</h3>
@@ -43,25 +43,30 @@
             <button
               class="bg-opacity-50 bg-[#262626] rounded-xl py-[1rem] lg:py-[1.375rem] flex-1 flex items-center justify-center gap-[1.875rem]">
               <IconsHomeDashboardCoinDeposit></IconsHomeDashboardCoinDeposit>
-              <span class="text-[1rem] leading-[1.5rem] lg:text-[1.375rem] lg:leading-[2.313rem] font-semibold">واریز</span>
+              <span
+                class="text-[1rem] leading-[1.5rem] lg:text-[1.375rem] lg:leading-[2.313rem] font-semibold">واریز</span>
             </button>
             <button
               class="bg-opacity-50 bg-[#262626] rounded-xl py-[1rem] lg:py-[1.375rem] flex-1 flex items-center justify-center gap-[1.875rem]">
               <IconsHomeDashboardCoinWithdraw></IconsHomeDashboardCoinWithdraw>
-              <span class="text-[1rem] leading-[1.5rem] lg:text-[1.375rem] lg:leading-[2.313rem] font-semibold">برداشت</span>
+              <span
+                class="text-[1rem] leading-[1.5rem] lg:text-[1.375rem] lg:leading-[2.313rem] font-semibold">برداشت</span>
             </button>
           </div>
           <button
             class="bg-opacity-50 bg-[#262626] rounded-xl py-[1rem] lg:py-[1.375rem] flex-1 flex items-center justify-center gap-[1.875rem]">
             <IconsHomeDashboardCoinEasyBuying></IconsHomeDashboardCoinEasyBuying>
-            <span class="text-[1rem] leading-[1.5rem] lg:text-[1.375rem] lg:leading-[2.313rem] font-semibold">خرید آسان</span>
+            <span class="text-[1rem] leading-[1.5rem] lg:text-[1.375rem] lg:leading-[2.313rem] font-semibold">خرید
+              آسان</span>
           </button>
         </div>
       </div>
       <div></div>
     </div>
     <div class="flex-1">
-      نمودار
+      <ClientOnly>
+        <HomeUserDashboardChart></HomeUserDashboardChart>
+      </ClientOnly>
     </div>
   </section>
 </template>
