@@ -85,7 +85,7 @@
   </div>
 </template>
 <script setup lang="ts">
-const isAuthenticated = ref(true)
+const isAuthenticated = ref(false)
 const links = [
   {
     title: "داشبورد",

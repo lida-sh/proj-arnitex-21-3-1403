@@ -80,16 +80,16 @@
   --Light-Grey: #343434;
   --black: #000;
   --black-mute: #676767;
-  --mid-grey:#262626;
+  --mid-grey: #262626;
   --dark-grey: #171717;
-  --hell-grey: #0E0E0E;
+  --hell-grey: #0e0e0e;
   --gradient-deep-grey: linear-gradient(0deg, #171717 0%, #262626 100%);
-  --red: #EA3C53;
-  --green: #5CBC76;
-  --green-shade-1: #319B54;
-  --error: #FFA928;
-  --primary: #FF7028;
-} 
+  --red: #ea3c53;
+  --green: #5cbc76;
+  --green-shade-1: #319b54;
+  --error: #ffa928;
+  --primary: #ff7028;
+}
 
 @tailwind base;
 @tailwind components;
@@ -113,7 +113,6 @@ body {
   .sun-menu-hover {
     hover: bg-gray-300;
   }
- 
 }
 @layer utilities {
   .bg-custom-radial-end {
@@ -130,7 +129,6 @@ body {
       rgba(255, 112, 40, 0) 100%
     );
   }
-  
 }
 
 .card-bg {
@@ -146,4 +144,19 @@ body {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+}
+
+@media (max-width: 600px) {
+  [data-sonner-toaster] {
+    --offset: 0 !important;
+  }
+}
+
+[data-sonner-toast] {
+  direction: rtl;
+  font-family: "siteFont";
+}
+
+[data-sonner-toast][data-styled=true] {
+  gap: 16px !important;
 }

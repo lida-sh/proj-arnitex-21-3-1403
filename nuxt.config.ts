@@ -20,6 +20,9 @@ export default defineNuxtConfig({
       path: "~/components",
     },
   ],
+  build: {
+    transpile: ["vue-sonner"],
+  },
   plugins: ["~/plugins/auth.js"],
   app: {
     head: {
