@@ -48,4 +48,8 @@ const test = () => {
   </div>
 </template>
 
-<style></style>
+<style scoped>
+.modal{
+  /* pointer-events: unset; */
+}
+</style>

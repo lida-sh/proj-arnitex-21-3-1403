@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-3 w-[15.813rem] bg-[#171717] p-4 rounded-b-lg text-white z-50">
+  <div @click.stop="" class="flex flex-col gap-3 w-[15.813rem] bg-[#171717] p-4 pb-10 rounded-b-lg text-white z-50 ">
     
     <div class="flex items-center justify-start gap-4">
       <div class="flex items-center justify-center">
@@ -12,9 +12,9 @@
     </div>
     <NuxtLink v-for="(item, index) in links" :to="item.to" :key="index" class="w-full text-sm font-bold">
       <div class="flex items-center gap-3">
-        <div v-if="item.icon" class="flex items-center justify-center">
+        <!-- <div v-if="item.icon" class="flex items-center justify-center">
           <component :is="item.icon" />
-        </div>
+        </div> -->
         {{ item.title }}
       </div>
     </NuxtLink>
