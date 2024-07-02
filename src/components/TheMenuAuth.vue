@@ -37,6 +37,7 @@
               </div> -->
         <div class="flex items-center justify-center h-full ml-[2.375rem]">
           <IconsHeaderMobNotification></IconsHeaderMobNotification>
+          
         </div>
         <div class="flex items-center justify-center h-full ml-[0.813rem]">
           <IconsHeaderWallet></IconsHeaderWallet>
@@ -73,8 +74,14 @@
         </div>
 
       </div>
-      <div v-if="isAuthenticated" class="flex items-center justify-center h-full xl:hidden">
-        <IconsHeaderMobNotification></IconsHeaderMobNotification>
+      <div v-if="isAuthenticated" class="flex items-center justify-center h-full xl:hidden relative">
+        <IconsHeaderMobNotification></IconsHeaderMobNotification @click="toggleMenuNotif">
+        <div ref="targetNotif" class="fixed h-0 invisible inset-x-0 top-10 flex flex-col w-screen  bg-[#171717] px-4">
+            <div class="flex items-center justify-center">
+              <button class="w-[9.75rem] h-[3.5rem] bg-[#FF7028] flex items-center justify-center">همه پیام ها</button>
+              <button class="w-[9.75rem] h-[3.5rem] bg-[#343434] flex items-center justify-center">خوانده نشده ها</button>
+            </div>
+          </div>
       </div>
     </div>
     <div class="flex items-center justify-center xl:border-r xl:border-[#676767] xl:pr-6 pl-[0.44rem] xl:pl-0">
@@ -107,4 +114,5 @@ const isAuthenticated = ref(true)
 
 
 const { toggleMenu, closeMenu, targetAuth } = useMenuAuth()
+ const {targetNotif, toggleMenuNotif, closeMenuNotif, openMenuNotif} = useMenuNotif()
 </script>

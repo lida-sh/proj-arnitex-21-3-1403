@@ -34,10 +34,10 @@
             </div>
 
             <router-link v-for="(item, index) in links" :key="`menu-${index}`" :to="item.to"
-              class="w-full xl:w-auto pr-0 xl:pr-4 bg-[#171717] xl:bg-transparent">
+              class=" group w-full xl:w-auto pr-0 xl:pr-4 bg-[#171717] xl:bg-transparent">
               <div
-                class="flex flex-col xl:flex-row pt-[0.5rem] xl:items-center justify-center relative w-auto xl:w-[5.938rem] hover:text-[#FF7028]"
-                :class="{ 'text-[#FF7028] bg-[#343434] xl:bg-transparent': menu[index] }" @click="toggleSubMenu(index)">
+                class="flex flex-col  xl:flex-row pt-[0.5rem] xl:items-center justify-center relative w-auto xl:w-[5.938rem] hover:text-[#FF7028]"
+                :class="{ 'text-[#FF7028] bg-[#343434] xl:bg-transparent': menu[index] }">
                 <div class="flex items-center gap-[0.8rem] px-[1.243rem] xl:px-0 py-3">
                   <div class="text-sm">
                     {{ item.title }}
@@ -50,31 +50,72 @@
                   </div>
                 </div>
 
+                <div
+                  class="relative xl:absolute xl:pt-12 max-h-0 group-hover:max-h-96 top-0 xl:h-auto overflow-hidden transition-all duration-300">
+                  <div
+                    class=" xl:right-0 w-full xl:w-[12.5rem] mt-[0.625rem] bg-[#262626] xl:bg-[#171717] overflow-hidden xl:rounded-b-[0.625rem] text-white z-50"
+                    :id="`menu-${index}`">
+                    <template v-for="(subMenu, i) in item.subMenu" :key="`sub-menu-${i}`">
+                      <div
+                        class="w-full h-12 bg-[#262626] px-[1.6rem] py-3 bg-opacity-50 backdrop-blur-xl xl:hover:bg-[#343434] text-sm hover:text-[#FF7028]">
 
-                <div :class="{ 'max-h-96': (menu[index] && item.child) }"
-                  class="relative xl:absolute xl:right-0 w-full xl:h-auto xl:w-[12.5rem] xl:top-12 overflow-hidden mt-[0.625rem] bg-[#262626] xl:bg-[#171717] xl:rounded-b-[0.625rem] text-white z-50"
-                  :id="`menu-${index}`" v-if="menu[index] && item.child">
-                  <template v-for="(subMenu, i) in item.subMenu" :key="`sub-menu-${i}`">
-                    <div  class="w-full h-12 bg-[#262626] px-[1.6rem] py-3 bg-opacity-50 backdrop-blur-xl xl:hover:bg-[#343434] text-sm hover:text-[#FF7028]">
-
-                      <NuxtLink :to="subMenu.to"
-                       >
-                        {{ subMenu.title }}
-                      </NuxtLink>
-                    </div>
-                  </template>
+                        <NuxtLink :to="subMenu.to">
+                          {{ subMenu.title }}
+                        </NuxtLink>
+                      </div>
+                    </template>
+                  </div>
                 </div>
               </div>
             </router-link>
           </div>
         </section>
-        <div
-          class="flex items-center justify-center xl:mr-[2.688rem] w-[9.625rem] xl:w-[12.5rem] h-[2.625rem] relative mr-0">
+        <div class="flex items-center justify-center xl:mr-[2rem] xl:w-[12.5rem] h-[2.625rem] relative mr-0">
+          
           <input type="text"
-            class="h-full w-full rounded-md bg-[#262626] px-4 focus:border-gray-600 focus:ring-0 text-gray-100 border-0 placeholder:text-sm"
+            class="peer h-full w-full rounded-md bg-[#262626] px-4 focus:ring-0 focus:border focus:border-[#FF7028] text-gray-100 border-0 placeholder:text-sm"
             placeholder="جستجوی رمز ارز" />
           <img src="~/assets/images/zoom.png" class="h-5 w-5 absolute top-3 left-4" />
+          <div class="peer-focus:flex hidden w-14 h-14 text-white absolute left-full  bg-[#171717]  items-center justify-center z-[200]">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+            </svg>
+
+          </div>
+          <div
+            class="xl:hidden fixed h-auto overflow-hidden max-h-0 top-14 inset-x-0 peer-focus:max-h-96 peer-blur:max-h-0 flex-col divide-[#A8A8A8] divide-y-[0.5px] bg-[#171717] px-[1.25rem] z-[200] transition-all duration-300">
+            <div class="flex items-center text-base font-medium  py-[0.938rem]">
+              <div class="w-[3.125rem] h-[3.125rem] flex items-center justify-center">
+                <img src="~/assets/images/btc.png" alt="" class="w-full h-full">
+              </div>
+              <h6 class="text-white mr-[0.625rem]">بیت کوین</h6>
+              <span class="text-[#A8A8A8] mr-[3.063rem]">(BTC)</span>
+            </div>
+            <div class="flex items-center text-base font-medium py-[0.938rem]">
+              <div class="w-[3.125rem] h-[3.125rem] flex items-center justify-center">
+                <img src="~/assets/images/btc.png" alt="" class="w-full h-full">
+              </div>
+              <h6 class="text-white mr-[0.625rem]">بیت کوین</h6>
+              <span class="text-[#A8A8A8] mr-[3.063rem]">(BTC)</span>
+            </div>
+            <div class="flex items-center text-base font-medium py-[0.938rem]">
+              <div class="w-[3.125rem] h-[3.125rem] flex items-center justify-center">
+                <img src="~/assets/images/btc.png" alt="" class="w-full h-full">
+              </div>
+              <h6 class="text-white mr-[0.625rem]">بیت کوین</h6>
+              <span class="text-[#A8A8A8] mr-[3.063rem]">(BTC)</span>
+            </div>
+            <div class="flex items-center text-base font-medium py-[0.938rem]">
+              <div class="w-[3.125rem] h-[3.125rem] flex items-center justify-center">
+                <img src="~/assets/images/btc.png" alt="" class="w-full h-full">
+              </div>
+              <h6 class="text-white mr-[0.625rem]">بیت کوین</h6>
+              <span class="text-[#A8A8A8] mr-[3.063rem]">(BTC)</span>
+            </div>
+          </div>
         </div>
+
       </div>
 
       <!-- <client-only>
@@ -173,6 +214,7 @@ onBeforeMount(() => {
 });
 
 const { target, toggleMenu, closeMenu, openMenu } = useMenu();
+
 </script>
 
 <style scoped></style>
