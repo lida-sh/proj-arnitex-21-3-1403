@@ -27,6 +27,11 @@ export default defineNuxtConfig({
     "~/plugins/auth.js",
     // '~/plugins/chart.js'
   ],
+  runtimeConfig: {
+    public: {
+      apiBaseURL: process.env.API_BASE_URL || "https://arnitex.ir/api/v1/",
+    },
+  },
   app: {
     head: {
       link: [

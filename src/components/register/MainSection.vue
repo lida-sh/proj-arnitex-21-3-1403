@@ -31,38 +31,6 @@ import VOtpInput from "vue3-otp-input";
           </p>
         </div>
 
-        <dialog id="my_modal_2" class="modal">
-          <div
-            class="modal-box  sm:p-[50px] bg-[#171717] sm:bglogin w-[350px] sm:w-[500px] rounded-[36px] h-[430px] sm:h-[500px]">
-            <div class="">
-              <div class="mt-[20px] flex flex-col w-full">
-                <label class="text-[14px] text-[#fff] my-2" for="">کد ۵ رقمی به شماره تلفن شما ارسال
-                  شد</label>
-
-                <div dir="ltr" class="flex justify-center mt-5 items-center">
-
-                  <v-otp-input ref="otpInput" input-classes="otp-input w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
-                    :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5" :should-auto-focus="true"
-                    :should-focus-order="true" @on-change="handleOnChange" @on-complete="handleOnComplete" />
-                </div>
-              </div>
-              <div class=" w-full flex flex-col h-[60px] justify-center items-end">
-                <div v-if="timer > 0">{{ formattedTimer }}</div>
-                <button class="text-[#FF7028]" @click="sendLoginOtpAgain" v-else v-show="showResendButton">
-                  ارسال مجدد کد
-                </button>
-              </div>
-
-              <button @click="OTP"
-                class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[22px]">
-                ادامه
-              </button>
-            </div>
-          </div>
-          <form method="dialog" class="modal-backdrop">
-            <button>close</button>
-          </form>
-        </dialog>
       </div>
     </div>
   </div>
