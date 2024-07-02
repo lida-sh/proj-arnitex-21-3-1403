@@ -1,7 +1,6 @@
 <template>
   <div>
-
-    <section class="flex flex-col min-h-screen">
+    <div class="flex flex-col min-h-screen">
       <HeaderSticky></HeaderSticky>
       <div class="flex flex-col flex-1">
 
@@ -10,8 +9,7 @@
       </div>
 
       <FooterMainFooter v-if="showFooter"></FooterMainFooter>
-    </section>
-
+    </div>
   </div>
 </template>
 

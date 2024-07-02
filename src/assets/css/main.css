@@ -96,7 +96,7 @@
 @tailwind utilities;
 
 body {
-  @apply overflow-y-scroll;
+  /* @apply overflow-y-scroll; */
   @apply overflow-x-hidden;
   direction: rtl;
   font-family: "siteFont", serif !important;
@@ -159,4 +159,9 @@ body {
 
 [data-sonner-toast][data-styled=true] {
   gap: 16px !important;
+}
+
+:root:has(:is(.modal-open, .modal:target, .modal-toggle:checked + .modal, .modal[open])) {
+  overflow: hidden;
+  scrollbar-gutter: auto;
 }
