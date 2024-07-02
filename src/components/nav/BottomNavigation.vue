@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 
 const activeTab = ref(1);
 
@@ -40,13 +40,18 @@ const isActive = (index) => {
 const moveActiveTo = (index) => {
   activeTab.value = index;
 }
+const emit = defineEmits(["toggleToProfileMenu"])
+const toggleProfileMenu = ()=>{
+  emit("toggleToProfileMenu")
+}
+
 </script>
 
 <template>
   <nav class="nav-button-container">
     <div class="z-[100] fixed bottom-0 left-0 h-[4.5rem] w-full">
       <div class="relative flex h-full">
-        <span class="dd bottom-nav-back-start bg-[#171717] z-40 flex-1" ></span>
+        <span class="dd bottom-nav-back-start bg-[#171717] z-40 flex-1"></span>
         <div class="z-30 relative">
           <span class="selected-circle"></span>
           <IconsBottomNavigationSelected class="indicator mx-[-2px] mb-[-1px]"></IconsBottomNavigationSelected>
@@ -59,8 +64,8 @@ const moveActiveTo = (index) => {
               <NuxtLink href="#" @click="moveActiveTo(1)" :class="{ 'bottom-nav-link-selected': isActive(1) }"
                 class="nav-link">
 
-                  <IconsBottomNavigationHomeSelected v-if="isActive(1)"></IconsBottomNavigationHomeSelected>
-                  <IconsBottomNavigationHome v-else></IconsBottomNavigationHome>
+                <IconsBottomNavigationHomeSelected v-if="isActive(1)"></IconsBottomNavigationHomeSelected>
+                <IconsBottomNavigationHome v-else></IconsBottomNavigationHome>
                 <span class="nav-link-text">خانه</span>
               </NuxtLink>
             </li>
@@ -88,12 +93,14 @@ const moveActiveTo = (index) => {
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" @click="moveActiveTo(5)" :class="{ 'bottom-nav-link-selected': isActive(5) }"
+              <div to="/" @click="()=>{moveActiveTo(5);toggleProfileMenu()}" :class="{ 'bottom-nav-link-selected': isActive(5) }"
                 class="nav-link">
                 <IconsBottomNavigationProfileSelected v-if="isActive(5)"></IconsBottomNavigationProfileSelected>
                 <IconsBottomNavigationProfile v-else></IconsBottomNavigationProfile>
                 <span class="nav-link-text">پروفایل</span>
-              </NuxtLink>
+                
+              </div>
+              
             </li>
           </ul>
         </div>
@@ -129,7 +136,7 @@ const moveActiveTo = (index) => {
   transition: all ease-in 0.3s;
 }
 
-.nav-link-text {  
+.nav-link-text {
   font-weight: 300;
   font-size: 0.625rem;
   line-height: 1.25rem;

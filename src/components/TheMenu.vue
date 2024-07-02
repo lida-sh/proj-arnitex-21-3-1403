@@ -14,25 +14,23 @@
             </svg>
           </button>
           <div ref="target"
-            class="fixed shadow-lg -right-96 top-0 px-0 h-screen w-auto  xl:visible flex flex-col xl:flex-row items-center bg-[#171717] xl:static xl:bg-transparent xl:rounded-none xl:shadow-none xl:border-none xl:mt-0 xl:h-auto text-sm z-50">
-            <div class="flex bg-[#171717]">
-              <div class="w-[4.375rem] h-[3.5rem] flex items-center justify-center xl:hidden" @click="closeMenu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 18" fill="none">
-                  <rect x="4.22168" y="-0.191406" width="24" height="2" rx="1" transform="rotate(45 4.22168 -0.191406)"
-                    fill="#D9D9D9" />
-                  <rect x="11" y="8" width="2" height="2" rx="1" fill="#D9D9D9" />
-                  <rect x="2.80762" y="16.7773" width="24" height="2" rx="1" transform="rotate(-45 2.80762 16.7773)"
-                    fill="#D9D9D9" />
+            class="fixed shadow-lg -right-[200rem] top-0 px-0 h-screen w-2/3 xl:visible flex flex-col xl:flex-row items-center bg-[#171717] xl:static xl:bg-transparent xl:rounded-none xl:shadow-none xl:border-none xl:mt-0 xl:h-auto text-sm z-50">
+            <div class="flex bg-[#171717] justify-start w-full">
+              <div class="w-[4.375rem] h-[3.5rem] flex items-center justify-center xl:hidden mr-0" @click="closeMenu">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="size-6">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
                 </svg>
+
               </div>
-              <div class="flex gap-[0.38rem] pl-[1.25rem] py-[0.44rem]">
+              <!-- <div class="flex gap-[0.38rem] pl-[1.25rem] py-[0.44rem]">
                 <div class="flex items-center justify-center h-[2.625rem] w-[12.5rem] relative xl:hidden">
                   <input type="text"
                     class="h-full w-full rounded-md bg-[#262626] px-4 focus:border-gray-600 focus:ring-0 text-gray-100 border-0"
                     placeholder="جستجوی رمز ارز" />
                   <HeaderMobHSearch class="h-5 w-5 absolute top-3 left-4" />
                 </div>
-              </div>
+              </div> -->
             </div>
 
             <router-link v-for="(item, index) in links" :key="`menu-${index}`" :to="item.to"
@@ -67,7 +65,8 @@
             </router-link>
           </div>
         </section>
-        <div class="hidden 2xl:flex items-center justify-center xl:mr-0 w-[12.5rem] h-[2.625rem] relative mr-[1.94rem]">
+        <div
+          class="flex items-center justify-center xl:mr-[2.688rem] w-[9.625rem] xl:w-[12.5rem] h-[2.625rem] relative mr-0">
           <input type="text"
             class="h-full w-full rounded-md bg-[#262626] px-4 focus:border-gray-600 focus:ring-0 text-gray-100 border-0 placeholder:text-sm"
             placeholder="جستجوی رمز ارز" />
@@ -75,8 +74,7 @@
         </div>
       </div>
 
-      <section class="">
-        <!-- <client-only>
+      <!-- <client-only>
         <button
           v-if="!authStore.isLoggedIn"
           class="btn btn-link lg:ml-4 no-animation"
@@ -88,11 +86,10 @@
           <the-menu-auth></the-menu-auth>
         </template>
       </client-only>  -->
-        <!-- <router-link class="text-gray-600 font-bold" to="/"
+      <!-- <router-link class="text-gray-600 font-bold" to="/"
         >آکادمی لند</router-link -->
 
-        <the-menu-auth></the-menu-auth>
-      </section>
+      <the-menu-auth></the-menu-auth>
     </div>
   </div>
 </template>
