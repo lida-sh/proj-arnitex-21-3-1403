@@ -1,7 +1,6 @@
 <script setup lang="ts">
 
-useHead
-  ({
+useHead({
     title: 'آرنیتکس | صفحه اصلی',
   })
 const { target, toggleMenu, closeMenu, openMenu } = useMenuProfile();

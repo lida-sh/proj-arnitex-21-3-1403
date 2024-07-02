@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { toast } from 'vue-sonner'
-import { isEmailOrIranianPhoneNumber } from '~/utils/validationUtils'
+import { isEmailOrPhoneNumber } from '~/utils/validationUtils'
 
 const router = useRouter()
 
@@ -16,7 +16,7 @@ const submitForm = () => {
   if (!inputText.value) {
     errorMessage = 'خطا - ورودی خالی است!'
   }
-  if (isEmailOrIranianPhoneNumber(inputText.value)) {
+  if (isEmailOrPhoneNumber(inputText.value)) {
     router.push({ path: "/register", query: { u: `${inputText.value}` } })
     return;
   } else {
@@ -51,7 +51,7 @@ const submitForm = () => {
             <div
               class="flex w-[20.5rem] lg:w-[22.5rem] h-14 mt-[3.75rem] lg:mt-[1.75rem] rounded-md text-white relative text-base">
 
-              <input v-model="inputText" @focus="inputFocus = true" @blur="inputFocus = false" type="text"
+              <input v-model="inputText" @keyup.enter="submitForm" @focus="inputFocus = true" @blur="inputFocus = false" type="text"
                 class="centered-input w-full h-full bg-[#262626] rounded-lg border-2 border-[#676767] focus:ring-0 focus:border-gray-600 text-white relative placeholder-white z-10"
                 :placeholder="placeholderText" />
               <button @click="submitForm"
