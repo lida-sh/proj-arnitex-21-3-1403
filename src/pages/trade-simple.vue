@@ -2,7 +2,7 @@
 
 <template>
   <main class="bg-black pt-[64px]">
-    <iframe class="w-full" src="http://old.arnitex.ir/trade/simple/TOMAN/BITCOIN"
+    <iframe class="w-full" src="https://old.arnitex.ir/trade/simple/TOMAN/BITCOIN"
       onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';"></iframe>
   </main>
 </template>
