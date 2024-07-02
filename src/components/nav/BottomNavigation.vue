@@ -46,7 +46,7 @@ const moveActiveTo = (index) => {
   <nav class="nav-button-container">
     <div class="z-[100] fixed bottom-0 left-0 h-[4.5rem] w-full">
       <div class="relative flex h-full">
-        <span class="dd bottom-nav-back-start bg-[#171717] z-40 flex-1" ></span>
+        <span class="dd bottom-nav-back-start bg-[#171717] z-40" :style="startOffset"></span>
         <div class="z-30 relative">
           <span class="selected-circle"></span>
           <IconsBottomNavigationSelected class="indicator mx-[-2px] mb-[-1px]"></IconsBottomNavigationSelected>
@@ -58,40 +58,35 @@ const moveActiveTo = (index) => {
             <li>
               <NuxtLink href="#" @click="moveActiveTo(1)" :class="{ 'bottom-nav-link-selected': isActive(1) }"
                 class="nav-link">
-
-                  <IconsBottomNavigationHomeSelected v-if="isActive(1)"></IconsBottomNavigationHomeSelected>
-                  <IconsBottomNavigationHome v-else></IconsBottomNavigationHome>
+                <IconsBottomNavigationHome></IconsBottomNavigationHome>
                 <span class="nav-link-text">خانه</span>
               </NuxtLink>
             </li>
             <li>
               <NuxtLink href="#" @click="moveActiveTo(2)" :class="{ 'bottom-nav-link-selected': isActive(2) }"
                 class="nav-link">
-                <IconsBottomNavigationMarketSelected v-if="isActive(2)"></IconsBottomNavigationMarketSelected>
-                <IconsBottomNavigationMarket v-else></IconsBottomNavigationMarket>
+                <IconsBottomNavigationMarket></IconsBottomNavigationMarket>
                 <span class="nav-link-text">بازار</span>
               </NuxtLink>
             </li>
             <li>
               <NuxtLink href="#" @click="moveActiveTo(3)" :class="{ 'bottom-nav-link-selected': isActive(3) }"
                 class="nav-link">
-                <IconsBottomNavigationTransaction class=" mb-[28px]"></IconsBottomNavigationTransaction>
+                <IconsBottomNavigationTransaction></IconsBottomNavigationTransaction>
                 <span class="nav-link-text">معامله</span>
               </NuxtLink>
             </li>
             <li>
               <NuxtLink href="#" @click="moveActiveTo(4)" :class="{ 'bottom-nav-link-selected': isActive(4) }"
                 class="nav-link">
-                <IconsBottomNavigationWalletSelected v-if="isActive(4)"></IconsBottomNavigationWalletSelected>
-                <IconsBottomNavigationWallet v-else></IconsBottomNavigationWallet>
+                <IconsBottomNavigationWallet></IconsBottomNavigationWallet>
                 <span class="nav-link-text">کیف پول</span>
               </NuxtLink>
             </li>
             <li>
               <NuxtLink to="/" @click="moveActiveTo(5)" :class="{ 'bottom-nav-link-selected': isActive(5) }"
                 class="nav-link">
-                <IconsBottomNavigationProfileSelected v-if="isActive(5)"></IconsBottomNavigationProfileSelected>
-                <IconsBottomNavigationProfile v-else></IconsBottomNavigationProfile>
+                <IconsBottomNavigationProfile></IconsBottomNavigationProfile>
                 <span class="nav-link-text">پروفایل</span>
               </NuxtLink>
             </li>
@@ -129,19 +124,19 @@ const moveActiveTo = (index) => {
   transition: all ease-in 0.3s;
 }
 
-.nav-link-text {  
+.nav-link-text {
   font-weight: 300;
   font-size: 0.625rem;
   line-height: 1.25rem;
 }
 
 .nav-link>* {
-  transition: all ease-in 0.1s;
+  transition: all ease-in 0.3s;
 }
 
-/* .bottom-nav-link-selected>*:nth-child(1) {
+.bottom-nav-link-selected>*:nth-child(1) {
   margin-bottom: 29PX;
-} */
+}
 
 .bottom-nav-link-selected .nav-link-text {
   color: #FF7028;
