@@ -1,10 +1,39 @@
-<script setup>
+<script setup lang="ts">
+import { toast } from 'vue-sonner'
+import { isEmailOrIranianPhoneNumber } from '~/utils/validationUtils'
+
+const router = useRouter()
+
+const inputText = ref('')
+const inputPlaceHolder = "شماره همراه یا ایمیل"
+const inputFocus = ref(false)
+const placeholderText = computed(() => {
+  return inputFocus.value ? '' : inputPlaceHolder
+})
+
+const submitForm = () => {
+  let errorMessage = 'خطایی پیش آمده!'
+  if (!inputText.value) {
+    errorMessage = 'خطا - ورودی خالی است!'
+  }
+  if (isEmailOrIranianPhoneNumber(inputText.value)) {
+    router.push({ path: "/register", query: { u: `${inputText.value}` } })
+    return;
+  } else {
+    errorMessage = 'خطا - ورودی معتبر وارد کنید!'
+  }
+  toast.error(errorMessage, {
+    duration: 6000,
+  })
+}
+
+
 </script>
 
 <template>
   <section class="block">
 
-    <div class="w-screen max-w-[95rem] mt-[4rem] mx-auto">
+    <div class="w-screen max-w-[95rem] mx-auto">
       <div
         class="relative w-full h-auto gap-[1.104rem] lg:flex lg:justify-between lg:pr-24 lg:pl-[5.563rem] px-4 mx-auto  py-10 sm:max-w-[38rem] lg:max-w-full">
         <!-- <div class="absolute">
@@ -20,13 +49,13 @@
               بازار بین المللی خرید و فروش ارز دیجیتال
             </div>
             <div
-              class="w-[20.5rem] lg:w-[22.5rem] h-14 mt-[3.75rem] lg:mt-[1.75rem] rounded-md text-white relative text-base">
+              class="flex w-[20.5rem] lg:w-[22.5rem] h-14 mt-[3.75rem] lg:mt-[1.75rem] rounded-md text-white relative text-base">
 
-              <input type="text"
-                class="w-full h-full bg-[#262626] rounded-lg border-2 border-[#676767] focus:ring-0 focus:border-gray-600 text-white relative placeholder-white z-10"
-                placeholder="شماره همراه یا ایمیل" />
-              <button
-                class="bg-[#FF7028] absolute left-0 top-0 h-full w-28 flex items-center justify-center rounded-lg z-20">
+              <input v-model="inputText" @focus="inputFocus = true" @blur="inputFocus = false" type="text"
+                class="centered-input w-full h-full bg-[#262626] rounded-lg border-2 border-[#676767] focus:ring-0 focus:border-gray-600 text-white relative placeholder-white z-10"
+                :placeholder="placeholderText" />
+              <button @click="submitForm"
+                class="bg-[#FF7028] relative mr-[-1.25rem] left-0 top-0 h-full w-28 flex items-center justify-center rounded-lg z-20">
                 ثبت نام
               </button>
               <div class="absolute w-[34.375rem] h-[34.375rem] left-12 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
@@ -71,4 +100,16 @@
   </section>
 </template>
 
-<style scoped></style>
+<style scoped>
+.centered-input::placeholder {
+  text-align: right;
+  direction: rtl;
+}
+
+.centered-input {
+  text-align: center;
+  padding-inline-end: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+</style>

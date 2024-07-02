@@ -55,9 +55,12 @@
                   class="relative xl:absolute xl:right-0 w-full xl:h-auto xl:w-[12.5rem] xl:top-12 overflow-hidden mt-[0.625rem] bg-[#262626] xl:bg-[#171717] xl:rounded-b-[0.625rem] text-white z-50"
                   :id="`menu-${index}`" v-if="menu[index] && item.child">
                   <template v-for="(subMenu, i) in item.subMenu" :key="`sub-menu-${i}`">
-                    <div
-                      class="w-full h-12 bg-[#262626] px-[1.6rem] py-3 bg-opacity-50 backdrop-blur-xl xl:hover:bg-[#343434] text-sm hover:text-[#FF7028]">
-                      {{ subMenu.title }}
+                    <div  class="w-full h-12 bg-[#262626] px-[1.6rem] py-3 bg-opacity-50 backdrop-blur-xl xl:hover:bg-[#343434] text-sm hover:text-[#FF7028]">
+
+                      <NuxtLink :to="subMenu.to"
+                       >
+                        {{ subMenu.title }}
+                      </NuxtLink>
                     </div>
                   </template>
                 </div>
@@ -108,17 +111,17 @@ import HeaderMobHSearch from './icons/HeaderMobHSearch.vue';
 const links = [
   {
     title: "خرید آسان",
-    to: "/",
+    to: "/trade-simple",
     child: false,
 
   },
   {
     title: "معامله",
-    to: "/",
+    to: "",
     child: true,
     subMenu: [
-      { title: "ساده", to: "/" },
-      { title: "پیشرفته", to: "/" },
+      { title: "ساده", to: "/trade-simple" },
+      { title: "پیشرفته", to: "/trade-adv" },
       { title: "تعهدی", to: "/" },
     ],
   },
