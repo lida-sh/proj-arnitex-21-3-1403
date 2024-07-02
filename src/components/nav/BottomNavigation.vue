@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 
 const activeTab = ref(1);
 
@@ -40,6 +40,11 @@ const isActive = (index) => {
 const moveActiveTo = (index) => {
   activeTab.value = index;
 }
+const emit = defineEmits(["toggleToProfileMenu"])
+const toggleProfileMenu = ()=>{
+  emit("toggleToProfileMenu")
+}
+
 </script>
 
 <template>
@@ -58,7 +63,9 @@ const moveActiveTo = (index) => {
             <li>
               <NuxtLink href="#" @click="moveActiveTo(1)" :class="{ 'bottom-nav-link-selected': isActive(1) }"
                 class="nav-link">
-                <IconsBottomNavigationHome></IconsBottomNavigationHome>
+
+                  <IconsBottomNavigationHomeSelected v-if="isActive(1)"></IconsBottomNavigationHomeSelected>
+                  <IconsBottomNavigationHome v-else></IconsBottomNavigationHome>
                 <span class="nav-link-text">خانه</span>
               </NuxtLink>
             </li>
@@ -84,11 +91,13 @@ const moveActiveTo = (index) => {
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink to="/" @click="moveActiveTo(5)" :class="{ 'bottom-nav-link-selected': isActive(5) }"
+              <div to="/" @click="()=>{moveActiveTo(5);toggleProfileMenu()}" :class="{ 'bottom-nav-link-selected': isActive(5) }"
                 class="nav-link">
                 <IconsBottomNavigationProfile></IconsBottomNavigationProfile>
                 <span class="nav-link-text">پروفایل</span>
-              </NuxtLink>
+                
+              </div>
+              
             </li>
           </ul>
         </div>

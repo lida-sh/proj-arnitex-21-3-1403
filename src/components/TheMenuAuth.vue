@@ -1,5 +1,5 @@
 <template>
-  <div class="relative transition duration-1000 flex gap-4 xl:gap-8  items-center">
+  <div class="relative transition duration-1000 flex py-2.5 gap-4 xl:gap-8 items-center">
     <div class="hidden xl:flex xl:items-center">
       <div class="flex ml-[1.8rem]">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -10,13 +10,13 @@
       </div>
       <UiThemeToggle></UiThemeToggle>
     </div>
-    <div class="flex xl:hidden items-center justify-center">
+    <!-- <div class="flex xl:hidden items-center justify-center">
       <IconsHeaderMobSearch></IconsHeaderMobSearch>
-    </div>
+    </div> -->
 
     <div class="h-[2.125rem] px-[2.125rem] xl:px-0 xl:h-auto border-l border-[#676767] xl:border-l-0 ">
       <div v-if="!isAuthenticated"
-        class="justify-center hidden xl:flex xl:w-36 xl:h-[2.625rem] bg-[#FF7028] rounded-md text-xs xl:text-base">
+        class="justify-center flex w-[7.375rem] xl:w-36 h-[2.063rem] xl:h-[2.625rem] bg-[#FF7028] rounded-md text-xs xl:text-base">
         <NuxtLink class="flex items-center ps-3 xl:ps-3.5" to="/register">
           <div class="flex items-center justify-center pl-3">ثبت نام</div>
         </NuxtLink>
@@ -26,22 +26,33 @@
           </div>
         </NuxtLink>
       </div>
-      <div v-else class="hidden xl:flex items-center justify-center">
+      <div v-else class="hidden xl:flex items-center">
+        <!-- <div class="flex gap-[0.38rem] pl-[1.25rem] py-[0.44rem]">
+                <div class="flex items-center justify-center h-[2.625rem] w-[12.5rem] relative xl:hidden">
+                  <input type="text"
+                    class="h-full w-full rounded-md bg-[#262626] px-4 focus:border-gray-600 focus:ring-0 text-gray-100 border-0"
+                    placeholder="جستجوی رمز ارز" />
+                  <HeaderMobHSearch class="h-5 w-5 absolute top-3 left-4" />
+                </div>
+              </div> -->
         <div class="flex items-center justify-center h-full ml-[2.375rem]">
           <IconsHeaderMobNotification></IconsHeaderMobNotification>
         </div>
         <div class="flex items-center justify-center h-full ml-[0.813rem]">
           <IconsHeaderWallet></IconsHeaderWallet>
         </div>
-        <div @click="toggleMenu" class="flex items-center justify-center gap-2.5 h-full min-w-[8.625rem] relative cursor-pointer">
+        <div @click="toggleMenu"
+          class="flex items-center justify-center gap-2.5 h-full min-w-[8.625rem] relative cursor-pointer">
           <span class="text-sm font-bold">حسن قادری</span>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5"
             stroke="currentColor" class="size-3">
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
           </svg>
         </div>
-        <div ref="targetAuth" class="absolute h-0 invisible top-10 left-28 flex flex-col gap-3 w-[15.813rem] bg-[#171717] p-4 rounded-b-lg">
-          <div class="flex items-center justify-start gap-4">
+        <div ref="targetAuth"
+          class="absolute h-0 invisible top-10 left-28">
+          <UserProfileMenu></UserProfileMenu>
+          <!-- <div class="flex items-center justify-start gap-4">
             <div class="flex items-center justify-center">
               <img src="~/assets/images/user-default.svg" alt="user" class="w-16 h-16">
             </div>
@@ -53,29 +64,30 @@
           <NuxtLink v-for="(item, index) in links" :to="item.to" :key="index" class="w-full text-sm font-bold">
             <div class="flex items-center gap-3">
               <div v-if="item.icon" class="flex items-center justify-center">
-                <img src="~/assets/images/logout-menu.svg" :alt="item.title" class="w-5 h-[1.125rem]">
+                <component :is="item.icon" />
               </div>
               {{ item.title }}
             </div>
-          </NuxtLink>
+          </NuxtLink> -->
 
         </div>
 
       </div>
-      <div class="flex items-center justify-center h-full xl:hidden">
+      <div v-if="isAuthenticated" class="flex items-center justify-center h-full xl:hidden">
         <IconsHeaderMobNotification></IconsHeaderMobNotification>
       </div>
     </div>
-
     <div class="flex items-center justify-center xl:border-r xl:border-[#676767] xl:pr-6 pl-[0.44rem] xl:pl-0">
 
       <a href="/" class="hidden 2xl:block xl:w-[7.5rem] xl:h-4">
         <img src="~assets/images/arnitex.png" class="" />
       </a>
-      <NuxtLink to="/" class="w-16 px-[1.25rem] py-[1.063rem] xl:w-[4.5rem] h-full flex items-center justify-center">
+      <NuxtLink to="/" class="w-16 px-[1.25rem] py-[0.5rem] xl:w-[4.5rem] h-full flex items-center justify-center">
         <IconsHeaderMobLogo></IconsHeaderMobLogo>
       </NuxtLink>
     </div>
+
+
 
     <!-- <chevron-down-icon class="w-4 h-4 mr-1"></chevron-down-icon> -->
 
@@ -85,62 +97,14 @@
   </div>
 </template>
 <script setup lang="ts">
-const isAuthenticated = ref(false)
-const links = [
-  {
-    title: "داشبورد",
-    icon: "",
-    to: "/"
+import UserProfileMenu from './ui/UserProfileMenu.vue';
 
-  },
-  {
-    title: "احراز هویت",
-    icon: "",
-    to: "/"
 
-  },
-  {
-    title: "امنیت",
-    icon: "",
-    to: "/"
 
-  },
-  {
-    title: "حساب بانکی",
-    icon: "",
-    to: "/"
 
-  },
-  {
-    title: "حساب کاربری",
-    icon: "",
-    to: "/"
 
-  },
-  {
-    title: "کپی ترید من",
-    icon: "",
-    to: "/"
+const isAuthenticated = ref(true)
 
-  },
-  {
-    title: "تنظیمات",
-    icon: "",
-    to: "/"
 
-  },
-  {
-    title: "دعوت از دوستان",
-    icon: "",
-    to: "/"
-
-  },
-  {
-    title: "خروج",
-    icon: "logout-menu.svg",
-    to: "/"
-
-  }, 
-]
-const {toggleMenu, closeMenu, targetAuth} = useMenuAuth()
+const { toggleMenu, closeMenu, targetAuth } = useMenuAuth()
 </script>
