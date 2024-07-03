@@ -1,24 +1,35 @@
 <template>
-  <div @click.stop="" class="flex flex-col gap-3 w-[15.813rem] bg-[#171717] p-4 pb-10 rounded-b-lg text-white z-50 ">
-    
-    <div class="flex items-center justify-start gap-4">
-      <div class="flex items-center justify-center">
-        <img src="~/assets/images/user-default.svg" alt="user" class="w-16 h-16">
-      </div>
-      <div class="flex flex-col">
-        <span class="text-sm font-bold">حسن قادری</span>
-        <span class="text-[11px] font-bold text-[#EA3C53]">احراز هویت نشده</span>
-      </div>
-    </div>
-    <NuxtLink v-for="(item, index) in links" :to="item.to" :key="index" class="w-full text-sm font-bold">
-      <div class="flex items-center gap-3">
-        <!-- <div v-if="item.icon" class="flex items-center justify-center">
-          <component :is="item.icon" />
-        </div> -->
-        {{ item.title }}
-      </div>
-    </NuxtLink>
+  <div class="flex flex-col gap-3 w-[20.375rem] bg-[#171717] p-4 pb-[6rem] pt-6 rounded-b-lg text-white z-50 ">
 
+    <div class="flex items-center justify-between gap-4 bg-[#262626] w-full p-4">
+      <div class="flex justify-start items-center gap-4">
+        <div class="flex items-center justify-center">
+          <img src="~/assets/images/user-default.svg" alt="user" class="w-16 h-16">
+        </div>
+        <div class="flex flex-col">
+          <span class="text-sm font-bold">حسن قادری</span>
+          <span class="text-[11px] font-bold text-[#EA3C53]">احراز هویت نشده</span>
+        </div>
+        
+      </div>
+      <div class="flex items-center justify-center text-[#FF7028]">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+          </svg>
+
+        </div>
+    </div>
+    <div class="flex flex-col gap-6">
+      <NuxtLink v-for="(item, index) in links" :to="item.to" :key="index" class="w-full text-sm font-bold text-white z-[200] last:text-[#EA3C53]">
+        <div class="flex items-center gap-3 ">
+          <div class="flex items-center justify-center">
+          <component :is="item.icon" />
+        </div>
+          {{ item.title }}
+        </div>
+      </NuxtLink>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -26,6 +37,12 @@
 import Dashboard from '~/components/icons/Dashboard.vue'
 import HomeAuthentication from '~/components/icons/HomeAuthentication.vue'
 import HomeSecurity from '~/components/icons/HomeSecurity.vue'
+import ProfileBankAccounts from '~/components/icons/ProfileBankAccounts.vue'
+import ProfileUserAccount from '~/components/icons/ProfileUserAccount.vue'
+import ProfileMyCopyTrade from '~/components/icons/ProfileMyCopyTrade.vue'
+import ProfileSetting from '~/components/icons/ProfileSetting.vue'
+import ProfileInviteFriend from '~/components/icons/ProfileInviteFriend.vue'
+import ProfileSignout from '~/components/icons/ProfileSignout.vue'
 
 const links = [
   {
@@ -48,37 +65,37 @@ const links = [
   },
   {
     title: "حساب بانکی",
-    icon: "",
+    icon: ProfileBankAccounts,
     to: "/"
 
   },
   {
     title: "حساب کاربری",
-    icon: "",
+    icon: ProfileUserAccount,
     to: "/"
 
   },
   {
     title: "کپی ترید من",
-    icon: "",
+    icon: ProfileMyCopyTrade,
     to: "/"
 
   },
   {
     title: "تنظیمات",
-    icon: "",
+    icon: ProfileSetting,
     to: "/"
 
   },
   {
     title: "دعوت از دوستان",
-    icon: "",
+    icon: ProfileInviteFriend,
     to: "/"
 
   },
   {
     title: "خروج",
-    icon: "logout-menu.svg",
+    icon: ProfileSignout,
     to: "/"
 
   },
