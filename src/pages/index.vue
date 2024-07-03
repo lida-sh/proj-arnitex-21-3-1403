@@ -14,7 +14,8 @@ const test = () => {
       <!-- <HomeUserDashboard></HomeUserDashboard> -->
 
       <HomeHeroSection></HomeHeroSection>
-      <HomeTickerTradingviewWidget></HomeTickerTradingviewWidget>
+      <!-- <HomeTickerTradingviewWidget></HomeTickerTradingviewWidget> -->
+      <HomeTickerBanner></HomeTickerBanner>
       <HomeFeaturesSection></HomeFeaturesSection>
       <HomeRealtimeCryptoPrice></HomeRealtimeCryptoPrice>
       <HomeCopyTrading></HomeCopyTrading>
@@ -43,7 +44,6 @@ const test = () => {
 
 
 
-      <!-- <HomeTickerBanner></HomeTickerBanner> -->
     </main>
   </div>
 </template>
