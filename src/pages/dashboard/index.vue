@@ -9,9 +9,11 @@
             </div>
             
         </div>
-        <!-- <div class="w-full px-4">
+        <div class="w-full px-4">
             <DashboardUserInfo></DashboardUserInfo>
-        </div> -->
+                        <DashboardInviteFriends></DashboardInviteFriends>
+
+        </div>
         
         
         
