@@ -36,7 +36,7 @@
             <router-link v-for="(item, index) in links" :key="`menu-${index}`" :to="item.to"
               class=" group w-full xl:w-auto pr-0 xl:pr-4 bg-[#171717] xl:bg-transparent">
               <div
-                class="flex flex-col  xl:flex-row pt-[0.5rem] xl:items-center justify-center relative w-auto xl:w-[5.938rem] hover:text-[#FF7028]"
+                class="flex flex-col xl:flex-row pt-[0.5rem] xl:items-center justify-center relative w-auto xl:w-[5.938rem] hover:text-[#FF7028]"
                 :class="{ 'text-[#FF7028] bg-[#343434] xl:bg-transparent': menu[index] }">
                 <div class="flex items-center gap-[0.8rem] px-[1.243rem] xl:px-0 py-3">
                   <div class="text-sm">
@@ -84,7 +84,7 @@
 
           </div>
           <div
-            class="xl:hidden fixed h-auto overflow-hidden max-h-0 top-14 inset-x-0 peer-focus:max-h-96 peer-blur:max-h-0 flex-col divide-[#A8A8A8] divide-y-[0.5px] bg-[#171717] px-[1.25rem] z-[200] transition-all duration-300">
+            class="fixed xl:absolute  overflow-hidden max-h-0 top-14 xl:top-12 inset-x-0 xl:inset-x-auto xl:min-w-[30rem] xl:-right-1/2 peer-focus:xl:max-h-96 peer-focus:max-h-screen peer-focus:h-screen flex-col divide-[#A8A8A8] divide-y-[0.5px] bg-[#171717] px-[1.25rem] z-[200] transition-all duration-300 xl:max-w-[37.5rem]">
             <div class="flex items-center text-base font-medium  py-[0.938rem]">
               <div class="w-[3.125rem] h-[3.125rem] flex items-center justify-center">
                 <img src="~/assets/images/btc.png" alt="" class="w-full h-full">
