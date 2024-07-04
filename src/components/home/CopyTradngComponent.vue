@@ -8,7 +8,7 @@
             </div>
         </div>
         <div class="flex items-center gap-[0.8rem] xl:gap-[3.454rem]">
-            <img src="~/assets/images/chartCopyTrading.png" alt="" class="w-full h-full">
+            <img src="~/assets/images/chartCopyTrading.png" alt="" class="w-[9.666rem] h-[2.869rem] xl:w-[17.59rem] xl:h-[5.221rem]">
             <div class="flex flex-col gap-1 xl:gap-8">
                 <h4 class="text-xs xl:text-[28px] text-[#0DB277] font-normal">33.30%+</h4>
                 <h6 class="text-xs xl:text-[22px] text-[#A8A8A8] font-normal xl:font-semibold">30D Rol</h6>
