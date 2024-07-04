@@ -14,12 +14,12 @@
                 </div>
             </template>
             <div class="flex flex-col  w-full py-6 px-[0.625rem] gap-2 ">
-                <div class="flex items-center gap-1"><span class="text-xs font-normal leading-[22px] text-white">ایمیل:
+                <div class="flex items-center gap-1"><span class="text-xs font-normal leading-[22px] text-white text-opacity-50">ایمیل:
                     </span><span class="text-sm font-bold leading-[26px] text-white">a***@g***.com</span></div>
-                <div class="flex items-center gap-1"><span class="text-xs font-normal leading-[22px] text-white">شماره
+                <div class="flex items-center gap-1"><span class="text-xs font-normal leading-[22px] text-white text-opacity-50">شماره
                         موبایل:
                     </span><span class="text-sm font-bold leading-[26px] text-white">۵۴***۰۹۳۳</span></div>
-                <div class="flex items-center gap-1"><span class="text-xs font-normal leading-[22px] text-white">شناسه
+                <div class="flex items-center gap-1"><span class="text-xs font-normal leading-[22px] text-white text-opacity-50">شناسه
                         حساب کاربری:
                     </span><span class="text-sm font-bold leading-[26px] text-white">E3FgR30</span>
                     <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
