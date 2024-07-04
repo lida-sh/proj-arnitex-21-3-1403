@@ -36,7 +36,7 @@
             <router-link v-for="(item, index) in links" :key="`menu-${index}`" :to="item.to"
               class=" group w-full xl:w-auto pr-0 xl:pr-4 bg-[#171717] xl:bg-transparent">
               <div
-                class="flex flex-col  xl:flex-row pt-[0.5rem] xl:items-center justify-center relative w-auto xl:w-[5.938rem] hover:text-[#FF7028]"
+                class="flex flex-col xl:flex-row pt-[0.5rem] xl:items-center justify-center relative w-auto xl:w-[5.938rem] hover:text-[#FF7028]"
                 :class="{ 'text-[#FF7028] bg-[#343434] xl:bg-transparent': menu[index] }">
                 <div class="flex items-center gap-[0.8rem] px-[1.243rem] xl:px-0 py-3">
                   <div class="text-sm">

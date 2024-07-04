@@ -1,5 +1,7 @@
 <script setup lang="ts">
-import { useLoginForm } from '~/composables/auth/useRegisterForm'
+import { useLoginForm } from '~/composables/auth/useRegisterForm';
+import VOtpInput from "vue3-otp-input";
+
 const emit = defineEmits(['successfulRegister'])
 
 const {
@@ -14,6 +16,7 @@ const {
   buttonClass,
   modalTitle
 } = useLoginForm()
+
 
 </script>
 
@@ -51,13 +54,14 @@ const {
           </label>
 
           <div dir="ltr" class="flex justify-center mt-5 items-center">
-
-            <v-otp-input ref="otpInput" input-classes="otp-input w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
+            <v-otp-input ref="otpInput"
+              input-classes="otp-input focus:border-white w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
               :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5" :should-auto-focus="true"
-              :should-focus-order="true" @on-change="handleOnChange" @on-complete="handleOnComplete" />
+              :should-focus-order="true" @on-change="" @on-complete="" />
           </div>
         </div>
-        <div class=" w-full flex flex-col h-[60px] justify-center items-end">
+
+        <!-- <div class=" w-full flex flex-col h-[60px] justify-center items-end">
           <div v-if="timer > 0">{{ formattedTimer }}</div>
           <button class="text-[#FF7028]" @click="sendLoginOtpAgain" v-else v-show="showResendButton">
             ارسال مجدد کد
@@ -67,7 +71,7 @@ const {
         <button @click="OTP"
           class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[22px]">
           ادامه
-        </button>
+        </button> -->
       </div>
     </div>
     <form method="dialog" class="modal-backdrop">

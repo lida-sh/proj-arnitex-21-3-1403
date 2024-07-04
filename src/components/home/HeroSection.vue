@@ -27,12 +27,13 @@ const submitForm = () => {
   })
 }
 
+const store = useCoinWebSocketStore()
+
 
 </script>
 
 <template>
   <section class="block">
-
     <div class="w-screen max-w-[95rem] mx-auto">
       <div
         class="relative w-full h-auto gap-[1.104rem] lg:flex lg:justify-between lg:pr-24 lg:pl-[5.563rem] px-4 mx-auto  py-10 sm:max-w-[38rem] lg:max-w-full">
@@ -42,14 +43,14 @@ const submitForm = () => {
         <div class="flex flex-col justify-center items-center z-10 relative ">
           <div
             class="flex flex-col gap-[0.563rem] lg:gap-7 h-full w-full text-white z-10 justify-center items-center xl:items-start">
-            <div class="text-[2.813rem] font-bold lg:text-5xl lg:font-black">
+            <div class="text-[2.813rem] font-bold lg:text-5xl lg:font-black z-[10]">
               صرافی آرنیتکس
-            </div>
-            <div class="text-base lg:text-3xl font-bold lg:font-normal lg:w-[24rem]">
+            </div>            
+            <div class="text-base lg:text-3xl font-bold lg:font-normal lg:w-[24rem] z-10">
               بازار بین المللی خرید و فروش ارز دیجیتال
             </div>
             <div
-              class="flex w-[20.5rem] lg:w-[22.5rem] h-14 mt-[3.75rem] lg:mt-[1.75rem] rounded-md text-white relative text-base">
+              class="flex w-[20.5rem] lg:w-[22.5rem] h-14 mt-[3.75rem] lg:mt-[1.75rem] rounded-md text-white relative text-base z-[1]">
 
               <input v-model="inputText" @keyup.enter="submitForm" @focus="inputFocus = true" @blur="inputFocus = false" type="text"
                 class="centered-input w-full h-full bg-[#262626] rounded-lg border-2 border-[#676767] focus:ring-0 focus:border-gray-600 text-white relative placeholder-white z-10"

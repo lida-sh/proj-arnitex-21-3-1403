@@ -13,7 +13,8 @@ const test = () => {
     <main class="bg-black overflow-hidden pt-[64px] relative">
       <!-- <HomeUserDashboard></HomeUserDashboard> -->
       <HomeHeroSection></HomeHeroSection>
-      <HomeTickerTradingviewWidget></HomeTickerTradingviewWidget>
+      <!-- <HomeTickerTradingviewWidget></HomeTickerTradingviewWidget> -->
+      <HomeTickerBanner></HomeTickerBanner>
       <HomeFeaturesSection></HomeFeaturesSection>
       <HomeRealtimeCryptoPrice></HomeRealtimeCryptoPrice>
       <HomeCopyTrading></HomeCopyTrading>
@@ -34,7 +35,9 @@ const test = () => {
           <UiUserProfileMenu></UiUserProfileMenu>
         </div>
       </div>
-      <!-- <HomeTickerBanner></HomeTickerBanner> -->
+
+
+
     </main>
   </div>
 </template>
