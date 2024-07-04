@@ -14,6 +14,7 @@ const test = () => {
       <!-- <HomeUserDashboard></HomeUserDashboard> -->
 
       <HomeHeroSection></HomeHeroSection>
+      <!-- <DashboardTotalAssetsMob></DashboardTotalAssetsMob> -->
       <HomeTickerTradingviewWidget></HomeTickerTradingviewWidget>
       <HomeFeaturesSection></HomeFeaturesSection>
       <HomeRealtimeCryptoPrice></HomeRealtimeCryptoPrice>
