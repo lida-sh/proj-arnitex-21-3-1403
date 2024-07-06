@@ -9,7 +9,7 @@
             </div>
             
         </div>
-        <DashboardChartJs></DashboardChartJs>
+        <!-- <DashboardChartJs></DashboardChartJs> -->
         <div class="w-full px-4">
             <DashboardUserInfo></DashboardUserInfo>
                         <DashboardInviteFriends></DashboardInviteFriends>
