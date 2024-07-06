@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full rounded-lg bg-gradient-to-t from-[#171717] to-[#262626]">
+    <div class="w-full rounded-lg bg-gradient-to-t from-[#171717] to-[#262626] z-[100] relative">
         <!-- <app-collaps noStyleBg :background-class-content="['bg-gradient-to-t', 'from-[#171717]','from-0%','to-[#262626]','to-90%']" :background-class-title="['bg-gradient-to-t', 'from-[#171717]','from-10%', 'to-[#212121]','to-100%']"> -->
             <app-collaps noStyleBg>
             <template #title>
@@ -48,7 +48,5 @@
 
 </template>
 <script>
-const bgGrad = [
-    'bg-gradient-to-b', 'from-[#171717]', 'to-[#262626]'
-]
+
 </script>
