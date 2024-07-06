@@ -11,7 +11,7 @@
         </div>
         <div class="w-full px-4">
             <DashboardUserInfo></DashboardUserInfo>
-                        <DashboardInviteFriends></DashboardInviteFriends>
+            <DashboardInviteFriends></DashboardInviteFriends>
 
         </div>
         

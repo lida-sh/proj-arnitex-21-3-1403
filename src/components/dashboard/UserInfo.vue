@@ -1,8 +1,9 @@
 <template>
-    <div class="w-full ">
-        <app-collaps>
+    <div class="w-full rounded-lg bg-gradient-to-t from-[#171717] to-[#262626]">
+        <!-- <app-collaps noStyleBg :background-class-content="['bg-gradient-to-t', 'from-[#171717]','from-0%','to-[#262626]','to-90%']" :background-class-title="['bg-gradient-to-t', 'from-[#171717]','from-10%', 'to-[#212121]','to-100%']"> -->
+            <app-collaps noStyleBg>
             <template #title>
-                <div class="bg-gradient-to-b to-[#171717] from-[#262626] flex items-center gap-[1.125rem]">
+                <div class=" flex items-center gap-[1.125rem] w-full">
                     <div class="flex items-center justify-center w-12 h-12">
                         <img src="/assets/images/user-default.svg" alt="user" class="w-full h-full">
                     </div>
@@ -13,7 +14,7 @@
 
                 </div>
             </template>
-            <div class="flex flex-col  w-full py-6 px-[0.625rem] gap-2 ">
+            <div class="flex flex-col  w-full py-6 px-[0.625rem] gap-2">
                 <div class="flex items-center gap-1"><span class="text-xs font-normal leading-[22px] text-white text-opacity-50">ایمیل:
                     </span><span class="text-sm font-bold leading-[26px] text-white">a***@g***.com</span></div>
                 <div class="flex items-center gap-1"><span class="text-xs font-normal leading-[22px] text-white text-opacity-50">شماره
@@ -40,11 +41,14 @@
 
 
             </div>
+        
         </app-collaps>
     </div>
 
 
 </template>
 <script>
-
+const bgGrad = [
+    'bg-gradient-to-b', 'from-[#171717]', 'to-[#262626]'
+]
 </script>

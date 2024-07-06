@@ -130,7 +130,7 @@ const links = [
   },
   {
     title: "معامله",
-    to: "",
+    to: "/",
     child: true,
     subMenu: [
       { title: "ساده", to: "/trade-simple" },
@@ -139,7 +139,7 @@ const links = [
     ],
   },
   {
-    title: "کپی تریدینگ", to: "/", child: false, to: "/",
+    title: "کپی تریدینگ", to: "/", child: false
   },
   {
     title: "آکادمی",
