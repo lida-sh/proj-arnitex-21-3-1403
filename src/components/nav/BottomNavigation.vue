@@ -34,10 +34,10 @@ const startOffset = computed(() => {
     width: `calc(${10 * (2 * activeTab.value - 1)}% - (123px/2))`,
   };
 });
-const isActive = (index) => {
+const isActive = (index: number) => {
   return (index === activeTab.value) ? true : false
 }
-const moveActiveTo = (index) => {
+const moveActiveTo = (index: number) => {
   activeTab.value = index;
 }
 const emit = defineEmits(["toggleToProfileMenu"])
@@ -61,7 +61,7 @@ const toggleProfileMenu = ()=>{
         <div class="absolute bottom-1 w-full px-[40px] text-white z-50">
           <ul class="flex w-full justify-between items-end">
             <li>
-              <NuxtLink href="#" @click="moveActiveTo(1)" :class="{ 'bottom-nav-link-selected': isActive(1) }"
+              <NuxtLink to="/" @click="moveActiveTo(1)" :class="{ 'bottom-nav-link-selected': isActive(1) }"
                 class="nav-link">
 
                   <IconsBottomNavigationHomeSelected v-if="isActive(1)"></IconsBottomNavigationHomeSelected>

@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { useRegisterForm } from '~/composables/auth/useRegisterForm';
-import { hasExactLength } from '~/utils/validationUtils'
+import { useRegisterVerify } from '~/composables/auth/useRegisterVerify';
 import VOtpInput from "vue3-otp-input";
-import { useFetch } from "@vueuse/core";
-import { toast } from "vue-sonner";
-
 
 const emit = defineEmits(['successfulRegister'])
 
@@ -21,83 +18,9 @@ const {
   enableButton
 } = useRegisterForm();
 
-
-
-
-
-
-
-
-
-
-
-const config = useRuntimeConfig();
-const registerRequestBody: any = ref<any>({});
-
-
-const {
-  isFetching,
-  error,
-  data,
-  execute,
-  onFetchFinally,
-  onFetchError,
-  onFetchResponse,
-} = useFetch<{ message: string; error: string }>(
-  `${config.public.apiBaseURL}accounts/register-verify/`,
-  { headers: { "Content-Type": "application/json;charset=UTF-8" } },
-  { immediate: false, updateDataOnError: true }
-)
-  .post(() => JSON.stringify(registerRequestBody.value))
-  .json();
-
-onFetchResponse((response) => {
-  // const modal: any = document.getElementById("my_modal_2");
-  // if (modal) {
-  //   modal.showModal();
-  // }
-  console.log(response);
-});
-
-onFetchError((error) => {
-  toast.error(error.message, {
-    duration: 6000,
-  });
-  console.error(error.message);
-});
-
-
-
-
-
-const verifyCodeModel = ref('');
-const submitRegisterVerify = async () => {
-  registerRequestBody.value =
-  {
-    password1: password.value,
-    password2: password.value,
-    otp: verifyCodeModel.value
-  }
-  if (isValidPhoneNumber(`${username.value}`)) {
-    registerRequestBody.value.phone_number = `${username.value}`;
-  } else if (isValidEmail(`${username.value}`)) {
-    registerRequestBody.value.email = `${username.value}`;
-  } else {
-    return;
-  }
-
-  await execute()
-  
-
-  console.log("ffffffffffffffffffffffffffffffffff");
-}
-const verifyEnableButton = computed(() => {
-  return hasExactLength(`${verifyCodeModel.value}`, 5)
-});
-console.log(`${verifyCodeModel.value}`);
+const { verifyCodeModel, verifyEnableButton, isFetching,submitRegisterVerify } = useRegisterVerify(password, username)
 
 </script>
-
 
 <template>
   <form class=" pt-5 pb-[90px]" @submit.prevent="">
@@ -122,9 +45,7 @@ console.log(`${verifyCodeModel.value}`);
         </template>
       </UiButtonSubmitButton>
     </div>
-
   </form>
-
 
   <dialog id="my_modal_2" class="modal">
     <div class="modal-box  sm:p-[50px] bg-[#171717] sm:bglogin w-[350px] sm:w-[500px] rounded-[36px] ">
