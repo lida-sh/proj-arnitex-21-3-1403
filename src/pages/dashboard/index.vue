@@ -4,7 +4,7 @@
             <span class="text-white text-[16px] w-[118px] ">نمودار روند دارایی</span>
             <div class="w-full h-auto flex justify-center items-center">
                 <!-- <DashboardChartJs></DashboardChartJs> -->
-                <UiChartPieChart></UiChartPieChart>
+                <!-- <UiChartPieChart></UiChartPieChart>  -->
                  
             </div>
             
@@ -12,7 +12,6 @@
         <!-- <div class="w-full px-4">
             <DashboardUserInfo></DashboardUserInfo>
         </div> -->
-        
         
         
     </div>
