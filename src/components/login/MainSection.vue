@@ -1,3 +1,4 @@
+<!-- old -->
 <!-- <script setup>
 import VOtpInput from "vue3-otp-input";
 const isUserHasAcc = ref('firstStep')
@@ -107,27 +108,7 @@ const isUserHasAcc = ref('firstStep')
 
 
 
-<!-- old -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!-- New -->
 
 
 <script setup>

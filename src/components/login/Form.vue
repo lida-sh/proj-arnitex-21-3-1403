@@ -115,7 +115,7 @@ console.log(`${verifyCodeModel.value}`);
     <div class="mt-10">
       <UiButtonSubmitButton @submit="submitForm" :enableStyle="enableButton" :loading="registerFetching">
         <template #default>
-          ثبت نام
+            ادامه
         </template>
         <template v-slot:loading>
           در حال پردازش ...
