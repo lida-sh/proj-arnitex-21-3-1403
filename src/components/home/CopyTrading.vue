@@ -13,22 +13,22 @@
 					},
 				}">
 				<swiper-slide>
-					<HomeCopyTradngComponent></HomeCopyTradngComponent>
+					<HomeCopyTradingItem></HomeCopyTradingItem>
 				</swiper-slide>
 				<swiper-slide>
-					<HomeCopyTradngComponent></HomeCopyTradngComponent>
+					<HomeCopyTradingItem></HomeCopyTradingItem>
 				</swiper-slide>
 				<swiper-slide>
-					<HomeCopyTradngComponent></HomeCopyTradngComponent>
+					<HomeCopyTradingItem></HomeCopyTradingItem>
 				</swiper-slide>
 				<swiper-slide>
-					<HomeCopyTradngComponent></HomeCopyTradngComponent>
+					<HomeCopyTradingItem></HomeCopyTradingItem>
 				</swiper-slide>
 				<swiper-slide>
-					<HomeCopyTradngComponent></HomeCopyTradngComponent>
+					<HomeCopyTradingItem></HomeCopyTradingItem>
 				</swiper-slide>
 				<swiper-slide>
-					<HomeCopyTradngComponent></HomeCopyTradngComponent>
+					<HomeCopyTradingItem></HomeCopyTradingItem>
 				</swiper-slide>
 			</swiper>
 		</div>
@@ -68,23 +68,21 @@ export default {
 	},
 };
 </script>
+
 <style>
 .trading_swipper .swiper-container {
 	width: 100%;
 	height: 100%;
 }
-
 .trading_swipper .swiper-wrapper {
 	width: 100%;
 	height: 100%;
 	justify-content: space-between;
 }
-
 .trading_swipper {
 	width: 100%;
 	justify-content: center;
 }
-
 .trading_swipper .swiper-slide {
 	text-align: center;
 	/* font-size: 18px; */
@@ -104,10 +102,8 @@ export default {
 	align-items: center;
 	width: auto;
 	opacity: .5;
-
 	box-shadow: none;
 	transition: all 200ms linear;
-
 }
 
 @media only screen and (max-width: 1280px) {
@@ -115,34 +111,26 @@ export default {
 	.trading_swipper .swiper-slide-active {
 		opacity: 1 !important;
 	}
-
-
 	.trading_swipper.swiper-slide.swiper-slide-active {
 		opacity: 1 !important;
 	}
-
-
 }
 
 @media only screen and (min-width: 1280px) {
 	.trading_swipper .swiper-slide {
 		transform: scale(.84);
 	}
-
 	.trading_swipper .swiper-slide-active {
 		transform: scale(1.2);
 		opacity: 1 !important;
 	}
-
 	.trading_swipper .swiper-backface-hidden .swiper-slide {
 		transform: scale(.84) translateZ(0);
 	}
-
 	.trading_swipper.swiper-slide.swiper-slide-active {
 		transform: scale(1) !important;
 		opacity: 1 !important;
 	}
-
 	.trading_swipper.swiper-backface-hidden .swiper-slide.swiper-slide-active {
 		transform: scale(1) translateZ(0) !important;
 	}
