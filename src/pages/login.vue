@@ -5,6 +5,7 @@
       <AuthFrameImg></AuthFrameImg>
     </div>
   </main>
+  <HomeTickerBanner class="hidden lg:flex"></HomeTickerBanner>
 
 </template>
 
