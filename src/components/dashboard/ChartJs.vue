@@ -1,118 +1,128 @@
 <template>
-  <div>
-    <div class="flex justify-end">
-       
-      <DashboardTimeRangeSelector @update:range="updateRange"></DashboardTimeRangeSelector>
-    </div>
-    <canvas class="chart-container" ref="chartCanvas"></canvas>
+  <div class="chart-container">
+    <canvas class="w-full h-full" ref="myChart"></canvas>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-import { Chart, registerables } from 'chart.js'
+import { ref, onMounted } from 'vue';
+import { Chart, LineController, LineElement, PointElement, LinearScale, CategoryScale, Filler, Tooltip, Legend } from 'chart.js';
 
-Chart.register(...registerables)
+Chart.register(LineController, LineElement, PointElement, LinearScale, CategoryScale, Filler, Tooltip, Legend);
 
-const chartCanvas = ref(null)
+const myChart = ref(null);
 
 const convertToPersianNumbers = (num) => {
-  const persianDigits = '۰۱۲۳۴۵۶۷۸۹'
-  return num.toString().replace(/\d/g, (digit) => persianDigits[digit])
-}
+  const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
+  return num.toString().replace(/\d/g, (digit) => persianDigits[digit]);
+};
 
 onMounted(() => {
-  if (chartCanvas.value) {
-    const ctx = chartCanvas.value.getContext('2d')
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['۰۳/۱۳', '۰۳/۱۴', '۰۳/۱۵', '۰۳/۱۶', '۰۳/۱۷', '۰۳/۱۸', '۰۳/۱۹'],
-        datasets: [{
-          label: 'قیمت (تومان)',
-          data: [200, 150, 300, 250, 350, 500, 400],
-          borderColor: '#FF7028',
-          borderWidth: 2,
-          pointRadius: 8,
-          pointBackgroundColor: '#171717'
-        }]
+  const ctx = myChart.value.getContext('2d');
+  const gradient = ctx.createLinearGradient(800, 10, 800, 300);
+  gradient.addColorStop(0, 'rgba(255, 112, 40, 0.50)');  
+  gradient.addColorStop(1, 'rgba(255, 112, 40, 0.00');  
+
+  new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['+7/14', '+7/15', '+7/16', '+7/17', '+7/18', '+7/19', 'امروز'],
+      datasets: [{
+        label: 'موجودی',
+        data: [315000000, 450000000, 305000000, 450000000, 315000000, 550000000, 815000000],
+        backgroundColor: gradient,
+      
+        pointBackgroundColor: '#B86B45',  
+        fill: 'start',
+        tension: 0.4  
+      }]
+    },
+    options: {
+     responsive: true,
+     maintainAspectRatio: false, 
+      elements: {
+        line: {
+          shadowColor: 'rgba(255, 165, 0, 0.4)',  
+          shadowBlur: 10,  
+          shadowOffsetX: 0,  
+          shadowOffsetY: 4  
+        },
+        point: {
+          shadowColor: 'rgba(255, 112, 40, 0.5)',  
+          shadowBlur: 10,  
+          shadowOffsetX: 0,  
+          shadowOffsetY: 4  
+        }
       },
-      options: {
-        indexAxis: 'x',
-        scales: {
-          x: {
-            reverse: true,
-            grid: {
-              color: 'rgba(255, 255, 255, 0.1)'
-            },
-            ticks: {
-              color: '#fff',
-              font: {
-                family: 'siteFont, sans-serif'
-              }
-            }
+      scales: {
+        x: {
+          beginAtZero: true,
+          grid: {
+            display: false,
+            color: '#333'
           },
-          y: {
-            position: 'right', // قرار دادن محور Y در سمت راست
-            grid: {
-              color: 'rgba(255, 255, 255, 0.1)'
+          ticks: {
+            color: '#fff',
+            font: {
+              family: 'siteFont, sans-serif'
             },
-            ticks: {
-              color: '#fff',
-              font: {
-                family: 'siteFont, sans-serif'
-              },
-              callback: function(value) {
-                return convertToPersianNumbers(value)
-              }
-            },
-            beginAtZero: true
+            callback: function(value) {
+              return convertToPersianNumbers(value);
+            }
           }
         },
-        plugins: {
-          legend: {
-            labels: {
-              color: '#fff',
-              font: {
-                family: 'siteFont, sans-serif'
-              }
-            }
+        y: {
+          beginAtZero: true,
+          position: 'right', 
+          grid: {
+            color: '#333'
           },
-          tooltip: {
-            callbacks: {
-              label: function(context) {
-                let label = context.dataset.label || ''
-                if (label) {
-                  label += ': '
-                }
-                if (context.parsed.y !== null) {
-                  label += new Intl.NumberFormat('fa-IR', { style: 'currency', currency: 'IRR' }).format(context.parsed.y * 1000000)
-                }
-                return label
-              },
-              title: function(context) {
-                return convertToPersianNumbers(context[0].label)
-              }
-            },
-            titleFont: {
+          ticks: {
+            color: '#fff',
+            font: {
               family: 'siteFont, sans-serif'
             },
-            bodyFont: {
-              family: 'siteFont, sans-serif'
+            callback: function(value) {
+              return convertToPersianNumbers(value);
             }
           }
         }
+      },
+      plugins: {
+        legend: {
+          display: false
+        },
+        tooltip: {
+          callbacks: {
+            label: function(context) {
+              const value = context.raw;
+              return `موجودی: ${value.toLocaleString()} تومان`;
+            },
+            title: function(context) {
+              return convertToPersianNumbers(context[0].label);
+            }
+          },
+          titleFont: {
+            family: 'siteFont, sans-serif'
+          },
+          bodyFont: {
+            family: 'siteFont, sans-serif'
+          }
+        }
       }
-    })
-  }
-})
+    }
+  });
+});
 </script>
 
 <style scoped>
 .chart-container {
-  width: 35vw;
-  height: 260px;
+  width: 1032px;
+  height: 368px;
+  margin: auto;
+  background-color: #1e1e1e;  
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
-
- 
-</style>
+</style> 

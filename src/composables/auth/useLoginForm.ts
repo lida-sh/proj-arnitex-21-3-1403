@@ -8,7 +8,7 @@ import {
 } from "~/utils/validationUtils";
 import { useFetch } from "@vueuse/core";
 
-export function useRegisterForm() {
+export function useLoginForm() {
   const route = useRoute();
   const router = useRouter();
   const config = useRuntimeConfig();
@@ -22,21 +22,9 @@ export function useRegisterForm() {
   const usernameErrors = ref<string[]>([]);
   const passwordErrors = ref<string[]>([]);
 
-  const requestBody: any = ref<any>({ position: "register" });
+  const requestBody: any = ref<any>({ position: "login" });
 
   const modalTitle = ref("کد برای شما ارسال شد");
-
-  onMounted(() => {
-    const routValue = route.query.u || "";
-    if (routValue !== "") {
-      const { u, ...queryWithoutNumber } = route.query;
-      router.replace({ query: queryWithoutNumber });
-    }
-    if (isEmailOrPhoneNumber(`${routValue}`)) {
-      username.value = `${routValue}`;
-      passwordFocus.value = true;
-    }
-  });
 
   const resetErrorsMessage = () => {
     usernameErrors.value = [];
@@ -138,7 +126,7 @@ export function useRegisterForm() {
       console.log("validationForm => Failed");
       return;
     }
-    requestBody.value = { position: "register" };
+    requestBody.value = { position: "login" };
     if (isValidPhoneNumber(`${username.value}`)) {
       requestBody.value.phone_number = `${username.value}`;
       modalTitle.value = "کد ۵ رقمی به شماره تلفن شما ارسال شد";

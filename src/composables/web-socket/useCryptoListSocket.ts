@@ -34,9 +34,12 @@ export function useWebSocket(
     socket = new ReconnectingWebSocket(url, protocols, options);
 
     socket.onmessage = (event: MessageEvent) => {
-      console.log(event);
+      // console.log(event);
 
       const data = JSON.parse(event.data);
+      
+      
+
       console.log(data);
 
       coins.value = data;
@@ -56,6 +59,8 @@ export function useWebSocket(
       console.error("WebSocket error:", error);
       status.value = `error: ${error.toString}`;
     };
+
+
   };
 
   onMounted(() => {

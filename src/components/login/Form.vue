@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRegisterForm } from '~/composables/auth/useRegisterForm';
+import { useLoginForm } from '~/composables/auth/useLoginForm';
 import { hasExactLength } from '~/utils/validationUtils'
 import VOtpInput from "vue3-otp-input";
 import { useFetch } from "@vueuse/core";
@@ -19,7 +19,7 @@ const {
   submitForm,
   modalTitle,
   enableButton
-} = useRegisterForm();
+} = useLoginForm();
 
 
 
@@ -44,7 +44,7 @@ const {
   onFetchError,
   onFetchResponse,
 } = useFetch<{ message: string; error: string }>(
-  `${config.public.apiBaseURL}accounts/register-verify/`,
+  `${config.public.apiBaseURL}accounts/login-verify/`,
   { headers: { "Content-Type": "application/json;charset=UTF-8" } },
   { immediate: false, updateDataOnError: true }
 )
@@ -74,8 +74,8 @@ const verifyCodeModel = ref('');
 const submitRegisterVerify = async () => {
   registerRequestBody.value =
   {
-    password1: password.value,
-    password2: password.value,
+    password: password.value,
+    // password2: password.value,
     otp: verifyCodeModel.value
   }
   if (isValidPhoneNumber(`${username.value}`)) {
@@ -100,7 +100,7 @@ console.log(`${verifyCodeModel.value}`);
 
 
 <template>
-  <form class=" pt-5 pb-[90px]" @submit.prevent="">
+  <form class=" pt-5 pb-[10px]" @submit.prevent="">
     <div class="flex flex-col">
       <label class="text-[16px] my-2" for="user-name">شماره همراه یا ایمیل</label>
       <UiFormInputMaterialInput v-model="username" id="user-name" type="text" :error="usernameErrors"
@@ -115,7 +115,7 @@ console.log(`${verifyCodeModel.value}`);
     <div class="mt-10">
       <UiButtonSubmitButton @submit="submitForm" :enableStyle="enableButton" :loading="registerFetching">
         <template #default>
-          ثبت نام
+            ادامه
         </template>
         <template v-slot:loading>
           در حال پردازش ...

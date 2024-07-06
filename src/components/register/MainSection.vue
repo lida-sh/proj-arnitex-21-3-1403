@@ -1,18 +1,12 @@
 <script setup>
-import VOtpInput from "vue3-otp-input";
-
 </script>
 
 <template>
   <div class="sm:bglogin">
     <div class="px-[2rem] lg:px-[3.2rem] xl:px-[6.25rem] flex flex-col max-w-[35rem] mx-auto pt-[2.5rem] text-[#fff]">
-
-
       <div class="w-full">
         <AuthIconArnitex></AuthIconArnitex>
       </div>
-
-
       <div class="mt-[50px]">
         <div class="flex w-full justify-between items-center">
           <p class="text-[24px]"> ثبت نام در آرنیتکس</p>

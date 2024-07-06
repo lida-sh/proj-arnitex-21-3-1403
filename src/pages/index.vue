@@ -17,7 +17,7 @@ const test = () => {
       <HomeTickerBanner></HomeTickerBanner>
       <HomeFeaturesSection></HomeFeaturesSection>
       <HomeRealtimeCryptoPrice></HomeRealtimeCryptoPrice>
-      <HomeCopyTrading></HomeCopyTrading>
+      <HomeCopyTrading2></HomeCopyTrading2>
       <HomeReferral></HomeReferral>
       <HomeOurAdvantages></HomeOurAdvantages>
       <HomeFAQ></HomeFAQ>

@@ -1,4 +1,5 @@
-<script setup>
+<!-- old -->
+<!-- <script setup>
 import VOtpInput from "vue3-otp-input";
 const isUserHasAcc = ref('firstStep')
 </script>
@@ -101,4 +102,63 @@ const isUserHasAcc = ref('firstStep')
   </div>
 </template>
 
+<style scoped></style> -->
+
+
+
+
+
+<!-- New -->
+
+
+<script setup>
+</script>
+
+<template>
+  <div class="sm:bglogin">
+    <div class="px-[2rem] lg:px-[3.2rem] xl:px-[6.25rem] flex flex-col max-w-[35rem] mx-auto pt-[2.5rem] text-[#fff]">
+      <div class="w-full">
+        <AuthIconArnitex></AuthIconArnitex>
+      </div>
+      <div class="mt-[50px]">
+        <div class="flex w-full justify-between items-center">
+          <p class="text-[24px]"> ورود به آرنیتکس</p>
+        </div>
+
+        <LoginForm></LoginForm>
+
+         
+        <div class="w-full h-[100px] flex flex-col justify-center items-center">
+          <span class="text-[14px] cursor-pointer text-[#FF7028]" @click="forgetpassword">رمز عبور خود را
+            فراموش کردم</span>
+        </div>
+        <div class="flex mt-2 pb-10 gap-8 w-full justify-center items-center">
+          <p class="text-[14px] text-[#676767]">حساب کاربری ندارید ؟</p>
+          <router-link to="/register">
+            <p class="text-[16px] sm:text-[13px] md:text-[16px] text-[#FF7028] cursor-pointer">ثبت نام
+              کنید
+            </p>
+          </router-link>
+        </div>
+     
+
+
+        <div class="w-full flex justify-center items-center mb-[2.5rem] ">
+          <p class="text-[0.875rem] font-normal"> مطمئن شوید در دامنه
+            <a href="https://arnitex.ir" class="text-[#FF7028] mx-1 cursor-pointer">https://arnitex.ir</a>
+            هستید
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>
+
 <style scoped></style>
+
+
+
+
+
+
