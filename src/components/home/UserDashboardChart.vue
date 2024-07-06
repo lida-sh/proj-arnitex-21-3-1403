@@ -86,5 +86,6 @@ const chartOptions = {
 </script>
 
 <template>
-  <apexchart type="bar" :options="chartOptions" :series="series"></apexchart>
+  <div>chart</div>
+  <!-- <apexchart type="bar" :options="chartOptions" :series="series"></apexchart> -->
 </template>
