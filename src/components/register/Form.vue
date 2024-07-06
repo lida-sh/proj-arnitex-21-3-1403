@@ -1,6 +1,10 @@
 <script setup lang="ts">
-import { useLoginForm } from '~/composables/auth/useRegisterForm';
+import { useRegisterForm } from '~/composables/auth/useRegisterForm';
+import { hasExactLength } from '~/utils/validationUtils'
 import VOtpInput from "vue3-otp-input";
+import { useFetch } from "@vueuse/core";
+import { toast } from "vue-sonner";
+
 
 const emit = defineEmits(['successfulRegister'])
 
@@ -11,12 +15,86 @@ const {
   passwordFocus,
   usernameErrors,
   passwordErrors,
-  isFetching,
+  isFetching: registerFetching,
   submitForm,
-  buttonClass,
-  modalTitle
-} = useLoginForm()
+  modalTitle,
+  enableButton
+} = useRegisterForm();
 
+
+
+
+
+
+
+
+
+
+
+const config = useRuntimeConfig();
+const registerRequestBody: any = ref<any>({});
+
+
+const {
+  isFetching,
+  error,
+  data,
+  execute,
+  onFetchFinally,
+  onFetchError,
+  onFetchResponse,
+} = useFetch<{ message: string; error: string }>(
+  `${config.public.apiBaseURL}accounts/register-verify/`,
+  { headers: { "Content-Type": "application/json;charset=UTF-8" } },
+  { immediate: false, updateDataOnError: true }
+)
+  .post(() => JSON.stringify(registerRequestBody.value))
+  .json();
+
+onFetchResponse((response) => {
+  // const modal: any = document.getElementById("my_modal_2");
+  // if (modal) {
+  //   modal.showModal();
+  // }
+  console.log(response);
+});
+
+onFetchError((error) => {
+  toast.error(error.message, {
+    duration: 6000,
+  });
+  console.error(error.message);
+});
+
+
+
+
+
+const verifyCodeModel = ref('');
+const submitRegisterVerify = async () => {
+  registerRequestBody.value =
+  {
+    password1: password.value,
+    password2: password.value,
+    otp: verifyCodeModel.value
+  }
+  if (isValidPhoneNumber(`${username.value}`)) {
+    registerRequestBody.value.phone_number = `${username.value}`;
+  } else if (isValidEmail(`${username.value}`)) {
+    registerRequestBody.value.email = `${username.value}`;
+  } else {
+    return;
+  }
+
+  await execute()
+  
+
+  console.log("ffffffffffffffffffffffffffffffffff");
+}
+const verifyEnableButton = computed(() => {
+  return hasExactLength(`${verifyCodeModel.value}`, 5)
+});
+console.log(`${verifyCodeModel.value}`);
 
 </script>
 
@@ -33,20 +111,23 @@ const {
       <UiFormInputMaterialInput type="text" id="password" :focus="passwordFocus" ref="passwordElement"
         :error="passwordErrors" v-model="password" placeholder="رمز عبور خود را وارد کنید" />
     </div>
-    <button @click="submitForm" v-if="!isFetching" :class="buttonClass"
-      class="w-full py-[0.438rem] font-semibold leading-[2.313rem] bg-[#262626] rounded-[8px] mt-10 text-[#676767] text-[20px]">
-      ثبت نام
-    </button>
-    <button v-else
-      class="dash w-full mt-10 py-[0.688rem] text-[#ff7028] bg-[#262626] text-base font-bold leading-[1.813rem] rounded-[8px] ">
-      در حال پردازش ...
-    </button>
+
+    <div class="mt-10">
+      <UiButtonSubmitButton @submit="submitForm" :enableStyle="enableButton" :loading="registerFetching">
+        <template #default>
+          ثبت نام
+        </template>
+        <template v-slot:loading>
+          در حال پردازش ...
+        </template>
+      </UiButtonSubmitButton>
+    </div>
+
   </form>
 
 
   <dialog id="my_modal_2" class="modal">
-    <div
-      class="modal-box  sm:p-[50px] bg-[#171717] sm:bglogin w-[350px] sm:w-[500px] rounded-[36px] h-[430px] sm:h-[500px]">
+    <div class="modal-box  sm:p-[50px] bg-[#171717] sm:bglogin w-[350px] sm:w-[500px] rounded-[36px] ">
       <div class="">
         <div class="mt-[20px] flex flex-col w-full">
           <label class="text-[14px] text-[#fff] my-2" for="">
@@ -57,21 +138,29 @@ const {
             <v-otp-input ref="otpInput"
               input-classes="otp-input focus:border-white w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
               :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5" :should-auto-focus="true"
-              :should-focus-order="true" @on-change="" @on-complete="" />
+              :should-focus-order="true" @on-change="" @on-complete="" v-model:value="verifyCodeModel" />
           </div>
         </div>
 
-        <!-- <div class=" w-full flex flex-col h-[60px] justify-center items-end">
-          <div v-if="timer > 0">{{ formattedTimer }}</div>
-          <button class="text-[#FF7028]" @click="sendLoginOtpAgain" v-else v-show="showResendButton">
+        <div class="w-full flex flex-col h-[60px] justify-center items-end">
+          <!-- <div v-if="timer > 0">{{ formattedTimer }}</div> -->
+
+          <button class="text-[#FF7028]" @click="">
             ارسال مجدد کد
           </button>
         </div>
 
-        <button @click="OTP"
-          class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[22px]">
-          ادامه
-        </button> -->
+        <div class="mt-10">
+          <UiButtonSubmitButton @submit="submitRegisterVerify" :loading="isFetching" :enableStyle="verifyEnableButton">
+            <template #default>
+              ادامه
+            </template>
+            <template v-slot:loading>
+              در حال پردازش ...
+            </template>
+          </UiButtonSubmitButton>
+        </div>
+
       </div>
     </div>
     <form method="dialog" class="modal-backdrop">

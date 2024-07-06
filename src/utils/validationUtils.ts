@@ -33,6 +33,16 @@ export function isEmptyString(value: any): boolean {
   return false;
 }
 
+/**
+ * Validate if the input string has exactly the specified number of characters
+ * @param value - The string to validate
+ * @param length - The exact length to check for
+ * @returns boolean - True if the string has the exact specified length, false otherwise
+ */
+export function hasExactLength(value: string, length: number): boolean {
+  return value.length === length;
+}
+
 // Function to validate email
 export function isValidEmail(email: string): boolean {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;

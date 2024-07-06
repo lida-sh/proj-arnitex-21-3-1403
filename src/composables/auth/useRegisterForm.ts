@@ -8,7 +8,7 @@ import {
 } from "~/utils/validationUtils";
 import { useFetch } from "@vueuse/core";
 
-export function useLoginForm() {
+export function useRegisterForm() {
   const route = useRoute();
   const router = useRouter();
   const config = useRuntimeConfig();
@@ -150,7 +150,6 @@ export function useLoginForm() {
     }
 
     await execute();
-
   };
 
   const buttonClass = computed(() => {
@@ -164,6 +163,13 @@ export function useLoginForm() {
     }
   });
 
+  const enableButton = computed(() => {
+    return (
+      isEmailOrPhoneNumber(`${username.value}`) &&
+      isValidPassword(`${password.value}`)
+    );
+  });
+
   return {
     username,
     password,
@@ -175,5 +181,6 @@ export function useLoginForm() {
     submitForm,
     buttonClass,
     modalTitle,
+    enableButton
   };
 }
