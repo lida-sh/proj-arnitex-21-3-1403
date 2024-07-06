@@ -16,7 +16,7 @@
                         <!-- Sidebar content here -->
                         <li><a
                                 class="flex items-center justify-start gap-[0.625rem] rounded-lg hover:bg-[#FF7028] h-12">
-                                <IconsDashboardMenuDashboard></IconsDashboardMenuDashboard><span>داشبورد</span>
+                                <IconsDashboardMenuDrawer></IconsDashboardMenuDrawer><span>داشبورد</span>
                             </a></li>
                         <li><a
                                 class="flex items-center justify-start gap-[0.625rem] rounded-lg hover:bg-[#FF7028] h-12">

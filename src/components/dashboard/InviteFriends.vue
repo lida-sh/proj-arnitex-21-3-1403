@@ -1,9 +1,9 @@
 <template>
-    <div class="w-full mt-10">
+    <div class="w-full mt-10 mb-10">
         <div class="flex flex-col items-center justify-center gap-2 py-[1.313rem]">
             <div class="w-[8.625rem] aspect-video relative">
                 <img src="~/assets/images/invite-friends3.png" alt="" class="w-full h-full z-50 relative">
-                <div class="absolute w-[24.375rem] h-[24.375rem] left-12 top-1/2 -translate-x-1/2 -translate-y-1/2 z-[1]">
+                <div class="absolute w-[24.375rem] h-[24.375rem] left-12 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
                 <UiPulsShadow></UiPulsShadow>
               </div>
             </div>
@@ -11,7 +11,7 @@
             <button class="bg-[#FF7028] h-10 w-[7.688rem] rounded-lg text-white text-sm font-bold leading-[26px]">دعوت از دوستان</button>
             
         </div>
-        <div class="w-full bg-[#171717] rounded-lg h-[9.375rem]  py-3">
+        <div class="w-full bg-[#171717] rounded-lg h-[9.375rem] py-3 z-[100] relative">
             <h3 class="text-xs font-normal leading-[22px] text-white px-2 mb-6">با معرفی دوستانتان تا ۶۰ درصد از کارمزد
                 هر معامله پاداش بگیرید!</h3>
             <div class="flex flex-col gap-[0.563rem]">
