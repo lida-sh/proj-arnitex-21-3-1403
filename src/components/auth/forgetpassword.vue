@@ -11,23 +11,26 @@ import VOtpInput from "vue3-otp-input";
 
   <div class="mt-[20px] flex flex-col">
     <label class="text-[16px] my-2" for="">شماره همراه یا ایمیل</label>
-    <input v-model="Username" type="text" placeholder="شماره همراه یا ایمیل خود را وارد کنید"
+    <UiFormInputMaterialInput v-model="Username" type="text" placeholder="شماره همراه یا ایمیل خود را وارد کنید"
       class="bg-[#262626] h-[58px] focus:ring-0 focus:border-gray-600 p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
+    </UiFormInputMaterialInput>
   </div>
 
-  <button @click="sendOTP" v-if="registerloader == false" :class="buttonActive"
-    class="w-full h-[45px] sm:h-[51px] bg-[#262626] rounded-[8px] mt-5  text-[#676767] text-[20px]">
-    ادامه
-  </button>
+  <div v-for="item in sendOTPError" :key="item" class="text-red-400 mt-3">
+    {{ item }}
+  </div>
 
-  <div v-else class="bg-[#262626] mt-5   rounded-[8px] ">
-    <button class="indicator-loader sm:h-[51px] text-[20px]  rounded-[8px] ">
+  <UiButtonSubmitButton class="mt-5" @click="sendOTP" :loading="registerloader" :enableStyle="buttonActive">
+    <template #default>
+      ادامه
+    </template>
+    <template v-slot:loading>
       در حال پردازش ...
-    </button>
-  </div>
+    </template>
+  </UiButtonSubmitButton>
 
   <div class="items-center flex justify-center mt-4">
-    <span class="text-[#FFA928] text-[14px] text-center w-[320px] sm:text-[14px] relative top-3">بعد
+    <span class="text-[#FFA928] text-[14px] text-center w-[320px] sm:text-[14px] relative top-3">
       بعد از تغییر رمز عبور، امکان برداشت ریالی و رمز ارز را تا 24 ساعت نخواهید داشت</span>
   </div>
   <dialog id="my_modal_2" class="modal">
@@ -49,8 +52,8 @@ import VOtpInput from "vue3-otp-input";
         <div class="mt-[25px] relative flex flex-col">
           <input v-model="newPassword2" :type="PasswordType" type="text" placeholder="تکرار رمز عبور جدید"
             class="bg-[#262626] focus:ring-0 focus:border-gray-600 h-[58px] p-3 border-solid border-[2px] border-[#676767] rounded-[8px] placeholder-[#676767] text-[14px]">
-            <span class=" absolute text-[14px] left-3 cursor-pointer top-[20px]" @click="switchVisibility">
-              <IconsVisible></IconsVisible>
+          <span class=" absolute text-[14px] left-3 cursor-pointer top-[20px]" @click="switchVisibility">
+            <IconsVisible></IconsVisible>
           </span>
         </div>
 
@@ -113,14 +116,17 @@ export default {
       registerloader: false,
       newPassword: null,
       newPassword2: null,
+      sendOTPError: []
+
     };
   },
   computed: {
     buttonActive() {
-      return {
-        'bg-[#262626] text-[#676767] transition ease-in-out': !this.Username,
-        'bg-[#FF7028] text-white transition ease-in-out': this.Username
-      };
+      return this.Username
+      // {
+      //   'bg-[#262626] text-[#676767] transition ease-in-out': !this.Username,
+      //     'bg-[#FF7028] text-white transition ease-in-out': this.Username
+      // };
     },
     buttonActiveNewPass() {
       return {
@@ -167,12 +173,20 @@ export default {
     },
 
     sendOTP(event) {
+      this.sendOTPError= []
       event.preventDefault();
       this.errorPass = null;
-      let data = JSON.stringify({
-        email: this.Username,
-      });
+      const data = {}
+      if (isValidPhoneNumber(`${this.Username}`)) {
+        data.phone_number = `${this.Username}`;
+      } else if (isValidEmail(`${this.Username}`)) {
+        data.email = `${this.Username}`;
+      } else {
+        this.sendOTPError.push("لطفا ورودی معتبر وارد کنید")
+        return;
+      }
 
+      
       if (this.Username) {
         this.registerloader = true;
         let config = {
@@ -181,8 +195,9 @@ export default {
           url: "https://arnitex.ir/api/v1/accounts/send-otp/",
           headers: {
             "Content-Type": "application/json",
+            "Accept-Language": "fa",
           },
-          data: data,
+          data: JSON.stringify(data),
         };
         axios
           .request(config)
@@ -199,7 +214,7 @@ export default {
 
           })
           .catch((error) => {
-            console.log(error);
+            this.sendOTPError = Object.values(error.response.data.messages).map(value => value.toString());
             this.registerloader = false;
             this.registerText = " ثبت نام";
           });

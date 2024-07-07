@@ -24,4 +24,39 @@ const buttonClass = computed(() => {
   </button>
 </template>
 
-<style scoped></style>
+
+<style scoped>
+.dash {
+  text-align: center;
+  display: table;
+  background: -webkit-linear-gradient(left, #ff7028 70%, transparent 70%), -webkit-linear-gradient(left, #ff7028 70%, transparent 70%), -webkit-linear-gradient(top, #ff7028 70%, transparent 70%), -webkit-linear-gradient(top, #ff7028 70%, transparent 70%);
+}
+
+.dash {
+  background-size: 12px 2px, 12px 2px, 2px 12px, 2px 12px;
+  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+  background-position: 0 0, left bottom, 0 0, right 0;
+  -webkit-animation: move 10s linear infinite;
+  animation: move 20s linear infinite;
+}
+
+@-webkit-keyframes move {
+  0% {
+    background-position: 0 0, left bottom, 0 0, right 0;
+  }
+
+  100% {
+    background-position: 1000px 0, -1000px bottom, 0 -1000px, right 1000px;
+  }
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0, left bottom, 0 0, right 0;
+  }
+
+  100% {
+    background-position: 1000px 0, -1000px bottom, 0 -1000px, right 1000px;
+  }
+}
+</style>

@@ -76,7 +76,7 @@ const resendOTP = () => {
             <v-otp-input ref="otpInput"
               input-classes="otp-input focus:border-white w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
               :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5" :should-auto-focus="true"
-              :should-focus-order="true" @on-change="" @on-complete="" v-model:value="verifyCodeModel" />
+              :should-focus-order="true" @on-change="" @on-complete="submitRegisterVerify" v-model:value="verifyCodeModel" />
           </div>
         </div>
         <div class="text-red-400 mt-4">

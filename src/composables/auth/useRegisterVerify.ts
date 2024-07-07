@@ -44,7 +44,7 @@ export function useRegisterVerify(
       setTimeout(async () => {
         await userStore.fetchUser(true);
         router.push({ path: "/" });
-      }, 500);
+      }, 400);
     } else {
       toast.error("خطایی پیش آمد :(", {
         duration: 6000,
@@ -56,7 +56,9 @@ export function useRegisterVerify(
     // toast.error(data.value.message, {
     //   duration: 6000,
     // });
-    backendError.value = data.value.messages.message;
+    backendError.value = data.value.messages.otp
+      ? data.value.messages.otp
+      : data.value.messages.message;
     // console.error(error.message);
   });
 

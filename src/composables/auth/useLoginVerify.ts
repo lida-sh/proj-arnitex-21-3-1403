@@ -56,8 +56,10 @@ export function useLoginVerify(
     // toast.error(data.value.message, {
     //   duration: 6000,
     // });
-    backendError.value = data.value.messages.message;
-    // console.error(error.message);
+    backendError.value = data.value.messages.otp
+      ? data.value.messages.otp
+      : data.value.messages.message;
+       // console.error(error.message);
   });
 
   const verifyCodeModel = ref("");
