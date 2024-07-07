@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col bg-gradient-to-b from-[#171717] to-[#262626] rounded-lg w-full h-[10.5rem] mt-6 px-[2.125rem] py-[0.813rem] gap-2">
+    <div class="flex flex-col bg-gradient-to-b from-[#171717] to-[#262626] rounded-lg w-full h-[10.5rem] mt-6 px-[2.125rem] py-[0.813rem] gap-2 z-[200] relative">
                 <h3 class="text-base font-bold leading-[29px] text-white">به آرنیتکس خوش آمدید، لطفا حساب کاربری خود را
                     تکمیل کنید.</h3>
                 <div class="flex flex-col items-end justify-center w-full">

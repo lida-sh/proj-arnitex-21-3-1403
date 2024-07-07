@@ -11,7 +11,7 @@
             <button class="bg-[#FF7028] h-10 w-[7.688rem] rounded-lg text-white text-sm font-bold leading-[26px]">دعوت از دوستان</button>
             
         </div>
-        <div class="w-full bg-[#171717] rounded-lg h-[9.375rem] py-3 z-[100] relative">
+        <div class="w-full bg-[#171717] rounded-lg h-full py-3 z-[100] relative">
             <h3 class="text-xs font-normal leading-[22px] text-white px-2 mb-6">با معرفی دوستانتان تا ۶۰ درصد از کارمزد
                 هر معامله پاداش بگیرید!</h3>
             <div class="flex flex-col gap-[0.563rem]">
@@ -35,6 +35,7 @@
                             نفر</span></div>
                 </div>
             </div>
+            
 
         </div>
     </div>
