@@ -1,33 +1,37 @@
 <script setup lang="ts">
 
 useHead({
-  title: 'آرنیتکس | صفحه اصلی',
+  title: '41356094',
 })
 const { target, toggleMenu, closeMenu, openMenu, divModal } = useMenuProfile();
 const test = () => {
   console.log("test")
 }
+import { useUserStore } from "~/stores/user"
+const user = useUserStore();
+await user.fetchUser(true)
+
 </script>
+
 <template>
   <div>
     <main class="bg-black overflow-hidden pt-[64px] relative">
-      <!-- <HomeUserDashboard></HomeUserDashboard> -->
-      <HomeHeroSection></HomeHeroSection>
+
+      <HomeUserDashboard v-if="user.isAuthenticated"></HomeUserDashboard>
+      <HomeHeroSection v-if="!user.isAuthenticated"></HomeHeroSection>
       <!-- <HomeTickerTradingviewWidget></HomeTickerTradingviewWidget> -->
       <HomeTickerBanner></HomeTickerBanner>
       <HomeFeaturesSection></HomeFeaturesSection>
       <HomeRealtimeCryptoPrice></HomeRealtimeCryptoPrice>
-      <HomeCopyTrading2></HomeCopyTrading2>
+      <HomeCopyTrading2 v-if="user.isAuthenticated"></HomeCopyTrading2>
       <HomeReferral></HomeReferral>
       <HomeOurAdvantages></HomeOurAdvantages>
       <HomeFAQ></HomeFAQ>
       <HomeGetApp></HomeGetApp>
       <HomeNavBottomNavigationWithUserProfile></HomeNavBottomNavigationWithUserProfile>
-    
+
     </main>
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

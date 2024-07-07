@@ -40,7 +40,7 @@ export function useWebSocket(
       
       
 
-      console.log(data);
+      // console.log(data);
 
       coins.value = data;
     };

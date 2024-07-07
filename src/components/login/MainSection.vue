@@ -120,14 +120,14 @@ const isUserHasAcc = ref('firstStep')
       <div class="w-full">
         <AuthIconArnitex></AuthIconArnitex>
       </div>
-      <div class="mt-[50px]">
+      <div class="mt-[50px]" v-if="forgetShow == 'firstStep'">
         <div class="flex w-full justify-between items-center">
           <p class="text-[24px]"> ورود به آرنیتکس</p>
         </div>
 
         <LoginForm></LoginForm>
 
-         
+
         <div class="w-full h-[100px] flex flex-col justify-center items-center">
           <span class="text-[14px] cursor-pointer text-[#FF7028]" @click="forgetpassword">رمز عبور خود را
             فراموش کردم</span>
@@ -140,7 +140,7 @@ const isUserHasAcc = ref('firstStep')
             </p>
           </router-link>
         </div>
-     
+
 
 
         <div class="w-full flex justify-center items-center mb-[2.5rem] ">
@@ -151,14 +151,29 @@ const isUserHasAcc = ref('firstStep')
         </div>
 
       </div>
+      <form v-if="forgetShow == 'Password'" class="mt-[50px]">
+        <AuthForgetpassword></AuthForgetpassword>
+      </form>
     </div>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {
+      PasswordType: "Password",
+      forgetShow: "firstStep",
+
+    };
+  },
+  methods: {
+    forgetpassword() {
+      this.forgetShow = "Password";
+    }
+
+  },
+};
+</script>
+
 <style scoped></style>
-
-
-
-
-
-

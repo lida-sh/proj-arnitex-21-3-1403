@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { useRegisterForm } from '~/composables/auth/useRegisterForm';
-import { hasExactLength } from '~/utils/validationUtils'
+import { useRegisterVerify } from '~/composables/auth/useRegisterVerify';
 import VOtpInput from "vue3-otp-input";
-import { useFetch } from "@vueuse/core";
-import { toast } from "vue-sonner";
-
 
 const emit = defineEmits(['successfulRegister'])
+const otpInput = ref<InstanceType<typeof VOtpInput> | null>(null);
+
 
 const {
   username,
@@ -18,86 +17,24 @@ const {
   isFetching: registerFetching,
   submitForm,
   modalTitle,
-  enableButton
-} = useRegisterForm();
-
-
-
-
-
-
-
-
-
-
-
-const config = useRuntimeConfig();
-const registerRequestBody: any = ref<any>({});
-
+  enableButton,
+  backendError,
+  resendOTP: resendOTPRegister
+} = useRegisterForm(otpInput);
 
 const {
+  verifyCodeModel,
+  verifyEnableButton,
   isFetching,
-  error,
-  data,
-  execute,
-  onFetchFinally,
-  onFetchError,
-  onFetchResponse,
-} = useFetch<{ message: string; error: string }>(
-  `${config.public.apiBaseURL}accounts/register-verify/`,
-  { headers: { "Content-Type": "application/json;charset=UTF-8" } },
-  { immediate: false, updateDataOnError: true }
-)
-  .post(() => JSON.stringify(registerRequestBody.value))
-  .json();
+  submitRegisterVerify,
+  backendError: verifyBackendError
+} = useRegisterVerify(password, username)
 
-onFetchResponse((response) => {
-  // const modal: any = document.getElementById("my_modal_2");
-  // if (modal) {
-  //   modal.showModal();
-  // }
-  console.log(response);
-});
-
-onFetchError((error) => {
-  toast.error(error.message, {
-    duration: 6000,
-  });
-  console.error(error.message);
-});
-
-
-
-
-
-const verifyCodeModel = ref('');
-const submitRegisterVerify = async () => {
-  registerRequestBody.value =
-  {
-    password1: password.value,
-    password2: password.value,
-    otp: verifyCodeModel.value
-  }
-  if (isValidPhoneNumber(`${username.value}`)) {
-    registerRequestBody.value.phone_number = `${username.value}`;
-  } else if (isValidEmail(`${username.value}`)) {
-    registerRequestBody.value.email = `${username.value}`;
-  } else {
-    return;
-  }
-
-  await execute()
-  
-
-  console.log("ffffffffffffffffffffffffffffffffff");
+const resendOTP = () => {
+  resendOTPRegister();
+  verifyBackendError.value = "";
 }
-const verifyEnableButton = computed(() => {
-  return hasExactLength(`${verifyCodeModel.value}`, 5)
-});
-console.log(`${verifyCodeModel.value}`);
-
 </script>
-
 
 <template>
   <form class=" pt-5 pb-[90px]" @submit.prevent="">
@@ -108,11 +45,14 @@ console.log(`${verifyCodeModel.value}`);
     </div>
     <div class="mt-[20px] flex flex-col">
       <label class="text-[16px] my-2" for="password"> رمز عبور</label>
-      <UiFormInputMaterialInput type="text" id="password" :focus="passwordFocus" ref="passwordElement"
+      <UiFormInputMaterialInput type="password" id="password" :focus="passwordFocus" ref="passwordElement"
         :error="passwordErrors" v-model="password" placeholder="رمز عبور خود را وارد کنید" />
     </div>
 
-    <div class="mt-10">
+    <div class="mt-7">
+      <div class="text-red-400 mb-2">
+        {{ backendError }}
+      </div>
       <UiButtonSubmitButton @submit="submitForm" :enableStyle="enableButton" :loading="registerFetching">
         <template #default>
           ثبت نام
@@ -122,9 +62,7 @@ console.log(`${verifyCodeModel.value}`);
         </template>
       </UiButtonSubmitButton>
     </div>
-
   </form>
-
 
   <dialog id="my_modal_2" class="modal">
     <div class="modal-box  sm:p-[50px] bg-[#171717] sm:bglogin w-[350px] sm:w-[500px] rounded-[36px] ">
@@ -138,14 +76,17 @@ console.log(`${verifyCodeModel.value}`);
             <v-otp-input ref="otpInput"
               input-classes="otp-input focus:border-white w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
               :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5" :should-auto-focus="true"
-              :should-focus-order="true" @on-change="" @on-complete="" v-model:value="verifyCodeModel" />
+              :should-focus-order="true" @on-change="" @on-complete="submitRegisterVerify" v-model:value="verifyCodeModel" />
           </div>
         </div>
+        <div class="text-red-400 mt-4">
+          {{ verifyBackendError }}
+        </div>
 
-        <div class="w-full flex flex-col h-[60px] justify-center items-end">
+        <div class="w-full flex flex-col h-[60px] justify-center mt-2 items-end">
           <!-- <div v-if="timer > 0">{{ formattedTimer }}</div> -->
 
-          <button class="text-[#FF7028]" @click="">
+          <button class="text-[#FF7028]" @click="resendOTP">
             ارسال مجدد کد
           </button>
         </div>
