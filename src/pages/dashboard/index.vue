@@ -1,7 +1,6 @@
 <template>
-  <ClientOnly>
-    <DashboardPageProvider></DashboardPageProvider>
-  </ClientOnly>
+  <DashboardIndexMobile class="block xl:hidden"></DashboardIndexMobile>
+  <DashboardIndexDesktop class="hidden xl:block"></DashboardIndexDesktop>
 </template>
 <script setup>
 

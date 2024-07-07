@@ -1,6 +1,6 @@
 <template>
-  <div class="p-[15px]">
-    <div class=" rounded-[8px] h-[198px] w-full bg-[#171717]">
+  <div>
+    <div class="dashboard-card-mob w-full">
       <div class="flex justify-between text-white p-3">
         <div class="flex items-center">
           <p class="text-[14px] font-bold leading-[26px]">دارایی کل:</p>

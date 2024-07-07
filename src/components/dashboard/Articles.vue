@@ -1,6 +1,6 @@
 <template>
-    <div class="w-full mt-10 mb-10">
-        <div class="w-full bg rounded-[32px] h-[96px] flex py-5 px-8 text-[#fff] z-[100] relative flex-col">
+    <div class="w-full dashboard-card">
+        <div class="w-full h-[96px] flex py-5 px-8 text-[#fff] z-[100] relative flex-col">
             <h3 class="text-[16px] font-bold leading-[24px] ">مقالات ۳ دقیقه‌ای</h3>
             <div class="flex justify-between items-center pt-3">
                 <p>چگونه نات کوین را به کیف پول آرنیتکس منتقل کنیم؟</p>

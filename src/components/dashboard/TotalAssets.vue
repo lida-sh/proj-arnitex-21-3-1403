@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full mt-10 mb-10">
-    <div class="w-full bg rounded-lg h-[168px] flex py-5 px-6 text-[#fff] z-[100] relative">
+  <div class="w-full dashboard-card">
+    <div class="w-full h-[168px] flex py-5 px-6 text-[#fff] z-[100] relative">
       <div class=" w-[400px] py-5 px-8  border-l border-gray-600">
         <div class="flex justify-between text-white">
           <div class="flex items-center">

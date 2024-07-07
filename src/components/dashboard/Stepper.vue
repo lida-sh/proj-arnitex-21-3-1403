@@ -1,98 +1,99 @@
 <template>
-    <div class="flex flex-col bg-gradient-to-b from-[#171717] to-[#262626] rounded-lg w-full h-[10.5rem] mt-6 px-[2.125rem] py-[0.813rem] gap-2 z-[200] relative">
-                <h3 class="text-base font-bold leading-[29px] text-white">به آرنیتکس خوش آمدید، لطفا حساب کاربری خود را
-                    تکمیل کنید.</h3>
-                <div class="flex flex-col items-end justify-center w-full">
-                    <ul class="relative flex flex-col md:flex-row gap-2 w-full mx-auto items-end mr-[5rem]">
-                        <!-- Item -->
-                        <li class="md:shrink md:basis-0 flex-1 group flex gap-x-2 md:block">
-                            <div
-                                class="flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle">
-                                <span
-                                    class="flex justify-center items-center w-[2.875rem] h-[2.875rem] bg-transparent rounded-full shrink-0 border-[#676767] border-[0.5px]">
-                                    <iconsDashboardStepperRegister></iconsDashboardStepperRegister>
-                                </span>
-                                <div
-                                    class="mt-2 md:mt-0 md:ms-2 md:w-full md:h-px md:flex-1 group-last:hidden w-full border-b border-[#676767] border-dashed">
-                                </div>
-                            </div>
-                            <div class="grow md:grow-0 md:mt-3 pb-5">
-                                <span class="block text-xs font-normal text-white">
-                                    ثبت نام
-                                </span>
-                                <p class="text-[11px] text-[#808080] font-normal leading-4">
-                                    ایمیل خود را تایید کنید.
-                                </p>
-                            </div>
-                        </li>
-                        <!-- End Item -->
+  <div
+    class="flex flex-col dashboard-card w-full h-[10.5rem] px-[2.125rem] py-[0.813rem] gap-2 z-[200] relative">
+    <h3 class="text-base font-bold leading-[29px] text-white">به آرنیتکس خوش آمدید، لطفا حساب کاربری خود را
+      تکمیل کنید.</h3>
+    <div class="flex flex-col items-end justify-center w-full">
+      <ul class="relative flex flex-col md:flex-row gap-2 w-full mx-auto items-end mr-[5rem]">
+        <!-- Item -->
+        <li class="md:shrink md:basis-0 flex-1 group flex gap-x-2 md:block">
+          <div
+            class="flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle">
+            <span
+              class="flex justify-center items-center w-[2.875rem] h-[2.875rem] bg-transparent rounded-full shrink-0 border-[#676767] border-[0.5px]">
+              <iconsDashboardStepperRegister></iconsDashboardStepperRegister>
+            </span>
+            <div
+              class="mt-2 md:mt-0 md:ms-2 md:w-full md:h-px md:flex-1 group-last:hidden w-full border-b border-[#676767] border-dashed">
+            </div>
+          </div>
+          <div class="grow md:grow-0 md:mt-3 pb-5">
+            <span class="block text-xs font-normal text-white">
+              ثبت نام
+            </span>
+            <p class="text-[11px] text-[#808080] font-normal leading-4">
+              ایمیل خود را تایید کنید.
+            </p>
+          </div>
+        </li>
+        <!-- End Item -->
 
-                        <!-- Item -->
-                        <li class="md:shrink md:basis-0 flex-1 group flex gap-x-2 md:block">
-                            <div
-                                class="flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle">
-                                <span
-                                    class="flex justify-center items-center w-[2.875rem] h-[2.875rem] bg-transparent rounded-full shrink-0 border-[#676767] border-[0.5px]">
-                                  <IconsDashboardStepperAuthentication></IconsDashboardStepperAuthentication>
-                                </span>
-                                <div
-                                    class="mt-2 md:mt-0 md:ms-2 md:w-full md:h-px md:flex-1 group-last:hidden w-full border-b border-[#676767] border-dashed">
-                                </div>
-                            </div>
-                            <div class="grow md:grow-0 md:mt-3 pb-5">
-                                <span class="block text-xs font-normal text-white">
-                                    احراز هویت
-                                </span>
-                                <p class="text-[11px] text-[#808080] font-normal leading-4">
-                                    اطلاعات هویتی خود را کامل کنید.
-                                </p>
-                            </div>
-                        </li>
-                        <!-- End Item -->
+        <!-- Item -->
+        <li class="md:shrink md:basis-0 flex-1 group flex gap-x-2 md:block">
+          <div
+            class="flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle">
+            <span
+              class="flex justify-center items-center w-[2.875rem] h-[2.875rem] bg-transparent rounded-full shrink-0 border-[#676767] border-[0.5px]">
+              <IconsDashboardStepperAuthentication></IconsDashboardStepperAuthentication>
+            </span>
+            <div
+              class="mt-2 md:mt-0 md:ms-2 md:w-full md:h-px md:flex-1 group-last:hidden w-full border-b border-[#676767] border-dashed">
+            </div>
+          </div>
+          <div class="grow md:grow-0 md:mt-3 pb-5">
+            <span class="block text-xs font-normal text-white">
+              احراز هویت
+            </span>
+            <p class="text-[11px] text-[#808080] font-normal leading-4">
+              اطلاعات هویتی خود را کامل کنید.
+            </p>
+          </div>
+        </li>
+        <!-- End Item -->
 
-                        <!-- Item -->
-                        <li class="md:shrink md:basis-0 flex-1 group flex gap-x-2 md:block w-full">
-                            <div
-                                class="flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle w-full">
-                                <span
-                                    class="flex justify-center items-center w-[2.875rem] h-[2.875rem] bg-transparent rounded-full shrink-0 border-[#676767] border-[0.5px]">
-                                    <IconsDashboardStepperChargeAccount></IconsDashboardStepperChargeAccount>
-                                </span>
-                                <div
-                                    class="mt-2 md:mt-0 md:ms-2 md:w-full md:h-px md:flex-1 group-last:hidden w-full border-b border-[#676767] border-dashed">
-                                </div>
-                            </div>
-                            <div class="grow md:grow-0 md:mt-3 pb-5 w-full">
-                                <span class="block text-xs font-normal text-white">
-                                    شارژحساب
-                                </span>
-                                <p class="text-[11px] text-[#808080] font-normal leading-4 block ">
-                                    با واریز تومانی یا رمز ارز حسابتان را شارژ کنید. </p>
-                            </div>
-                        </li>
-                        <!-- Item -->
-                        <li class="md:shrink md:basis-0 flex-1 group flex gap-x-2 md:block">
-                            <div
-                                class="flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle">
-                                <span
-                                    class=" min-w-9 flex justify-center items-center w-[2.875rem] h-[2.875rem] bg-transparent rounded-full shrink-0 border-[#676767] border-[0.5px] ">
-                                    <IconsDashboardStepperSecurity></IconsDashboardStepperSecurity>
-                                </span>
-                                <div
-                                    class="mt-2 md:mt-0 md:ms-2 md:w-full md:h-px md:flex-1 group-last:hidden w-full border-b border-[#676767] border-dashed">
-                                </div>
-                            </div>
-                            <div class="grow md:grow-0 md:mt-3 pb-5">
-                                <span class="block text-xs font-normal text-white">
-                                    امنیت
-                                </span>
-                                <p class="text-[11px] text-[#808080] font-normal leading-4">
-                                    شناسه دو عاملی خود را فعال کنید. </p>
-                            </div>
-                        </li>
-                    </ul>
+        <!-- Item -->
+        <li class="md:shrink md:basis-0 flex-1 group flex gap-x-2 md:block w-full">
+          <div
+            class="flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle w-full">
+            <span
+              class="flex justify-center items-center w-[2.875rem] h-[2.875rem] bg-transparent rounded-full shrink-0 border-[#676767] border-[0.5px]">
+              <IconsDashboardStepperChargeAccount></IconsDashboardStepperChargeAccount>
+            </span>
+            <div
+              class="mt-2 md:mt-0 md:ms-2 md:w-full md:h-px md:flex-1 group-last:hidden w-full border-b border-[#676767] border-dashed">
+            </div>
+          </div>
+          <div class="grow md:grow-0 md:mt-3 pb-5 w-full">
+            <span class="block text-xs font-normal text-white">
+              شارژحساب
+            </span>
+            <p class="text-[11px] text-[#808080] font-normal leading-4 block ">
+              با واریز تومانی یا رمز ارز حسابتان را شارژ کنید. </p>
+          </div>
+        </li>
+        <!-- Item -->
+        <li class="md:shrink md:basis-0 flex-1 group flex gap-x-2 md:block">
+          <div
+            class="flex flex-col items-center md:w-full md:inline-flex md:flex-wrap md:flex-row text-xs align-middle">
+            <span
+              class=" min-w-9 flex justify-center items-center w-[2.875rem] h-[2.875rem] bg-transparent rounded-full shrink-0 border-[#676767] border-[0.5px] ">
+              <IconsDashboardStepperSecurity></IconsDashboardStepperSecurity>
+            </span>
+            <div
+              class="mt-2 md:mt-0 md:ms-2 md:w-full md:h-px md:flex-1 group-last:hidden w-full border-b border-[#676767] border-dashed">
+            </div>
+          </div>
+          <div class="grow md:grow-0 md:mt-3 pb-5">
+            <span class="block text-xs font-normal text-white">
+              امنیت
+            </span>
+            <p class="text-[11px] text-[#808080] font-normal leading-4">
+              شناسه دو عاملی خود را فعال کنید. </p>
+          </div>
+        </li>
+      </ul>
 
-                    <!-- <ol class="flex items-center w-full">
+      <!-- <ol class="flex items-center w-full">
                         <li
                             class="flex w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-[#676767] after:border-dotted after:inline-block">
                             <span
@@ -141,8 +142,16 @@
                     </ol> -->
 
 
-                </div>
-            </div>
+    </div>
+  </div>
 </template>
 <script>
 </script>
+
+<style scoped>
+.steps {
+	color: white;
+	background-color: transparent;
+	color: #676767;
+}
+</style>

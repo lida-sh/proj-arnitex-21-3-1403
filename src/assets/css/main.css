@@ -175,8 +175,17 @@ body {
 
 .dashboard-card {
   border-radius: 1.5rem;
-  background: var(
-    --styles-GRADIENT-BOX,
-    linear-gradient(180deg, #171717 0%, #262626 100%)
-  );
+  background: linear-gradient(180deg, #171717 0%, #262626 100%);
+}
+
+.dashboard-card-mob {
+  border-radius: 0.5rem;
+  background: linear-gradient(0deg, #171717 0%, #262626 100%);
+}
+
+.selected-dashboard-item path {
+  fill: rgba(255, 112, 40, 1);
+}
+.selected-dashboard-item .arrow-down path {
+  stroke: rgba(255, 112, 40, 1);
 }
