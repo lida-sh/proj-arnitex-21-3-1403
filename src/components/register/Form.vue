@@ -4,6 +4,8 @@ import { useRegisterVerify } from '~/composables/auth/useRegisterVerify';
 import VOtpInput from "vue3-otp-input";
 
 const emit = defineEmits(['successfulRegister'])
+const otpInput = ref<InstanceType<typeof VOtpInput> | null>(null);
+
 
 const {
   username,
@@ -15,11 +17,23 @@ const {
   isFetching: registerFetching,
   submitForm,
   modalTitle,
-  enableButton
-} = useRegisterForm();
+  enableButton,
+  backendError,
+  resendOTP: resendOTPRegister
+} = useRegisterForm(otpInput);
 
-const { verifyCodeModel, verifyEnableButton, isFetching,submitRegisterVerify } = useRegisterVerify(password, username)
+const {
+  verifyCodeModel,
+  verifyEnableButton,
+  isFetching,
+  submitRegisterVerify,
+  backendError: verifyBackendError
+} = useRegisterVerify(password, username)
 
+const resendOTP = () => {
+  resendOTPRegister();
+  verifyBackendError.value = "";
+}
 </script>
 
 <template>
@@ -31,11 +45,14 @@ const { verifyCodeModel, verifyEnableButton, isFetching,submitRegisterVerify } =
     </div>
     <div class="mt-[20px] flex flex-col">
       <label class="text-[16px] my-2" for="password"> رمز عبور</label>
-      <UiFormInputMaterialInput type="text" id="password" :focus="passwordFocus" ref="passwordElement"
+      <UiFormInputMaterialInput type="password" id="password" :focus="passwordFocus" ref="passwordElement"
         :error="passwordErrors" v-model="password" placeholder="رمز عبور خود را وارد کنید" />
     </div>
 
-    <div class="mt-10">
+    <div class="mt-7">
+      <div class="text-red-400 mb-2">
+        {{ backendError }}
+      </div>
       <UiButtonSubmitButton @submit="submitForm" :enableStyle="enableButton" :loading="registerFetching">
         <template #default>
           ثبت نام
@@ -59,14 +76,17 @@ const { verifyCodeModel, verifyEnableButton, isFetching,submitRegisterVerify } =
             <v-otp-input ref="otpInput"
               input-classes="otp-input focus:border-white w-[45px] h-[60px] sm:w-[54px] sm:h-[70px]"
               :conditionalClass="['one', 'two', 'three', 'four']" :num-inputs="5" :should-auto-focus="true"
-              :should-focus-order="true" @on-change="" @on-complete="" v-model:value="verifyCodeModel" />
+              :should-focus-order="true" @on-change="" @on-complete="submitRegisterVerify" v-model:value="verifyCodeModel" />
           </div>
         </div>
+        <div class="text-red-400 mt-4">
+          {{ verifyBackendError }}
+        </div>
 
-        <div class="w-full flex flex-col h-[60px] justify-center items-end">
+        <div class="w-full flex flex-col h-[60px] justify-center mt-2 items-end">
           <!-- <div v-if="timer > 0">{{ formattedTimer }}</div> -->
 
-          <button class="text-[#FF7028]" @click="">
+          <button class="text-[#FF7028]" @click="resendOTP">
             ارسال مجدد کد
           </button>
         </div>

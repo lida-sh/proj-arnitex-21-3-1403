@@ -157,11 +157,26 @@ body {
   font-family: "siteFont";
 }
 
-[data-sonner-toast][data-styled=true] {
+[data-sonner-toast][data-styled="true"] {
   gap: 16px !important;
 }
 
-:root:has(:is(.modal-open, .modal:target, .modal-toggle:checked + .modal, .modal[open])) {
+:root:has(
+    :is(
+        .modal-open,
+        .modal:target,
+        .modal-toggle:checked + .modal,
+        .modal[open]
+      )
+  ) {
   overflow: hidden;
   scrollbar-gutter: auto;
+}
+
+.dashboard-card {
+  border-radius: 1.5rem;
+  background: var(
+    --styles-GRADIENT-BOX,
+    linear-gradient(180deg, #171717 0%, #262626 100%)
+  );
 }

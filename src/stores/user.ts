@@ -1,43 +1,3 @@
-// // stores/user.ts
-// import { useFetch } from "@vueuse/core";
-// import { defineStore } from "pinia";
-
-// interface User {
-//   id: string;
-//   user: number;
-//   first_name: string;
-//   last_name: string;
-//   email: string;
-//   date_of_birth: null;
-//   address: string;
-//   city: string;
-//   state: string;
-//   country: string;
-//   postal_code: string;
-//   national_id: string;
-// }
-// export const useUserStore = defineStore("user", () => {
-//   const user = ref<null | User>(null);
-
-//   const setUser = (userData: User) => {
-//     user.value = userData;
-//   };
-
-//   const clearUser = () => {
-//     user.value = null;
-//   };
-
-//   const isAuthenticated = computed(() => !!user.value);
-
-//   return {
-//     user,
-//     setUser,
-//     clearUser,
-//     isAuthenticated,
-//   };
-// });
-
-// stores/user.ts
 import { defineStore } from "pinia";
 import { ref, computed } from "vue";
 
@@ -57,7 +17,6 @@ interface User {
 }
 
 export const useUserStore = defineStore("user", () => {
-  const access = useCookie("arnitex-access-token");
   const config = useRuntimeConfig();
 
   const user = ref<null | User>(null);
@@ -74,7 +33,16 @@ export const useUserStore = defineStore("user", () => {
 
   const isAuthenticated = computed(() => !!user.value);
 
-  const fetchUser = async ( ) => {
+  const fetchUser = async (force: boolean = false) => {
+    const access = useCookie("arnitex-access-token");
+    if(!access.value){
+      console.log("no cookie");
+      return;
+    }
+    if (user.value && !force) {
+      return;
+    }
+
     loading.value = true;
     error.value = null;
 
@@ -82,13 +50,14 @@ export const useUserStore = defineStore("user", () => {
       const { data } = await useFetch(
         `https://arnitex.ir/api/v1/accounts/profile/`,
         {
+          timeout: 5000,
           headers: {
             "Content-Type": "application/json;charset=UTF-8",
             Authorization: `Bearer ${access.value}`,
           },
         }
       );
-      setUser(data.value as User);
+      setUser(data.value.data as User);
     } catch (err) {
       error.value = "Failed to fetch user data";
       console.log(error.value);
@@ -97,7 +66,6 @@ export const useUserStore = defineStore("user", () => {
       console.log(user.value);
     }
   };
-
 
   return {
     user,

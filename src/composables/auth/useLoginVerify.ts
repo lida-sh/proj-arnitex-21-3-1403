@@ -2,7 +2,7 @@ import { useFetch } from "@vueuse/core";
 import { toast } from "vue-sonner";
 import { hasExactLength } from "~/utils/validationUtils";
 
-export function useRegisterVerify(
+export function useLoginVerify(
   password: globalThis.Ref<string | null>,
   username: globalThis.Ref<string | null>
 ) {
@@ -21,7 +21,7 @@ export function useRegisterVerify(
     onFetchError,
     onFetchResponse,
   } = useFetch<{ message: string; error: string }>(
-    `${config.public.apiBaseURL}accounts/register-verify/`,
+    `${config.public.apiBaseURL}accounts/login-verify/`,
     {
       headers: {
         "Content-Type": "application/json;charset=UTF-8",
@@ -44,7 +44,7 @@ export function useRegisterVerify(
       setTimeout(async () => {
         await userStore.fetchUser(true);
         router.push({ path: "/" });
-      }, 400);
+      }, 500);
     } else {
       toast.error("خطایی پیش آمد :(", {
         duration: 6000,
@@ -59,15 +59,14 @@ export function useRegisterVerify(
     backendError.value = data.value.messages.otp
       ? data.value.messages.otp
       : data.value.messages.message;
-    // console.error(error.message);
+       // console.error(error.message);
   });
 
   const verifyCodeModel = ref("");
   const submitRegisterVerify = async () => {
     backendError.value = "";
     registerRequestBody.value = {
-      password1: password.value,
-      password2: password.value,
+      password: password.value,
       otp: verifyCodeModel.value,
     };
     if (isValidPhoneNumber(`${username.value}`)) {

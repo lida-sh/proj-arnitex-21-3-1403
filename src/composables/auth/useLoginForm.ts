@@ -1,5 +1,6 @@
-import { toast } from "vue-sonner";
+ import { toast } from "vue-sonner";
 import { isEmailOrPhoneNumber } from "~/utils/validationUtils";
+import VOtpInput from "vue3-otp-input";
 import {
   getValidationErrorType,
   getValidationErrorTypeForPassword,
@@ -8,7 +9,9 @@ import {
 } from "~/utils/validationUtils";
 import { useFetch } from "@vueuse/core";
 
-export function useLoginForm() {
+export function useLoginForm(
+  otpInput: globalThis.Ref<InstanceType<typeof VOtpInput> | null>
+) {
   const route = useRoute();
   const router = useRouter();
   const config = useRuntimeConfig();
@@ -21,14 +24,28 @@ export function useLoginForm() {
 
   const usernameErrors = ref<string[]>([]);
   const passwordErrors = ref<string[]>([]);
+  const backendError = ref<string | null>(null);
 
   const requestBody: any = ref<any>({ position: "login" });
 
   const modalTitle = ref("کد برای شما ارسال شد");
 
+  onMounted(() => {
+    const routValue = route.query.u || "";
+    if (routValue !== "") {
+      const { u, ...queryWithoutNumber } = route.query;
+      router.replace({ query: queryWithoutNumber });
+    }
+    if (isEmailOrPhoneNumber(`${routValue}`)) {
+      username.value = `${routValue}`;
+      passwordFocus.value = true;
+    }
+  });
+
   const resetErrorsMessage = () => {
     usernameErrors.value = [];
     passwordErrors.value = [];
+    backendError.value = null;
   };
 
   const validationForm = () => {
@@ -100,7 +117,13 @@ export function useLoginForm() {
     onFetchResponse,
   } = useFetch<{ message: string; error: string }>(
     `${config.public.apiBaseURL}accounts/send-otp/`,
-    { headers: { "Content-Type": "application/json;charset=UTF-8" } },
+    {
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8",
+        "Accept-Language": "fa",
+        // "a-language": "fa",
+      },
+    },
     { immediate: false, updateDataOnError: true }
   )
     .post(() => JSON.stringify(requestBody.value))
@@ -115,9 +138,10 @@ export function useLoginForm() {
   });
 
   onFetchError((error) => {
-    toast.error(error.message, {
-      duration: 6000,
-    });
+    // toast.error(data.value.message[0], {
+    //   duration: 6000,
+    // });
+    backendError.value = data.value.message.message;
     console.error(error.message);
   });
 
@@ -158,6 +182,17 @@ export function useLoginForm() {
     );
   });
 
+  const resendOTP = () => {
+    if (otpInput) {
+      otpInput.value?.clearInput();
+    }
+    const modal: any = document.getElementById("my_modal_2");
+    if (modal) {
+      modal.close();
+    }
+    submitForm();
+    
+  };
   return {
     username,
     password,
@@ -169,6 +204,8 @@ export function useLoginForm() {
     submitForm,
     buttonClass,
     modalTitle,
-    enableButton
+    enableButton,
+    backendError,
+    resendOTP,
   };
 }
