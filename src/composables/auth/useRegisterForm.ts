@@ -141,7 +141,7 @@ export function useRegisterForm(
     // toast.error(data.value.message[0], {
     //   duration: 6000,
     // });
-    backendError.value = data.value.message.message;
+    backendError.value = data.value.messages.message;
     console.error(error.message);
   });
 
