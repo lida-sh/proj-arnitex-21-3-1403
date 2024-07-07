@@ -120,7 +120,7 @@ const isUserHasAcc = ref('firstStep')
       <div class="w-full">
         <AuthIconArnitex></AuthIconArnitex>
       </div>
-      <div class="mt-[50px]">
+      <div class="mt-[50px]" v-if="forgetShow == 'firstStep'">
         <div class="flex w-full justify-between items-center">
           <p class="text-[24px]"> ورود به آرنیتکس</p>
         </div>
@@ -151,8 +151,29 @@ const isUserHasAcc = ref('firstStep')
         </div>
 
       </div>
+      <form v-if="forgetShow == 'Password'" class="mt-[50px]">
+        <AuthForgetpassword></AuthForgetpassword>
+      </form>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      PasswordType: "Password",
+      forgetShow: "firstStep",
+
+    };
+  },
+  methods: {
+    forgetpassword() {
+      this.forgetShow = "Password";
+    }
+
+  },
+};
+</script>
 
 <style scoped></style>
