@@ -45,7 +45,7 @@ const resendOTP = () => {
     </div>
     <div class="mt-[20px] flex flex-col">
       <label class="text-[16px] my-2" for="password"> رمز عبور</label>
-      <UiFormInputMaterialInput type="text" id="password" :focus="passwordFocus" ref="passwordElement"
+      <UiFormInputMaterialInput type="password" id="password" :focus="passwordFocus" ref="passwordElement"
         :error="passwordErrors" v-model="password" placeholder="رمز عبور خود را وارد کنید" />
     </div>
 
