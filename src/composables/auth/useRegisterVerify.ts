@@ -56,8 +56,6 @@ export function useRegisterVerify(
     // toast.error(data.value.message, {
     //   duration: 6000,
     // });
-    console.log(data.value.messages);
-    
     backendError.value = data.value.messages.message;
     // console.error(error.message);
   });
