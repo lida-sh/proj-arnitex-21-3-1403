@@ -1,3 +1,8 @@
+<script setup>
+import { useUserStore } from "~/stores/user"
+const user = useUserStore();
+await user.fetchUser()
+</script>
 <template>
   <main class="flex bg-[#171717] w-full min-h-[100vh] pt-[64px] overflow-hidden">
     <LoginMainSection class="w-full lg:max-w-[35rem] mx-auto"></LoginMainSection>
@@ -62,13 +67,3 @@
   }
 }
 </style>
-
-
-
-
-
-
-
-
-
-

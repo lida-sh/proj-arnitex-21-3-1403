@@ -10,7 +10,8 @@ export function useRegisterVerify(
   const config = useRuntimeConfig();
   const registerRequestBody: any = ref<any>({});
   const userStore = useUserStore();
-  
+  const backendError = ref<string | null>(null);
+
   const {
     isFetching,
     error,
@@ -21,7 +22,12 @@ export function useRegisterVerify(
     onFetchResponse,
   } = useFetch<{ message: string; error: string }>(
     `${config.public.apiBaseURL}accounts/register-verify/`,
-    { headers: { "Content-Type": "application/json;charset=UTF-8" } },
+    {
+      headers: {
+        "Content-Type": "application/json;charset=UTF-8",
+        "Accept-Language": "fa",
+      },
+    },
     { immediate: false, updateDataOnError: true }
   )
     .post(() => JSON.stringify(registerRequestBody.value))
@@ -30,12 +36,15 @@ export function useRegisterVerify(
   onFetchResponse(async (response) => {
     const access = useCookie("arnitex-access-token");
     const refresh = useCookie("arnitex-refresh-token");
-    if (data.value.access && data.value.refresh) {
-      access.value = data.value.access;
-      refresh.value = data.value.refresh;
-      await userStore.fetchUser('userId');
+    if (data.value.data.access && data.value.data.refresh) {
+      access.value = data.value.data.access;
+      refresh.value = data.value.data.refresh;
+      console.log(access.value);
 
-      router.push({ path: "/" });
+      setTimeout(async () => {
+        await userStore.fetchUser(true);
+        router.push({ path: "/" });
+      }, 500);
     } else {
       toast.error("خطایی پیش آمد :(", {
         duration: 6000,
@@ -44,14 +53,16 @@ export function useRegisterVerify(
   });
 
   onFetchError((error) => {
-    toast.error(error.message, {
-      duration: 6000,
-    });
-    console.error(error.message);
+    // toast.error(data.value.message, {
+    //   duration: 6000,
+    // });
+    backendError.value = data.value.message.message;
+    // console.error(error.message);
   });
 
   const verifyCodeModel = ref("");
   const submitRegisterVerify = async () => {
+    backendError.value = "";
     registerRequestBody.value = {
       password1: password.value,
       password2: password.value,
@@ -70,10 +81,12 @@ export function useRegisterVerify(
   const verifyEnableButton = computed(() => {
     return hasExactLength(`${verifyCodeModel.value}`, 5);
   });
+
   return {
     verifyCodeModel,
     verifyEnableButton,
     isFetching,
-    submitRegisterVerify
+    submitRegisterVerify,
+    backendError,
   };
 }

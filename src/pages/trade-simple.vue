@@ -1,5 +1,8 @@
-<script setup></script>
-
+<script setup>
+import { useUserStore } from "~/stores/user"
+const user = useUserStore();
+await user.fetchUser()
+</script>
 <template>
   <main class="bg-black pt-[64px]">
     <iframe class="w-full" src="https://old.arnitex.ir/trade/simple/TOMAN/BITCOIN"

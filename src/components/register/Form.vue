@@ -4,6 +4,8 @@ import { useRegisterVerify } from '~/composables/auth/useRegisterVerify';
 import VOtpInput from "vue3-otp-input";
 
 const emit = defineEmits(['successfulRegister'])
+const otpInput = ref<InstanceType<typeof VOtpInput> | null>(null);
+
 
 const {
   username,
@@ -15,11 +17,23 @@ const {
   isFetching: registerFetching,
   submitForm,
   modalTitle,
-  enableButton
-} = useRegisterForm();
+  enableButton,
+  backendError,
+  resendOTP: resendOTPRegister
+} = useRegisterForm(otpInput);
 
-const { verifyCodeModel, verifyEnableButton, isFetching,submitRegisterVerify } = useRegisterVerify(password, username)
+const {
+  verifyCodeModel,
+  verifyEnableButton,
+  isFetching,
+  submitRegisterVerify,
+  backendError: verifyBackendError
+} = useRegisterVerify(password, username)
 
+const resendOTP = () => {
+  resendOTPRegister();
+  verifyBackendError.value = "";
+}
 </script>
 
 <template>
@@ -35,7 +49,10 @@ const { verifyCodeModel, verifyEnableButton, isFetching,submitRegisterVerify } =
         :error="passwordErrors" v-model="password" placeholder="رمز عبور خود را وارد کنید" />
     </div>
 
-    <div class="mt-10">
+    <div class="mt-7">
+      <div class="text-red-400 mb-2">
+        {{ backendError }}
+      </div>
       <UiButtonSubmitButton @submit="submitForm" :enableStyle="enableButton" :loading="registerFetching">
         <template #default>
           ثبت نام
@@ -62,11 +79,14 @@ const { verifyCodeModel, verifyEnableButton, isFetching,submitRegisterVerify } =
               :should-focus-order="true" @on-change="" @on-complete="" v-model:value="verifyCodeModel" />
           </div>
         </div>
+        <div class="text-red-400 mt-4">
+          {{ verifyBackendError }}
+        </div>
 
-        <div class="w-full flex flex-col h-[60px] justify-center items-end">
+        <div class="w-full flex flex-col h-[60px] justify-center mt-2 items-end">
           <!-- <div v-if="timer > 0">{{ formattedTimer }}</div> -->
 
-          <button class="text-[#FF7028]" @click="">
+          <button class="text-[#FF7028]" @click="resendOTP">
             ارسال مجدد کد
           </button>
         </div>
