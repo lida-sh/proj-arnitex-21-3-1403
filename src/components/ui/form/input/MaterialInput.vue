@@ -56,7 +56,7 @@ const inputType = computed(() => {
       </span>
     </template>
     <div v-if="isPassword" @click="isPasswordVisible = !isPasswordVisible"
-      class="bg-[#262626] cursor-pointer absolute top-1/2 show-pass-key left-3 transform -translate-y-1/2">
+      class="bg-[#262626] cursor-pointer absolute top-[13px] show-pass-key left-3 transform ">
       <IconsUiInputShowPass v-if="isPasswordVisible"></IconsUiInputShowPass>
       <IconsUiInputHidePass v-else></IconsUiInputHidePass>
     </div>

@@ -34,13 +34,17 @@ export const useUserStore = defineStore("user", () => {
   const isAuthenticated = computed(() => !!user.value);
 
   const fetchUser = async (force: boolean = false) => {
+    const access = useCookie("arnitex-access-token");
+    if(!access.value){
+      console.log("no cookie");
+      return;
+    }
     if (user.value && !force) {
       return;
     }
 
     loading.value = true;
     error.value = null;
-    const access = useCookie("arnitex-access-token");
 
     try {
       const { data } = await useFetch(
