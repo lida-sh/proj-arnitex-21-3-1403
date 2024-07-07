@@ -10,9 +10,12 @@
             
         </div>
         <!-- <DashboardChartJs></DashboardChartJs> -->
+
+
         <div class="w-full px-4">
-            <DashboardUserInfo></DashboardUserInfo>
-            <DashboardInviteFriends></DashboardInviteFriends>
+            <!-- <DashboardUserInfo></DashboardUserInfo> -->
+            <!-- <DashboardInviteFriends></DashboardInviteFriends> -->
+            <DashboardTotalAssets></DashboardTotalAssets>
 
         </div>
         
