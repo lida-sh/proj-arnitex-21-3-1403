@@ -143,6 +143,7 @@ export function useRegisterForm(
     // });
     backendError.value = data.value.messages.message;
     console.error(error.message);
+    console.error(data.value.messages.message);
   });
 
   const submitForm = async () => {
