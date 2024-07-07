@@ -19,7 +19,7 @@ const convertToPersianNumbers = (num) => {
 
 onMounted(() => {
   const ctx = myChart.value.getContext('2d');
-  const gradient = ctx.createLinearGradient(800, 10, 800, 300);
+  const gradient = ctx.createLinearGradient(800, 10, 800, 400);
   gradient.addColorStop(0, 'rgba(255, 112, 40, 0.50)');
   gradient.addColorStop(1, 'rgba(255, 112, 40, 0.00');
 

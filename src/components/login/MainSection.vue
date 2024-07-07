@@ -127,7 +127,7 @@ const isUserHasAcc = ref('firstStep')
 
         <LoginForm></LoginForm>
 
-         
+
         <div class="w-full h-[100px] flex flex-col justify-center items-center">
           <span class="text-[14px] cursor-pointer text-[#FF7028]" @click="forgetpassword">رمز عبور خود را
             فراموش کردم</span>
@@ -140,7 +140,7 @@ const isUserHasAcc = ref('firstStep')
             </p>
           </router-link>
         </div>
-     
+
 
 
         <div class="w-full flex justify-center items-center mb-[2.5rem] ">
@@ -156,9 +156,3 @@ const isUserHasAcc = ref('firstStep')
 </template>
 
 <style scoped></style>
-
-
-
-
-
-
