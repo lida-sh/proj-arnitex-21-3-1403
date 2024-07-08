@@ -1,8 +1,12 @@
 <template>
   <div>
-    <div class="flex flex-col min-h-screen">
+    <div class=" relative flex flex-col min-h-screen">
       <HeaderSticky></HeaderSticky>
-      <div class="flex flex-col flex-1">
+      <div v-if="pageLoading"
+        class="bg-black bg-opacity-70 fixed inset-0 h-full w-full flex items-center justify-center overflow-hidden z-[5001]">
+        <UiLoadingSpinner></UiLoadingSpinner>
+      </div>
+      <div class="flex flex-col flex-1 relative">
 
         <Toaster richColors position="top-right" />
         <NuxtPage></NuxtPage>
@@ -21,4 +25,9 @@ const route = useRoute();
 const hiddenFooterRoutes = ['/login', '/register'];
 
 const showFooter = !hiddenFooterRoutes.includes(route.path);
+
+const pageLoading = ref(true)
+onMounted(() => {
+  pageLoading.value = false
+})
 </script>
