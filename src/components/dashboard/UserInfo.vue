@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col w-full px-6 pt-[0.625rem] pb-[0.875rem] h-[5.5rem] dashboard-card">
+    class="flex flex-col flex-1 px-6 pt-[0.625rem] pb-[0.875rem] h-[5.5rem] dashboard-card">
     <div class=" flex items-center gap-[1.125rem] w-full">
       <div class="flex items-center justify-center w-16 h-16">
         <img src="/assets/images/user-default.svg" alt="user" class="w-full h-full">

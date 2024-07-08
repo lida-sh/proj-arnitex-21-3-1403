@@ -1,6 +1,6 @@
 <template>
-  <DashboardIndexMobile class="block xl:hidden"></DashboardIndexMobile>
-  <DashboardIndexDesktop class="hidden xl:block"></DashboardIndexDesktop>
+  <DashboardIndexMobile class="block xl:hidden overflow-hidden"></DashboardIndexMobile>
+  <DashboardIndexDesktop class="hidden xl:block overflow-hidden"></DashboardIndexDesktop>
 </template>
 <script setup>
 
