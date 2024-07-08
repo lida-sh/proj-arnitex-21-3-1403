@@ -20,8 +20,8 @@ const convertToPersianNumbers = (num) => {
 onMounted(() => {
   const ctx = myChart.value.getContext('2d');
   const gradient = ctx.createLinearGradient(800, 10, 800, 300);
-  gradient.addColorStop(0, 'rgba(255, 112, 40, 0.50)');  
-  gradient.addColorStop(1, 'rgba(255, 112, 40, 0.00');  
+  gradient.addColorStop(0, 'rgba(255, 112, 40, 0.50)');
+  gradient.addColorStop(1, 'rgba(255, 112, 40, 0.00');
 
   new Chart(ctx, {
     type: 'line',
@@ -31,27 +31,28 @@ onMounted(() => {
         label: 'موجودی',
         data: [315000000, 450000000, 305000000, 450000000, 315000000, 550000000, 815000000],
         backgroundColor: gradient,
-      
-        pointBackgroundColor: '#B86B45',  
+
+        pointBackgroundColor: '#B86B45',
         fill: 'start',
-        tension: 0.4  
+        tension: 0.4
       }]
     },
     options: {
-     responsive: true,
-     maintainAspectRatio: false, 
+      maintainAspectRatio: false,
+      responsive: true,
+      maintainAspectRatio: false,
       elements: {
         line: {
-          shadowColor: 'rgba(255, 165, 0, 0.4)',  
-          shadowBlur: 10,  
-          shadowOffsetX: 0,  
-          shadowOffsetY: 4  
+          shadowColor: 'rgba(255, 165, 0, 0.4)',
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowOffsetY: 4
         },
         point: {
-          shadowColor: 'rgba(255, 112, 40, 0.5)',  
-          shadowBlur: 10,  
-          shadowOffsetX: 0,  
-          shadowOffsetY: 4  
+          shadowColor: 'rgba(255, 112, 40, 0.5)',
+          shadowBlur: 10,
+          shadowOffsetX: 0,
+          shadowOffsetY: 4
         }
       },
       scales: {
@@ -66,14 +67,14 @@ onMounted(() => {
             font: {
               family: 'siteFont, sans-serif'
             },
-            callback: function(value) {
+            callback: function (value) {
               return convertToPersianNumbers(value);
             }
           }
         },
         y: {
           beginAtZero: true,
-          position: 'right', 
+          position: 'right',
           grid: {
             color: '#333'
           },
@@ -82,7 +83,7 @@ onMounted(() => {
             font: {
               family: 'siteFont, sans-serif'
             },
-            callback: function(value) {
+            callback: function (value) {
               return convertToPersianNumbers(value);
             }
           }
@@ -94,11 +95,11 @@ onMounted(() => {
         },
         tooltip: {
           callbacks: {
-            label: function(context) {
+            label: function (context) {
               const value = context.raw;
               return `موجودی: ${value.toLocaleString()} تومان`;
             },
-            title: function(context) {
+            title: function (context) {
               return convertToPersianNumbers(context[0].label);
             }
           },
@@ -117,12 +118,8 @@ onMounted(() => {
 
 <style scoped>
 .chart-container {
-  width: 1032px;
-  height: 368px;
+  width: 100%;
+  height: 300px;
   margin: auto;
-  background-color: #1e1e1e;  
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
-</style> 
+</style>
