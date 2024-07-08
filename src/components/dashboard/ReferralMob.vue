@@ -18,14 +18,14 @@
                 <div class="flex items-center justify-between px-[0.813rem]">
                     <span class="text-[#676767] text-xs font-normal">کد دعوت:</span>
                     <div class="flex items-center gap-2"><span
-                            class="text-xs font-normal leading-[22px] text-white">5252538</span>
+                            class="text-xs font-normal leading-[22px] text-white mt-[10px]">5252538</span>
                         <IconsDashboardDocs></IconsDashboardDocs>
                     </div>
                 </div>
                 <div class="flex items-center justify-between px-[0.813rem]">
                     <span class="text-[#676767] text-xs font-normal">لینک دعوت:</span>
                     <div class="flex items-center gap-2"><span
-                            class="text-xs font-normal leading-[22px] text-white">https://Arnitex.com/Invitation</span>
+                            class="text-xs font-normal leading-[22px] text-white mt-[10px]">https://Arnitex.com/Invitation</span>
                         <IconsDashboardDocs></IconsDashboardDocs>
                     </div>
                 </div>
