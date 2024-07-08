@@ -1,7 +1,7 @@
 <template>
   <div
-    class="py-[1.875rem] px-[1.5rem] md:px-[4.5rem] gap-3 flex rounded-2xl relative z-20 justify-between cursor-pointer items-center transition-all"
-    :class="[{'card-bg': !noStyleBg}, backgroundClassTitle]"
+    class="py-[1.875rem]   gap-3 flex rounded-2xl relative z-20 justify-between cursor-pointer items-center transition-all"
+    :class="[{'card-bg px-[1.5rem] md:px-[4.5rem]': !noStyleBg},{'pr-3 pl-[1.688rem] xl:px-[4.5rem]':noStyleBg}, backgroundClassTitle]"
     @click="toggle" v-bind="$attrs">
     <slot name="title" :is-open="isOpen"></slot>
     <IconsCollapseArrowDown v-if="withTitleIcon && !isOpen"></IconsCollapseArrowDown>
