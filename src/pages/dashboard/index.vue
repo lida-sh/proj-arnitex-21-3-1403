@@ -8,5 +8,9 @@ definePageMeta({
   layout: "dashboard",
 });
 
+useHead({
+  title: 'آرنیتکس | داشبور',
+})
+
 </script>
 <style></style>
