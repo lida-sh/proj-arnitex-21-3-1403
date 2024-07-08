@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="dashboard-card-mob w-full">
+    <div class="dashboard-card-mob w-full relative z-[200]">
       <div class="flex justify-between text-white p-3">
         <div class="flex items-center">
           <p class="text-[14px] font-bold leading-[26px]">دارایی کل:</p>
