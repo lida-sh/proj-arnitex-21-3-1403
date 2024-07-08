@@ -9,6 +9,7 @@
 				<DashboardUserInfo></DashboardUserInfo>
 				<DashboardStepper></DashboardStepper>
 				<DashboardTotalAssets></DashboardTotalAssets>
+				<DashboardAssetDispersion></DashboardAssetDispersion>
 				<DashboardAssetChart></DashboardAssetChart>
 				<DashboardArticles></DashboardArticles>
 				<DashboardReferral></DashboardReferral>
