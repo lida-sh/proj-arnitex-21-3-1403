@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-1 dashboard-card">
+  <div class="flex-1 dashboard-card ">
     <div class="w-full h-[168px] flex py-5 px-6 text-[#fff] z-[100] relative">
       <div class="flex-1 py-5 px-8  border-l border-gray-600">
         <div class="flex justify-between text-white">
