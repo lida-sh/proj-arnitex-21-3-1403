@@ -1,5 +1,9 @@
 <script setup>
 import { useUserStore } from "~/stores/user"
+useHead({
+  title: 'آرنیتکس | معامله ساده',
+})
+
 const user = useUserStore();
 await user.fetchUser()
 </script>
