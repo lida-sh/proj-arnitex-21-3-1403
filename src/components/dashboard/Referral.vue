@@ -15,21 +15,21 @@
 			</div>
 			<div class="flex flex-col gap-[0.563rem]">
 				<div class="flex items-center justify-between">
-					<span class="text-[#676767] text-base font-medium lead-6">کد دعوت:</span>
-					<div class="flex items-center gap-2"><span class="text-base font-medium lead-6 text-white">5252538</span>
+					<span class="text-[#676767] text-base font-medium leading-6">کد دعوت:</span>
+					<div class="flex items-center gap-2"><span class="text-base font-medium leading-6 text-white mt-[10px]">5252538</span>
 						<IconsDashboardDocs></IconsDashboardDocs>
 					</div>
 				</div>
 				<div class="flex items-center justify-between">
-					<span class="text-[#676767] text-base font-medium lead-6">لینک دعوت:</span>
+					<span class="text-[#676767] text-base font-medium leading-6">لینک دعوت:</span>
 					<div class="flex items-center gap-2"><span
-							class="text-base font-medium lead-6 text-white">https://Arnitex.com/Invitation</span>
+							class="text-base font-medium leading-6 text-white align-middle mt-[10px]">https://Arnitex.com/Invitation</span>
 						<IconsDashboardDocs></IconsDashboardDocs>
 					</div>
 				</div>
 				<div class="flex items-center justify-between">
-					<span class="text-[#676767] text-base font-medium lead-6">تعداد دعوت شدگان:</span>
-					<div class="flex items-center gap-2"><span class="ext-base font-medium lead-6 text-white">۱۵
+					<span class="text-[#676767] text-base font-medium leading-6">تعداد دعوت شدگان:</span>
+					<div class="flex items-center gap-2"><span class="ext-base font-medium leading-6 text-white">۱۵
 							نفر</span></div>
 				</div>
 				<button
@@ -38,8 +38,8 @@
 			</div>
 		</div>
 		<div class="flex items-center justify-center w-full aspect-video relative ">
-			<img src="~/assets/images/invite-friend-dashboard.png" alt="invite friends"
-				class="w-[20.756rem] h-auto relative z-[100]">
+			<img src="~/assets/images/invite-friend-dashboard2.png" alt="invite friends"
+				class="w-full h-auto relative z-[100]">
 			<div class="absolute w-[34.375rem] h-[34.375rem] top-1/2 -left-2 -translate-y-1/2 z-[1]">
 				<UiPulsShadow></UiPulsShadow>
 			</div>

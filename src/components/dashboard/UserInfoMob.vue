@@ -1,26 +1,36 @@
 <template>
     <div class="w-full dashboard-card-mob z-[100] relative">
         <!-- <app-collaps noStyleBg :background-class-content="['bg-gradient-to-t', 'from-[#171717]','from-0%','to-[#262626]','to-90%']" :background-class-title="['bg-gradient-to-t', 'from-[#171717]','from-10%', 'to-[#212121]','to-100%']"> -->
-            <app-collaps noStyleBg>
-            <template #title>
-                <div class=" flex items-center gap-[1.125rem] w-full">
-                    <div class="flex items-center justify-center w-12 h-12">
-                        <img src="/assets/images/user-default.svg" alt="user" class="w-full h-full">
-                    </div>
-                    <div class="flex flex-col gap-1">
-                        <h3 class="text-xs font-bold text-white">حسن قادری</h3>
-                        <h6 class="text-[11px] font-bold text-[#FF7028]">احراز هویت نشده</h6>
-                    </div>
+        <app-collaps noStyleBg :withTitleIcon="false">
+            <template #title="{ isOpen }">
+                <div class="flex items-center justify-between w-full">
+                    <div class="flex items-center gap-[1.125rem] w-full">
+                        <div class="flex items-center justify-center w-12 h-12">
+                            <img src="/assets/images/user-default.svg" alt="user" class="w-full h-full">
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <h3 class="text-xs font-bold text-white">حسن قادری</h3>
+                            <h6 class="text-[11px] font-bold text-[#FF7028]">احراز هویت نشده</h6>
+                        </div>
 
+                    </div>
+                    <div class="w-[0.688rem] h-[0.243rem]">
+                        <IconsCollapseArrowDownMob v-if="!isOpen"></IconsCollapseArrowDownMob>
+                        <IconsCollapseArrowUpMob v-if="isOpen"></IconsCollapseArrowUpMob>
+                    </div>
                 </div>
+
             </template>
             <div class="flex flex-col  w-full py-6 px-[0.625rem] gap-2">
-                <div class="flex items-center gap-1"><span class="text-xs font-normal leading-[22px] text-white text-opacity-50">ایمیل:
+                <div class="flex items-center gap-1"><span
+                        class="text-xs font-normal leading-[22px] text-white text-opacity-50">ایمیل:
                     </span><span class="text-sm font-bold leading-[26px] text-white">a***@g***.com</span></div>
-                <div class="flex items-center gap-1"><span class="text-xs font-normal leading-[22px] text-white text-opacity-50">شماره
+                <div class="flex items-center gap-1"><span
+                        class="text-xs font-normal leading-[22px] text-white text-opacity-50">شماره
                         موبایل:
                     </span><span class="text-sm font-bold leading-[26px] text-white">۵۴***۰۹۳۳</span></div>
-                <div class="flex items-center gap-1"><span class="text-xs font-normal leading-[22px] text-white text-opacity-50">شناسه
+                <div class="flex items-center gap-1"><span
+                        class="text-xs font-normal leading-[22px] text-white text-opacity-50">شناسه
                         حساب کاربری:
                     </span><span class="text-sm font-bold leading-[26px] text-white">E3FgR30</span>
                     <svg width="17" height="20" viewBox="0 0 17 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,7 +51,7 @@
 
 
             </div>
-        
+
         </app-collaps>
     </div>
 
