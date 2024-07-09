@@ -3,15 +3,17 @@
     <div id="the-menu"
       class="flex justify-between items-center max-w-[110rem] mx-auto px-0 sm:px-[2.87rem] py-2.5 bg-[#171717] text-white shadow-lg text-sm h-full w-full">
       <div class="flex items-center w-auto">
-        <section class="w-auto">
-          <button class="block xl:hidden py-[1.25rem] px-[1.438rem]" @click="toggleMenu">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-              stroke="currentColor" class="w-6 h-6">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        <div class="w-auto flex xl:block self-stretch">
+          <button class="block xl:hidden px-[1.25rem]" @click="toggleMenu">
+            <svg width="24" height="16" viewBox="0 0 24 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="24" height="2" rx="1" fill="#D9D9D9" />
+              <rect y="7" width="24" height="2" rx="1" fill="#D9D9D9" />
+              <rect y="14" width="24" height="2" rx="1" fill="#D9D9D9" />
             </svg>
           </button>
+
           <div ref="target"
-            class="min-w-[18rem] xl:min-w-[unset] fixed shadow-lg -right-[200rem] top-0 px-0 h-screen xl:visible flex flex-col xl:flex-row items-center bg-[#171717] xl:static xl:bg-transparent xl:rounded-none xl:shadow-none xl:border-none xl:mt-0 xl:h-auto text-sm z-50">
+            class="min-w-[18rem] xl:min-w-[unset] gap-2 fixed shadow-lg -right-[200rem] top-0 px-0 h-screen xl:visible flex flex-col xl:flex-row items-center bg-[#171717] xl:static xl:bg-transparent xl:rounded-none xl:shadow-none xl:border-none xl:mt-0 xl:h-auto text-sm z-50">
             <div class="flex bg-[#171717] justify-start w-full">
               <div class="w-[4.375rem] h-[3.5rem] flex items-center justify-center xl:hidden mr-0" @click="closeMenu">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -21,13 +23,13 @@
               </div>
             </div>
             <div v-for="(item, index) in links" :key="`menu-${item.title}`"
-              class="w-full xl:w-[unset] group flex xl:flex-row flex-col items-center">
+              class="w-full xl:w-[unset] group flex xl:flex-row flex-col items-center xl:px-3">
               <NuxtLink :to="item.to" class="w-full xl:w-auto bg-[#171717] xl:bg-transparent cursor-pointer">
                 <div
-                  class="flex flex-col xl:flex-row xl:items-center justify-center relative w-auto xl:w-[5.938rem] hover:text-[#FF7028]"
+                  class="flex flex-col xl:flex-row xl:items-center justify-center relative w-auto xl: hover:text-[#FF7028]"
                   :class="{ 'text-[#FF7028] bg-[#343434] xl:bg-transparent': menu[index] }">
                   <div class="flex items-center gap-[0.8rem] px-[1.243rem] xl:px-0 py-3">
-                    <div class="text-sm">
+                    <div class="text-sm whitespace-nowrap">
                       {{ item.title }}
                     </div>
                     <div v-if="item.child">
@@ -57,7 +59,7 @@
             </div>
 
           </div>
-        </section>
+        </div>
         <div class="flex items-center justify-center xl:mr-[2rem] xl:w-[12.5rem] h-[2.625rem] relative mr-0">
           <input type="text"
             class="peer h-full w-full rounded-md bg-[#262626] px-4 focus:ring-0 focus:border focus:border-[#FF7028] text-gray-100 border-0 placeholder:text-sm"
