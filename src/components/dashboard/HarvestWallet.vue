@@ -12,7 +12,7 @@ const data = ref([
 ])
 </script>
 <template>
-  <div class="flex-1 pb-[500px]">
+  <div class="flex-1 pb-[100px]">
     <div class="w-full text-[#fff] z-[100] relative">
       <div class="w-full">
 
