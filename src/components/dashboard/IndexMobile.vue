@@ -9,6 +9,7 @@
       <DashboardUserInfoMob></DashboardUserInfoMob>
       <DashboardTotalAssetsMob></DashboardTotalAssetsMob>
       <DashboardReferralMob></DashboardReferralMob>
+      <!-- <DashboardHarvestWalletMob></DashboardHarvestWalletMob> -->
     </div>
   </div>
 </template>

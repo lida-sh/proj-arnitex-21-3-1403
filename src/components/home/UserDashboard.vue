@@ -3,7 +3,8 @@
 </script>
 
 <template>
-  <section dir="rtl" class="text-white flex flex-col mt-[2.75rem] lg:mt-[4.063rem] lg:flex-row px-0 c-container-sm-full gap-[7.5rem]">
+  <section dir="rtl"
+    class="text-white flex flex-col mt-[2.75rem] lg:mt-[4.063rem] lg:flex-row px-0 c-container-sm-full gap-[7.5rem]">
     <div class="flex-[500]">
       <div class="flex flex-col">
         <h3 class="font-semibold text-[1.375rem] px-[1rem] lg:px-0 text-[#676767]">موجودی کل :</h3>

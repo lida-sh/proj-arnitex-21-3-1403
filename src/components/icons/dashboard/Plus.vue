@@ -1,0 +1,9 @@
+<template>
+    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none">
+        <path d="M6 1.5V11.5" stroke="#FF7028" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M11 6.5L1 6.5" stroke="#FF7028" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+</template>
+<script>
+</script>
