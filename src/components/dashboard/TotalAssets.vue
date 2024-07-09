@@ -15,10 +15,7 @@
           <div class="flex items-center">
             <p dir="ltr" class="text-[22px] leading-[24px]">۴۵۷ ، ۹۶۰ ، ۰۰۰</p>
           </div>
-          <div class="flex gap-3 items-center">
-            <p class="text-[#fff] text-[14px] leading-[26px] font-bold"> تومان</p>
-            <IconsDashboardArrowDownMob></IconsDashboardArrowDownMob>
-          </div>
+          <UiDropDownSimple></UiDropDownSimple>
         </div>
       </div>
       <div class="flex-1 py-5 px-8  border-l border-gray-600">
