@@ -1,13 +1,12 @@
 <template>
     <div class="px-4 pt-[1.563rem] pb-[60rem] w-full h-screen bg-black flex flex-col gap-[0.563rem]">
-
        <div v-for="feature in featurs" class="w-full bg-[#171717] rounded-lg py-2 flex flex-col">
         <h2 class="text-base font-normal leading-7 text-white mr-[1.313rem] mt-2">{{feature.title}}</h2>
         <div class="grid grid-cols-4 p-3 gap-4">
-          <div v-for="subFeature in feature.subFeaturs" class="flex flex-col items-center justify-center gap-3">
+          <NuxtLink v-for="subFeature in feature.subFeaturs" class="flex flex-col items-center justify-center gap-3">
             <component :is="subFeature.icon"/>
             <h6 class="text-white text-xs font-normal leading-[22px]">{{ subFeature.subTitle }}</h6>
-          </div>
+          </NuxtLink>
         </div>
        </div>
     </div>
@@ -34,6 +33,7 @@ import IconsInviteFriends from "~/components/icons/dashboard/InviteFriends.vue"
 import IconsSettings from "~/components/icons/dashboard/Settings.vue"
 import IconsAccademy from "~/components/icons/dashboard/Accademy.vue"
 import IconsSupport from "~/components/icons/dashboard/Support.vue"
+
 definePageMeta({
   layout: "dashboard",
 });
