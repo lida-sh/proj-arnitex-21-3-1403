@@ -17,7 +17,7 @@ const data = ref([
       <div class="w-full">
 
         <div class=" pb-7 border-b border-[#343434]">
-          <div class="bg-[#171717] rounded-2xl h-[62px] w-[405px]">
+          <div class=" px-4">
             <UiButtonTabButtonDashboard class="flex-1" :list="data" v-model="TabIndex"></UiButtonTabButtonDashboard>
           </div>
         </div>

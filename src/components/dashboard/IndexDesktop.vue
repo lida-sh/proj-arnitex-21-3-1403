@@ -5,15 +5,14 @@
 		<div class="w-full max-w-[100rem] pt-[5rem] mx-auto gap-2 2xl:gap-[1.25rem] px-2 flex items-start">
 			<DashboardMenuBar class="max-w-[16.5rem] min-w-[13rem] dashboard-card w-full"></DashboardMenuBar>
 			<main class="flex flex-col flex-1 gap-2 2xl:gap-[1.25rem]">
-
-				<!-- <DashboardUserInfo></DashboardUserInfo> -->
+				<DashboardUserInfo></DashboardUserInfo>
 				<DashboardStepper></DashboardStepper>
 				<DashboardTotalAssets></DashboardTotalAssets>
 				<DashboardAssetDispersion></DashboardAssetDispersion>
 				<DashboardAssetChart></DashboardAssetChart>
 				<DashboardArticles></DashboardArticles>
 				<DashboardReferral></DashboardReferral>
-				<!-- <DashboardHarvestWallet></DashboardHarvestWallet> -->
+				<DashboardHarvestWallet></DashboardHarvestWallet>
 
 			</main>
 		</div>

@@ -16,8 +16,8 @@ const data = ref([
         <div class="w-full text-[#fff] z-[100] relative">
             <div class="w-full">
                 <div class=" pb-3 flex justify-center items-center">
-                    <div class="bg-[#171717] rounded-2xl w-full h-[62px]">
-                        <UiButtonTabButton class="flex-1" :list="data" v-model="TabIndex"></UiButtonTabButton>
+                    <div class="">
+                        <UiButtonTabButtonDashboard class="flex-1" :list="data" v-model="TabIndex"></UiButtonTabButtonDashboard>
                     </div>
                 </div>
                 <p class="text-[16px] font-normal leading-[28px] pt-3 pb-3">مبلغ واریزی (تومان)</p>
