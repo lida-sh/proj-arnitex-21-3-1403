@@ -10,9 +10,6 @@
       </div>
       <UiThemeToggle></UiThemeToggle>
     </div>
-    <!-- <div class="flex xl:hidden items-center justify-center">
-      <IconsHeaderMobSearch></IconsHeaderMobSearch>
-    </div> -->
 
     <div class="h-[2.125rem] px-[2.125rem] xl:px-0 xl:h-auto border-l border-[#676767] xl:border-l-0 ">
       <div v-if="!isAuthenticated"
@@ -27,14 +24,6 @@
         </NuxtLink>
       </div>
       <div v-else class="flex items-center justify-center h-full">
-        <!-- <div class="flex gap-[0.38rem] pl-[1.25rem] py-[0.44rem]">
-                <div class="flex items-center justify-center h-[2.625rem] w-[12.5rem] relative xl:hidden">
-                  <input type="text"
-                    class="h-full w-full rounded-md bg-[#262626] px-4 focus:border-gray-600 focus:ring-0 text-gray-100 border-0"
-                    placeholder="جستجوی رمز ارز" />
-                  <HeaderMobHSearch class="h-5 w-5 absolute top-3 left-4" />
-                </div>
-              </div> -->
         <div class="flex items-center justify-center h-full ml-[2.375rem] relative">
           <div class="" @click="toggleMenuNotif()">
             <IconsHeaderMobNotification></IconsHeaderMobNotification>
@@ -94,87 +83,18 @@
         </div>
         <div ref="targetAuth" class="absolute h-0 invisible top-14 left-28">
           <UserProfileMenu></UserProfileMenu>
-          <!-- <div class="flex items-center justify-start gap-4">
-            <div class="flex items-center justify-center">
-              <img src="~/assets/images/user-default.svg" alt="user" class="w-16 h-16">
-            </div>
-            <div class="flex flex-col">
-              <span class="text-sm font-bold">حسن قادری</span>
-              <span class="text-[11px] font-bold text-[#EA3C53]">احراز هویت نشده</span>
-            </div>
-          </div>
-          <NuxtLink v-for="(item, index) in links" :to="item.to" :key="index" class="w-full text-sm font-bold">
-            <div class="flex items-center gap-3">
-              <div v-if="item.icon" class="flex items-center justify-center">
-                <component :is="item.icon" />
-              </div>
-              {{ item.title }}
-            </div>
-          </NuxtLink> -->
-
         </div>
-
       </div>
-      <!-- <div v-if="isAuthenticated" class="flex items-center justify-center h-full xl:hidden relative">
-        <div class="" @click="toggleMenuNotif()">
-          <IconsHeaderMobNotification></IconsHeaderMobNotification>
-        </div>
-        <div v-if="closeMenuNotification" class="fixed flex items-center justify-center right-0 top-0 w-[4.375rem] h-[3.5rem] bg-[#171717]" @click="closeMenuNotif">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-          </svg>
-
-        </div>
-        <div ref="targetNotif"
-          class="fixed h-0 invisible inset-x-0 top-10 flex flex-col w-screen  bg-[#171717] py-6 px-4">
-          <div class="flex items-center justify-center gap-4 ">
-            <button class="w-[9.75rem] h-[3.5rem] bg-[#FF7028] flex items-center justify-center rounded-lg">همه پیام
-              ها</button>
-            <button class="w-[9.75rem] h-[3.5rem] bg-[#343434] flex items-center justify-center rounded-lg">خوانده نشده
-              ها</button>
-          </div>
-          <div class="flex flex-col divide-y-[0.5px] divide-[#ABABAB] ">
-            <div class="flex flex-col py-6">
-              <span class="text-[11px]">۱۴۰۳/۰۴/۰۶ - ۱۱:۲۷</span>
-              <h6 class="text-[11px] font-normal mt-1">ورود به حساب کاربری</h6>
-              <p class="text-sm font-normal mt-8">دستگاهی با نام phone, iOS 17_5_1, Safari, iPhone در تاریخ 1403/04/06
-                در ساعت 11:27 وارد حساب کاربری شما شده است.</p>
-            </div>
-            <div class="flex flex-col py-6">
-              <span class="text-[11px]">۱۴۰۳/۰۴/۰۶ - ۱۱:۲۷</span>
-              <h6 class="text-[11px] font-normal mt-1">ورود به حساب کاربری</h6>
-              <p class="text-sm font-normal mt-8">دستگاهی با نام phone, iOS 17_5_1, Safari, iPhone در تاریخ 1403/04/06
-                در ساعت 11:27 وارد حساب کاربری شما شده است.</p>
-            </div>
-            <div class="flex flex-col py-6">
-              <span class="text-[11px]">۱۴۰۳/۰۴/۰۶ - ۱۱:۲۷</span>
-              <h6 class="text-[11px] font-normal mt-1">ورود به حساب کاربری</h6>
-              <p class="text-sm font-normal mt-8">دستگاهی با نام phone, iOS 17_5_1, Safari, iPhone در تاریخ 1403/04/06
-                در ساعت 11:27 وارد حساب کاربری شما شده است.</p>
-            </div>
-          </div>
-
-        </div>
-      </div> -->
     </div>
     <div class="flex items-center justify-center xl:border-r xl:border-[#676767] xl:pr-6 pl-[0.44rem] xl:pl-0">
-
-      <a href="/" class="hidden 2xl:block xl:w-[7.5rem] xl:h-4">
-        <img src="~assets/images/arnitex.png" class="" />
+      <a href="/" class="hidden 2xl:block ">
+        <IconsLogoDes></IconsLogoDes>
       </a>
-      <NuxtLink to="/" class="w-16 px-[1.25rem] py-[0.5rem] xl:w-[4.5rem] h-full flex items-center justify-center">
+      <NuxtLink to="/"
+        class="w-16 px-[1.25rem] py-[0.5rem] xl:w-[4.5rem]  2xl:hidden h-full flex items-center justify-center">
         <IconsHeaderMobLogo></IconsHeaderMobLogo>
       </NuxtLink>
     </div>
-
-
-
-    <!-- <chevron-down-icon class="w-4 h-4 mr-1"></chevron-down-icon> -->
-
-    <!-- <div class="absolute bg-white rounded-box border inset-x-5 top-10 z-30 invisible h-0 flex justify-center" ref="target">
-          <button @click="logout" class="text-error p-4 lg:ml-4">خروج</button>
-       </div> -->
   </div>
 </template>
 <script setup lang="ts">
