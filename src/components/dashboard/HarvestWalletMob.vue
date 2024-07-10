@@ -17,7 +17,8 @@ const data = ref([
             <div class="w-full">
                 <div class=" pb-3 flex justify-center items-center">
                     <div class="">
-                        <UiButtonTabButtonDashboard class="flex-1" :list="data" v-model="TabIndex"></UiButtonTabButtonDashboard>
+                        <UiButtonTabButtonDashboard class="flex-1" :list="data" v-model="TabIndex">
+                        </UiButtonTabButtonDashboard>
                     </div>
                 </div>
                 <p class="text-[16px] font-normal leading-[28px] pt-3 pb-3">مبلغ واریزی (تومان)</p>
@@ -60,7 +61,7 @@ const data = ref([
                         <IconsDashboardArrowDown></IconsDashboardArrowDown>
                     </div>
                 </div>
-                <div class="bg-[#FF7028] mt-8 h-[56px] rounded-[16px] flex items-center justify-center cursor-pointer">
+                <div class="bg-[#FF7028] mt-8 h-[40px] rounded-[16px] flex items-center justify-center cursor-pointer">
                     <p class="text-[16px] font-medium leading-[24px]">درخواست برداشت وجه</p>
                 </div>
 
