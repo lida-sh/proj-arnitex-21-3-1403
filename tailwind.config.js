@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const plugin = require('tailwindcss/plugin')
 export default {
   content: [
     "./assets/**/*.css",
@@ -81,6 +82,9 @@ export default {
   require('@tailwindcss/typography'),
   require('@tailwindcss/aspect-ratio'),
   require('@tailwindcss/forms'),
+  plugin(function({ addVariant }) {
+    addVariant('radio-checked', '&:checked ~ label')
+  }),
   ],
   daisyui: {
     styled: true,
