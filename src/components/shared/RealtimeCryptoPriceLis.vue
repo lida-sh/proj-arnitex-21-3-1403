@@ -32,47 +32,8 @@ const market_capFormatter = (price: number) => {
 </script>
 
 <template>
-  <div
-    class="flex flex-col lg:flex-row items-center justify-center mt-[6.563rem] lg:mb-10 max-w-[95rem] lg:px-[6.25rem] lg:mx-auto lg:gap-20 xl:gap-60 2xl:gap-[21rem] mb-5">
-    <h2 class="flex lg:hidden text-[1.75rem] text-white font-medium mx-auto mb-10">
-      نمودار قیمت لحظه ای
-    </h2>
-    <div
-      class="h-[3.1rem] lg:h-[2.525rem] bg-[#262626] flex items-center justify-center py-[0.45rem] px-[0.6rem] lg:px-2 rounded-[40px] mx-auto lg:mx-0">
-      <div class="flex-1 cursor-pointer transition" :class="{
-        'active-button': cryptoCurrency === 'Toman',
-        'inactive-button': cryptoCurrency !== 'Toman',
-      }" @click="setActive('Toman')">
-        <div class="w-[10.25rem] lg:w-[5.125rem] h-[2.25rem] lg:h-full flex items-center justify-center">
-          تومان
-        </div>
-      </div>
-
-      <div class="flex-1 cursor-pointer transition" :class="{
-        'active-button': cryptoCurrency === 'Tether',
-        'inactive-button': cryptoCurrency !== 'Tether',
-      }" @click="setActive('Tether')">
-        <div class="flex items-center justify-center">
-          <div
-            class="w-[10.25rem] lg:w-[5.125rem] h-[2.25rem] lg:h-full rounded-[40px] flex items-center justify-center">
-            تتر
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <h2 class="hidden lg:flex text-[28px] text-white font-medium">
-      نمودار قیمت لحظه ای
-    </h2>
-    <div class="hidden lg:flex gap-1 text-base font-bold text-[#FF7028]">
-      <h6 class="">مشاهده همه ی رمز ارز ها</h6>
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-        class="size-4">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-      </svg>
-    </div>
-  </div>
-  <div class="px-0 lg:px-[6.25rem] w-full max-w-[95rem] mx-auto mt-[2.5rem]">
+  
+  <div class="px-0 w-full  mx-auto mt-[1rem]">
     <div
       class="pb-10 bg-gradient-to-b from-[#171717] to-[#262626] rounded-none lg:rounded-[1.875rem] flex flex-col gap-[0.625rem] overflow-hidden">
       <div
