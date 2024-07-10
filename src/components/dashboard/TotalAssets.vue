@@ -35,14 +35,22 @@
         </div>
       </div>
       <div class="flex-1 px-8 flex flex-col items-center justify-center gap-3">
-        <div class="h-[63px] bgB w-full max-w-[15rem] rounded-[16px] flex justify-center items-center gap-10">
-          <IconsDashboardWallet></IconsDashboardWallet>
-          <span class="text-[22px] leading-[37px] font-bold">واریز</span>
-        </div>
-        <div class="h-[63px] bgB rounded-[16px] w-full max-w-[15rem] flex justify-center items-center gap-10">
-          <IconsDashboardWalletHarvest></IconsDashboardWalletHarvest>
-          <span class="text-[22px] leading-[37px] font-bold"> برداشت</span>
-        </div>
+
+        <button class="h-[63px] bgB w-full max-w-[15rem] rounded-[16px] flex justify-center items-center ">
+          <div class="flex items-center justify-between gap-4 min-w-[8rem]">
+            <IconsDashboardWallet></IconsDashboardWallet>
+            <span class="text-[22px] leading-[37px] font-bold pl-[27px]">واریز</span>
+          </div>
+        </button>
+
+        <button class="h-[63px] bgB rounded-[16px] w-full max-w-[15rem] flex justify-center items-center">
+          <div class="flex items-center justify-between min-w-[8rem]">
+
+            <IconsDashboardWalletHarvest></IconsDashboardWalletHarvest>
+            <span class="text-[22px] leading-[37px] font-bold"> برداشت</span>
+          </div>
+        </button>
+
       </div>
     </div>
   </div>
