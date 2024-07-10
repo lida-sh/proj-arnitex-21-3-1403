@@ -23,6 +23,37 @@ onMounted(() => {
   gradient.addColorStop(0, 'rgba(255, 112, 40, 0.50)');
   gradient.addColorStop(1, 'rgba(255, 112, 40, 0.00');
 
+  const drawShadowPlugin = {
+    id: 'drawShadow',
+    afterDatasetsDraw: function (chart) {
+      const ctx = chart.ctx;
+      chart.data.datasets.forEach((dataset, i) => {
+        const meta = chart.getDatasetMeta(i);
+        meta.data.forEach((point, index) => {
+          if (point.$context.active) {
+            const { x, y } = point.getCenterPoint();
+            ctx.save();
+            ctx.shadowColor = 'rgba(255, 255, 255, 1)';
+            ctx.shadowBlur = 40;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 0;
+            ctx.beginPath();
+            ctx.arc(x, y, 8, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.fillStyle = point.options.backgroundColor;
+            ctx.strokeStyle = point.options.borderColor;
+            ctx.lineWidth = 3;
+            ctx.fill();
+            ctx.stroke();
+            ctx.restore();
+          }
+        });
+      });
+    }
+  };
+
+  Chart.register(drawShadowPlugin);
+
   new Chart(ctx, {
     type: 'line',
     data: {
@@ -31,8 +62,8 @@ onMounted(() => {
         label: 'موجودی',
         data: [315000000, 450000000, 305000000, 450000000, 315000000, 550000000, 815000000],
         backgroundColor: gradient,
-
-        pointBackgroundColor: '#B86B45',
+        pointHoverBackgroundColor: '#fff',
+        pointHoverBorderColor: '#FF7028',
         fill: 'start',
         tension: 0.4
       }]
@@ -40,7 +71,6 @@ onMounted(() => {
     options: {
       maintainAspectRatio: false,
       responsive: true,
-      maintainAspectRatio: false,
       elements: {
         line: {
           shadowColor: 'rgba(255, 165, 0, 0.4)',
@@ -49,10 +79,9 @@ onMounted(() => {
           shadowOffsetY: 4
         },
         point: {
-          shadowColor: 'rgba(255, 112, 40, 0.5)',
-          shadowBlur: 10,
-          shadowOffsetX: 0,
-          shadowOffsetY: 4
+          radius: 5,
+          hoverRadius: 5,
+          hoverBorderWidth: 3
         }
       },
       scales: {
@@ -94,6 +123,22 @@ onMounted(() => {
           display: false
         },
         tooltip: {
+          backgroundColor: 'rgba(0, 0, 0, 0.7)',
+          borderColor: 'rgba(0, 0, 0, 0.7)',
+          borderWidth: 1,
+          borderRadius: 10,
+          displayColors: false,
+          titleFont: {
+            size: 14,
+            family: 'siteFont, sans-serif',
+            weight: 'bold',
+            color: '#4CAF50'
+          },
+          bodyFont: {
+            size: 14,
+            family: 'siteFont, sans-serif',
+            color: '#FFFFFF'
+          },
           callbacks: {
             label: function (context) {
               const value = context.raw;
@@ -103,11 +148,11 @@ onMounted(() => {
               return convertToPersianNumbers(context[0].label);
             }
           },
-          titleFont: {
-            family: 'siteFont, sans-serif'
-          },
-          bodyFont: {
-            family: 'siteFont, sans-serif'
+          padding: {
+            top: 10,
+            right: 15,
+            bottom: 10,
+            left: 15
           }
         }
       }
