@@ -35,7 +35,6 @@ export const toPersianString = (str: string): string => {
   return output;
 };
 
-
 export function isStringInRange(value: any, min: number, max: number): boolean {
   // Check if the value is a string
   if (typeof value !== "string") {
@@ -67,7 +66,7 @@ export function isEmail(value: any): boolean {
  * @param {number} decimals - The number of decimal places to keep.
  * @returns {string} - The formatted number as a string.
  */
-export function formatNumber(num: number, decimals: number): string {
+export function formatNumber(num: number, decimals: number = 3): string {
   // Split the number into integer and fractional parts
   const parts = num.toFixed(decimals).split(".");
 

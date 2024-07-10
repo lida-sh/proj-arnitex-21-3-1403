@@ -1,5 +1,4 @@
 <script setup>
-
 import { useDashboardPageStore } from "~/stores/dashboard-page"
 const dashboardStor = useDashboardPageStore();
 </script>
