@@ -1,6 +1,6 @@
 <template>
     <DashboardDepositDepositMob class="block xl:hidden"></DashboardDepositDepositMob>
-    <DashboardDepositTomanDesktop class="hidden xl:block overflow-hidden"></DashboardDepositTomanDesktop>
+    <DashboardDepositDesktop class="hidden xl:block overflow-hidden"></DashboardDepositDesktop>
 </template>
 <script setup lang="ts">
 
