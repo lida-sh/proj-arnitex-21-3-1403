@@ -13,6 +13,7 @@
 				<DashboardArticles></DashboardArticles>
 				<DashboardReferral></DashboardReferral>
 				<DashboardCoinList class="relative mt-[3rem] z-10"></DashboardCoinList>
+				<!-- <WalletWithdrawlIndex></WalletWithdrawlIndex> -->
 
 			</main>
 		</div>
