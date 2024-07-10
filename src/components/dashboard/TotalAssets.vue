@@ -1,3 +1,9 @@
+<script setup>
+
+import { useDashboardPageStore } from "~/stores/dashboard-page"
+const dashboardStor = useDashboardPageStore();
+</script>
+
 <template>
   <div class="flex-1 dashboard-card ">
     <div class="w-full h-[168px] flex py-5 px-6 text-[#fff] z-[100] relative">
@@ -15,7 +21,7 @@
           <div class="flex items-center">
             <p dir="ltr" class="text-[22px] leading-[24px]">۴۵۷ ، ۹۶۰ ، ۰۰۰</p>
           </div>
-          <UiDropDownSimple></UiDropDownSimple>
+          <UiDropDownSimple :list="dashboardStor.currencyList" v-model="dashboardStor.currencyIndex"></UiDropDownSimple>
         </div>
       </div>
       <div class="flex-1 py-5 px-8  border-l border-gray-600">
@@ -29,8 +35,8 @@
             <p dir="ltr" class="text-[22px] text-[#5CBC76] leading-[37px] font-semibold"> + ۵۶ ، ۳۲۶ ، ۰۰۰</p>
           </div>
           <div class="flex gap-3 items-center">
-            <p class="text-[#fff] text-[14px] leading-[26px] font-bold"> تومان</p>
-            <IconsDashboardArrowDownMob></IconsDashboardArrowDownMob>
+            <UiDropDownSimple :list="dashboardStor.currencyList" v-model="dashboardStor.currencyIndex">
+            </UiDropDownSimple>
           </div>
         </div>
       </div>
@@ -56,8 +62,6 @@
   </div>
 
 </template>
-<script>
-</script>
 
 <style>
 .bg {

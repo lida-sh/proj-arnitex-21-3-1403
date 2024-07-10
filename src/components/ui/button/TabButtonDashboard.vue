@@ -17,7 +17,8 @@ const changeIndex = (index: number) => {
 			<button @click="changeIndex(index)" :class="{ active: selectedIndex === index }" v-for="(item, index) in list"
 				:key="item.id" class="text-xs font-normal ">
 				<div class="outer p-[1px]">
-					<div class="inner px-[29px] lg:px-[55px] py-[11px] flex items-center justify-center leading-[29px] whitespace-nowrap">
+					<div
+						class="inner px-[29px] lg:px-[55px] py-[11px] flex items-center justify-center leading-[29px] whitespace-nowrap">
 						{{ item.title }}
 					</div>
 				</div>
