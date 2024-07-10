@@ -34,6 +34,9 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: {
+        translate: "no",
+      },
       link: [
         {
           rel: "apple-touch-icon",
