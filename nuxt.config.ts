@@ -36,6 +36,7 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: {
         translate: "no",
+        class: "notranslate",
       },
       link: [
         {
@@ -67,6 +68,7 @@ export default defineNuxtConfig({
         { name: "msapplication-TileColor", content: "#ff7028" },
         { name: "msapplication-config", content: "/favicon/browserconfig.xml" },
         { name: "theme-color", content: "#ffffff" },
+        { name: "google", content: "notranslate" },
       ],
       script: [],
     },
