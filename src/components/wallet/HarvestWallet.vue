@@ -1,27 +1,8 @@
-<script setup>
-const TabIndex = ref(0)
-
-const data = ref([
-  {
-    id: 1,
-    title: "برداشت رمز ارز"
-  }, {
-    id: 2,
-    title: "برداشت تومان"
-  },
-])
-</script>
 <template>
   <div class="flex-1 pb-[100px]">
     <div class="w-full text-[#fff] z-[100] relative">
       <div class="w-full">
-
-        <div class=" pb-7 border-b border-[#343434]">
-          <div class=" px-4">
-            <UiButtonTabButtonDashboard class="flex-1" :list="data" v-model="TabIndex"></UiButtonTabButtonDashboard>
-          </div>
-        </div>
-        <p class="text-[16px] font-normal leading-[28px] pt-8 pb-3">مبلغ واریزی (تومان)</p>
+        <p class="text-[16px] font-normal leading-[28px] pt-3 pb-3">مبلغ واریزی (تومان)</p>
         <input type="text"
           class="w-full bg-black border-[#676767] border-[1px] rounded-[16px] h-[62px] z-50 placeholder-[#676767] text-[16px]"
           placeholder="مبلغ را وارد کنید (حداقل مبلغ ۵۰،۰۰۰ تومان است)">
