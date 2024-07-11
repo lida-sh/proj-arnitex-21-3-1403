@@ -1,15 +1,15 @@
 <template>
-    <div class="px-4 pt-[1.563rem] pb-[60rem] w-full h-screen bg-black flex flex-col gap-[0.563rem]">
-       <div v-for="feature in featurs" class="w-full bg-[#171717] rounded-lg py-2 flex flex-col">
-        <h2 class="text-base font-normal leading-7 text-white mr-[1.313rem] mt-2">{{feature.title}}</h2>
-        <div class="grid grid-cols-4 p-3 gap-4">
-          <NuxtLink v-for="subFeature in feature.subFeaturs" class="flex flex-col items-center justify-center gap-3">
-            <component :is="subFeature.icon"/>
-            <h6 class="text-white text-xs font-normal leading-[22px]">{{ subFeature.subTitle }}</h6>
-          </NuxtLink>
-        </div>
-       </div>
+  <div class="px-4 pt-[1.563rem] pb-[3rem] w-full bg-black flex flex-col gap-[0.563rem]">
+    <div v-for="feature in featurs" class="w-full bg-[#171717] rounded-lg py-2 flex flex-col">
+      <h2 class="text-base font-normal leading-7 text-white mr-[1.313rem] mt-2">{{ feature.title }}</h2>
+      <div class="grid grid-cols-4 p-3 gap-4">
+        <NuxtLink v-for="subFeature in feature.subFeaturs" class="flex flex-col items-center justify-center gap-3">
+          <component :is="subFeature.icon" />
+          <h6 class="text-white text-xs font-normal leading-[22px] whitespace-nowrap">{{ subFeature.subTitle }}</h6>
+        </NuxtLink>
+      </div>
     </div>
+  </div>
 </template>
 <script setup>
 import IconsDashboardSimpleTradeNav from "~/components/icons/dashboard/SimpleTradeNav.vue"
@@ -81,44 +81,49 @@ const links = [
   },
 ];
 const featurs = [
-    {
-        title: "معامله",
-        subFeaturs: [
-      { subTitle: "معامله ساده", to: "/", icon:IconsDashboardSimpleTradeNav },
-      { subTitle: "معامله پیشرفته ", to: "/", icon:IconsDashboardComplexTradeNav },
-      { subTitle: "معامله تعهدی ", to: "/",icon:IconsDashboardAccrualTradeNav },
-      { subTitle: "کپی ترید", to: "/",icon:IconsDashboardCopyTradeNav },
-      { subTitle: "بازارها", to: "/",icon:IconsMarkets },
-      { subTitle: "سفارشات", to: "/",icon:IconsOrders },
-      { subTitle: "ماشین حساب ", to: "/",icon: IconsCalculator},
-    ]},
-    {
-        title: "کیف پول",
-        subFeaturs: [
-      { subTitle: "واریز", to: "/", icon:IconsDeposit },
-      { subTitle: "برداشت", to: "/", icon:IconsHarvest },
-      { subTitle: "تاریخچه", to: "/", icon:IconsHistory },
-      { subTitle: "دارایی‌ها", to: "/", icon:IconsAssets },
-      { subTitle: "پورتفولیو", to: "/", icon:IconsPortfolio },
-      { subTitle: "حساب‌های بانکی", to: "/", icon:IconsVerifiedAccounts },
+  {
+    title: "معامله",
+    subFeaturs: [
+      { subTitle: "معامله ساده", to: "/", icon: IconsDashboardSimpleTradeNav },
+      {
+        subTitle: "معامله پیشرفته ", to: "/", icon: IconsDashboardComplexTradeNav
+      },
+      {
+        subTitle: "معامله تعهدی ", to: "/", icon: IconsDashboardAccrualTradeNav
+      },
+      { subTitle: "کپی ترید", to: "/", icon: IconsDashboardCopyTradeNav },
+      { subTitle: "بازارها", to: "/", icon: IconsMarkets },
+      { subTitle: "سفارشات", to: "/", icon: IconsOrders },
+      { subTitle: "ماشین حساب ", to: "/", icon: IconsCalculator },
     ]
-    },
-    {
-        title: "پروفایل",
-        subFeaturs: [
-      { subTitle: "امنیت", to: "/", icon:IconsSecurity },
-      { subTitle: "احراز هویت", to: "/", icon:IconsAuthentication },
+  },
+  {
+    title: "کیف پول",
+    subFeaturs: [
+      { subTitle: "واریز", to: "/", icon: IconsDeposit },
+      { subTitle: "برداشت", to: "/", icon: IconsHarvest },
+      { subTitle: "تاریخچه", to: "/", icon: IconsHistory },
+      { subTitle: "دارایی‌ها", to: "/", icon: IconsAssets },
+      { subTitle: "پورتفولیو", to: "/", icon: IconsPortfolio },
+      { subTitle: "حساب‌های بانکی", to: "/", icon: IconsVerifiedAccounts },
     ]
-    },
-    {
-        title: "راهنما و پشتیبانی",
-        subFeaturs: [
-      { subTitle: "سوالات متداول", to: "/", icon:IconsFAQs },
-      { subTitle: "دعوت از دوستان", to: "/", icon:IconsInviteFriends },
-      { subTitle: "تنظیمات", to: "/", icon:IconsSettings },
-      { subTitle: "آکامی", to: "/", icon:IconsAccademy },
-      { subTitle: "پشتیبانی", to: "/", icon:IconsSupport },
+  },
+  {
+    title: "پروفایل",
+    subFeaturs: [
+      { subTitle: "امنیت", to: "/", icon: IconsSecurity },
+      { subTitle: "احراز هویت", to: "/", icon: IconsAuthentication },
     ]
-    },
-    ];
+  },
+  {
+    title: "راهنما و پشتیبانی",
+    subFeaturs: [
+      { subTitle: "سوالات متداول", to: "/", icon: IconsFAQs },
+      { subTitle: "دعوت از دوستان", to: "/", icon: IconsInviteFriends },
+      { subTitle: "تنظیمات", to: "/", icon: IconsSettings },
+      { subTitle: "آکامی", to: "/", icon: IconsAccademy },
+      { subTitle: "پشتیبانی", to: "/", icon: IconsSupport },
+    ]
+  },
+];
 </script>

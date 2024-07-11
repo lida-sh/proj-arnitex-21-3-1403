@@ -134,7 +134,7 @@ const data = {
       <div class="flex flex-col-reverse lg:flex-row items-center justify-between mt-[1.875rem] lg:mt-24">
         <h6 class="text-xs leading-[1.375rem] font-normal text-[#676767]">تمامی حقوق برای آرنیتکس محفوظ می باشد</h6>
 
-        <div class="flex flex-col-reverse lg:flex-row items-center mb-[3.125rem] lg:mb-0">
+        <div class="flex flex-col-reverse lg:flex-row items-center mt-[3.125rem] lg:mt-0 mb-[3.125rem] lg:mb-0">
           <div class="flex items-center">
             <div
               class="w-[7.25rem] h-[2.625rem] border-[#676767] border flex items-center justify-between px-4 py-2.5 rounded-md ml-3">

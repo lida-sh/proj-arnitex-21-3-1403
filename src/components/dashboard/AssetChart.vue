@@ -23,7 +23,7 @@ const data = ref([
       <UiButtonTabButton class="flex-1" :list="data" v-model="tabIndex"></UiButtonTabButton>
     </div>
 
-    <div class="w-full h-auto flex justify-center items-center mt-[1.5rem]">
+    <div class="w-full h-auto flex justify-center items-center mt-[0.5rem]">
       <UiChartAssets v-if="tabIndex == 0" :day="7"></UiChartAssets>
       <UiChartAssets v-if="tabIndex == 1" :day="30"></UiChartAssets>
       <UiChartAssets v-if="tabIndex == 2" :day="90"></UiChartAssets>

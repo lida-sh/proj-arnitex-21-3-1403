@@ -6,7 +6,7 @@ const dashboardStor = useDashboardPageStore();
 <template>
   <div class="flex-1 dashboard-card ">
     <div class="w-full h-[168px] flex py-5 px-6 text-[#fff] z-[100] relative">
-      <div class="flex-1 py-5 px-8  border-l border-gray-600">
+      <div class="flex-1 py-5 px-8">
         <div class="flex justify-between text-white">
           <div class="flex items-center">
             <p class="text-[16px] font-bold leading-[29px]">دارایی کل:</p>
@@ -23,7 +23,9 @@ const dashboardStor = useDashboardPageStore();
           <UiDropDownSimple :list="dashboardStor.currencyList" v-model="dashboardStor.currencyIndex"></UiDropDownSimple>
         </div>
       </div>
-      <div class="flex-1 py-5 px-8  border-l border-gray-600">
+      <span class="boarder-g"></span>
+
+      <div class="flex-1 py-5 px-8">
         <div class="flex justify-between text-white">
           <div class="flex items-center">
             <p class="text-[16px] font-bold leading-[29px]">سود و زیان ۲۴ ساعت گذشته:</p>
@@ -33,12 +35,9 @@ const dashboardStor = useDashboardPageStore();
           <div class="flex items-center">
             <p dir="ltr" class="text-[22px] text-[#5CBC76] leading-[37px] font-semibold"> + ۵۶ ، ۳۲۶ ، ۰۰۰</p>
           </div>
-          <div class="flex gap-3 items-center">
-            <UiDropDownSimple :list="dashboardStor.currencyList" v-model="dashboardStor.currencyIndex">
-            </UiDropDownSimple>
-          </div>
         </div>
       </div>
+      <span class="boarder-g"></span>
       <div class="flex-1 px-8 flex flex-col items-center justify-center gap-3">
 
         <button class="h-[63px] bgB w-full max-w-[15rem] rounded-[16px] flex justify-center items-center ">
@@ -69,5 +68,10 @@ const dashboardStor = useDashboardPageStore();
 
 .bgB {
   background: #343434;
+}
+
+.boarder-g {
+  width: 1px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.50) 0%, rgba(255, 112, 40, 0.00) 121.28%);
 }
 </style>

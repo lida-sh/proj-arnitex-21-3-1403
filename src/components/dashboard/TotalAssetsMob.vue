@@ -14,7 +14,7 @@ const dashboardStor = useDashboardPageStore();
       </div>
     </div>
     <div class=" px-3">
-      <div class="flex justify-between border-b border-[GREY] text-white px-5 py-4">
+      <div class="flex justify-between border-b border-[#5e5e5e] text-white px-5 py-4">
         <div class="flex items-center">
           <p dir="ltr" class="text-[22px] leading-[24px]">۴۵۷ ، ۹۶۰ ، ۰۰۰</p>
         </div>

@@ -137,7 +137,7 @@ onMounted(() => {
 					shadowOffsetY: 4
 				},
 				point: {
-					radius: 5,
+					radius: 3,
 					hoverRadius: 7,
 					hoverBorderWidth: 3
 				}
@@ -183,7 +183,7 @@ onMounted(() => {
 				tooltip: {
 					mode: 'nearest',
 					intersect: false,
-					backgroundColor: 'rgba(0, 0, 0, 0.7)',
+					backgroundColor: 'rgba(0, 0, 0, 0.9)',
 					borderColor: 'rgba(0, 0, 0, 0.7)',
 					borderWidth: 1,
 					borderRadius: 10,

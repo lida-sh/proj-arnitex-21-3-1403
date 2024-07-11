@@ -120,9 +120,9 @@ onMounted(() => {
 			responsive: true,
 			layout: {
 				padding: {
-					top: 20,
+					top: 40,
 					right: 32,
-					bottom: 0,
+					bottom: 20,
 					left: 32
 				}
 			},
@@ -138,7 +138,7 @@ onMounted(() => {
 					shadowOffsetY: 4
 				},
 				point: {
-					radius: 5,
+					radius: 3,
 					hoverRadius: 7,
 					hoverBorderWidth: 3
 				}
@@ -187,7 +187,7 @@ onMounted(() => {
 					backgroundColor: 'rgba(0, 0, 0, 0.7)',
 					borderColor: 'rgba(0, 0, 0, 0.7)',
 					borderWidth: 1,
-					borderRadius: 10,
+					borderRadius: 16,
 					displayColors: false,
 					titleFont: {
 						size: 14,
