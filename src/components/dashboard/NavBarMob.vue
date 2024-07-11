@@ -63,7 +63,7 @@
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink class="nav-link">
+          <NuxtLink to="/dashboard/more" class="nav-link">
             <div>
               <IconsDashboardMoreNav></IconsDashboardMoreNav>
             </div>
