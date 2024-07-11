@@ -1,44 +1,37 @@
 <template>
 	<div class="chart-container">
-		<canvas class="w-full h-full" ref="myChart"></canvas>
+		<canvas class="w-full h-full" ref="myLineChart"></canvas>
 	</div>
 </template>
-
-
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import { Chart, LineController, LineElement, PointElement, LinearScale, CategoryScale, Filler, Tooltip, Legend } from 'chart.js';
-import { formatNumber } from "~/utils/stringUtils"
-
 
 const props = defineProps({
 	day: {
 		type: Number,
 		default: 7
 	},
-})
-
+});
 
 Chart.register(LineController, LineElement, PointElement, LinearScale, CategoryScale, Filler, Tooltip, Legend);
 
-const myChart = ref(null);
+const myLineChart = ref(null);
 
 const convertToPersianNumbers = (num) => {
 	const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
 	return num.toString().replace(/\d/g, (digit) => persianDigits[digit]);
 };
 
-// ایجاد داده‌های تصادفی
 const generateRandomData = (numDays) => {
 	const data = [];
 	for (let i = 0; i < numDays; i++) {
-		data.push(Math.floor(Math.random() * (900000000 - 300000000 + 1)) );
+		data.push(Math.floor(Math.random() * (900000000 - 300000000 + 1)));
 	}
 	return data;
 };
 
-// ایجاد لیبل‌های تاریخ
 const generateDateLabels = (numDays) => {
 	const labels = [];
 	const now = new Date();
@@ -47,7 +40,7 @@ const generateDateLabels = (numDays) => {
 		date.setDate(now.getDate() - i);
 		labels.push(`${date.getMonth() + 1}/${date.getDate()}`);
 	}
-	labels[labels.length - 1] = 'امروز'; // آخرین روز امروز است
+	labels[labels.length - 1] = 'امروز';
 	return labels;
 };
 
@@ -55,7 +48,7 @@ const data90Days = generateRandomData(props.day);
 const labels90Days = generateDateLabels(props.day);
 
 onMounted(() => {
-	const ctx = myChart.value.getContext('2d');
+	const ctx = myLineChart.value.getContext('2d');
 	const gradient = ctx.createLinearGradient(800, 10, 800, 200);
 	gradient.addColorStop(0, 'rgba(255, 112, 40, 0.50)');
 	gradient.addColorStop(1, 'rgba(255, 112, 40, 0.00)');
@@ -107,8 +100,6 @@ onMounted(() => {
 		}
 	};
 
-	Chart.register(drawShadowPlugin, verticalLinePlugin);
-
 	new Chart(ctx, {
 		type: 'line',
 		data: {
@@ -128,7 +119,7 @@ onMounted(() => {
 			responsive: true,
 			layout: {
 				padding: {
-					top: 20,
+					top: 30,
 					right: 20,
 					bottom: 0,
 					left: 20
@@ -180,7 +171,7 @@ onMounted(() => {
 							family: 'siteFont, sans-serif'
 						},
 						callback: function (value) {
-							return convertToPersianNumbers(formatNumber(value, 0));
+							return convertToPersianNumbers(value.toLocaleString());
 						}
 					}
 				}
@@ -225,10 +216,12 @@ onMounted(() => {
 					}
 				}
 			}
-		}
+		},
+		plugins: [drawShadowPlugin, verticalLinePlugin]
 	});
 });
 </script>
+
 <style scoped>
 .chart-container {
 	width: 100%;

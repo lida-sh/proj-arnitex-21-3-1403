@@ -1,44 +1,38 @@
 <template>
 	<div class="chart-container">
-		<canvas class="w-full h-full" ref="myChart"></canvas>
+		<canvas class="w-full h-full" ref="myChart2"></canvas>
 	</div>
 </template>
-
-
 
 <script setup>
 import { ref, onMounted } from 'vue';
 import { Chart, LineController, LineElement, PointElement, LinearScale, CategoryScale, Filler, Tooltip, Legend } from 'chart.js';
-import { formatNumber } from "~/utils/stringUtils"
-
+import { formatNumber } from "~/utils/stringUtils";
 
 const props = defineProps({
 	day: {
 		type: Number,
 		default: 7
 	},
-})
-
+});
 
 Chart.register(LineController, LineElement, PointElement, LinearScale, CategoryScale, Filler, Tooltip, Legend);
 
-const myChart = ref(null);
+const myChart2 = ref(null);
 
 const convertToPersianNumbers = (num) => {
 	const persianDigits = '۰۱۲۳۴۵۶۷۸۹';
 	return num.toString().replace(/\d/g, (digit) => persianDigits[digit]);
 };
 
-// ایجاد داده‌های تصادفی
 const generateRandomData = (numDays) => {
 	const data = [];
 	for (let i = 0; i < numDays; i++) {
-		data.push(Math.floor(Math.random() * (900000000 - 300000000 + 1)) );
+		data.push(Math.floor(Math.random() * (900000000 - 300000000 + 1)));
 	}
 	return data;
 };
 
-// ایجاد لیبل‌های تاریخ
 const generateDateLabels = (numDays) => {
 	const labels = [];
 	const now = new Date();
@@ -55,7 +49,7 @@ const data90Days = generateRandomData(props.day);
 const labels90Days = generateDateLabels(props.day);
 
 onMounted(() => {
-	const ctx = myChart.value.getContext('2d');
+	const ctx = myChart2.value.getContext('2d');
 	const gradient = ctx.createLinearGradient(800, 10, 800, 300);
 	gradient.addColorStop(0, 'rgba(255, 112, 40, 0.50)');
 	gradient.addColorStop(1, 'rgba(255, 112, 40, 0.00)');
@@ -106,8 +100,6 @@ onMounted(() => {
 			}
 		}
 	};
-
-	Chart.register(drawShadowPlugin, verticalLinePlugin);
 
 	new Chart(ctx, {
 		type: 'line',
@@ -225,10 +217,12 @@ onMounted(() => {
 					}
 				}
 			}
-		}
+		},
+		plugins: [drawShadowPlugin, verticalLinePlugin]
 	});
 });
 </script>
+
 <style scoped>
 .chart-container {
 	width: 100%;

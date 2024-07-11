@@ -9,6 +9,7 @@
       <DashboardUserInfoMob></DashboardUserInfoMob>
       <DashboardTotalAssetsMob></DashboardTotalAssetsMob>
       <DashboardAssetChartMob></DashboardAssetChartMob>
+      <DashboardAssetDispersionMob></DashboardAssetDispersionMob>
       <DashboardReferralMob></DashboardReferralMob>
     </div>
   </div>
