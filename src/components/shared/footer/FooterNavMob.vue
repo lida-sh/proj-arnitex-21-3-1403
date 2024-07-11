@@ -4,7 +4,7 @@ const props = defineProps(['data'])
 
 <template>
   <nav>
-    <FooterNavCollapse v-for="_item in data" class="mt-[1.875rem]">
+    <SharedFooterNavCollapse v-for="_item in data" class="mt-[1.875rem]">
       <template #title>
         <h6 class="text-xl leading-[1.813rem] text-[1rem] font-bold text-white">
           {{ _item.title }}
@@ -20,7 +20,7 @@ const props = defineProps(['data'])
           </template>
         </ul>
       </div>
-    </FooterNavCollapse>
+    </SharedFooterNavCollapse>
   </nav>
 </template>
 

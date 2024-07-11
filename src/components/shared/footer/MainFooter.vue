@@ -1,6 +1,4 @@
 <script setup>
-import FooterLang from '../icons/FooterLang.vue';
-
 
 const data = {
   quickAccess: {
@@ -128,8 +126,8 @@ const data = {
 <template>
   <footer class="bg-gradient-to-b z-[49] relative from-[#262626] to-[#171717] w-full pb-4">
     <div class="c-container py-[3.125rem] pb-[8rem] lg:pb-unset z-10">
-      <FooterNav :data="data" class="hidden lg:block"></FooterNav>
-      <FooterNavMob :data="data" class="lg:hidden block"></FooterNavMob>
+      <SharedFooterNav :data="data" class="hidden lg:block"></SharedFooterNav>
+      <SharedFooterNavMob :data="data" class="lg:hidden block"></SharedFooterNavMob>
 
       <div class="flex flex-col-reverse lg:flex-row items-center justify-between mt-[1.875rem] lg:mt-24">
         <h6 class="text-xs leading-[1.375rem] font-normal text-[#676767]">تمامی حقوق برای آرنیتکس محفوظ می باشد</h6>
@@ -140,7 +138,7 @@ const data = {
               class="w-[7.25rem] h-[2.625rem] border-[#676767] border flex items-center justify-between px-4 py-2.5 rounded-md ml-3">
               <span class="text-base font-thin text-white">فارسی</span>
               <div class="w-5">
-                <FooterLang></FooterLang>
+                <IconsFooterLang></IconsFooterLang>
               </div>
             </div>
             <div
