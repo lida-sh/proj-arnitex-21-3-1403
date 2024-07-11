@@ -60,7 +60,7 @@
 
           </div>
         </div>
-        <div class="flex items-center justify-center xl:mr-[2rem] xl:w-[12.5rem] h-[2.625rem] relative mr-0">
+        <div class="hidden xl:flex items-center justify-center xl:mr-[2rem] xl:w-[12.5rem] h-[2.625rem] relative mr-0">
           <input type="text"
             class="peer h-full w-full rounded-md bg-[#262626] px-4 focus:ring-0 focus:border focus:border-[#FF7028] text-gray-100 border-0 placeholder:text-sm"
             placeholder="جستجوی رمز ارز" />

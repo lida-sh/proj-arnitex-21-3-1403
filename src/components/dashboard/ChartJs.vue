@@ -1,8 +1,10 @@
 <template>
-  <div class="chart-container">
-    <canvas class="w-full h-full" ref="myChart"></canvas>
-  </div>
+	<div class="chart-container">
+		<canvas class="w-full h-full" ref="myChart"></canvas>
+	</div>
 </template>
+
+
 
 <script setup>
 import { ref, onMounted } from 'vue';
@@ -17,11 +19,36 @@ const convertToPersianNumbers = (num) => {
   return num.toString().replace(/\d/g, (digit) => persianDigits[digit]);
 };
 
+// ایجاد داده‌های تصادفی
+const generateRandomData = (numDays) => {
+  const data = [];
+  for (let i = 0; i < numDays; i++) {
+    data.push(Math.floor(Math.random() * (900000000 - 300000000 + 1)) + 300000000);
+  }
+  return data;
+};
+
+// ایجاد لیبل‌های تاریخ
+const generateDateLabels = (numDays) => {
+  const labels = [];
+  const now = new Date();
+  for (let i = numDays - 1; i >= 0; i--) {
+    const date = new Date();
+    date.setDate(now.getDate() - i);
+    labels.push(`${date.getMonth() + 1}/${date.getDate()}`);
+  }
+  labels[labels.length - 1] = 'امروز'; // آخرین روز امروز است
+  return labels;
+};
+
+const data90Days = generateRandomData(90);
+const labels90Days = generateDateLabels(90);
+
 onMounted(() => {
   const ctx = myChart.value.getContext('2d');
   const gradient = ctx.createLinearGradient(800, 10, 800, 300);
   gradient.addColorStop(0, 'rgba(255, 112, 40, 0.50)');
-  gradient.addColorStop(1, 'rgba(255, 112, 40, 0.00');
+  gradient.addColorStop(1, 'rgba(255, 112, 40, 0.00)');
 
   const drawShadowPlugin = {
     id: 'drawShadow',
@@ -30,7 +57,7 @@ onMounted(() => {
       chart.data.datasets.forEach((dataset, i) => {
         const meta = chart.getDatasetMeta(i);
         meta.data.forEach((point, index) => {
-          if (point.$context.active) {
+          if (chart.tooltip._active && chart.tooltip._active.length && chart.tooltip._active[0].index === index) {
             const { x, y } = point.getCenterPoint();
             ctx.save();
             ctx.shadowColor = 'rgba(255, 255, 255, 1)';
@@ -52,15 +79,33 @@ onMounted(() => {
     }
   };
 
-  Chart.register(drawShadowPlugin);
+  const verticalLinePlugin = {
+    id: 'verticalLine',
+    afterDatasetsDraw: function (chart) {
+      if (chart.tooltip._active && chart.tooltip._active.length) {
+        const ctx = chart.ctx;
+        ctx.save();
+        const activePoint = chart.tooltip._active[0];
+        ctx.beginPath();
+        ctx.moveTo(activePoint.element.x, chart.chartArea.top);
+        ctx.lineTo(activePoint.element.x, chart.chartArea.bottom);
+        ctx.lineWidth = 1;
+        ctx.strokeStyle = '#fff';
+        ctx.stroke();
+        ctx.restore();
+      }
+    }
+  };
+
+  Chart.register(drawShadowPlugin, verticalLinePlugin);
 
   new Chart(ctx, {
     type: 'line',
     data: {
-      labels: ['+7/14', '+7/15', '+7/16', '+7/17', '+7/18', '+7/19', 'امروز'],
+      labels: labels90Days.map(label => convertToPersianNumbers(label)),
       datasets: [{
         label: 'موجودی',
-        data: [315000000, 450000000, 305000000, 450000000, 315000000, 550000000, 815000000],
+        data: data90Days,
         backgroundColor: gradient,
         pointHoverBackgroundColor: '#fff',
         pointHoverBorderColor: '#FF7028',
@@ -71,6 +116,18 @@ onMounted(() => {
     options: {
       maintainAspectRatio: false,
       responsive: true,
+      layout: {
+        padding: {
+          top: 20,
+          right: 30,
+          bottom: 0,
+          left: 30
+        }
+			},
+      hover: {
+        mode: 'nearest',
+        intersect: false
+      },
       elements: {
         line: {
           shadowColor: 'rgba(255, 165, 0, 0.4)',
@@ -80,7 +137,7 @@ onMounted(() => {
         },
         point: {
           radius: 5,
-          hoverRadius: 5,
+          hoverRadius: 7,
           hoverBorderWidth: 3
         }
       },
@@ -123,6 +180,8 @@ onMounted(() => {
           display: false
         },
         tooltip: {
+          mode: 'nearest',
+          intersect: false,
           backgroundColor: 'rgba(0, 0, 0, 0.7)',
           borderColor: 'rgba(0, 0, 0, 0.7)',
           borderWidth: 1,
@@ -160,11 +219,10 @@ onMounted(() => {
   });
 });
 </script>
-
 <style scoped>
 .chart-container {
-  width: 100%;
-  height: 300px;
-  margin: auto;
+	width: 100%;
+	height: 300px;
+	margin: auto;
 }
 </style>

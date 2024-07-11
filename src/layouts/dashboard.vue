@@ -7,6 +7,8 @@
 		</div>
 		<NuxtPage class="z-1 relative"></NuxtPage>
 	</div>
+	<HomeNavBottomNavigationWithUserProfile></HomeNavBottomNavigationWithUserProfile>
+
 	<FooterMainFooter></FooterMainFooter>
 </template>
 

@@ -8,8 +8,9 @@
       <DashboardNavBarMob></DashboardNavBarMob>
       <DashboardUserInfoMob></DashboardUserInfoMob>
       <DashboardTotalAssetsMob></DashboardTotalAssetsMob>
+      <DashboardAssetChartMob></DashboardAssetChartMob>
+      <DashboardAssetDispersionMob></DashboardAssetDispersionMob>
       <DashboardReferralMob></DashboardReferralMob>
-      <DashboardHarvestWalletMob></DashboardHarvestWalletMob>
     </div>
   </div>
 </template>

@@ -31,13 +31,13 @@ const setIndex = (index: number) => {
   <div class="items-center ml-2 relative min-w-[5rem]" ref="dropDownElement">
     <!-- {{list}} -->
     <button class="flex gap-3 px-2 items-center justify-between w-full" @click="dropdown = !dropdown">
-      <p class="text-[#fff] text-[14px] leading-[26px] font-bold">{{ list[model].title }}</p>
+      <p class="text-[#fff] text-[14px] leading-[26px] font-bold">{{ list[Number(model)].title }}</p>
       <IconsDashboardArrowDownMob></IconsDashboardArrowDownMob>
     </button>
     <ul v-if="dropdown" class="dropdown-inner">
       <li v-for="(item, index) in list" :key="item.title" @click="setIndex(index)"
         :class="{ 'dropdown-item-select': model === index }"
-        class="dropdown-item cursor-pointer text-[#fff] text-[14px] leading-[26px] font-bold flex items-center justify-center px-[1.25rem] rounded-xl pt-[5px] pb-[8px]">
+        class="dropdown-item cursor-pointer text-[#fff] text-[14px] leading-[26px] font-bold flex items-center justify-center px-[0.5rem] lg:px-[1.25rem] rounded-xl pt-[5px] pb-[8px]">
         {{ item.title }}</li>
     </ul>
   </div>

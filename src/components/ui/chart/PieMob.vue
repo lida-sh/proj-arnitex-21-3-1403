@@ -41,7 +41,7 @@ onMounted(() => {
         hoverOffset: 20,
         borderWidth: 5,
         borderColor: '#1e1e1e',
-        borderRadius: 10,
+        borderRadius: 8,
       }]
     },
     options: {
@@ -68,7 +68,7 @@ onMounted(() => {
               return `${label}: ${value}`;
             }
           },
-          backgroundColor: 'rgba(0, 0, 0, 0.9)', 
+          backgroundColor: 'rgba(0, 0, 0, 0.7)',
           titleFont: {
             size: 14,
             family: 'siteFont, sans-serif',
