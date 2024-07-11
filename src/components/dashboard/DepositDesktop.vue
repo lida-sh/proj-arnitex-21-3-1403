@@ -39,15 +39,18 @@
                             class="grid grid-cols-12 bg-[#0E0E0E] text-xs text-white font-normal leading-[29px] py-2 border-b border-[#262626]">
                             <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">واریز
                             </div>
-                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">۱۴۰۳ / ۰۳
+                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626] ltrDir">۱۴۰۳ / ۰۳
                                 / ۰۳</div>
                             <div
                                 class="col-span-2 flex items-center justify-center text-[#319B54] border-l border-[#262626]">
                                 ۱۰۰.۰۰۰.۰۰۰</div>
                             <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">موفق
                             </div>
-                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">
-                                http://arnitex....</div>
+                            <div
+                                class="col-span-2 flex items-center justify-center border-l border-[#262626] gap-[0.5rem]">
+                                <span class="ltrDir"> http://arnitex....</span>
+                                <IconsDashboardDepositDocLink></IconsDashboardDepositDocLink>
+                            </div>
                             <div class="col-span-2 flex items-center justify-center">5843635
                             </div>
                         </div>
@@ -55,15 +58,18 @@
                             class="grid grid-cols-12 bg-[#0E0E0E] text-xs text-white font-normal leading-[29px] py-2 border-b border-[#262626]">
                             <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">واریز
                             </div>
-                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">۱۴۰۳ / ۰۳
+                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626] ltrDir">۱۴۰۳ / ۰۳
                                 / ۰۳</div>
                             <div
                                 class="col-span-2 flex items-center justify-center text-[#319B54] border-l border-[#262626]">
                                 ۱۰۰.۰۰۰.۰۰۰</div>
                             <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">موفق
                             </div>
-                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">
-                                http://arnitex....</div>
+                            <div
+                                class="col-span-2 flex items-center justify-center border-l border-[#262626] gap-[0.5rem]">
+                                <span class="ltrDir"> http://arnitex....</span>
+                                <IconsDashboardDepositDocLink></IconsDashboardDepositDocLink>
+                            </div>
                             <div class="col-span-2 flex items-center justify-center">5843635
                             </div>
                         </div>
@@ -71,15 +77,18 @@
                             class="grid grid-cols-12 bg-[#0E0E0E] text-xs text-white font-normal leading-[29px] py-2 border-b border-[#262626]">
                             <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">واریز
                             </div>
-                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">۱۴۰۳ / ۰۳
+                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626] ltrDir">۱۴۰۳ / ۰۳
                                 / ۰۳</div>
                             <div
                                 class="col-span-2 flex items-center justify-center text-[#319B54] border-l border-[#262626]">
                                 ۱۰۰.۰۰۰.۰۰۰</div>
                             <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">موفق
                             </div>
-                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">
-                                http://arnitex....</div>
+                            <div
+                                class="col-span-2 flex items-center justify-center border-l border-[#262626] gap-[0.5rem]">
+                                <span class="ltrDir"> http://arnitex....</span>
+                                <IconsDashboardDepositDocLink></IconsDashboardDepositDocLink>
+                            </div>
                             <div class="col-span-2 flex items-center justify-center ">5843635
                             </div>
                         </div>
@@ -87,30 +96,36 @@
                             class="grid grid-cols-12 bg-[#0E0E0E] text-xs text-white font-normal leading-[29px] py-2 border-b border-[#262626]">
                             <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">واریز
                             </div>
-                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">۱۴۰۳ / ۰۳
+                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626] ltrDir">۱۴۰۳ / ۰۳
                                 / ۰۳</div>
                             <div
                                 class="col-span-2 flex items-center justify-center text-[#319B54] border-l border-[#262626]">
                                 ۱۰۰.۰۰۰.۰۰۰</div>
                             <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">موفق
                             </div>
-                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">
-                                http://arnitex....</div>
+                            <div
+                                class="col-span-2 flex items-center justify-center border-l border-[#262626] gap-[0.5rem]">
+                                <span class="ltrDir"> http://arnitex....</span>
+                                <IconsDashboardDepositDocLink></IconsDashboardDepositDocLink>
+                            </div>
                             <div class="col-span-2 flex items-center justify-center ">5843635
                             </div>
                         </div>
                         <div class="grid grid-cols-12 bg-[#0E0E0E] text-xs text-white font-normal leading-[29px] py-2 ">
                             <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">واریز
                             </div>
-                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">۱۴۰۳ / ۰۳
+                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626] ltrDir">۱۴۰۳ / ۰۳
                                 / ۰۳</div>
                             <div
                                 class="col-span-2 flex items-center justify-center text-[#319B54] border-l border-[#262626]">
                                 ۱۰۰.۰۰۰.۰۰۰</div>
                             <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">موفق
                             </div>
-                            <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">
-                                http://arnitex....</div>
+                            <div
+                                class="col-span-2 flex items-center justify-center border-l border-[#262626] gap-[0.5rem]">
+                                <span class="ltrDir"> http://arnitex....</span>
+                                <IconsDashboardDepositDocLink></IconsDashboardDepositDocLink>
+                            </div>
                             <div class="col-span-2 flex items-center justify-center ">5843635
                             </div>
                         </div>
@@ -215,5 +230,10 @@ const data = ref([
     }
 ])
 
+
 </script>
-<style scoped></style>
+<style scoped>
+.ltrDir {
+    direction: ltr;
+}
+</style>

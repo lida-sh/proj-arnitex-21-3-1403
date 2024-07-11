@@ -24,7 +24,7 @@
             </div>
             <div class="bg-[#171717] rounded-3xl py-[1.625rem] px-[2.875rem]">
                 <h2 class="text-base text-white font-medium leading-6 mb-[1.75rem] underline decoration-[#FF7028] underline-offset-8">راهنمای ساخت شناسه واریز</h2>
-                 <UiStepper :list="listStep"></UiStepper>
+                 <UiStepper :list="listStep" class-item="text-xs"></UiStepper>
             </div>
         </div>
     </div>

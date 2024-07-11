@@ -16,37 +16,60 @@
         </li>
     </ol> -->
     <ul class="steps steps-vertical">
-        <li v-for="(item, index) in list" class="step step-primary text-white text-justify text-xs font-medium leading-5 justify-start" :class="{'counter':!numberStep}">{{ item.title }}</li>
-        
+        <li v-for="(item, index) in list"
+            class="step step-primary text-white text-justify font-medium leading-5 justify-start"
+            :class="[{ 'counter': !numberStep }, classItem]">{{ item.title }}</li>
+
     </ul>
 
 </template>
-<script setup lang="ts">
+<script lang="ts">
 interface ListItem {
     title: string;
 }
-const props = defineProps<{ list: ListItem[], numberStep: boolean }>()
+export default defineComponent({
+    props: {
+        classItem: {
+            type: [String, Object, Array],
+            default: "false",
+        },
+        list: {
+            type:Array,
+            required:true
+        },
+        numberStep:{
+            type: Boolean,
+            default:false
+        }
+    }
+})
+
+
+// const props = withDefaults(defineProps<{ list: ListItem[], numberStep: boolean, classItem:[String, Object, Array] }>(),
+// {classItem:false})
 </script>
 <style scoped>
-.step{
+.step {
     text-align: start;
-    
+
 }
-.step::after{
+
+.step::after {
     background-color: #FF9A67;
     height: 1.188rem;
     width: 1.188rem;
     color: #FF9A67;
-    
-   
-   
+
+
+
 }
 
-.steps .step-primary::before{
+.steps .step-primary::before {
     background-color: #FF9A67;
 }
-.steps-vertical .step:before{
+
+.steps-vertical .step:before {
     width: 1px;
-    margin-inline-start:47%
+    margin-inline-start: 47%
 }
 </style>
