@@ -8,15 +8,15 @@
 			<DashboardMenuBar class="sticky top-20 max-w-[16.5rem] min-w-[13rem] dashboard-card w-full">
 			</DashboardMenuBar>
 			<main class="flex flex-col flex-1 gap-2 2xl:gap-[1.25rem]">
-				<DashboardUserInfo></DashboardUserInfo>
-				<DashboardStepper></DashboardStepper>
-				<DashboardTotalAssets></DashboardTotalAssets>
-				<DashboardAssetDispersion></DashboardAssetDispersion>
-				<DashboardAssetChart></DashboardAssetChart>
-				<DashboardArticles></DashboardArticles>
-				<DashboardReferral></DashboardReferral>
-				<DashboardCoinList class="relative mt-[3rem] z-10"></DashboardCoinList>
-				<!-- <WalletWithdrawlIndex></WalletWithdrawlIndex> -->
+				<!-- <DashboardUserInfo></DashboardUserInfo> -->
+				<!-- <DashboardStepper></DashboardStepper> -->
+				<!-- <DashboardTotalAssets></DashboardTotalAssets> -->
+				<!-- <DashboardAssetDispersion></DashboardAssetDispersion> -->
+				<!-- <DashboardAssetChart></DashboardAssetChart> -->
+				<!-- <DashboardArticles></DashboardArticles> -->
+				<!-- <DashboardReferral></DashboardReferral> -->
+				<!-- <DashboardCoinList class="relative mt-[3rem] z-10"></DashboardCoinList> -->
+				<WalletWithdrawlIndex></WalletWithdrawlIndex>
 
 			</main>
 		</div>
