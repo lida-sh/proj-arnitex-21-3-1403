@@ -5,29 +5,29 @@
           <div class="flex-1">
             <div class=" py-3 relative">
               <p class="text-[14px] leading-[20px] font-normal pb-3">انتخاب ارز دیجیتال</p>
-              <input type="text" name="" id="" class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] ">
+              <input type="text" name="" id="" class="bg-[#000] w-full h-[44px] rounded-2xl border-[#676767] ">
               <IconsDashboardArrowBig class=" left-5 absolute bottom-8"></IconsDashboardArrowBig>
             </div>
   
             <div class=" pb-8 relative">
               <p class="text-[14px] leading-[20px] font-normal pb-3"> میزان برداشت (BTC)</p>
-              <input type="text" name="" id="" class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] ">
-              <span class=" left-5 absolute bottom-12 text-[16px] font-normal leading-[22px]">BTC</span>
+              <input type="text" name="" id="" class="bg-[#000] w-full h-[44px] rounded-2xl border-[#676767] ">
+              <span class=" left-5 absolute bottom-10 text-[16px] font-normal leading-[22px]">BTC</span>
             </div>
   
             <div class=" pb-8 relative">
               <p class="text-[14px] leading-[20px] font-normal pb-3"> نوع شبکه</p>
               <input type="text" name="" id=""
-                class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] placeholder-[#676767]"
+                class="bg-[#000] w-full h-[44px] rounded-2xl border-[#676767] placeholder-[#676767]"
                 placeholder="نوع شبکه را انتخاب کنید.">
-              <IconsDashboardArrowBig class=" left-5 absolute bottom-14"></IconsDashboardArrowBig>
+              <IconsDashboardArrowBig class=" left-5 absolute bottom-12"></IconsDashboardArrowBig>
             </div>
   
             <div class=" pb-8">
               <p class="text-[14px] leading-[20px] font-normal pb-3"> آدرس مقصد</p>
   
               <input type="text" name="" id=""
-                class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] placeholder-[#676767]"
+                class="bg-[#000] w-full h-[44px] rounded-2xl border-[#676767] placeholder-[#676767]"
                 placeholder="آدرس کیف پول مقصد را وارد کنید.">
             </div>
   
