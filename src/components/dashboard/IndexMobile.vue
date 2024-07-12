@@ -11,6 +11,8 @@
       <DashboardAssetChartMob></DashboardAssetChartMob>
       <DashboardAssetDispersionMob></DashboardAssetDispersionMob>
       <DashboardReferralMob></DashboardReferralMob>
+
+      <WalletWithdrawlIndexMob></WalletWithdrawlIndexMob>
     </div>
   </div>
 </template>
