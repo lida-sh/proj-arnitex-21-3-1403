@@ -1,0 +1,191 @@
+@font-face {
+  font-family: "siteFont";
+  src: url("../fonts/IRANSansWeb.woff");
+}
+
+@font-face {
+  font-family: "siteFont";
+  src: url("../fonts/Vazirmatn-Thin.woff2") format("woff2");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "siteFont";
+  src: url("../fonts/Vazirmatn-ExtraLight.woff2") format("woff2");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "siteFont";
+  src: url("../fonts/Vazirmatn-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "siteFont";
+  src: url("../fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "siteFont";
+  src: url("../fonts/Vazirmatn-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "siteFont";
+  src: url("../fonts/Vazirmatn-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "siteFont";
+  src: url("../fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "siteFont";
+  src: url("../fonts/Vazirmatn-ExtraBold.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "siteFont";
+  src: url("../fonts/Vazirmatn-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --white: #ffffff;
+  --Light-Grey: #343434;
+  --black: #000;
+  --black-mute: #676767;
+  --mid-grey: #262626;
+  --dark-grey: #171717;
+  --hell-grey: #0e0e0e;
+  --gradient-deep-grey: linear-gradient(0deg, #171717 0%, #262626 100%);
+  --red: #ea3c53;
+  --green: #5cbc76;
+  --green-shade-1: #319b54;
+  --error: #ffa928;
+  --primary: #ff7028;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  /* @apply overflow-y-scroll; */
+  @apply overflow-x-hidden;
+  direction: rtl;
+  font-family: "siteFont", serif !important;
+  @apply text-gray-800;
+}
+/* custom-container */
+.c-container {
+  @apply w-full mx-auto h-full px-[1rem] lg:px-[2rem] xl:px-[4.25rem] 2xl:px-[6.25rem] max-w-[30rem] lg:max-w-[95rem];
+}
+.c-container-sm-full {
+  @apply w-full mx-auto h-full lg:px-[2rem] xl:px-[4.25rem] 2xl:px-[6.25rem] max-w-[30rem] lg:max-w-[95rem];
+}
+@layer components {
+  .sun-menu-hover {
+    hover: bg-gray-300;
+  }
+}
+@layer utilities {
+  .bg-custom-radial-end {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(255, 112, 40, 0.25) 0.01%,
+      rgba(255, 112, 40, 0) 100%
+    );
+  }
+  .bg-custom-radial-start {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(255, 112, 40, 0.15) 0.01%,
+      rgba(255, 112, 40, 0) 100%
+    );
+  }
+}
+
+.card-bg {
+  background: linear-gradient(0deg, #171717 0%, #262626 100%);
+  border-top: 1px solid rgba(103, 103, 103, 1);
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+@media (max-width: 600px) {
+  [data-sonner-toaster] {
+    --offset: 0 !important;
+  }
+}
+
+[data-sonner-toast] {
+  direction: rtl;
+  font-family: "siteFont";
+}
+
+[data-sonner-toast][data-styled="true"] {
+  gap: 16px !important;
+}
+
+:root:has(
+    :is(
+        .modal-open,
+        .modal:target,
+        .modal-toggle:checked + .modal,
+        .modal[open]
+      )
+  ) {
+  overflow: hidden;
+  scrollbar-gutter: auto;
+}
+
+.dashboard-card {
+  border-radius: 1.5rem;
+  background: #171717;
+}
+
+.dashboard-card-mob {
+  border-radius: 1rem;
+  background: #171717;
+}
+
+.selected-dashboard-item path {
+  fill: rgba(255, 112, 40, 1);
+}
+.selected-dashboard-item .arrow-down path {
+  stroke: rgba(255, 112, 40, 1);
+}
