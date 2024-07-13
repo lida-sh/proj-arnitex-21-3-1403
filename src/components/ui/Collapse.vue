@@ -1,6 +1,6 @@
 <template>
-    <div class="collapse-container">
-        <div ref="collapseContent" class="collapse-content">
+    <div class="collapse-container-1">
+        <div ref="collapseContent" class="collapse-content-1">
             <slot></slot>
         </div>
     </div>
@@ -43,12 +43,12 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.collapse-container {
+.collapse-container-1 {
     overflow: hidden;
     transition: height 0.3s ease;
 }
 
-.collapse-content {
+.collapse-content-1 {
     overflow: hidden;
 }
 </style>

@@ -40,8 +40,8 @@
               انتخابی پشتیبانی می‌کند.</p>
           </div>
           <div class="flex pt-7 items-center gap-3">
-            <span class="w-[17px] h-[10px] bg-[#FF7028] rounded-full"></span>
-            <p class="text-[14px] font-medium leading-[20px] "> درصورت بروز هرگونه اشتباه، مسئولیت آن با خود کاربر است.
+            <span class="w-[10px] h-[10px] bg-[#FF7028] rounded-full"></span>
+            <p class="flex-1 text-[14px] font-medium leading-[20px] "> درصورت بروز هرگونه اشتباه، مسئولیت آن با خود کاربر است.
               بنابراین، آدرس مقصد و نوع شبکه را چک کنید تا از صحت آن مطمئن شوید.
                </p>
           </div>
