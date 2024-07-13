@@ -71,7 +71,6 @@ onClickOutside(dropDownElement, () => {
 </script>
 
 <style scoped>
-/* اضافه کردن انیمیشن‌های دلخواه */
 .slide-fade-enter-active,
 .slide-fade-leave-active {
     transition: all 0.3s ease;
@@ -88,19 +87,4 @@ onClickOutside(dropDownElement, () => {
     transform: translateY(0);
     opacity: 1;
 }
-
-/* .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-
-
-    max-height: 200px;
-    overflow-y: auto;
-    z-index: 1000;
-    border-radius: 5px;
-    opacity: 1;
-    transition: all 0.3s ease;
-} */
 </style>
