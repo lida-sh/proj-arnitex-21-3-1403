@@ -4,7 +4,7 @@
   <section class="block">
     <div
       class="flex flex-col-reverse xl:flex-row items-center justify-between c-container py-[6.25rem]">
-      <div class="items-center xl:items-start text-center xl:text-start flex flex-col gap-4 text-white">
+      <div class="items-center flex-1 xl:items-start text-center xl:text-start flex flex-col gap-4 text-white">
         <h2 class="hidden xl:block text-[2.813rem] font-normal">نصب اپلیکیشن آرنیتکس</h2>
         <div class="max-w-[29.875rem] mb-[2.5rem] xl:mb-[3.125rem] mt-[2.5rem] xl:mt-0">
           <h6 class="text-base font-bold w-full leading-7">
@@ -23,8 +23,8 @@
         </div>
       </div>
 
-      <div class="max-w-[51.938rem] h-auto aspect-auto relative">
-        <img src="~/assets/images/devices.png" alt="tablet-laptop-and-smartphone" class="w-full h-auto relative z-20" />
+      <div class="max-w-[51.938rem] flex-1 h-auto aspect-auto relative">
+        <img width="660" height="660" src="~/assets/images/devices3.png" alt="tablet-laptop-and-smartphone" class="w-full h-auto relative z-20" />
         <div
           class="absolute h-[50rem] w-[60rem] -translate-x-1/2 z-[1] -translate-y-1/2 left-1/2 top-1/2 pointer-events-none">
           <UiPulsShadow></UiPulsShadow>

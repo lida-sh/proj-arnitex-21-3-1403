@@ -108,7 +108,7 @@ export default {
 				<div class="w-28 h-[6.25rem] flex items-center justify-center rounded-box">
 					<img src="~/assets/images/security-of-withdrawal-system.png" alt="" class="w-full h-auto" />
 				</div>
-				<h6 class="text-[1.75rem] font-normal text-white">
+				<h6 class="text-[1.5rem] font-normal text-white">
 					امنیت سیستم برداشت وجه
 				</h6>
 			</div>
