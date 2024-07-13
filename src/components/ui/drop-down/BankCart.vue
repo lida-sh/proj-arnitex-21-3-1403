@@ -1,6 +1,7 @@
 <template>
     <div class="dropdown-container" ref="dropDownElement">
-        <div @click="toggleDropdown" class="input-box h-[88px] bg-[#171717] rounded-[16px] p-5 flex justify-between">
+        <div @click="toggleDropdown"
+            class="input-box cursor-pointer h-[88px] bg-[#171717] rounded-[16px] p-5 flex justify-between">
             <div class="px-6 flex items-center gap-5">
                 <IconsDashboardOptions v-if="selectedItem" />
                 <div v-if="selectedItem"
@@ -20,9 +21,9 @@
             </div>
         </div>
         <transition name="slide-fade">
-            <div v-if="dropdownOpen" class="dropdown-menu absolute top-16 w-full bg-[#171717]">
+            <div v-if="dropdownOpen" class="dropdown-menu absolute rounded-2xl top-16 w-full bg-[#171717]">
                 <div v-for="item in options" :key="item.id" @click="selectItem(item)"
-                    class="bg-[#171717] flex items-center cursor-pointer p-4 px-6 border-t border-[#3A3A3A]">
+                    class=" flex items-center cursor-pointer p-4 px-6 border-t  border-[#3A3A3A]">
                     <div class="px-6 flex items-center gap-5">
                         <div class="bg-[#868686] w-[43px] h-[43px] flex justify-center items-center rounded-2xl">
                             <img :src="item.bankLogo" alt="Bank Logo" />
