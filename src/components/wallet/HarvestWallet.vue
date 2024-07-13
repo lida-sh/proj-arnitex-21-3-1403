@@ -26,7 +26,9 @@
             <p class="text-[#FF7028]">شبا</p>
           </div>
         </div>
-        <UiDropDownBankCart :options="bankOptions"></UiDropDownBankCart>
+        <div class="relative">
+          <UiDropDownBankCart :options="bankOptions"></UiDropDownBankCart>
+        </div>
 
         <div class="flex pt-8 pb-12 items-center gap-3">
           <span class="w-[10px] h-[10px] bg-[#FF7028] rounded-full"></span>
