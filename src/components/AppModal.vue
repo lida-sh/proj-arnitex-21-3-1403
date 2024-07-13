@@ -11,6 +11,7 @@
       <div
         v-if="eager||modelValue"
         class="modal-box relative overflow-hidden bg-[#171717] w-full"
+        :class="{'mobile':mobile}"
         @click.stop=""
       >
         <section class="flex items-center justify-between">
@@ -52,6 +53,10 @@
       eager:{
         type:Boolean,
         default:false
+      },
+      mobile: {
+        type:Boolean,
+        default:false
       }
     },
     emits:['update:modelValue'],
@@ -72,5 +77,8 @@
   <style scoped>
   .modal-box{
     max-width: 50rem;
+  }
+  .modal-box.mobile{
+    max-width: 19.625rem;
   }
   </style>
