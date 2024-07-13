@@ -1,68 +1,217 @@
-<script setup>
+<script setup lang="ts">
+
+import DashboardMenuDrawer from "~/components/icons/DashboardMenuDrawer.vue"
+import DashboardMenuWallet from "~/components/icons/DashboardMenuWallet.vue"
+import DashboardMenuUserAdd from "~/components/icons/DashboardMenuUserAdd.vue"
+import DashboardMenuAward from "~/components/icons/DashboardMenuAward.vue"
+import DashboardMenuProfile from "~/components/icons/DashboardMenuProfile.vue"
+import DashboardMenuSetting from "~/components/icons/DashboardMenuSetting.vue"
+import { callback } from "chart.js/helpers"
+// import DashboardMenuProfile from "~/components/icons/DashboardMenuProfile.vue"
+const router = useRouter();
+interface MenuItem {
+	id: number,
+	title: string,
+	selected: boolean,
+	callBack: Function,
+
+
+}
+
+
+const menuList = ref([
+	{
+		id: 1,
+		title: "داشبورد",
+		path: '/dashboard',
+		selected: true,
+		hasSubmenu: false,
+		isSubmenuOpen: false,
+		submenu: [],
+		callBack: (item: any) => {
+			router.push('/dashboard')
+		}
+	},
+	{
+		id: 2,
+		title: "کیف پول",
+		selected: false,
+		hasSubmenu: true,
+		isSubmenuOpen: true,
+		submenu: [
+			{
+				title: "دارایی‌ها",
+				to: "/"
+			},
+			{
+				title: "حساب‌های بانکی",
+				to: "/"
+			},
+			{
+				title: "واریز",
+				to: "/dashboard/deposit"
+			},
+			{
+				title: "برداشت",
+				to: "/"
+			},
+			{
+				title: "پورتفوی حساب",
+				to: "/"
+			},
+			{
+				title: "تاریخچه",
+				to: "/"
+			},
+		],
+		link: '/',
+		callBack: (item: any) => {
+			item.isSubmenuOpen = !item.isSubmenuOpen
+			// router.push('/dashboard/deposit')
+		}
+	},
+	{
+		id: 3,
+		title: "دعوت از دوستان",
+		selected: false,
+		hasSubmenu: false,
+		isSubmenuOpen: false,
+		submenu: [],
+		callBack: (item: any) => {
+			// menuList.value[0].hasSubmenu = !menuList.value[0].hasSubmenu
+		}
+	},
+	{
+		id: 4,
+		title: "پاداش‌ها",
+		selected: false,
+		hasSubmenu: false,
+		isSubmenuOpen: false,
+		submenu: [],
+		callBack: (item: any) => {
+			// menuList.value[0].hasSubmenu = !menuList.value[0].hasSubmenu
+		}
+	},
+	{
+		id: 5,
+		title: "پروفایل",
+		selected: false,
+		hasSubmenu: true,
+		isSubmenuOpen: false,
+		submenu: [
+			{
+				title: "احراز هویت",
+				to: "/"
+			},
+			{
+				title: "امنیت",
+				to: "/"
+			},
+		],
+		callBack: (item: any) => {
+			item.isSubmenuOpen = !item.isSubmenuOpen
+			// router.push('/dashboard/deposit')
+		}
+	},
+	{
+		id: 6,
+		title: "تنظیمات",
+		selected: false,
+		hasSubmenu: false,
+		isSubmenuOpen: false,
+		submenu: [],
+		callBack: (item: any) => {
+			// menuList.value[0].hasSubmenu = !menuList.value[0].hasSubmenu
+		}
+	},
+])
+
+const icons = [
+	{
+		id: 1,
+		component: DashboardMenuDrawer
+	},
+	{
+		id: 2,
+		component: DashboardMenuWallet
+	},
+	{
+		id: 3,
+		component: DashboardMenuUserAdd
+	},
+	{
+		id: 4,
+		component: DashboardMenuAward
+	},
+	{
+		id: 5,
+		component: DashboardMenuProfile
+	},
+	{
+		id: 6,
+		component: DashboardMenuSetting
+	},
+]
+
+
+const getIcon = (id: number) => {
+	return icons.find((object) => {
+		return object.id === id
+	})?.component;
+}
+
+const route = useRoute()
+
+watch(
+	() => route.path,
+	(newPath) => {
+		console.log(newPath);
+
+		// react to route changes...
+	}, {
+	immediate: true
+}
+)
 
 </script>
 
 <template>
+
 	<aside>
 		<ul class="text-white dashboard-menu py-[1.5rem] text-sm font-bold z-50 flex flex-col gap-4">
-			<!-- Sidebar content here -->
-			<li class="dashboard-item selected-dashboard-item cursor-pointer pl-[1.375rem] gap-4 flex">
-				<a class="flex flex-1 items-center justify-start gap-[0.625rem] rounded-lg h-12">
-					<div class="flex items-center gap-[0.625rem] ">
-						<IconsDashboardMenuDrawer></IconsDashboardMenuDrawer>
-						<span class="font-bold text-sm leading-[1.625rem]">داشبورد</span>
-					</div>
-				</a>
-			</li>
 
-			<li class="dashboard-item cursor-pointer pl-[1.375rem] gap-4 flex">
-				<a class="flex flex-1 items-center justify-between gap-[0.625rem] rounded-lg h-12">
-					<div class="flex items-center gap-[0.625rem] ">
-						<IconsDashboardMenuWallet></IconsDashboardMenuWallet>
-						<span class="font-bold text-sm leading-[1.625rem]">کیف پول</span>
+			<template v-for="(item, index) in menuList" :key="item">
+				<li>
+					<div :class="{ 'selected-dashboard-item': item.selected }"
+						class="dashboard-item cursor-pointer pl-[1.375rem] gap-4 flex">
+						<button class="flex flex-1 items-center gap-[0.625rem] rounded-lg h-12 justify-between"
+							@click="item.callBack(item)">
+							<div class="flex items-center gap-[0.625rem] ">
+								<component :is="getIcon(item.id)"></component>
+								<span class="font-bold text-sm leading-[1.625rem]">{{ item.title }}</span>
+							</div>
+							<IconsDashboardArrowDown v-if="item.hasSubmenu"
+								:class="{ 'sub-menu-arrow-open': item.isSubmenuOpen }" class="sub-menu-arrow">
+							</IconsDashboardArrowDown>
+						</button>
 					</div>
-					<IconsDashboardArrowDown>
-					</IconsDashboardArrowDown>
-				</a>
-			</li>
 
-			<li class="dashboard-item cursor-pointer pl-[1.375rem] gap-4 flex">
-				<a class="flex flex-1 items-center justify-start gap-[0.625rem] rounded-lg h-12">
-					<div class="flex items-center gap-[0.625rem] ">
-						<IconsDashboardMenuUserAdd></IconsDashboardMenuUserAdd>
-						<span class="font-bold text-sm leading-[1.625rem]">دعوت از دوستان</span>
-					</div>
-				</a>
-			</li>
+					<UiCollapse class="block" :is-open="item.isSubmenuOpen">
+						<ul>
+							<li v-for="(submenuItem, index) in item.submenu" :key="submenuItem.title">
 
-			<li class="dashboard-item cursor-pointer pl-[1.375rem] gap-4 flex">
-				<a class="flex flex-1 items-center justify-start gap-[0.625rem] rounded-lg h-12">
-					<div class="flex items-center gap-[0.625rem] ">
-						<IconsDashboardMenuUserAdd></IconsDashboardMenuUserAdd>
-						<span class="font-bold text-sm leading-[1.625rem]">پاداش‌ها</span>
-					</div>
-				</a>
-			</li>
+								<NuxtLink :to="submenuItem.to"
+									class="dashboard-item font-normal cursor-pointer pr-[2.8rem] gap-4 h-12 items-center flex">
+									{{
+										submenuItem.title
+									}}
+								</NuxtLink>
+							</li>
+						</ul>
 
-			<li class="dashboard-item cursor-pointer pl-[1.375rem] gap-4 flex">
-				<a class="flex flex-1 items-center justify-between gap-[0.625rem] rounded-lg h-12">
-					<div class="flex items-center gap-[0.625rem] ">
-						<IconsDashboardMenuProfile></IconsDashboardMenuProfile>
-						<span class="font-bold text-sm leading-[1.625rem]">پروفایل</span>
-					</div>
-					<IconsDashboardArrowDown>
-					</IconsDashboardArrowDown>
-				</a>
-			</li>
-
-			<li class="dashboard-item cursor-pointer pl-[1.375rem] gap-4 flex">
-				<a class="flex flex-1 items-center justify-between gap-[0.625rem] rounded-lg h-12">
-					<div class="flex items-center gap-[0.625rem] ">
-						<IconsDashboardMenuSetting></IconsDashboardMenuSetting>
-						<span class="font-bold text-sm leading-[1.625rem]">تنظیمات</span>
-					</div>
-				</a>
-			</li>
+					</UiCollapse>
+				</li>
+			</template>
 
 		</ul>
 	</aside>
@@ -91,5 +240,15 @@
 
 .selected-dashboard-item {
 	color: #FF7028;
+}
+
+.sub-menu-arrow {
+	transition: transform 0.3s ease-in;
+	transform: rotate(0);
+
+}
+
+.sub-menu-arrow-open {
+	transform: rotate(180deg);
 }
 </style>

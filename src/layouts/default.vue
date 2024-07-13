@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class=" relative flex flex-col min-h-screen">
-      <HeaderSticky></HeaderSticky>
+      <SharedHeaderSticky></SharedHeaderSticky>
       <div v-if="pageLoading"
         class="bg-black bg-opacity-70 fixed inset-0 h-full w-full flex items-center justify-center overflow-hidden z-[5001]">
         <UiLoadingSpinner></UiLoadingSpinner>
@@ -12,7 +12,7 @@
         <NuxtPage></NuxtPage>
       </div>
 
-      <FooterMainFooter v-if="showFooter"></FooterMainFooter>
+      <SharedFooterMainFooter v-if="showFooter"></SharedFooterMainFooter>
     </div>
   </div>
 </template>
