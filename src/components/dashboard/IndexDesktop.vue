@@ -1,5 +1,9 @@
 <script setup>
+const isOpen = ref(false);
 
+const toggleCollapse = () => {
+  isOpen.value = !isOpen.value;
+};
 </script>
 
 <template>
@@ -8,6 +12,24 @@
 			<DashboardMenuBar class="sticky top-20 max-w-[16.5rem] min-w-[13rem] dashboard-card w-full">
 			</DashboardMenuBar>
 			<main class="flex flex-col flex-1 gap-2 2xl:gap-[1.25rem]">
+
+
+				<div>
+					<h1>مثال استفاده از کامپوننت Collapse با دکمه خارجی</h1>
+					<button class="text-white" @click="toggleCollapse">
+						{{ isOpen ? 'نمایش کمتر' : 'نمایش بیشتر' }}
+					</button>
+					<UiCollapse :isOpen="isOpen">
+						<p class="text-white">
+							این متن درون کامپوننت collapse قرار دارد. با کلیک بر روی دکمه، می‌توانید این متن را نمایش یا
+							پنهان
+							کنید.
+						</p>
+					</UiCollapse>
+				</div>
+
+
+
 				<DashboardUserInfo></DashboardUserInfo>
 				<DashboardStepper></DashboardStepper>
 				<DashboardTotalAssets></DashboardTotalAssets>

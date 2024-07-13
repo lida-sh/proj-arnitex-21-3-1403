@@ -5,7 +5,7 @@
 			class="bg-black bg-opacity-70 fixed inset-0 h-full w-full flex items-center justify-center overflow-hidden z-[5000]">
 			<UiLoadingSpinner></UiLoadingSpinner>
 		</div>
-		<NuxtPage class="z-1 relative"></NuxtPage>
+		<NuxtPage></NuxtPage>
 	</div>
 	<HomeNavBottomNavigationWithUserProfile></HomeNavBottomNavigationWithUserProfile>
 
