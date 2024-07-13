@@ -4,7 +4,7 @@
       <div class="w-full">
         <p class="text-[16px] font-normal leading-[28px] pt-3 pb-3">مبلغ واریزی (تومان)</p>
         <input type="text"
-          class="w-full bg-black border-[#676767] border-[1px] rounded-[16px] h-[62px] z-50 placeholder-[#676767] text-[16px]"
+          class="w-full bg-black border-[#676767] border-[1px] rounded-[16px] h-[62px] z-50 placeholder-[#676767] text-[16px] focus:border-white focus:ring-0"
           placeholder="مبلغ را وارد کنید (حداقل مبلغ ۵۰،۰۰۰ تومان است)">
 
         <div class="bg-[#171717] h-[55px] rounded-[16px] relative bottom-6 -z-10 px-4">

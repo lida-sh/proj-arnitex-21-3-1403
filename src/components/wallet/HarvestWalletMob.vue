@@ -10,7 +10,7 @@
         </div> -->
         <p class="text-[16px] font-normal leading-[28px] pt-3 pb-3">مبلغ واریزی (تومان)</p>
         <input type="text"
-          class="w-full bg-black border-[#676767] border-[1px] rounded-[8px] h-[40px] z-50 placeholder-[#676767] text-[11px]"
+          class="w-full bg-black border-[#676767] border-[1px] rounded-[8px] h-[40px] z-50 placeholder-[#676767] text-[11px] focus:border-white focus:ring-0"
           placeholder="مبلغ را وارد کنید (حداقل مبلغ ۵۰،۰۰۰ تومان است)">
 
         <div class="bg-[#171717] h-[40px] rounded-[8px] relative bottom-5 -z-10 px-4">
