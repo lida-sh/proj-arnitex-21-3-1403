@@ -21,8 +21,8 @@
                         :class="[{ 'right-1/2': depositType }, { 'right-0': !depositType }]"></label>
                 </div> -->
 
-                <DashboardDepositTomanDesktop v-if="tabIndex == 1"></DashboardDepositTomanDesktop>
-                <DashboardDepositIdDesktop v-if="tabIndex == 0"></DashboardDepositIdDesktop>
+                <WalletTomanDesktop v-if="tabIndex == 1"></WalletTomanDesktop>
+                <WalletIdDesktop v-if="tabIndex == 0"></WalletIdDesktop>
                 <h2 class="text-xl font-normal text-white leading-7 mb-[1.563rem]">تراکنش های واریز و برداشت</h2>
                 <div class="rounded-3xl overflow-hidden flex flex-col mb-[1.625rem]">
                     <div

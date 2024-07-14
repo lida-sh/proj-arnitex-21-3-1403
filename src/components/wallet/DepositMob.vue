@@ -12,9 +12,8 @@
                 <UiButtonTabButtonDashboard class="flex-1 flex-row-reverse" :list="data" v-model="TabIndex">
                 </UiButtonTabButtonDashboard>
             </div>
-           <DashboardDepositTomanMob v-if="TabIndex == 1"></DashboardDepositTomanMob>
-
-           <DashboardDepositIdMob v-if="TabIndex == 0"></DashboardDepositIdMob >
+           <WalletTomanMob v-if="TabIndex == 1"></WalletTomanMob>
+           <WalletIdMob v-if="TabIndex == 0"></WalletIdMob >
 
         </main>
         <!-- </div> -->
@@ -22,6 +21,8 @@
     
 </template>
 <script setup lang="ts">
+
+
 
 const TabIndex = ref(1)
 

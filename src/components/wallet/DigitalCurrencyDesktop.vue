@@ -1,7 +1,7 @@
 <template>
-<div class="w-full max-w-[100rem] mx-auto gap-2 2xl:gap-[1.25rem] px-2 flex items-start">
+<div class="w-full max-w-[100rem] mx-auto px-2 flex items-start">
             <!-- <DashboardMenuBar class="max-w-[16.5rem] min-w-[13rem] dashboard-card w-full"></DashboardMenuBar> -->
-            <div class="flex flex-col flex-1 gap-2 2xl:gap-[1.25rem] pt-[0.563rem]">
+            <div class="flex flex-col flex-1 pt-[0.563rem]">
                 <h1 class="text-[22px] text-white font-normal leading-7 ">واریز ارز دیجیتال</h1>
                 <div class="bg-[#343434] h-[0.5px] mb-7"></div>
                 <div class="grid grid-cols-11 gap-[1.625rem] mb-10">
@@ -58,7 +58,7 @@
                     <div class="col-span-5 flex flex-col justify-start">
                         <div class="rounded-3xl bg-[#171717] pr-[3.25rem] pl-[1.125rem] py-6">
                             <h2
-                                class="text-base text-white font-medium leading-6 mb-[1.75rem] underline decoration-[#FF7028] underline-offset-8">
+                                class="text-base text-white font-medium leading-6 mb-[1.125rem] underline decoration-[#FF7028] underline-offset-8">
                                 راهنما:</h2>
                             <UiStepper :list="listStep" classItem="text-sm"></UiStepper>
                         </div>
@@ -67,7 +67,7 @@
 
 
                 <h2 class="text-base font-normal text-white leading-7 mb-[1.188rem]">آخرین واریزهای ارز دیجیتال</h2>
-                <div class="rounded-3xl overflow-hidden flex flex-col mb-[1.625rem]">
+                <div class="rounded-3xl overflow-hidden flex flex-col mb-[5.375rem]">
                     <div
                         class="grid grid-cols-12 bg-[#171717] h-[2.813rem] text-xs text-white font-normal leading-[29px] ">
                         <div class="col-span-2 flex items-center justify-center">رمز ارز</div>
@@ -160,7 +160,7 @@
                         </div>
                     </div>
                 </div>
-                <h3 class="text-white text-base font-normal leading-[29px]">سوالات متداول</h3>
+                <h3 class="text-white text-base font-normal leading-[29px] mb-4">سوالات متداول</h3>
                 <div class="flex flex-col gap-6 mb-[6.563rem]">
 
                     <div class="w-full">
