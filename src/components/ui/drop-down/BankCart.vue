@@ -105,7 +105,6 @@ onClickOutside(dropDownElement, () => {
     max-height: 200px;
     overflow-y: auto;
     z-index: 1000;
-    opacity: 1;
     border-radius: 0 0 16px 16px;
 }
 </style>
