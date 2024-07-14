@@ -78,7 +78,9 @@
                             ۱۰۰.۰۰۰.۰۰۰</div>
                         <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">موفق
                         </div>
-                        <div class="col-span-2"></div>
+                        <div class="col-span-1 flex items-center justify-center">
+                                <IconsDashboardDepositArrowDown></IconsDashboardDepositArrowDown>
+                            </div>
                     </div>
                     <div :id="`details-${index}`"
                         class="max-h-0 flex flex-col text-[11px] text-white font-normal leading-4 bg-[#171717] border-b border-[#696969] rounded-b-xl transition-all duration-500 ease-in-out"

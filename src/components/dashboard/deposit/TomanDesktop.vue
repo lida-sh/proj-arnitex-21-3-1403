@@ -27,13 +27,17 @@
                 <div class="text-[#FF7028] text-base font-bold leading-[29px]">+ کارت</div>
             </button>
         </div>
-        <select
+        <div class="relative w-full h-[5.5rem]bg-[#171717] rounded-2xl mb-[1.813rem]">
+            <UiDropDownBankCart :options="options" class="text-white"></UiDropDownBankCart>
+        </div>
+        
+        <!-- <select
             class="rtl w-full h-[5.5rem] border border-[#676767] focus:ring-0 text-base font-normal leading-7 text-[#676767] focus:border-[#676767] bg-[#171717] rounded-2xl mb-[1.813rem]">
             <option value="">شماره کارت مورد نظر را انتخاب کنید.</option>
             <option></option>
             <option></option>
             <option></option>
-        </select>
+        </select> -->
         <button
             class="bg-[#FF7028] h-[3.5rem] w-full text-white text-base rounded-2xl font-normal leading-[29px] 3.313">انتقال
             به درگاه پرداخت</button>
@@ -126,6 +130,27 @@ const confirmCart = () => {
 const confirm = ()=>{
     openConfirmCart.value = false
 }
+
+const options = ref([
+  {
+    id: 1,
+    cardNumber: '6037-6975-5327-5844',
+    bankName: 'بانک صادرات',
+    bankLogo: "~/assets/images/saderat-logo.png",
+  },
+  {
+    id: 2,
+    cardNumber: '6037-6975-5327-5944',
+    bankName: 'بانک صادرات',
+    bankLogo: "~/assets/images/saderat-logo.png",
+  },
+  {
+    id: 3,
+    cardNumber: '6037-6975-5327-5555',
+    bankName: 'بانک صادرات',
+    bankLogo: "~/assets/images/saderat-logo.png",
+  },
+])
 </script>
 <style scoped>
 select {
