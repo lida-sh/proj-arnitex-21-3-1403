@@ -66,6 +66,18 @@ const bankOptions = ref([
     bankName: 'سلام',
     bankLogo: img,
   },
+  {
+    id: 4,
+    cardNumber: '6037-6975-5327-5555',
+    bankName: 'سلام',
+    bankLogo: img,
+  },
+  {
+    id: 5,
+    cardNumber: '6037-6975-5327-5555',
+    bankName: 'سلام',
+    bankLogo: img,
+  },
 ])
 </script>
 <style scoped></style>

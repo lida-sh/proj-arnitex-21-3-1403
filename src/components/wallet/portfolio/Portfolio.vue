@@ -23,7 +23,7 @@
         </div>
 
         <div class="basis-1/4  ">
-          <div class="w-full h-[173px] bg-[#171717] rounded-2xl py-5 px-6">
+          <div class="w-full h-[173px] bg-[#171717] z-10 relative rounded-2xl py-5 px-6">
             <div class="flex items-center gap-3">
               <p class="text-[#676767] text-[16px] font-bold leading-[29px]">موجودی کل :</p>
 
@@ -61,7 +61,7 @@
 
           </div>
 
-          <WalletPortfolioCollaps></WalletPortfolioCollaps>
+          <WalletPortfolioCollaps class="z-[1] relative"></WalletPortfolioCollaps>
         </div>
 
       </div>
