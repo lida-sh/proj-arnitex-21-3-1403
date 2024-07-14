@@ -5,10 +5,6 @@ const availableFilterHandler = () => {
 }
 const searchText = ref('')
 
-
-
-
-
 </script>
 
 <template>
@@ -22,7 +18,7 @@ const searchText = ref('')
         </div>
         <div class="text-white cursor-pointer flex items-center gap-[0.8rem]" @click="availableFilterHandler">
           <span class="radio-input" :class="{ 'radio-input-select': availableFilter }"></span>
-          <p class="mt-[3px]">فقط رمز ارزهای موجود را نمایش بده.</p>
+          <p class="mt-[3px] select-none">فقط رمز ارزهای موجود را نمایش بده.</p>
         </div>
       </div>
 
@@ -32,13 +28,12 @@ const searchText = ref('')
       </NuxtLink>
     </div>
 
+    <div class="bg-[#171717] py-7 rounded-3xl mt-5 flex flex-col gap-[1.5rem]">
 
-
-    <div class="bg-[#171717] py-7 rounded-3xl mt-5">
+      <WalletAssetsCoinListItem v-for="i in 6"></WalletAssetsCoinListItem>
 
     </div>
 
-    <!-- <SharedRealtimeCryptoPriceLis></SharedRealtimeCryptoPriceLis> -->
   </section>
 </template>
 

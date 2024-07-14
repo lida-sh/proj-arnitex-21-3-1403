@@ -18,7 +18,7 @@ const searchText = ref('')
         </div>
         <div class="text-white cursor-pointer flex items-center gap-[0.8rem]" @click="availableFilterHandler">
           <span class="radio-input" :class="{ 'radio-input-select': availableFilter }"></span>
-          <p class="mt-[3px]">فقط رمز ارزهای موجود را نمایش بده.</p>
+          <p class="mt-[3px] select-none">فقط رمز ارزهای موجود را نمایش بده.</p>
         </div>
       </div>
 

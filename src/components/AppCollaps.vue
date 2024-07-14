@@ -1,14 +1,14 @@
 <template>
-  <div
-    class="py-[1.875rem] gap-3 flex  relative z-20 justify-between cursor-pointer items-center transition-all"
-    :class="[{'card-bg px-[1.5rem] md:px-[4.5rem] rounded-2xl': !noStyleBg},{'pr-3 pl-[1.688rem] xl:px-[4.5rem]':noStyleBg}, backgroundClassTitle]"
+  <div class="py-[1.875rem] gap-3 flex  relative z-20 justify-between cursor-pointer items-center transition-all"
+    :class="[{ 'card-bg px-[1.5rem] md:px-[4.5rem] rounded-2xl': !noStyleBg }, { 'pr-3 pl-[1.688rem] xl:px-[4.5rem]': noStyleBg }, backgroundClassTitle]"
     @click="toggle" v-bind="$attrs">
     <slot name="title" :is-open="isOpen"></slot>
     <IconsCollapseArrowDown v-if="withTitleIcon && !isOpen"></IconsCollapseArrowDown>
     <IconsCollapseArrowUp v-if="withTitleIcon && isOpen"></IconsCollapseArrowUp>
 
   </div>
-  <div ref="target" class="px-[1rem] md:px-[4.5rem] z-10 h-0 overflow-y-hidden  " :class="[{'bg-[#262626] mt-[-14px] rounded-b-lg':!noStyleBg},backgroundClassContent]">
+  <div ref="target" class="px-[1rem] md:px-[4.5rem] z-10 h-0 overflow-y-hidden  "
+    :class="[{ 'bg-[#262626] mt-[-14px] rounded-b-lg': !noStyleBg }, backgroundClassContent]">
     <slot></slot>
   </div>
 </template>
@@ -22,13 +22,13 @@ import { ChevronUpIcon } from "@heroicons/vue/24/solid";
 import { BeakerIcon } from "@heroicons/vue/24/solid";
 export default defineComponent({
   props: {
-    backgroundClassTitle:{
-       type: [String, Object, Array],
-       default: "",
+    backgroundClassTitle: {
+      type: [String, Object, Array],
+      default: "",
     },
-    backgroundClassContent:{
-       type: [String, Object, Array],
-       default: "false",
+    backgroundClassContent: {
+      type: [String, Object, Array],
+      default: "false",
     },
     noStyleBg: {
       type: Boolean,
