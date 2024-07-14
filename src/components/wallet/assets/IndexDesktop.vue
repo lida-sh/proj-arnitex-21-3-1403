@@ -4,10 +4,13 @@
 
 <template>
   <div>
+
     <div class="gap-[1.5rem] flex">
-      <WalletAssetsTotalInventory></WalletAssetsTotalInventory>
-      <WalletAssetsChart></WalletAssetsChart>
+      <WalletAssetsTotalInventory class="flex-1"></WalletAssetsTotalInventory>
+      <WalletAssetsChart class="flex-1"></WalletAssetsChart>
     </div>
+    <WalletAssetsCoinList class="mt-[1.5rem]"></WalletAssetsCoinList>
+
 
   </div>
 </template>
