@@ -3,7 +3,7 @@ import type { OnClickOutsideHandler } from '@vueuse/core';
 import { onClickOutside } from '@vueuse/core'
 
 const prop = defineProps(['list'])
-const model = defineModel<number>();
+const model = defineModel<number>({ type: Number, default: 0 });
 
 const dropDownElement = ref(null);
 const dropdown = ref(false);

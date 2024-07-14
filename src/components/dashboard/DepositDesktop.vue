@@ -1,11 +1,11 @@
 <template>
     <div class="w-full bg-black">
         <div class="w-full max-w-[100rem] pt-[5rem] mx-auto gap-2 2xl:gap-[1.25rem] px-2 flex items-start">
-            <DashboardMenuBar class="max-w-[16.5rem] min-w-[13rem] dashboard-card w-full"></DashboardMenuBar>
-            <main class="flex flex-col flex-1 gap-2 2xl:gap-[1.25rem]">
+            <!-- <DashboardMenuBar class="max-w-[16.5rem] min-w-[13rem] dashboard-card w-full"></DashboardMenuBar> -->
+            <div class="flex flex-col flex-1 gap-2 2xl:gap-[1.25rem]">
                 <div class="w-[25.313rem]">
-                    <UiButtonTabButtonDashboard class="flex-1 flex-row-reverse" :list="data" v-model="TabIndex">
-                    </UiButtonTabButtonDashboard>
+                    <UiButtonTabButton2 class="flex-1 flex-row-reverse" :list="data" v-model="tabIndex">
+                    </UiButtonTabButton2>
                 </div>
                 <div class="bg-[#343434] h-[0.5px] mb-7"></div>
                 <!-- <div
@@ -21,8 +21,8 @@
                         :class="[{ 'right-1/2': depositType }, { 'right-0': !depositType }]"></label>
                 </div> -->
 
-                <DashboardDepositTomanDesktop v-if="TabIndex == 1"></DashboardDepositTomanDesktop>
-                <DashboardDepositIdDesktop v-if="TabIndex == 0"></DashboardDepositIdDesktop>
+                <DashboardDepositTomanDesktop v-if="tabIndex == 1"></DashboardDepositTomanDesktop>
+                <DashboardDepositIdDesktop v-if="tabIndex == 0"></DashboardDepositIdDesktop>
                 <h2 class="text-xl font-normal text-white leading-7 mb-[1.563rem]">تراکنش های واریز و برداشت</h2>
                 <div class="rounded-3xl overflow-hidden flex flex-col mb-[1.625rem]">
                     <div
@@ -212,13 +212,13 @@
                     </div>
                 </div>
 
-            </main>
+            </div>
         </div>
 
     </div>
 </template>
 <script setup>
-const TabIndex = ref(1)
+const tabIndex = ref(0)
 
 const data = ref([
     {

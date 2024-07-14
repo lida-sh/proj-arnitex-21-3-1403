@@ -3,7 +3,6 @@ const availableFilter = ref(false)
 const availableFilterHandler = () => {
   availableFilter.value = !availableFilter.value;
 }
-
 const searchText = ref('')
 
 </script>
@@ -13,7 +12,8 @@ const searchText = ref('')
     <div class="flex justify-between items-center px-2 mx-auto">
       <div class="flex items-center gap-4">
         <div class="relative">
-          <input type="text" v-model="searchText" class="search-input rounded-full bg-transparent text-white" placeholder="جستجو رمز ارز">
+          <input type="text" v-model="searchText" class="search-input rounded-full bg-transparent text-white"
+            placeholder="جستجو رمز ارز">
           <IconsDashboardSearchCoin class="input-icon"></IconsDashboardSearchCoin>
         </div>
         <div class="text-white cursor-pointer flex items-center gap-[0.8rem]" @click="availableFilterHandler">
@@ -28,7 +28,12 @@ const searchText = ref('')
       </NuxtLink>
     </div>
 
-    <SharedRealtimeCryptoPriceLis ></SharedRealtimeCryptoPriceLis>
+    <div class="bg-[#171717] py-7 rounded-3xl mt-5 flex flex-col gap-[1.5rem]">
+
+      <WalletAssetsCoinListItem v-for="i in 6"></WalletAssetsCoinListItem>
+
+    </div>
+
   </section>
 </template>
 
