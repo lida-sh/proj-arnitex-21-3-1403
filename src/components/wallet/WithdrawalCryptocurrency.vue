@@ -5,20 +5,22 @@
         <div class="flex-1 px-8">
           <div class=" py-3 relative">
             <p class="text-[16px] leading-[28px] font-normal pb-3">انتخاب ارز دیجیتال</p>
-            <input type="text" name="" id="" class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] ">
+            <input type="text" name="" id=""
+              class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] focus:border-white focus:ring-0">
             <IconsDashboardArrowBig class=" left-5 absolute bottom-8"></IconsDashboardArrowBig>
           </div>
 
           <div class=" pb-8 relative">
             <p class="text-[16px] leading-[28px] font-normal pb-3"> میزان برداشت (BTC)</p>
-            <input type="text" name="" id="" class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] ">
+            <input type="text" name="" id=""
+              class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] focus:border-white focus:ring-0">
             <span class=" left-5 absolute bottom-12 text-[16px] font-normal leading-[22px]">BTC</span>
           </div>
 
           <div class=" pb-8 relative">
             <p class="text-[16px] leading-[28px] font-normal pb-3"> نوع شبکه</p>
             <input type="text" name="" id=""
-              class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] placeholder-[#676767]"
+              class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] placeholder-[#676767] focus:border-white focus:ring-0"
               placeholder="نوع شبکه را انتخاب کنید.">
             <IconsDashboardArrowBig class=" left-5 absolute bottom-14"></IconsDashboardArrowBig>
           </div>
@@ -27,7 +29,7 @@
             <p class="text-[16px] leading-[28px] font-normal pb-3"> آدرس مقصد</p>
 
             <input type="text" name="" id=""
-              class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] placeholder-[#676767]"
+              class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] placeholder-[#676767] focus:border-white focus:ring-0"
               placeholder="آدرس کیف پول مقصد را وارد کنید.">
           </div>
 
@@ -41,13 +43,12 @@
           </div>
           <div class="flex pt-7 items-baseline gap-3">
             <span class="w-[10px] h-[10px] bg-[#FF7028] rounded-full"></span>
-            <p class="flex-1 text-[14px] font-medium leading-[20px] "> درصورت بروز هرگونه اشتباه، مسئولیت آن با خود کاربر است.
+            <p class="flex-1 text-[14px] font-medium leading-[20px] "> درصورت بروز هرگونه اشتباه، مسئولیت آن با خود
+              کاربر است.
               بنابراین، آدرس مقصد و نوع شبکه را چک کنید تا از صحت آن مطمئن شوید.
                </p>
           </div>
         </div>
-
-
         <div class="flex-1 py-3 px-3 h-[160px]">
           <div class="bg-[#171717] rounded-3xl py-[1.625rem] px-[2.875rem]">
             <h2
@@ -144,201 +145,3 @@ const listStep = [
   margin-right: 10px;
 }
 </style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-<template>
-  <div class="container">
-    <div class="input-container">
-      <img v-if="selectedCryptoIcon" :src="selectedCryptoIcon" alt="crypto icon" class="crypto-input-icon" />
-      <input
-        type="text"
-        v-model="selectedCryptoText"
-        @focus="showDropdown = true"
-        placeholder="یک ارز دیجیتال انتخاب کنید"
-        readonly
-      />
-       <IconsDashboardArrowBig class="arrow-icon"></IconsDashboardArrowBig>
-      
-    </div>
-    <div v-if="showDropdown" class="dropdown">
-      <input
-        type="text"
-        v-model="searchText"
-        placeholder="جستجوی ارز دیجیتال"
-        @input="filterCryptos"
-      />
-      <ul>
-        <li
-          v-for="crypto in filteredCryptos"
-          :key="crypto.id"
-          @click="selectCrypto(crypto)"
-        >
-          <img :src="crypto.icon" alt="crypto icon" class="crypto-icon" />
-          {{ crypto.text }}
-        </li>
-      </ul>
-    </div>
-  </div>
-</template>
-
-<script>
-// import { IconsDashboardArrowBig } from '#build/components';
-
-export default {
-  data() {
-    return {
-      selectedCryptoText: '',
-      selectedCryptoIcon: '',
-      showDropdown: false,
-      searchText: '',
-      cryptos: [
-        { id: 'btc', text: 'بیت کوین', icon: 'https://cryptologos.cc/logos/bitcoin-btc-logo.png' },
-        { id: 'eth', text: 'اتریوم', icon: 'path/to/ethereum-icon.png' },
-        { id: 'usdt', text: 'تتر', icon: 'path/to/tether-icon.png' },
-        { id: 'bch', text: 'بیت کوین کش', icon: 'path/to/bitcoincash-icon.png' },
-        { id: 'shiba', text: 'شیبا', icon: 'path/to/shiba-icon.png' },
-        // ارزهای دیگر را اضافه کنید
-      ],
-      filteredCryptos: [],
-    };
-  },
-  mounted() {
-    this.filteredCryptos = this.cryptos;
-    document.addEventListener('click', this.handleClickOutside);
-  },
-  beforeDestroy() {
-    document.removeEventListener('click', this.handleClickOutside);
-  },
-  methods: {
-    filterCryptos() {
-      const filter = this.searchText.toLowerCase();
-      this.filteredCryptos = this.cryptos.filter((crypto) =>
-        crypto.text.toLowerCase().includes(filter)
-      );
-    },
-    selectCrypto(crypto) {
-      this.selectedCryptoText = crypto.text;
-      this.selectedCryptoIcon = crypto.icon;
-      this.showDropdown = false;
-    },
-    handleClickOutside(event) {
-      if (!this.$el.contains(event.target)) {
-        this.showDropdown = false;
-      }
-    },
-  },
-};
-</script>
-
-<style scoped>
-body {
-  font-family: Arial, sans-serif;
-  background-color: #2c2c2c;
-  color: white;
-}
-
-.container {
-  position: relative;
-  width: 300px;
-}
-
-.input-container {
-  display: flex;
-  align-items: center;
-  position: relative;
-}
-
-input[type='text'] {
-  width: 100%;
-  padding: 10px;
-  padding-left: 40px;
-  box-sizing: border-box;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  background-color: #2c2c2c;
-  color: white;
-}
-
-.arrow-icon {
-  position: absolute;
-  right: 250px;
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
-}
-
-.crypto-input-icon {
-  position: absolute;
-  left: 10px;
-  width: 24px;
-  height: 24px;
-}
-
-.dropdown {
-  position: absolute;
-  top: 50px;
-  width: 100%;
-  background-color: #333;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  overflow: hidden;
-  z-index: 1000;
-  animation: fadeIn 0.3s;
-}
-
-.dropdown input {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  background-color: #333;
-  color: white;
-}
-
-.dropdown ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.dropdown li {
-  display: flex;
-  align-items: center;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.dropdown li:hover {
-  background-color: #444;
-}
-
-.crypto-icon {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-</style> -->
