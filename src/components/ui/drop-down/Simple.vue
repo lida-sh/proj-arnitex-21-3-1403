@@ -28,7 +28,7 @@ const setIndex = (index: number) => {
 </script>
 
 <template>
-  <div class="items-center ml-2 relative min-w-[5rem]" ref="dropDownElement">
+  <div class="items-center relative min-w-[5rem]" ref="dropDownElement">
     <!-- {{list}} -->
     <button class="flex gap-3 px-2 items-center justify-between w-full" @click="dropdown = !dropdown">
       <p class="text-[#fff] text-[14px] leading-[26px] font-bold">{{ list[Number(model)].title }}</p>

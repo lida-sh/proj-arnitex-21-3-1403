@@ -189,3 +189,8 @@ body {
 .selected-dashboard-item .arrow-down path {
   stroke: rgba(255, 112, 40, 1);
 }
+
+
+body.no-scroll {
+  overflow: hidden;
+}
