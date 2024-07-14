@@ -35,7 +35,7 @@
           </div>
         </div>
 
-        <div class="h-[48px] bg-[#171717] rounded-[16px] p-5 flex justify-between">
+        <!-- <div class="h-[48px] bg-[#171717] rounded-[16px] p-5 flex justify-between">
           <div class="px-2 flex items-center gap-3">
             <IconsDashboardOptions></IconsDashboardOptions>
             <div class="bg-[#868686] w-[43px] h-[43px] rounded-2xl">
@@ -47,7 +47,14 @@
             <p class="text-[11px]">تغییر کارت</p>
             <IconsDashboardArrowDown></IconsDashboardArrowDown>
           </div>
+        </div> -->
+
+        <div class="relative">
+          <UiDropDownBankCart :options="bankOptions"></UiDropDownBankCart>
         </div>
+
+
+
         <div class="bg-[#FF7028] mt-8 h-[40px] rounded-[16px] flex items-center justify-center cursor-pointer">
           <p class="text-[16px] font-medium leading-[24px]">درخواست برداشت وجه</p>
         </div>
@@ -56,6 +63,44 @@
     </div>
   </div>
 </template>
+
+<script setup>
+import { ref } from 'vue'
+import img from '../../assets/images/nody-لوگوی-صادرات-1628414003 1.png'
+
+const bankOptions = ref([
+  {
+    id: 1,
+    cardNumber: '6037-6975-5327-5844',
+    bankName: 'بانک صادرات',
+    bankLogo: img,
+  },
+  {
+    id: 2,
+    cardNumber: '6037-6975-5327-5944',
+    bankName: 'سش',
+    bankLogo: img,
+  },
+  {
+    id: 3,
+    cardNumber: '6037-6975-5327-5555',
+    bankName: 'سلام',
+    bankLogo: img,
+  },
+  {
+    id: 4,
+    cardNumber: '6037-6975-5327-5555',
+    bankName: 'سلام',
+    bankLogo: img,
+  },
+  {
+    id: 5,
+    cardNumber: '6037-6975-5327-5555',
+    bankName: 'سلام',
+    bankLogo: img,
+  },
+])
+</script>
 <style lang="">
 
 </style>
