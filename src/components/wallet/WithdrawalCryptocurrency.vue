@@ -36,12 +36,12 @@
           <div class="bg-[#FF7028] h-[56px] rounded-[16px] flex items-center justify-center cursor-pointer">
             <p class="text-[16px] font-medium leading-[24px]">درخواست برداشت </p>
           </div>
-          <div class="flex pt-7 items-center gap-3">
+          <div class="flex pt-7 items-baseline gap-3">
             <span class="w-[10px] h-[10px] bg-[#FF7028] rounded-full"></span>
             <p class="text-[14px] font-medium leading-[20px] "> برای انتخاب نوع شبکه بررسی کنید کیف‌ پول مقصد از شبکه
               انتخابی پشتیبانی می‌کند.</p>
           </div>
-          <div class="flex pt-7 items-center gap-3">
+          <div class="flex pt-7 items-baseline gap-3">
             <span class="w-[10px] h-[10px] bg-[#FF7028] rounded-full"></span>
             <p class="flex-1 text-[14px] font-medium leading-[20px] "> درصورت بروز هرگونه اشتباه، مسئولیت آن با خود
               کاربر است.

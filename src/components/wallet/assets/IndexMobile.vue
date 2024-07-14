@@ -3,12 +3,10 @@
 </script>
 
 <template>
-        <div>
-            mobile
+  <div>
+    mobile
 
-        </div>
+  </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
