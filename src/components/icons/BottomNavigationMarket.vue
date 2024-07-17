@@ -7,7 +7,7 @@
 </template>
 
 <style scoped>
-.bottom-nav-link-selected rect {
+/* .bottom-nav-link-selected rect {
   stroke: #FF7028;
-}
+} */
 </style>
