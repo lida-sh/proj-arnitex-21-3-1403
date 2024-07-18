@@ -30,6 +30,49 @@
             <option></option>
             <option></option>
         </select>
+        <div class="relative w-full bg-[#171717] rounded-2xl mb-[1.813rem]">
+            <div  class="h-[5.5rem] flex items-center px-7 cursor-pointer">
+                <div @click="toggleMenuCarts" v-if="!selectedItem.cardNumber" class="flex items-center justify-between">
+                    <p  class="text-[#676767] text-base font-normal leading-7">شماره کارت
+                        مورد نظر را انتخاب کنید.</p>
+                </div>
+                
+                <div class="flex items-center relative">
+                    <div v-if="selectedItem.cardNumber" class="w-14" @click.stop="toggleCartMenu">
+                        <IconsDashboardOptions></IconsDashboardOptions>
+                    </div>
+                    <div v-if="selectedItem.cardNumber" class="flex items-center relative">
+                        <img src="~/assets/images/saderat-logo.png" :alt="selectedItem.bankName" class="">
+                        <span class="text-xs font-bold leading-[23px] text-white mr-4">{{ selectedItem.bankName
+                            }}</span>
+                        <span class="text-base font-normal leading-7 text-white mr-[1.875rem]">{{
+                            selectedItem.cardNumber }}</span>
+                    </div>
+
+                    <div ref="targetCartMenu"
+                        class="w-[12.688rem] h-0 invisible absolute -right-7 top-16 bg-[#171717] rounded-2xl px-[1.125rem] flex flex-col py-1">
+                        <div @click="deletCart"
+                            class="flex items-center gap-[0.625rem] text-xs font-bold leading-[23px] text-white py-2 border-b border-[#262626]">
+                            <IconsWalletTrash></IconsWalletTrash>
+                            <span class="">حذف کارت</span>
+                        </div>
+                        <div class="flex items-center gap-[0.625rem] text-xs font-bold leading-[23px] text-white py-2">
+                            <IconsWalletAccountManagment></IconsWalletAccountManagment>
+                            <span @click="manageAccounts" class="">مدیریت حساب‌ها</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ref="targetCarts" class="bsolute h-0 invisible inset-x-0 top-10 flex flex-col">
+                <div class="flex items-center px-[0.813rem] py-3 border-b border-[#262626] last:border-none"
+                    v-for="(item, index) in cartItems" :key="index" @click="selectItem(item)">
+                    <img src="~/assets/images/saderat-logo.png" :alt="item.bankName" class="">
+                    <span class="text-xs font-bold leading-[23px] text-white mr-4">{{ item.bankName }}</span>
+                    <span class="text-base font-normal leading-7 text-white mr-[1.875rem]">{{ item.cardNumber }}</span>
+                </div>
+            </div>
+
+        </div>
         <div class="flex justify-end mb-[1.813rem]">
             <button @click="plusCart"
                 class="w-[5.875rem] h-10 border-[0.5px] border-[#FF7028] rounded-xl flex items-center justify-center bg-[#171717]">
@@ -260,6 +303,45 @@ const openDetailsOfDeposits = (index: number) => {
         }
     }
 
+}
+interface CartItem {
+    id: number; cardNumber: string; bankName: string; bankLogo: string
+}
+
+const cartItems = ref<CartItem[]>([
+    {
+        id: 1,
+        cardNumber: '6037-6975-5327-5844',
+        bankName: 'بانک صادرات',
+        bankLogo: "~/assets/images/saderat-logo.png",
+    },
+    {
+        id: 2,
+        cardNumber: '6037-6975-5327-5944',
+        bankName: 'بانک صادرات',
+        bankLogo: "~/assets/images/saderat-logo.png",
+    },
+    {
+        id: 3,
+        cardNumber: '6037-6975-5327-5555',
+        bankName: 'بانک صادرات',
+        bankLogo: "~/assets/images/saderat-logo.png",
+    },
+]);
+const selectedItem = ref<CartItem>({})
+const { targetCarts, toggleMenuCarts, closeMenuCarts, openMenuCarts } = useSelectCart()
+const { targetCartMenu, toggleCartMenu, closeCartMenu, openCartMenu } = useCartMenu();
+const selectItem = (item) => {
+    selectedItem.value = item
+    console.log(item)
+}
+const deletCart = () => {
+    selectedItem.value = {}
+    closeCartMenu()
+};
+const manageAccounts = ()=>{
+    closeMenuCarts()
+    closeCartMenu()
 }
 </script>
 <style scoped>

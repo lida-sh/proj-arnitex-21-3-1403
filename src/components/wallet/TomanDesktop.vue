@@ -29,13 +29,18 @@
                 </div>
             </button>
         </div>
-        <div class="relative w-full h-[5.5rem] bg-[#171717] rounded-2xl mb-[1.813rem]">
+        <!-- <div class="relative w-full h-[5.5rem] bg-[#171717] rounded-2xl mb-[1.813rem]">
             <UiDropDownBankCart :options="cartItems" class="text-white "></UiDropDownBankCart>
-        </div>
+        </div> -->
         <div class="relative w-full bg-[#171717] rounded-2xl mb-[1.813rem]">
-            <div  class="h-[5.5rem] flex items-center px-7 cursor-pointer">
-                <p @click="toggleMenuCarts" v-if="!selectedItem.cardNumber" class="text-[#676767] text-base font-normal leading-7">شماره کارت
-                    مورد نظر را انتخاب کنید.</p>
+            <div class="h-[5.5rem] flex items-center px-7 cursor-pointer">
+                <div @click="toggleMenuCarts" v-if="!selectedItem.cardNumber"
+                    class="flex items-center justify-between w-full">
+                    <p class="text-[#676767] text-base font-normal leading-7">شماره کارت
+                        مورد نظر را انتخاب کنید.</p>
+                    <IconsDashboardArrowBig />
+                </div>
+
                 <div class="flex items-center relative">
                     <div v-if="selectedItem.cardNumber" class="w-14" @click.stop="toggleCartMenu">
                         <IconsDashboardOptions></IconsDashboardOptions>
@@ -49,9 +54,9 @@
                     </div>
 
                     <div ref="targetCartMenu"
-                        class="w-[12.688rem] h-0 invisible absolute -right-7 top-16 bg-[#171717] rounded-2xl px-[1.125rem] flex flex-col divide-y devide-[#171717] py-1">
+                        class="w-[12.688rem] h-0 invisible absolute -right-7 top-16 bg-[#171717] rounded-2xl px-[1.125rem] flex flex-col py-1">
                         <div @click="deletCart"
-                            class="flex items-center gap-[0.625rem] text-xs font-bold leading-[23px] text-white py-2">
+                            class="flex items-center gap-[0.625rem] text-xs font-bold leading-[23px] text-white py-2 border-b border-[#262626]">
                             <IconsWalletTrash></IconsWalletTrash>
                             <span class="">حذف کارت</span>
                         </div>
@@ -386,7 +391,7 @@ const deletCart = () => {
     selectedItem.value = {}
     closeCartMenu()
 };
-const manageAccounts = ()=>{
+const manageAccounts = () => {
     closeMenuCarts()
     closeCartMenu()
 }
