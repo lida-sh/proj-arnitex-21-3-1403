@@ -1,7 +1,7 @@
 <template>
-    <div class="px-4 mt-[1.438rem]">
+    <div class="px-8 mt-[1.438rem]">
         <select
-            class="rtl w-full align-middle h-11 border border-[#676767] focus:ring-0 text-base font-normal leading-7 text-[#676767] focus:border-[#676767] bg-[#171717] rounded-2xl mb-[1.125rem]">
+            class="rtl w-full align-middle shrink h-11 border border-[#676767] focus:ring-0 text-base font-normal leading-7 text-[#676767] focus:border-[#676767] bg-[#171717] rounded-2xl mb-[1.125rem]">
             <option value="">شماره شبای مورد نظر خود را انتخاب کنید.</option>
             <option></option>
             <option></option>
@@ -9,9 +9,9 @@
         </select>
         <div class="flex justify-end items-center mb-[1.625rem]">
             <button @click="plusId"
-                class="text-[#FF7028] text-[10px] font-normal leading-[14px] h-[2.188rem] border border-[#FF7028] px-[1.625rem] rounded-lg">
-                <div class="flex gap-3">
-                    <span class="">+</span>
+                class="text-[#FF7028] text-[10px] font-normal leading-[14px] border-[0.5px] border-[#FF7028] px-[1.625rem] py-[0.656rem] rounded-lg bg-[#171717]">
+                <div class="flex items-center justify-center gap-3">
+                    <IconsWalletPlusMob></IconsWalletPlusMob>
                     <span>افزودن شماره شبا جدید</span>
                 </div>
             </button>
@@ -19,67 +19,67 @@
         <p class="text-[9px] font-normal leading-4 text-white mb-[1.813rem]">با توجه به دلیل محدودیت‌های بانکی، واریز
             بیش از ۲۵,۰۰۰,۰۰۰ تومان از طریق درگاه‌های پرداخت ممکن نیست و برای انجام این کار باید از خدمات پرداخت با
             شناسه (ساتنا، پایا و ...) استفاده کنید.</p>
-        <div class="bg-[#171717] px-8 py-[0.948rem] rounded-[14px] mb-[0.813rem]">
+        <div class="bg-[#171717] px-4 py-[0.948rem] rounded-[14px] mb-[0.813rem]">
             <h2
                 class="text-[9px] text-white font-normal leading-4 mb-[0.927rem] underline decoration-[#FF7028] underline-offset-8">
                 راهنمای ساخت شناسه واریز</h2>
-            <UiStepper :list="listStep" class-item="text-[9px] font-normal leading-4"></UiStepper>
+            <UiStepperMob :list="listStep" class-item="text-[9px] font-normal leading-4"></UiStepperMob>
         </div>
         <h3 class="text-sm font-medium leading-5 text-white mb-[0.938rem]">تراکنش های واریز و برداشت</h3>
-                <div class="rounded-2xl overflow-hidden flex flex-col mb-[3.875rem]">
-                    <div
-                        class="grid grid-cols-9 bg-[#171717] h-[2.813rem] text-xs text-white font-normal leading-[29px] ">
-                        <div class="col-span-2 flex items-center justify-center">نوع</div>
-                        <div class="col-span-2 flex items-center justify-center">زمان</div>
-                        <div class="col-span-2 flex items-center justify-center">مقدار</div>
-                        <div class="col-span-2 flex items-center justify-center">وضعیت</div>
-                        <div class="col-span-1 flex items-center justify-center">جزئیات</div>
+        <div class="rounded-2xl overflow-hidden flex flex-col mb-[3.875rem]">
+            <div class="grid grid-cols-14 bg-[#171717] h-[2.813rem] text-xs text-white font-normal leading-[29px]">
+                <div class="col-span-2 flex items-center justify-center">نوع</div>
+                <div class="col-span-3 flex items-center justify-center">زمان</div>
+                <div class="col-span-3 flex items-center justify-center">مقدار</div>
+                <div class="col-span-3 flex items-center justify-center">وضعیت</div>
+                <div class="col-span-3 flex items-center justify-center">جزئیات</div>
 
-                    </div>
-                    <div class="flex flex-col ">
-                        <div v-for="(item, index) in 6" :key="index" class="flex flex-col cursor-pointer">
-                            <div @click="openDetailsOfDeposits(index)"
-                                class="grid grid-cols-9 bg-[#0E0E0E] text-[11px] text-white font-normal leading-4 py-4 border-b border-[#262626] last:border-b-none">
-                                <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">واریز
-                                </div>
-                                <div
-                                    class="col-span-2 flex items-center justify-center border-l border-[#262626] ltrDir">
-                                    ۱۴۰۳ / ۰۳
-                                    / ۰۳</div>
-                                <div
-                                    class="col-span-2 flex items-center justify-center text-[#319B54] border-l border-[#262626]">
-                                    ۱۰۰.۰۰۰.۰۰۰</div>
-                                <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">موفق
-                                </div>
-                                <div class="col-span-2"></div>
+            </div>
+            <div class="flex flex-col ">
+                <div v-for="(item, index) in 6" :key="index" class="flex flex-col cursor-pointer bg-[#0E0E0E] ">
+                    <div @click="openDetailsOfDeposits(index)"
+                        class="grid grid-cols-14  text-[11px] text-white font-normal leading-4 py-4 border-b border-[#262626] last:border-b-none">
+                        <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">واریز
+                        </div>
+                        <div class="col-span-3 flex items-center justify-center border-l border-[#262626] ltrDir">
+                            ۱۴۰۳ / ۰۳
+                            / ۰۳</div>
+                        <div
+                            class="col-span-3 flex items-center justify-center text-[#319B54] border-l border-[#262626]">
+                            ۱۰۰.۰۰۰.۰۰۰</div>
+                        <div class="col-span-3 flex items-center justify-center border-l border-[#262626]">موفق
+                        </div>
+                        <div class="col-span-3 flex items-center justify-center">
+                                <IconsDashboardDepositArrowDown></IconsDashboardDepositArrowDown>
                             </div>
-                            <div :id="`details-${index}`"
-                                class="max-h-0 flex flex-col text-[11px] text-white font-normal leading-4 bg-[#171717] border-b border-[#696969] rounded-b-xl transition-all duration-500 ease-in-out"
-                                :class="{ 'max-h-96': detailsRowDeposits[index] }">
-                                <div class="flex items-center justify-between py-4 border-b border-[#232323] px-4">
-                                    <span class="">زمان</span>
-                                    <span class="">۱۲:۳۰</span>
-                                </div>
-                                <div class="flex items-center justify-between py-4 border-b border-[#232323] px-4">
-                                    <span class="">شناسه تراکنش</span>
-                                    <div class="flex items-center gap-3">
-                                        <IconsDashboardDepositDocMob></IconsDashboardDepositDocMob>
-                                        <span class="">1231343434</span>
-                                    </div>
-                                </div>
-                                <div class="flex items-center justify-between py-4 border-b  border-[#232323] px-4">
-                                    <span class="">لینک</span>
-                                    <div class="flex items-center gap-3">
-                                        <IconsDashboardDepositDocMob></IconsDashboardDepositDocMob>
-                                        <span class="">uykhkjjkh123651</span>
-                                    </div>
-                                </div>
+                    </div>
+                    <div :id="`details-${index}`"
+                        class="max-h-0 flex flex-col text-[11px] text-white font-normal leading-4 bg-[#171717]  rounded-b-xl transition-all duration-500 ease-in-out"
+                        :class="{ 'max-h-96 border-b border-[#696969]': detailsRowDeposits[index] }">
+                        <div class="flex items-center justify-between py-4 border-b border-[#232323] px-4">
+                            <span class="">زمان</span>
+                            <span class="">۱۲:۳۰</span>
+                        </div>
+                        <div class="flex items-center justify-between py-4 border-b border-[#232323] px-4">
+                            <span class="">شناسه تراکنش</span>
+                            <div class="flex items-center gap-3">
+                                <IconsDashboardDepositDocMob></IconsDashboardDepositDocMob>
+                                <span class="">1231343434</span>
                             </div>
                         </div>
-
-
+                        <div class="flex items-center justify-between py-4 border-b  border-[#232323] px-4">
+                            <span class="">لینک</span>
+                            <div class="flex items-center gap-3">
+                                <IconsDashboardDepositDocMob></IconsDashboardDepositDocMob>
+                                <span class="">uykhkjjkh123651</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+
+            </div>
+        </div>
                 <h3 class="text-sm font-medium leading-5 text-white mb-4">سوالات متداول</h3>
                 <div class="flex flex-col gap-6 mb-6">
                     <div class="w-full">
@@ -89,13 +89,13 @@
                             :withTitleIcon="false">
                             <template #title="{ isOpen }">
                                 <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">
-                                    <h3 class="text-sm font-normal leading-[26px] text-white">آیا می‌توانم کیف پولم در
+                                    <h3 class="text-xs font-normal leading-[26px] text-white">آیا می‌توانم کیف پولم در
                                         آرنیتکس را با کارت دیگران شارژ کنم؟</h3>
                                     <IconsDashboardArrowDown v-if="!isOpen"></IconsDashboardArrowDown>
                                     <IconsDashboardArrowUp v-else></IconsDashboardArrowUp>
                                 </div>
                             </template>
-                            <p class="text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
+                            <p class="text-xs font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
                                 خیر. برای شارژ و
                                 برداشت حساب خود در آرنیتکس لازم است مشخصات احراز شده با اطلاعات صاحب حساب مطابقت داشته
                                 باشد.</p>
@@ -108,13 +108,13 @@
                             :withTitleIcon="false">
                             <template #title="{ isOpen }">
                                 <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">
-                                    <h3 class="text-sm font-normal leading-[26px] text-white">محدودیت واریز در روز چه
+                                    <h3 class="text-xs font-normal leading-[26px] text-white">محدودیت واریز در روز چه
                                         مقدار است؟</h3>
                                     <IconsDashboardArrowDown v-if="!isOpen"></IconsDashboardArrowDown>
                                     <IconsDashboardArrowUp v-else></IconsDashboardArrowUp>
                                 </div>
                             </template>
-                            <p class="text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
+                            <p class="text-xs font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
                                  واریز بدون شناسه به کیف پول براساس محدودیت‌های بانکی تا ۲۵,۰۰۰,۰۰۰ تومان از هر کارت
                                 امکان‌پذیر است. سقف
                                 واریز با شناسه بستگی به بانک موردنظر دارد. بنابراین، برای اطلاع از سقف واریز با شناسه،
@@ -129,13 +129,13 @@
                             :withTitleIcon="false">
                             <template #title="{ isOpen }">
                                 <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">
-                                    <h3 class="text-sm font-normal leading-[26px] text-white">درصورت دریافت خطای کارت
+                                    <h3 class="text-xs font-normal leading-[26px] text-white">درصورت دریافت خطای کارت
                                         نامعتبر، چه باید کرد؟</h3>
                                     <IconsDashboardArrowDown v-if="!isOpen"></IconsDashboardArrowDown>
                                     <IconsDashboardArrowUp v-else></IconsDashboardArrowUp>
                                 </div>
                             </template>
-                            <p class="text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
+                            <p class="text-xs font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
                                 اطلاعات وارد شده را بررسی کنید تا در صورت وجود اشتباه، آن را تصحیح نمایید. </p>
                         </AppCollaps>
                     </div>
@@ -146,13 +146,13 @@
                             :withTitleIcon="false">
                             <template #title="{ isOpen }">
                                 <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">
-                                    <h3 class="text-sm font-normal leading-[26px] text-white">چرا وجه از حسابم برداشت
+                                    <h3 class="text-xs font-normal leading-[26px] text-white">چرا وجه از حسابم برداشت
                                         شده ولی هنوز به کیف‌پول آرنیتکس واریز نشده؟</h3>
-                                    <IconsDashboardArrowDown v-if="!isOpen"></IconsDashboardArrowDown>
-                                    <IconsDashboardArrowUp v-else></IconsDashboardArrowUp>
+                                    <IconsDashboardArrowDown v-if="!isOpen" class="shrink-0"></IconsDashboardArrowDown>
+                                    <IconsDashboardArrowUp v-else class="shrink-0"></IconsDashboardArrowUp>
                                 </div>
                             </template>
-                            <p class="text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
+                            <p class="text-xs font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
                                 انتقال پول از کارت به کیف‌پول براساس سازه‌های زمان‌بندی هر بانک انجام می‌شود. همچنین،
                                 بستگی به نحوه انتقال
                                 (ساتنا، پایا و غیره) و ساعت انتقال دارد. </p>

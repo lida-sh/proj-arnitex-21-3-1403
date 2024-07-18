@@ -1,24 +1,26 @@
 <template>
     <div class="w-full bg-black">
         <!-- <div class="w-full pt-[5rem] mx-auto gap-2 2xl:gap-[1.25rem] px-2 flex items-start"> -->
-        <main class="flex flex-col flex-1 pt-[0.938rem]">
-            <div
+        <div class="flex flex-col pt-[0.938rem] w-full items-center justify-center h-full">
+            <!-- <div
                 class="h-[3.5rem] bg-[#171717] flex items-center justify-center text-white text-base font-normal leading-7">
                 <span class=""> واریز تومان</span>
                 <IconsDashboardDepositArrowRight class="absolute y-1/2 right-[1.143rem]">
                 </IconsDashboardDepositArrowRight>
+            </div> -->
+            <div class="flex items-center justify-center w-full">
+                <div class="w-[25.313rem] px-[1.438rem]">
+                    <UiButtonTabButtonDashboard :list="data" v-model="TabIndex">
+                    </UiButtonTabButtonDashboard>
+                </div>
             </div>
-            <div class="w-[25.313rem] mt-[0.938rem] px-[1.438rem]">
-                <UiButtonTabButtonDashboard class="flex-1 flex-row-reverse" :list="data" v-model="TabIndex">
-                </UiButtonTabButtonDashboard>
-            </div>
-           <WalletTomanMob v-if="TabIndex == 1"></WalletTomanMob>
-           <WalletIdMob v-if="TabIndex == 0"></WalletIdMob >
+            <WalletTomanMob v-if="TabIndex == 1"></WalletTomanMob>
+            <WalletIdMob v-if="TabIndex == 0"></WalletIdMob>
 
-        </main>
+        </div>
         <!-- </div> -->
     </div>
-    
+
 </template>
 <script setup lang="ts">
 
@@ -65,14 +67,12 @@ const openDetailsOfDeposits = (index: number) => {
     }
 
 }
-onMounted(()=>{
+onMounted(() => {
     console.log(TabIndex.value)
 })
 
 </script>
 <style scoped>
-
-
 select {
     background-position: left 1.5rem center
 }

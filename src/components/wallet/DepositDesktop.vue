@@ -23,7 +23,7 @@
 
                 <WalletTomanDesktop v-if="tabIndex == 1"></WalletTomanDesktop>
                 <WalletIdDesktop v-if="tabIndex == 0"></WalletIdDesktop>
-                <h2 class="text-xl font-normal text-white leading-7 mb-[1.563rem]">تراکنش های واریز و برداشت</h2>
+                <!-- <h2 class="text-xl font-normal text-white leading-7 mb-[1.563rem]">تراکنش های واریز و برداشت</h2>
                 <div class="rounded-3xl overflow-hidden flex flex-col mb-[1.625rem]">
                     <div
                         class="grid grid-cols-12 bg-[#171717] h-[2.813rem] text-xs text-white font-normal leading-[29px] ">
@@ -210,7 +210,7 @@
                                 (ساتنا، پایا و غیره) و ساعت انتقال دارد. </p>
                         </AppCollaps>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div>
@@ -218,7 +218,7 @@
     </div>
 </template>
 <script setup>
-const tabIndex = ref(0)
+const tabIndex = ref(1)
 
 const data = ref([
     {
