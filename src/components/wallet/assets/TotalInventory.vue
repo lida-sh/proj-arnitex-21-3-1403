@@ -19,6 +19,9 @@ const refresh = () => {
 const assetsStore = useAssetsPageStore();
 const depositModal = ref(false)
 
+
+
+
 </script>
 
 <template>
@@ -81,9 +84,9 @@ const depositModal = ref(false)
 
 
     <div>
-      <SharedModalDepositModal name="deposit" :isOpen="depositModal" @update:isOpen="depositModal = $event">
+      <SharedModalDeposit name="deposit" v-model:show-modal="depositModal">
         <p>This is a modal content</p>
-      </SharedModalDepositModal>
+      </SharedModalDeposit>
     </div>
 
   </div>
