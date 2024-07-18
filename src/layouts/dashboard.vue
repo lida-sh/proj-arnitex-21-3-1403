@@ -2,7 +2,7 @@
   <SharedHeaderSticky></SharedHeaderSticky>
   <div class="pt-[54px] lg:pt-[63px] relative w-full">
     <div v-if="pageLoading"
-      class="bg-black bg-opacity-70 fixed inset-0 h-full w-full flex items-center justify-center overflow-hidden z-[5000]">
+      class="bg-black backdrop-blur-[1px] bg-opacity-70 fixed inset-0 h-full w-full flex items-center justify-center overflow-hidden z-[5000]">
       <UiLoadingSpinner></UiLoadingSpinner>
     </div>
 
