@@ -3,19 +3,19 @@
         <h3 class="text-base font-normal leading-7 text-white mb-4">مبلغ واریزی (تومان)</h3>
         <div class="flex flex-col gap-4 mb-[2.813rem]">
             <input v-model="depositAmount"
-                class="rtl w-full border border-[#676767] focus:ring-0 focus:border-[#676767] text-base font-normal leading-7 text-[#676767] bg-black rounded-2xl ">
+                class="rtl w-full border border-[#676767] focus:ring-0 focus:border-[#676767] text-base font-normal leading-7 text-[#676767] bg-black rounded-2xl placeholder-[#676767]" placeholder="مبلغ را وارد کنید (حداقل مبلغ ۵۰،۰۰۰ تومان است)">
             </input>
             <div class="flex gap-4">
-                <div @click="setDepositAmount(500000)"
-                    class="h-10 rounded-2xl text-base font-normal leading-7 text-[#676767] border border-[#676767] px-4 py-1.5 numDir">
-                    ۵ ، ۰۰۰ ، ۰۰۰</div>
+                <!-- <div @click="setDepositAmount(500000)"
+                    class="h-10 rounded-2xl text-base font-normal leading-7 text-white border border-[#676767] px-4 py-1.5 numDir">
+                    ۵ ، ۰۰۰ ، ۰۰۰</div> -->
 
                 <div @click="setDepositAmount(20000000)"
-                    class="h-10 rounded-2xl text-base font-normal leading-7 text-[#676767] border border-[#676767] px-4 py-1.5 numDir">
+                    class="h-10 rounded-2xl text-base font-normal leading-7 text-white border border-[#676767] px-4 py-1.5 numDir">
                     ۲۰ ، ۰۰۰ ، ۰۰۰</div>
 
                 <div @click="setDepositAmount(25000000)"
-                    class="h-10 rounded-2xl text-base font-normal leading-7 text-[#676767] border border-[#676767] px-4 py-1.5 numDir">
+                    class="h-10 rounded-2xl text-base font-normal leading-7 text-white border border-[#676767] px-4 py-1.5 numDir">
                     ۲۵ ، ۰۰۰ ، ۰۰۰</div>
             </div>
         </div>

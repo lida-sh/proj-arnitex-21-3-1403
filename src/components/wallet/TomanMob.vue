@@ -1,30 +1,30 @@
 <template>
-    <div class="px-4 mt-[1.188rem]">
-        <label class="text-white text-base font-normal leading-7 mb-[0.813rem]">مبلغ واریزی (تومان)</label>
-        <input type="text"
-            class="rtl w-full h-[2.75rem] border border-[#676767] focus:ring-0 text-[11px] font-normal leading-4 placeholder-[#676767] text-[#676767] focus:border-[#676767] bg-[#171717] rounded-lg mb-[1.813rem]"
+    <div class="px-8 mt-[1.188rem] w-full flex flex-col">
+        <label class="text-white text-base font-normal leading-7 mb-3">مبلغ واریزی (تومان)</label>
+        <input type="text" v-model="depositAmount"
+            class="rtl w-full h-[2.75rem] border-[0.5px] border-[#C7C7C7] focus:ring-0 text-[11px] font-normal leading-4 placeholder-[#C7C7C7] text-[#676767] focus:border-[#676767] bg-[#171717] rounded-lg mb-[1.813rem]"
             placeholder="مبلغ را وارد کنید (حداقل مبلغ ۵۰،۰۰۰ تومان است)">
         <div class="flex items-center mb-[1.875rem]">
             <div class="flex-1 flex items-center justify-center">
                 <div @click="setDepositAmount(500000)"
-                    class="h-10 rounded-lg text-base font-normal leading-7 text-[#676767] border border-[#676767] px-4 py-1.5 numDir">
+                    class="h-10 rounded-lg text-xs md:text-base font-normal leading-7 text-white border-[0.5px] border-[#C7C7C7] px-4 py-1.5 numDir">
                     ۵ ، ۰۰۰ ، ۰۰۰</div>
             </div>
             <div class="flex-1 flex items-center justify-center">
                 <div @click="setDepositAmount(20000000)"
-                    class="h-10 rounded-lg text-base font-normal leading-7 text-[#676767] border border-[#676767] px-4 py-1.5 numDir">
+                    class="h-10 rounded-lg text-xs md:text-base font-normal leading-7 text-white border-[0.5px] border-[#C7C7C7] px-4 py-1.5 numDir">
                     ۲۰ ، ۰۰۰ ، ۰۰۰</div>
             </div>
             <div class="flex-1 flex items-center justify-center">
                 <div @click="setDepositAmount(25000000)"
-                    class="h-10 rounded-lg text-base font-normal leading-7 text-[#676767] border border-[#676767] px-4 py-1.5 numDir">
+                    class="h-10 rounded-lg text-xs md:text-base font-normal leading-7 text-white border-[0.5px] border-[#C7C7C7] px-4 py-1.5 numDir">
                     ۲۵ ، ۰۰۰ ، ۰۰۰</div>
             </div>
 
         </div>
-        <label class="text-sm leading-5 font-normal text-white">شماره کارت</label>
+        <!-- <label class="text-sm leading-5 font-normal text-white">شماره کارت</label> -->
         <select
-            class="rtl w-full align-middle h-11 border border-[#676767] focus:ring-0 text-base font-normal leading-7  focus:border-[#676767] bg-[#171717] rounded-xl mb-3">
+            class="rtl w-full align-middle h-11 border-none text-white focus:ring-0 text-[11px] font-normal leading-7  bg-[#171717] rounded-xl mb-3">
             <option value="">شماره کارت مورد نظر را انتخاب کنید.</option>
             <option></option>
             <option></option>
@@ -32,12 +32,14 @@
         </select>
         <div class="flex justify-end mb-[1.813rem]">
             <button @click="plusCart"
-                class="w-[5.875rem] h-10 border border-[#FF7028] rounded-xl flex items-center justify-center">
-                <div class="text-[#FF7028] text-[11px] font-normal leading-4">+ کارت</div>
+                class="w-[5.875rem] h-10 border-[0.5px] border-[#FF7028] rounded-xl flex items-center justify-center bg-[#171717]">
+                <div class="text-[#FF7028] text-[11px] font-normal leading-4 flex items-center justify-center gap-2">
+                    <IconsWalletPlusMob></IconsWalletPlusMob>
+                     کارت</div>
             </button>
         </div>
-        <div class="bg-[#0E0E0E] px-6 py-[1.875rem] flex flex-col w-full rounded-2xl mb-4">
-            <div class="bg-[#262626] w-full py-4 px-[1.563rem] flex justify-between items-center rounded-2xl mb-4">
+        <div class="bg-[#171717] px-6 py-[1.875rem] flex flex-col w-full rounded-2xl mb-[3.188rem] border-1 border-[#C7C7C7]">
+            <div class="bg-black w-full py-4 px-[1.563rem] flex justify-between items-center rounded-2xl mb-4">
                 <IconsDashboardDepositHour24Mob></IconsDashboardDepositHour24Mob>
                 <div class="flex flex-col text-white text-xs font-normal leading-[22px]">
                     <p class="">سقف واریز ۲۴ ساعت</p>
@@ -54,37 +56,37 @@
                 </ul>
             </div>
         </div>
-        <h3 class="text-sm font-medium leading-5 text-white mb-[0.938rem]">تراکنش های واریز و برداشت</h3>
+        <!-- <h3 class="text-sm font-medium leading-5 text-white mb-[0.938rem]">تراکنش های واریز و برداشت</h3> -->
         <div class="rounded-2xl overflow-hidden flex flex-col mb-[3.875rem]">
-            <div class="grid grid-cols-9 bg-[#171717] h-[2.813rem] text-xs text-white font-normal leading-[29px] ">
+            <div class="grid grid-cols-14 bg-[#171717] h-[2.813rem] text-xs text-white font-normal leading-[29px]">
                 <div class="col-span-2 flex items-center justify-center">نوع</div>
-                <div class="col-span-2 flex items-center justify-center">زمان</div>
-                <div class="col-span-2 flex items-center justify-center">مقدار</div>
-                <div class="col-span-2 flex items-center justify-center">وضعیت</div>
-                <div class="col-span-1 flex items-center justify-center">جزئیات</div>
+                <div class="col-span-3 flex items-center justify-center">زمان</div>
+                <div class="col-span-3 flex items-center justify-center">مقدار</div>
+                <div class="col-span-3 flex items-center justify-center">وضعیت</div>
+                <div class="col-span-3 flex items-center justify-center">جزئیات</div>
 
             </div>
             <div class="flex flex-col ">
-                <div v-for="(item, index) in 6" :key="index" class="flex flex-col cursor-pointer">
+                <div v-for="(item, index) in 6" :key="index" class="flex flex-col cursor-pointer bg-[#0E0E0E] ">
                     <div @click="openDetailsOfDeposits(index)"
-                        class="grid grid-cols-9 bg-[#0E0E0E] text-[11px] text-white font-normal leading-4 py-4 border-b border-[#262626] last:border-b-none">
+                        class="grid grid-cols-14  text-[11px] text-white font-normal leading-4 py-4 border-b border-[#262626] last:border-b-none">
                         <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">واریز
                         </div>
-                        <div class="col-span-2 flex items-center justify-center border-l border-[#262626] ltrDir">
+                        <div class="col-span-3 flex items-center justify-center border-l border-[#262626] ltrDir">
                             ۱۴۰۳ / ۰۳
                             / ۰۳</div>
                         <div
-                            class="col-span-2 flex items-center justify-center text-[#319B54] border-l border-[#262626]">
+                            class="col-span-3 flex items-center justify-center text-[#319B54] border-l border-[#262626]">
                             ۱۰۰.۰۰۰.۰۰۰</div>
-                        <div class="col-span-2 flex items-center justify-center border-l border-[#262626]">موفق
+                        <div class="col-span-3 flex items-center justify-center border-l border-[#262626]">موفق
                         </div>
-                        <div class="col-span-1 flex items-center justify-center">
+                        <div class="col-span-3 flex items-center justify-center">
                                 <IconsDashboardDepositArrowDown></IconsDashboardDepositArrowDown>
                             </div>
                     </div>
                     <div :id="`details-${index}`"
-                        class="max-h-0 flex flex-col text-[11px] text-white font-normal leading-4 bg-[#171717] border-b border-[#696969] rounded-b-xl transition-all duration-500 ease-in-out"
-                        :class="{ 'max-h-96': detailsRowDeposits[index] }">
+                        class="max-h-0 flex flex-col text-[11px] text-white font-normal leading-4 bg-[#171717]  rounded-b-xl transition-all duration-500 ease-in-out"
+                        :class="{ 'max-h-96 border-b border-[#696969]': detailsRowDeposits[index] }">
                         <div class="flex items-center justify-between py-4 border-b border-[#232323] px-4">
                             <span class="">زمان</span>
                             <span class="">۱۲:۳۰</span>
@@ -173,8 +175,8 @@
                         <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">
                             <h3 class="text-sm font-normal leading-[26px] text-white">چرا وجه از حسابم برداشت
                                 شده ولی هنوز به کیف‌پول آرنیتکس واریز نشده؟</h3>
-                            <IconsDashboardArrowDown v-if="!isOpen"></IconsDashboardArrowDown>
-                            <IconsDashboardArrowUp v-else></IconsDashboardArrowUp>
+                            <IconsDashboardArrowDown v-if="!isOpen" class="shrink-0"></IconsDashboardArrowDown>
+                            <IconsDashboardArrowUp v-else class="shrink-0"></IconsDashboardArrowUp>
                         </div>
                     </template>
                     <p class="text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
@@ -262,14 +264,17 @@ const openDetailsOfDeposits = (index: number) => {
 </script>
 <style scoped>
 select {
-    background-position: left 1.5rem center
+    background-position: left 1.5rem center;
+    background-image:url("~/assets/images/ArrowSelect.svg");
+    background-size: 1em 1em;
+    
 }
 
 select>option {
     font-size: 11px;
     font-weight: normal;
     display: block;
-    color: #676767;
+    color: white;
     /* min-height: 1.2em; */
     padding: 0px 0px 1px;
     white-space: nowrap;

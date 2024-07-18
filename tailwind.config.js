@@ -32,6 +32,9 @@ export default {
     //   '4xl': '2.441rem',
     //   '5xl': '3.052rem',
     // },
+    // borderWidth: {
+    //   '1': '0.5px',
+    // },
     aspectRatio: {
       40: "40",
       21: "21",
