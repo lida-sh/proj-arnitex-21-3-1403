@@ -51,10 +51,11 @@ const toggleProfileMenu = ()=>{
   <nav class="nav-button-container">
     <div class="z-[1000] fixed bottom-0 left-0 h-[4.5rem] w-full">
       <div class="relative flex h-full">
+
         <span class="dd bottom-nav-back-start bg-[#171717] z-40" :style="startOffset"></span>
         <div class="z-30 relative">
           <span class="selected-circle"></span>
-          <IconsBottomNavigationSelected class="indicator mx-[-2px] mb-[-1px]"></IconsBottomNavigationSelected>
+          <IconsBottomNavigationHomeSelectedV2 class="indicator mx-[-2px] mb-[-1px]"></IconsBottomNavigationHomeSelectedV2>
         </div>
         <span class="dd bottom-nav-back-end flex-1 bg-[#171717] z-40"></span>
 
@@ -108,17 +109,16 @@ const toggleProfileMenu = ()=>{
 
 <style scoped>
 .dd {
-  border-top: 1.2px solid #FF7028;
 }
 
 .selected-circle {
-  background: linear-gradient(0deg, #171717 0%, #262626 100%);
-  border: 1.5px solid #FF7028;
+  background: #FF7028;
+  /* border: 1.5px solid #FF7028; */
   width: 3.5rem;
   height: 3.5rem;
   display: block;
   border-radius: 999px;
-  box-shadow: 0 0 25px rgba(255, 112, 40, 50%);
+  /* box-shadow: 0 0 25px rgba(255, 112, 40, 50%); */
   position: absolute;
   z-index: 40;
   left: 50%;

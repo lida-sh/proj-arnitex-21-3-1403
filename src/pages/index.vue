@@ -28,7 +28,7 @@ await user.fetchUser(true)
       <HomeOurAdvantages></HomeOurAdvantages>
       <HomeFAQ></HomeFAQ>
       <HomeGetApp></HomeGetApp>
-      <HomeNavBottomNavigationWithUserProfile></HomeNavBottomNavigationWithUserProfile>
+      <NavBottomNavigationV2></NavBottomNavigationV2>
 
     </main>
   </div>
