@@ -6,25 +6,22 @@ import DashboardMenuUserAdd from "~/components/icons/DashboardMenuUserAdd.vue"
 import DashboardMenuAward from "~/components/icons/DashboardMenuAward.vue"
 import DashboardMenuProfile from "~/components/icons/DashboardMenuProfile.vue"
 import DashboardMenuSetting from "~/components/icons/DashboardMenuSetting.vue"
-import { callback } from "chart.js/helpers"
-// import DashboardMenuProfile from "~/components/icons/DashboardMenuProfile.vue"
+
 const router = useRouter();
+
 interface MenuItem {
 	id: number,
 	title: string,
 	selected: boolean,
 	callBack: Function,
-
-
 }
-
 
 const menuList = ref([
 	{
 		id: 1,
 		title: "داشبورد",
-		path: '/dashboard',
-		selected: true,
+		path: 'dashboard',
+		selected: false,
 		hasSubmenu: false,
 		isSubmenuOpen: false,
 		submenu: [],
@@ -35,13 +32,14 @@ const menuList = ref([
 	{
 		id: 2,
 		title: "کیف پول",
+		path: 'wallet',
 		selected: false,
 		hasSubmenu: true,
-		isSubmenuOpen: true,
+		isSubmenuOpen: false,
 		submenu: [
 			{
 				title: "دارایی‌ها",
-				to: "/"
+				to: "/wallet/assets"
 			},
 			{
 				title: "حساب‌های بانکی",
@@ -49,15 +47,15 @@ const menuList = ref([
 			},
 			{
 				title: "واریز",
-				to: "/dashboard/deposit"
+				to: "/wallet/deposit"
 			},
 			{
 				title: "برداشت",
-				to: "/"
+				to: "/wallet/withdraw"
 			},
 			{
 				title: "پورتفوی حساب",
-				to: "/"
+				to: "/wallet/portfolio"
 			},
 			{
 				title: "تاریخچه",
@@ -165,12 +163,31 @@ const route = useRoute()
 watch(
 	() => route.path,
 	(newPath) => {
-		console.log(newPath);
+		// get the first path of the route		
+		const firstPath = newPath.split('/')[1];
+
+		// search for the menu item that has the same path as the firstPath
+		const menuItem = menuList.value.find((item) => item.path === firstPath)
+
+		// if the menu item is found
+		if (menuItem) {
+			// set the selected property of the menu item to true
+			menuItem.selected = true
+			menuItem.isSubmenuOpen = true
+			// set the selected property of the other menu items to false
+			menuList.value.forEach((item) => {
+				if (item !== menuItem) {
+					item.selected = false
+				}
+			})
+		}
+
 
 		// react to route changes...
-	}, {
-	immediate: true
-}
+	},
+	{
+		immediate: true
+	}
 )
 
 </script>
@@ -190,8 +207,8 @@ watch(
 								<component :is="getIcon(item.id)"></component>
 								<span class="font-bold text-sm leading-[1.625rem]">{{ item.title }}</span>
 							</div>
-							<IconsDashboardArrowDown v-if="item.hasSubmenu"
-								:class="{ 'sub-menu-arrow-open': item.isSubmenuOpen }" class="sub-menu-arrow">
+							<IconsDashboardArrowDown v-if="item.hasSubmenu" :class="{ 'sub-menu-arrow-open': item.isSubmenuOpen }"
+								class="sub-menu-arrow">
 							</IconsDashboardArrowDown>
 						</button>
 					</div>
@@ -200,11 +217,9 @@ watch(
 						<ul>
 							<li v-for="(submenuItem, index) in item.submenu" :key="submenuItem.title">
 
-								<NuxtLink :to="submenuItem.to"
+								<NuxtLink :to="submenuItem.to" :class="{ 'selected-dashboard-item': route.path === submenuItem.to }"
 									class="dashboard-item font-normal cursor-pointer pr-[2.8rem] gap-4 h-12 items-center flex">
-									{{
-										submenuItem.title
-									}}
+									{{ submenuItem.title }}
 								</NuxtLink>
 							</li>
 						</ul>

@@ -19,9 +19,6 @@ const refresh = () => {
 const assetsStore = useAssetsPageStore();
 const depositModal = ref(false)
 
-
-
-
 </script>
 
 <template>
@@ -76,12 +73,12 @@ const depositModal = ref(false)
         <IconsWalletAssetsDeposit></IconsWalletAssetsDeposit>
         <span>واریز</span>
       </button>
-      <button class="bg-[#1A1A1A] flex-1 flex items-center justify-between rounded-xl py-3 px-5">
+      <NuxtLink to="/wallet/withdraw"
+        class="bg-[#1A1A1A] flex-1 flex items-center justify-between rounded-xl py-3 px-5">
         <IconsWalletAssetsHarvest></IconsWalletAssetsHarvest>
-        <span>برداشت</span>
-      </button>
+        <span class="mt-[3px]">برداشت</span>
+      </NuxtLink>
     </div>
-
 
     <div>
       <SharedModalDeposit name="deposit" v-model:show-modal="depositModal">

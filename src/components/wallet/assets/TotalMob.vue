@@ -27,10 +27,10 @@ const showSelectCoinModal = ref(false);
         <IconsWalletAssetsDepositMob></IconsWalletAssetsDepositMob>
         <span class="text-white text-base leading-7 mt-[3px]">واریز</span>
       </button>
-      <button class="bg-[#131313] rounded-2xl px-6 py-4 flex items-center justify-between basis-1/2">
+      <NuxtLink to="/wallet/withdraw"class="bg-[#131313] rounded-2xl px-6 py-4 flex items-center justify-between basis-1/2">
         <IconsWalletAssetsHarvestMob></IconsWalletAssetsHarvestMob>
         <span class="text-white text-base leading-7 mt-[3px]">برداشت</span>
-      </button>
+      </NuxtLink>
     </div>
   </div>
 

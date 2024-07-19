@@ -22,7 +22,7 @@ const searchText = ref('')
         </div>
       </div>
 
-      <NuxtLink to="/#" class="flex items-center text-[#FF7028] py-1 gap-[0.625rem]">
+      <NuxtLink to="#" class="flex items-center text-[#FF7028] py-1 gap-[0.625rem]">
         <span>مشاهده همه ی رمز ارز ها</span>
         <IconsDashboardSeeAllCoinArrow></IconsDashboardSeeAllCoinArrow>
       </NuxtLink>

@@ -7,6 +7,7 @@ const { target, toggleMenu, closeMenu, openMenu, divModal } = useMenuProfile();
 const test = () => {
   console.log("test")
 }
+import NavBottomNavigationWithUserProfile from "~/components/home/NavBottomNavigationWithUserProfile.vue";
 import { useUserStore } from "~/stores/user"
 const user = useUserStore();
 await user.fetchUser(true)
@@ -28,7 +29,7 @@ await user.fetchUser(true)
       <HomeOurAdvantages></HomeOurAdvantages>
       <HomeFAQ></HomeFAQ>
       <HomeGetApp></HomeGetApp>
-      <NavBottomNavigationV2></NavBottomNavigationV2>
+      <NavBottomNavigationWithUserProfile></NavBottomNavigationWithUserProfile>
 
     </main>
   </div>
