@@ -9,7 +9,7 @@
 
     <div
         class="w-full bg-black xl:hidden overflow-hidden pt-[1.5rem] px-[1rem] flex-col gap-[0.5rem] max-w-[800px] mx-auto">
-        <WalletWithdrawIndexMob></WalletWithdrawIndexMob>
+        <WalletPortfolioIndexMob></WalletPortfolioIndexMob>
     </div>
 
 </template>

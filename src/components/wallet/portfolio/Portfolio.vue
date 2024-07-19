@@ -11,13 +11,23 @@
             </div>
 
             <div class="w-full h-auto flex justify-center items-center mt-[0.5rem]">
-              <UiChartAssets v-if="tabIndex == 0" :day="7"></UiChartAssets>
-              <UiChartAssets v-if="tabIndex == 1" :day="30"></UiChartAssets>
-              <UiChartAssets v-if="tabIndex == 2" :day="90"></UiChartAssets>
+              <UiChartAssets  :day="7"></UiChartAssets>
+              <UiChartAssets  :day="30"></UiChartAssets>
+              <UiChartAssets  :day="90"></UiChartAssets>
             </div>
           </div>
           <div class="pt-4">
             <DashboardAssetDispersion> </DashboardAssetDispersion>
+          </div>
+          <div class="w-full mt-3 flex flex-col dashboard-card pt-[0.625rem] pb-[0.875rem]">
+            <div class="flex items-center gap-[2rem] px-[2rem]">
+              <span class="text-white text-[16px]">نمودار روند دارایی</span>
+              <UiButtonTabButton class="flex-1" :list="data" v-model="tabIndex"></UiButtonTabButton>
+            </div>
+
+            <div class="w-full h-auto flex justify-center items-center mt-[0.5rem]">
+              <UiChartProfitLossChart :day="30" ></UiChartProfitLossChart>
+            </div>
           </div>
 
         </div>
@@ -56,9 +66,6 @@
               <IconsDashboardArrowRightMob></IconsDashboardArrowRightMob>
             </div>
 
-
-
-
           </div>
 
           <WalletPortfolioCollaps class="z-[1] relative"></WalletPortfolioCollaps>
@@ -67,7 +74,6 @@
       </div>
     </div>
   </div>
-
 
 </template>
 
