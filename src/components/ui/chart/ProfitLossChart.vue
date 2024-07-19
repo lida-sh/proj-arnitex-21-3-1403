@@ -91,7 +91,8 @@
           },
           y: {
             grid: {
-              color: '#333'
+              color: '#333',
+            //   display: false,
             },
             ticks: {
               color: '#fff',
