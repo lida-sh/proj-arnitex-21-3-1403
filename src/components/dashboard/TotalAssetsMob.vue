@@ -3,7 +3,7 @@ import { useDashboardPageStore } from "~/stores/dashboard-page"
 const dashboardStor = useDashboardPageStore();
 </script>
 <template>
-  <div class="dashboard-card-mob w-full relative z-[200] py-[1.125rem] px-[0.625rem]">
+  <div class="dashboard-card-mob w-full relative z-[200] pt-2 pb-4 px-4">
     <div class="flex justify-between text-white pb-3">
       <div class="flex items-center">
         <p class="text-[14px] font-bold leading-[26px]">دارایی کل:</p>

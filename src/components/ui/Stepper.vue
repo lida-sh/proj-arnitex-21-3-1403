@@ -1,20 +1,4 @@
 <template>
-
-
-    <!-- <ol class="relative text-white text-xs font-medium leading-5 border-s border-[#FF9A67] ">
-        <li v-for="(item, index) in list" class="mb-10 ms-6">
-            <span
-                class="absolute flex items-center justify-center w-[1.188rem] h-[1.188rem] bg-[#FF9A67] rounded-full -start-[10px] lsdt:border-s-0 ">
-                <template v-if="$slots.icon">
-                    <slot name="icon"></slot>
-                </template> -->
-    <!-- <template v-if="numberStep">
-                    {{index+1}}
-                </template>
-            </span>
-            {{ item.title }}
-        </li>
-    </ol> -->
     <ul class="steps steps-vertical">
         <li v-for="(item, index) in list"
             class="step step-primary text-white text-justify font-medium leading-5 justify-start"
@@ -23,6 +7,7 @@
     </ul>
 
 </template>
+
 <script lang="ts">
 interface ListItem {
     title: string;
@@ -34,12 +19,12 @@ export default defineComponent({
             default: "false",
         },
         list: {
-            type:Array,
-            required:true
+            type: Array,
+            required: true
         },
-        numberStep:{
+        numberStep: {
             type: Boolean,
-            default:false
+            default: false
         }
     }
 })

@@ -8,7 +8,7 @@
         <h6 class="text[1.375rem] leading-[2.313rem] font-semibold mb-[3.438rem] xl:mb-9">
           <span>با هر معامله دوستان معرفی شده ی شما به آرنیتکس</span>
           <span class="text-[#FF7028] whitespace-nowrap"> ۲۵٪ پاداش </span>
-          <span class="">از کارمزدشان به شما داده خواهد شد .</span>
+          <span class="">از کارمزدشان به شما داده خواهد شد.</span>
         </h6>
         <div class="relative">
           <button class="w-[13.5rem] h-[3.75rem] rounded-lg bg-[#FF7028] text-white font-semibold relative z-20">
@@ -17,8 +17,8 @@
         </div>
       </div>
       <div class="flex items-center justify-center relative w-auto h-full aspect-video mb-[4.375rem] xl:mb-0">
-        <img src="~/assets/images/Group 26086268.png" alt="" class="w-[24.6875rem] h-auto relative z-20" />
-        <div class="absolute translate-[50%,-50%] xl:translate-[unset] xl:top-[10%] xl:right-0 h-[34.375rem] w-[34.375rem] pointer-events-none">
+        <img src="~/assets/images/devices2.png" alt="" class="w-auto h-full relative z-20" />
+        <div class="absolute -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 h-[34.375rem] w-[34.375rem] pointer-events-none">
           <UiPulsShadow></UiPulsShadow>
         </div>
       </div>

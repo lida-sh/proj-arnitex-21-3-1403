@@ -189,3 +189,12 @@ body {
 .selected-dashboard-item .arrow-down path {
   stroke: rgba(255, 112, 40, 1);
 }
+
+
+body.no-scroll {
+  overflow: hidden;
+}
+.content-padding{
+  padding-right: 16px !important;
+  padding-left: 16px !important;
+}

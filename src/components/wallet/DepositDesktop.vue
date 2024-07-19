@@ -1,11 +1,11 @@
 <template>
     <div class="w-full bg-black">
-        <div class="w-full max-w-[100rem] pt-[5rem] mx-auto gap-2 2xl:gap-[1.25rem] px-2 flex items-start">
-            <DashboardMenuBar class="max-w-[16.5rem] min-w-[13rem] dashboard-card w-full"></DashboardMenuBar>
-            <main class="flex flex-col flex-1 gap-2 2xl:gap-[1.25rem]">
+        <div class="w-full max-w-[100rem] mx-auto gap-2 2xl:gap-[1.25rem] px-2 flex items-start">
+            <!-- <DashboardMenuBar class="max-w-[16.5rem] min-w-[13rem] dashboard-card w-full"></DashboardMenuBar> -->
+            <div class="flex flex-col flex-1 gap-2 2xl:gap-[1.25rem]">
                 <div class="w-[25.313rem]">
-                    <UiButtonTabButtonDashboard class="flex-1 flex-row-reverse" :list="data" v-model="TabIndex">
-                    </UiButtonTabButtonDashboard>
+                    <UiButtonTabButton2 class="flex-1 flex-row-reverse" :list="data" v-model="tabIndex">
+                    </UiButtonTabButton2>
                 </div>
                 <div class="bg-[#343434] h-[0.5px] mb-7"></div>
                 <!-- <div
@@ -21,9 +21,9 @@
                         :class="[{ 'right-1/2': depositType }, { 'right-0': !depositType }]"></label>
                 </div> -->
 
-                <DashboardDepositTomanDesktop v-if="TabIndex == 0"></DashboardDepositTomanDesktop>
-                <DashboardDepositIdDesktop v-if="TabIndex == 1"></DashboardDepositIdDesktop>
-                <h2 class="text-xl font-normal text-white leading-7 mb-[1.563rem]">تراکنش های واریز و برداشت</h2>
+                <WalletTomanDesktop v-if="tabIndex == 1"></WalletTomanDesktop>
+                <WalletIdDesktop v-if="tabIndex == 0"></WalletIdDesktop>
+                <!-- <h2 class="text-xl font-normal text-white leading-7 mb-[1.563rem]">تراکنش های واریز و برداشت</h2>
                 <div class="rounded-3xl overflow-hidden flex flex-col mb-[1.625rem]">
                     <div
                         class="grid grid-cols-12 bg-[#171717] h-[2.813rem] text-xs text-white font-normal leading-[29px] ">
@@ -210,23 +210,23 @@
                                 (ساتنا، پایا و غیره) و ساعت انتقال دارد. </p>
                         </AppCollaps>
                     </div>
-                </div>
+                </div> -->
 
-            </main>
+            </div>
         </div>
 
     </div>
 </template>
 <script setup>
-const TabIndex = ref(0)
+const tabIndex = ref(1)
 
 const data = ref([
     {
         id: 0,
-        title: "واریز تومان"
+        title: "واریز با شناسه"
     }, {
         id: 1,
-        title: "واریز با شناسه"
+        title: "واریز با تومان"
     }
 ])
 
