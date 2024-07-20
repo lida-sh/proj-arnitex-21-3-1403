@@ -117,7 +117,7 @@
 
                 <div class="flex flex-col font-normal pb-[1.063rem] rounded-b-3xl">
                     <p class="text-[#A8A8A8] text-[16px]"> آخرین تایمی که معامله کرده‌اید:</p>
-                    <p class="text-[13px] justify-end flex pt-3">۱۴۰۲-۰۶-۱۲ ۲۱:۳۸</p>
+                    <p class="text-[20px] justify-end flex pt-3">۱۴۰۲-۰۶-۱۲ ۲۱:۳۸</p>
                 </div>
             </WalletPortfolioCollap>
         </div>
