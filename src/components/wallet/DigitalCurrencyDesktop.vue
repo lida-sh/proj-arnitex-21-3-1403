@@ -166,9 +166,9 @@
             <div class="flex flex-col gap-6 mb-[6.563rem]">
 
                 <div class="w-full">
-                    <AppCollaps noStyleBg
+                    <AppCollaps noStyleBg class="!px-6"
                         :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
-                        :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px]  border-white h-[4.5rem]']"
+                        :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px] border-[#676767] h-[4.5rem]']"
                         :withTitleIcon="false">
                         <template #title="{ isOpen }">
                             <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">
@@ -179,16 +179,16 @@
                                 <IconsDashboardArrowUp v-else></IconsDashboardArrowUp>
                             </div>
                         </template>
-                        <p class="text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
+                        <p class="-mx-8 text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
                             متاسفانه، انتقال رمز ارزهایی که نیاز به مموی اجباری دارند، بدون وارد کردن تگ یا کامنت به
                             درستی انجام نمی‌شود و در
                             صورت ارسال، توکن موردنظر در شبکه گم می‌شود.</p>
                     </AppCollaps>
                 </div>
                 <div class="w-full">
-                    <AppCollaps noStyleBg
+                    <AppCollaps noStyleBg class="!px-6"
                         :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
-                        :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px]  border-white h-[4.5rem]']"
+                        :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px] border-[#676767] h-[4.5rem]']"
                         :withTitleIcon="false">
                         <template #title="{ isOpen }">
                             <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">
@@ -198,7 +198,7 @@
                                 <IconsDashboardArrowUp v-else></IconsDashboardArrowUp>
                             </div>
                         </template>
-                        <p class="text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
+                        <p class="-mx-8 text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
                              سرعت انتقال رمز ارزها به دو عامل بستگی دارد: شبکه انتخابی شما و ترافیک شبکه. به عنوان مثال،
                             سرعت شبکه ترون
                             نسبتاً بالا است. در شرایط ترافیک بالا، انتقال‌ها در صف تأیید شبکه قرار می‌گیرند.</p>
