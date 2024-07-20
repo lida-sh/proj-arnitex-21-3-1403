@@ -18,7 +18,7 @@
           <p>۰ تومان</p>
         </div>
 
-        <div class="flex justify-between pt-5 pb-10 text-[16px] font-normal">
+        <div class="flex justify-between pt-5 pb-4 text-[16px] font-normal">
           <p> شماره شبا</p>
           <div
             class="px-[26px] py-[6px] flex cursor-pointer justify-center items-center gap-3 bg-[#171717] rounded-[8px] border-[#FF7028] border">
