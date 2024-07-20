@@ -51,8 +51,8 @@ const assetsDay = computed(() => {
     </div>
     <div>
       <UiChartAssets v-if="tabIndex === 0" :day="assetsDay"></UiChartAssets>
-      <div class="flex gap-10 px-6" v-if="tabIndex === 1">
-        <div class="mt-[2.125rem] mx-auto w-full">
+      <div class="flex gap-1 px-6" v-if="tabIndex === 1">
+        <div class="mt-[2.125rem] mx-auto basis-7/12">
 
           <div class="dispersion-grid font-bold text-xs text-white">
             <span>نام رمز ارز</span>
@@ -112,7 +112,7 @@ const assetsDay = computed(() => {
 
           </ul>
         </div>
-        <UiChartPieChart></UiChartPieChart>
+        <UiChartPieChart class="basis-5/12"></UiChartPieChart>
 
       </div>
     </div>

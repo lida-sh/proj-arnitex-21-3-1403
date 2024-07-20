@@ -7,13 +7,14 @@
                         پرداخت امکان پذیر نیست. بنابراین،
                         برای واریز مبالغ بیشتر، لطفاً از واریز با شناسه استفاده کنید.</li>
                 </ul>
-                <select
-                    class="rtl w-full h-[3.75rem] border border-[#676767] focus:ring-0 text-base font-normal leading-7 text-[#676767] focus:border-[#676767] bg-transparent rounded-2xl mb-[1.813rem]">
-                    <option value="">شماره شبای مورد نظر خود را انتخاب کنید.</option>
-                    <option></option>
-                    <option></option>
-                    <option></option>
-                </select>
+
+                <div class="relative mb-7">
+                    <input type="text" name="" id="" placeholder="شماره شبای مورد نظر خود را انتخاب کنید."
+                        class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] placeholder:text-[#676767] focus:border-white focus:ring-0">
+                    <IconsDashboardArrowBig class="cursor-pointer left-4 absolute top-1/2 -translate-y-1/2">
+                    </IconsDashboardArrowBig>
+                </div>
+
                 <div class="flex justify-end h-10">
                     <button
                         class="text-[#FF7028] text-base font-bold leading-[29px] py-[0.375rem] rounded-lg border border-[#FF7028] flex items-center gap-3 justify-center bg-[#171717] px-[1.625rem]">
@@ -128,66 +129,82 @@
             </div>
         </div>
         <h3 class="text-white text-base font-normal leading-[29px] mb-2">سوالات متداول</h3>
-        <div class="flex flex-col gap-6 mb-[6.563rem]">
+        <div class="flex flex-col gap-6 mb-[1rem]">
 
             <div class="w-full">
-                <AppCollaps noStyleBg :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
-                    :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px]  border-white h-[4.5rem]']"
+                <AppCollaps noStyleBg class="!px-6"
+                    :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
+                    :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px] border-[#7d7d7d] h-[4.5rem]']"
                     :withTitleIcon="false">
                     <template #title="{ isOpen }">
                         <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">
-                            <h3 class="text-sm font-normal leading-[26px] text-white"> در صورت مشاهده خطای کارت نامعتبر چه باید کرد؟</h3>
+                            <h3 class="text-sm font-normal leading-[26px] text-white">آیا می‌توانم کیف پولم در
+                                آرنیتکس را با کارت دیگران شارژ کنم؟</h3>
                             <IconsDashboardArrowDown v-if="!isOpen"></IconsDashboardArrowDown>
                             <IconsDashboardArrowUp v-else></IconsDashboardArrowUp>
                         </div>
                     </template>
-                    <p class="text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
-                        لطفاً اطلاعاتی که وارد کردید را مجدد بررسی کنید و درصورت وجود اشتباه، آن را برطرف کنید. </p>
+                    <p class="-mx-8 text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
+                        خیر. برای شارژ و
+                        برداشت حساب خود در آرنیتکس لازم است مشخصات احراز شده با اطلاعات صاحب حساب مطابقت داشته
+                        باشد.</p>
                 </AppCollaps>
             </div>
             <div class="w-full">
-                <AppCollaps noStyleBg :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
-                    :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px]  border-white h-[4.5rem]']"
+                <AppCollaps noStyleBg class="!px-6"
+                    :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
+                    :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px] border-[#7d7d7d] h-[4.5rem]']"
                     :withTitleIcon="false">
                     <template #title="{ isOpen }">
                         <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">
-                            <h3 class="text-sm font-normal leading-[26px] text-white"> آیا می‌توانم کیف پولم در آرنیتکس را با کارت دیگران شارژ کنم؟</h3>
+                            <h3 class="text-sm font-normal leading-[26px] text-white">محدودیت واریز در روز چه
+                                مقدار است؟</h3>
                             <IconsDashboardArrowDown v-if="!isOpen"></IconsDashboardArrowDown>
                             <IconsDashboardArrowUp v-else></IconsDashboardArrowUp>
                         </div>
                     </template>
-                    <p class="text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
-                         خیر. برای شارژ و برداشت حساب خود در آرنیتکس لازم است مشخصات احراز شده با اطلاعات صاحب حساب مطابقت داشته باشد.</p>
+                    <p class="-mx-8 text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
+                         واریز بدون شناسه به کیف پول براساس محدودیت‌های بانکی تا ۲۵,۰۰۰,۰۰۰ تومان از هر کارت
+                        امکان‌پذیر است. سقف
+                        واریز با شناسه بستگی به بانک موردنظر دارد. بنابراین، برای اطلاع از سقف واریز با شناسه،
+                        به بانک مورد نظر
+                        مراجعه کنید.</p>
                 </AppCollaps>
             </div>
             <div class="w-full">
-                <AppCollaps noStyleBg :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
-                    :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px]  border-white h-[4.5rem]']"
+                <AppCollaps noStyleBg class="!px-6"
+                    :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
+                    :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px] border-[#7d7d7d] h-[4.5rem]']"
                     :withTitleIcon="false">
                     <template #title="{ isOpen }">
                         <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">
-                            <h3 class="text-sm font-normal leading-[26px] text-white"> آیا بعد از واریز مبلغ با استفاده از شناسه، محدودیت زمانی برای برداشت رمز ارز دارم؟ </h3>
+                            <h3 class="text-sm font-normal leading-[26px] text-white">درصورت دریافت خطای کارت
+                                نامعتبر، چه باید کرد؟</h3>
                             <IconsDashboardArrowDown v-if="!isOpen"></IconsDashboardArrowDown>
                             <IconsDashboardArrowUp v-else></IconsDashboardArrowUp>
                         </div>
                     </template>
-                    <p class="text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
-                        خیر هیچ محدودیت زمانی برای برداشت و انتقال رمز ارز بعد از واریز پول به کیف‌پول خود ندارید.   </p>
+                    <p class="-mx-8 text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
+                        اطلاعات وارد شده را بررسی کنید تا در صورت وجود اشتباه، آن را تصحیح نمایید. </p>
                 </AppCollaps>
             </div>
             <div class="w-full">
-                <AppCollaps noStyleBg :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
-                    :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px]  border-white h-[4.5rem]']"
+                <AppCollaps noStyleBg class="!px-6"
+                    :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
+                    :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px] border-[#7d7d7d] h-[4.5rem]']"
                     :withTitleIcon="false">
                     <template #title="{ isOpen }">
                         <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">
-                            <h3 class="text-sm font-normal leading-[26px] text-white">چرا وجه از حسابم برداشت شده ولی هنوز به کیف‌پول آرنیتکس واریز نشده؟</h3>
-                            <IconsDashboardArrowDown v-if="!isOpen" class="shrink-0"></IconsDashboardArrowDown>
-                            <IconsDashboardArrowUp v-else class="shrink-0"></IconsDashboardArrowUp>
+                            <h3 class="text-sm font-normal leading-[26px] text-white">چرا وجه از حسابم برداشت
+                                شده ولی هنوز به کیف‌پول آرنیتکس واریز نشده؟</h3>
+                            <IconsDashboardArrowDown v-if="!isOpen"></IconsDashboardArrowDown>
+                            <IconsDashboardArrowUp v-else></IconsDashboardArrowUp>
                         </div>
                     </template>
-                    <p class="text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
-                        انتقال پول از کارت بانکی به کیف‌پول آرنیتکس براساس سازه‌های زمان‌بندی هر بانک انجام می‌شود. همچنین، بستگی به نحوه انتقال (ساتنا، پایا و غیره) و ساعت انتقال دارد.</p>
+                    <p class="-mx-8 text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
+                        انتقال پول از کارت به کیف‌پول براساس سازه‌های زمان‌بندی هر بانک انجام می‌شود. همچنین،
+                        بستگی به نحوه انتقال
+                        (ساتنا، پایا و غیره) و ساعت انتقال دارد. </p>
                 </AppCollaps>
             </div>
         </div>

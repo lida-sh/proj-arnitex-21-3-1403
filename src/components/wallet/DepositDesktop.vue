@@ -1,6 +1,6 @@
 <template>
     <div class="w-full bg-black">
-        <div class="w-full max-w-[100rem] mx-auto gap-2 2xl:gap-[1.25rem] px-2 flex items-start">
+        <div class="w-full max-w-[100rem] mx-auto gap-2 2xl:gap-[1.25rem] flex items-start">
             <!-- <DashboardMenuBar class="max-w-[16.5rem] min-w-[13rem] dashboard-card w-full"></DashboardMenuBar> -->
             <div class="flex flex-col flex-1 gap-2 2xl:gap-[1.25rem]">
                 <div class="w-[25.313rem]">
@@ -8,18 +8,6 @@
                     </UiButtonTabButton2>
                 </div>
                 <div class="bg-[#343434] h-[0.5px] mb-7"></div>
-                <!-- <div
-                    class="w-[25.313rem] h-[3.875rem] rounded-2xl bg-[#171717] text-base font-bold leading-[29px] flex items-center justify-center py-2 relative mb-[2.063rem]">
-                    <div @click="depositToToman" class="flex-1 flex items-center justify-center bg-transparent z-[200]"
-                        :class="[{ 'text-[#FF7028]': !depositType }, { 'text-white': depositType }]">واریز تومان</div>
-                    <div @click="depositToID" class="flex-1 flex items-center justify-center bg-transparent z-[200]"
-                        :class="[{ 'text-[#FF7028]': depositType }, { 'text-white': !depositType }]">واریز با شناسه
-                    </div>
-                    <input type="radio" name="type" id="depositTypeId" class="absolute top-0 right-0 invisible">
-                    <label for="depositTypeId"
-                        class="absolute w-1/2 h-full top-0 bg-black rounded-2xl transition-all border-y border-[#FF7028]"
-                        :class="[{ 'right-1/2': depositType }, { 'right-0': !depositType }]"></label>
-                </div> -->
 
                 <WalletTomanDesktop v-if="tabIndex == 1"></WalletTomanDesktop>
                 <WalletIdDesktop v-if="tabIndex == 0"></WalletIdDesktop>

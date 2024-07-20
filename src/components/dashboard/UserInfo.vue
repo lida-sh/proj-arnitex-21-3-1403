@@ -15,7 +15,7 @@
         </div>
         <div class="flex flex-col justify-center gap-2">
           <span class="text-sm leading-5 font-medium text-white text-opacity-50">شماره موبایل</span>
-          <span class="text-sm leading-5 font-medium text-white text-opacity-50">09330***36</span>
+          <span dir="ltr" class="text-sm leading-5 font-medium text-white text-opacity-50">09330***36</span>
         </div>
         <!-- <div class="flex flex-col justify-center gap-2">
           <span class="text-sm leading-5 font-medium text-white text-opacity-50">شناسه حساب کاربری</span>
