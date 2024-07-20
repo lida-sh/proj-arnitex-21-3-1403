@@ -379,6 +379,36 @@ const cartItems = ref<CartItem[]>([
         bankName: 'بانک صادرات',
         bankLogo: "~/assets/images/saderat-logo.png",
     },
+    {
+        id: 4,
+        cardNumber: '6037-6975-5327-5555',
+        bankName: 'بانک صادرات',
+        bankLogo: "~/assets/images/saderat-logo.png",
+    },
+    {
+        id: 5,
+        cardNumber: '6037-6975-5327-5555',
+        bankName: 'بانک صادرات',
+        bankLogo: "~/assets/images/saderat-logo.png",
+    },
+    {
+        id: 3,
+        cardNumber: '6037-6975-5327-5555',
+        bankName: 'بانک صادرات',
+        bankLogo: "~/assets/images/saderat-logo.png",
+    },
+    {
+        id: 3,
+        cardNumber: '6037-6975-5327-5555',
+        bankName: 'بانک صادرات',
+        bankLogo: "~/assets/images/saderat-logo.png",
+    },
+    {
+        id: 3,
+        cardNumber: '6037-6975-5327-5555',
+        bankName: 'بانک صادرات',
+        bankLogo: "~/assets/images/saderat-logo.png",
+    },
 ]);
 const selectedItem = ref<CartItem>({})
 const { targetCarts, toggleMenuCarts, closeMenuCarts, openMenuCarts } = useSelectCart()
