@@ -20,7 +20,9 @@
 
             <div class="px-2 flex lg:hidden items-center gap-3">
                 <IconsDashboardOptions v-if="selectedItem"></IconsDashboardOptions>
-                <div v-if="selectedItem" class="bg-[#868686] w-[43px] h-[43px] rounded-2xl">
+                <div v-if="selectedItem"
+                    class="bg-[#868686] w-[34px] h-[34px] lg:h-[43px] lg:w-[43px] flex justify-center items-center rounded lg:rounded-2xl">
+                    <img :src="selectedItem.bankLogo" alt="Bank Logo" />
                 </div>
                 <p v-if="selectedItem" class=" text-[11px] leading-[16px] font-normal"> {{ selectedItem.cardNumber }}
                 </p>
@@ -38,7 +40,8 @@
                 <div v-for="item in options" :key="item.id" @click="selectItem(item)"
                     class=" flex items-center cursor-pointer p-2 px-1 border-t  border-[#3A3A3A]">
                     <div class="px-6 flex items-center gap-5">
-                        <div class="bg-[#868686] w-[43px] h-[43px] flex justify-center items-center rounded-2xl">
+                        <div
+                            class="bg-[#868686] w-[34px] h-[34px] lg:h-[43px] lg:w-[43px] flex justify-center items-center rounded lg:rounded-2xl">
                             <img :src="item.bankLogo" alt="Bank Logo" />
                         </div>
                         <p class="text-[12px] leading-[23px] font-bold "> {{ item.bankName }}</p>
