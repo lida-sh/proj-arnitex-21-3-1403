@@ -10,7 +10,7 @@
     <WalletWithdrawalCryptocurrency v-if="TabIndex == 0"></WalletWithdrawalCryptocurrency>
 </template>
 <script setup>
-const TabIndex = ref(0)
+const TabIndex = ref(1)
 
 const data = ref([
     {

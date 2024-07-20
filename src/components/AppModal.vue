@@ -16,7 +16,7 @@
       >
         <section class="flex items-center justify-between">
           <slot name="title">
-            <span class="font-medium">{{ title }}</span>
+            <span class="font-medium text-white">{{ title }}</span>
           </slot>
           <span
             class="cursor-pointer text-xl select-none text-white"

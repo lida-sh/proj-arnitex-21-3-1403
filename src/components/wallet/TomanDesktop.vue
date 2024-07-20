@@ -88,7 +88,7 @@
             class="bg-[#FF7028] h-[3.5rem] w-full text-white text-base rounded-2xl font-normal leading-[29px] 3.313">انتقال
             به درگاه پرداخت</button>
         <div
-            class="bg-[#0E0E0E] rounded-2xl px-[1.625rem] pt-10 pb-[2.688rem] grid grid-cols-11 gap-[1.125rem] mb-[1.625rem]">
+            class="mt-24 bg-[#0E0E0E] rounded-2xl px-[1.625rem] pt-10 pb-[2.688rem] grid grid-cols-11 gap-[1.125rem] mb-[1.625rem]">
             <div
                 class="col-span-3 bg-[#262626] rounded-2xl flex flex-col items-center justify-center pt-[0.875rem] pb-[2.125rem] px-[2.125rem] gap-[1.798rem]">
                 <IconsDashboardDepositHour24></IconsDashboardDepositHour24>
@@ -216,7 +216,7 @@
             </div>
         </div>
         <h3 class="text-white text-base font-normal leading-[29px] mb-2">سوالات متداول</h3>
-        <div class="flex flex-col gap-6 mb-[6.563rem]">
+        <div class="flex flex-col gap-6 mb-[1rem]">
 
             <div class="w-full">
                 <AppCollaps noStyleBg :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"

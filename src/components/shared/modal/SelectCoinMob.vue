@@ -99,7 +99,10 @@ const coinList = ref([
   },
 ])
 
-const path = ref('/bitcoin-logo.png')
+const toDepositCrypto = () => {
+  document.body.classList.remove('no-scroll'); 
+  router.push("/wallet/deposit-crypto")
+}
 </script>
 
 <template>
@@ -125,7 +128,7 @@ const path = ref('/bitcoin-logo.png')
             </IconsSharedSelectCoinSearchMob>
           </div>
           <ul class="max-h-64 overflow-auto">
-            <li v-for="item in coinList" :key="item"
+            <li @click="toDepositCrypto" v-for="item in coinList" :key="item"
               class="flex items-center hover:bg-[#000000] px-2 gap-4 border-solid border-b-[1px] border-[#BBBBBB]">
               <img class="w-10 h-10 object-contain" :src="item.image" alt="">
               <div class="flex flex-col items-start flex-1">
