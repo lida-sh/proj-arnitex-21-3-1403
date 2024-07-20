@@ -50,10 +50,8 @@
         </div> -->
 
         <div class="relative">
-          <UiDropDownBankCart :options="bankOptions"></UiDropDownBankCart>
+          <UiDropDownBankCartMob :options="bankOptions"></UiDropDownBankCartMob>
         </div>
-
-
 
         <div class="bg-[#FF7028] mt-8 h-[40px] rounded-[16px] flex items-center justify-center cursor-pointer">
           <p class="text-[16px] font-medium leading-[24px]">درخواست برداشت وجه</p>
