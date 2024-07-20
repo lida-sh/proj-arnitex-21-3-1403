@@ -61,7 +61,7 @@ const toggleProfileMenu = ()=>{
         <div class="absolute bottom-1 w-full px-[40px] text-white z-50">
           <ul class="flex w-full justify-between items-end">
             <li>
-              <NuxtLink to="/" @click="moveActiveTo(1)" :class="{ 'bottom-nav-link-selected': isActive(1) }"
+              <NuxtLink @click="moveActiveTo(1)" :class="{ 'bottom-nav-link-selected': isActive(1) }"
                 class="nav-link">
 
                   <IconsBottomNavigationHomeSelected v-if="isActive(1)"></IconsBottomNavigationHomeSelected>
@@ -70,21 +70,21 @@ const toggleProfileMenu = ()=>{
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink href="#" @click="moveActiveTo(2)" :class="{ 'bottom-nav-link-selected': isActive(2) }"
+              <NuxtLink  @click="moveActiveTo(2)" :class="{ 'bottom-nav-link-selected': isActive(2) }"
                 class="nav-link">
                 <IconsBottomNavigationMarket></IconsBottomNavigationMarket>
                 <span class="nav-link-text">بازار</span>
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink href="#" @click="moveActiveTo(3)" :class="{ 'bottom-nav-link-selected': isActive(3) }"
+              <NuxtLink @click="moveActiveTo(3)" :class="{ 'bottom-nav-link-selected': isActive(3) }"
                 class="nav-link">
                 <IconsBottomNavigationTransaction></IconsBottomNavigationTransaction>
                 <span class="nav-link-text">معامله</span>
               </NuxtLink>
             </li>
             <li>
-              <NuxtLink href="#" @click="moveActiveTo(4)" :class="{ 'bottom-nav-link-selected': isActive(4) }"
+              <NuxtLink @click="moveActiveTo(4)" :class="{ 'bottom-nav-link-selected': isActive(4) }"
                 class="nav-link">
                 <IconsBottomNavigationWallet></IconsBottomNavigationWallet>
                 <span class="nav-link-text">کیف پول</span>

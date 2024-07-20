@@ -29,7 +29,7 @@ await user.fetchUser(true)
       <HomeOurAdvantages></HomeOurAdvantages>
       <HomeFAQ></HomeFAQ>
       <HomeGetApp></HomeGetApp>
-      <NavBottomNavigationWithUserProfile></NavBottomNavigationWithUserProfile>
+      <!-- <NavBottomNavigationWithUserProfile></NavBottomNavigationWithUserProfile> -->
 
     </main>
   </div>
