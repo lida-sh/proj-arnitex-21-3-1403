@@ -11,12 +11,12 @@
                     <div ref="targetCartMenu" v-if="targetCartMenu"
                         class="h-auto visible absolute -right-3 top-16 bg-[#171717] rounded-2xl  flex flex-col py-1">
                         <div @click="deletCart"
-                            class="flex items-center hover:bg-[#868686] gap-[0.625rem]  px-[1.125rem] text-xs font-bold leading-[23px] text-white py-2 border-b border-[#262626]">
+                            class="flex items-center hover:bg-[#5f5f5f] gap-[0.625rem]  px-[1.125rem] text-xs font-bold leading-[23px] text-white py-2 border-b border-[#262626]">
                             <IconsWalletTrash></IconsWalletTrash>
                             <span class="">حذف کارت</span>
                         </div>
                         <div
-                            class="flex items-center gap-[0.625rem] text-xs font-bold leading-[23px] px-[1.125rem] hover:bg-[#868686] text-white py-2">
+                            class="flex items-center gap-[0.625rem] text-xs font-bold leading-[23px] px-[1.125rem] hover:bg-[#5f5f5f] text-white py-2">
                             <IconsWalletAccountManagment></IconsWalletAccountManagment>
                             <span @click="manageAccounts" class="">مدیریت حساب‌ها</span>
                         </div>
@@ -42,7 +42,7 @@
         <transition name="slide-fade">
             <div v-if="dropdownOpen" class="dropdown-menu absolute top-[90%] w-full bg-[#171717]">
                 <div v-for="item in options" :key="item.id" @click="selectItem(item)"
-                    class=" flex items-center cursor-pointer p-2 px-1 border-t border-[#3A3A3A] hover:bg-[#868686]">
+                    class=" flex items-center cursor-pointer p-2 px-1 border-t border-[#3A3A3A] hover:bg-[#5f5f5f]">
                     <div class="px-6 flex items-center gap-5">
                         <div
                             class="bg-[#868686] w-[34px] h-[34px] lg:h-[43px] lg:w-[43px] flex justify-center items-center rounded lg:rounded-2xl">
