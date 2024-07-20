@@ -39,6 +39,7 @@ watch(showModal, (newVal) => {
     // 'closing modal'
     document.body.classList.remove('no-scroll'); // Remove the class when modal is closed
     if (window.location.hash === `#${props.name}`) {
+      console.log("mob",window.location.hash);
       if (window.history.length > 1) {
         window.history.back();
         // 'going back'
@@ -49,7 +50,6 @@ watch(showModal, (newVal) => {
     }
   }
 });
-
 
 
 </script>
