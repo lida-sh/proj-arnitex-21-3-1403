@@ -17,16 +17,16 @@
           <p class="text-[#676767] text-[9px] top-6 relative">موجودی قابل برداشت :۱۰.۰۰۰.۰۰۰ میلیون تومان</p>
         </div>
 
-        <div class="flex justify-between py-5 text-[11px] font-normal">
+        <div class="flex justify-between text-[11px] font-normal">
           <p>میزان برداشت نهایی</p>
           <p>۰ تومان</p>
         </div>
-        <div class="flex justify-between pt-5 pb-10 text-[11px] font-normal">
+        <div class="flex justify-between pt-4 pb-10 text-[11px] font-normal">
           <p> کارمزد</p>
           <p>۰ تومان</p>
         </div>
 
-        <div class="flex justify-between pt-3 pb-5 text-[11px] font-normal">
+        <div class="flex justify-between pb-3 items-center text-[11px] font-normal">
           <p> شماره شبا</p>
           <div
             class="px-[26px] py-[6px] flex cursor-pointer justify-center items-center gap-3 bg-[#171717] rounded-[8px] border-[#FF7028] border">
