@@ -159,7 +159,7 @@ watch(() => props.day, () => {
 
 <style scoped>
 .chart-container {
-    width: 100%;
+    width: 90%;
     height: 180px;
     margin: auto;
 }
