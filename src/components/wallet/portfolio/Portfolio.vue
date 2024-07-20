@@ -21,7 +21,7 @@
           </div>
           <div class="w-full mt-3 flex flex-col dashboard-card pt-[0.625rem] pb-[0.875rem]">
             <div class="flex items-center gap-[2rem] px-[2rem]">
-              <span class="text-white text-[16px]">نمودار روند دارایی</span>
+              <span class="text-white text-[16px]"> نمودار سود و زیان</span>
               <UiButtonTabButton class="flex-1" :list="data" v-model="tabIndex"></UiButtonTabButton>
             </div>
 
