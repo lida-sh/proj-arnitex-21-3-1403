@@ -17,6 +17,18 @@
 
       <DashboardAssetDispersionMob class="mt-3"></DashboardAssetDispersionMob>
 
+
+      <div class="w-full flex flex-col bg-[#0E0E0E] rounded-2xl pt-[0.625rem] mt-3 pb-[0.875rem] z-10">
+        <div class="flex items-center justify-between px-5 gap-[2rem]">
+          <span class="text-white text-sm leading-[1.25rem]">نمودار روند دارایی</span>
+          <UiDropDownSimple :list="data"></UiDropDownSimple>
+        </div>
+        <div class="w-full h-auto flex justify-center items-center mt-[0.1rem]">
+          <UiChartProfitLossChartMob :day="15"></UiChartProfitLossChartMob>
+        </div>
+
+      </div>
+
       <div class="w-full h-[173px] bg-[#171717] mt-3 z-10 relative rounded-2xl py-5 px-6">
         <div class="flex items-center gap-3">
           <p class="text-[#676767] text-[16px] font-bold leading-[29px]">موجودی کل :</p>
