@@ -20,7 +20,7 @@
 
       <div class="w-full flex flex-col bg-[#0E0E0E] rounded-2xl pt-[0.625rem] mt-3 pb-[0.875rem] z-10">
         <div class="flex items-center justify-between px-5 gap-[2rem]">
-          <span class="text-white text-sm leading-[1.25rem]">نمودار روند دارایی</span>
+          <span class="text-white text-sm leading-[1.25rem]">نمودار سود و زیان</span>
           <UiDropDownSimple :list="data"></UiDropDownSimple>
         </div>
         <div class="w-full h-auto flex justify-center items-center mt-[0.1rem]">
