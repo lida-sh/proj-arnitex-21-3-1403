@@ -37,7 +37,6 @@ watch(showModal, (newVal) => {
     }
   } else {
     // 'closing modal'
-    document.body.classList.remove('no-scroll'); // Remove the class when modal is closed
     if (window.location.hash === `#${props.name}`) {
       if (window.history.length > 1) {
         window.history.back();
@@ -50,15 +49,19 @@ watch(showModal, (newVal) => {
   }
 });
 
+
+
+
 </script>
 
 <template>
 
-<Transition :duration="650" name="nested">
-    <div class="outer fixed bg-black backdrop-blur-[1px] bg-opacity-70 inset-0 z-[3000] select-none modal-overlay" v-if="showModal" @click.self="showModal = false">
+  <Transition :duration="650" name="nested">
+    <div class="outer fixed bg-black backdrop-blur-[1px] bg-opacity-70 inset-0 z-[3000] select-none modal-overlay"
+      v-if="showModal" @click.self="showModal = false">
       <div class="inner modal-content bg-[#171717] ">
-        <button class="close-button block ms-auto" @click="showModal = false"><svg width="18" height="18" viewBox="0 0 18 18"
-            fill="none" xmlns="http://www.w3.org/2000/svg">
+        <button class="close-button block ms-auto" @click="showModal = false"><svg width="18" height="18"
+            viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1L17 17" stroke="white" stroke-width="1.5" stroke-linecap="round" />
             <path d="M17 1L1 17" stroke="white" stroke-width="1.5" stroke-linecap="round" />
           </svg>
@@ -84,7 +87,8 @@ watch(showModal, (newVal) => {
                 stroke-linejoin="round" />
             </svg>
           </NuxtLink>
-          <button  @click="$emit('depositCrypto')" class="bg-[#262626] flex items-center gap-4 py-6 px-4 rounded-2xl w-[25rem]">
+          <button @click="$emit('depositCrypto')"
+            class="bg-[#262626] flex items-center gap-4 py-6 px-4 rounded-2xl w-[25rem]">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
               <path
                 d="M25 50C38.8071 50 50 38.8071 50 25C50 11.1929 38.8071 0 25 0C11.1929 0 0 11.1929 0 25C0 38.8071 11.1929 50 25 50Z"
@@ -147,23 +151,23 @@ watch(showModal, (newVal) => {
 }
 
 .modal-overlay {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 1000;
-	overflow: hidden;
-	transition: opacity 0.15s ease;
-	backdrop-filter: blur(4px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+  transition: opacity 0.15s ease;
+  backdrop-filter: blur(4px);
 }
 
 .modal-content {
-	padding: 30px;
-	border-radius: 16px;
-	transition: transform 0.15s ease, opacity 0.15s ease;
+  padding: 30px;
+  border-radius: 16px;
+  transition: transform 0.15s ease, opacity 0.15s ease;
 }
 </style>
