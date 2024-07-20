@@ -15,10 +15,10 @@ const TabIndex = ref(0)
 const data = ref([
     {
         id: 1,
-        title: "برداشت رمز ارز"
+        title: "اسپات"
     }, {
         id: 2,
-        title: "برداشت تومان"
+        title: "تعهدی"
     },
 ])
 </script>
