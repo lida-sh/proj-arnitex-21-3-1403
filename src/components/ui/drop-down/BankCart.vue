@@ -1,7 +1,7 @@
 <template>
     <div class="dropdown-container" ref="dropDownElement">
         <div @click="toggleDropdown"
-            class="input-box cursor-pointer h-[44px] lg:h-[88px] bg-[#171717] rounded-[16px] p-5 flex justify-between">
+            class="input-box cursor-pointer h-[44px] lg:h-[66px] bg-[#171717] rounded-[16px] p-5 flex justify-between">
             <div class="px-6 hidden lg:flex items-center gap-5">
                 <IconsDashboardOptions v-if="selectedItem" />
                 <div v-if="selectedItem"
@@ -34,7 +34,7 @@
             </div>
         </div>
         <transition name="slide-fade">
-            <div v-if="dropdownOpen" class="dropdown-menu absolute  top-[100%] w-full bg-[#171717]">
+            <div v-if="dropdownOpen" class="dropdown-menu absolute  top-[90%] w-full bg-[#171717]">
                 <div v-for="item in options" :key="item.id" @click="selectItem(item)"
                     class=" flex items-center cursor-pointer p-2 px-1 border-t  border-[#3A3A3A]">
                     <div class="px-6 flex items-center gap-5">
