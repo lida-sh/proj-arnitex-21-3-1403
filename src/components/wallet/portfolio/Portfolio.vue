@@ -11,9 +11,9 @@
             </div>
 
             <div class="w-full h-auto flex justify-center items-center mt-[0.5rem]">
-              <UiChartAssets  :day="7"></UiChartAssets>
-              <UiChartAssets  :day="30"></UiChartAssets>
-              <UiChartAssets  :day="90"></UiChartAssets>
+              <UiChartAssets v-if="tabIndex == 0" :day="7"></UiChartAssets>
+              <UiChartAssets v-if="tabIndex == 1" :day="30"></UiChartAssets>
+              <UiChartAssets v-if="tabIndex == 2" :day="90"></UiChartAssets>
             </div>
           </div>
           <div class="pt-4">
@@ -26,7 +26,7 @@
             </div>
 
             <div class="w-full h-auto flex justify-center items-center mt-[0.5rem]">
-              <UiChartProfitLossChart :day="30" ></UiChartProfitLossChart>
+              <UiChartProfitLossChart :day="30"></UiChartProfitLossChart>
             </div>
           </div>
 
