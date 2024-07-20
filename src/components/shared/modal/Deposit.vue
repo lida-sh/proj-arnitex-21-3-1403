@@ -60,6 +60,11 @@ watch(showModal, (newVal) => {
     document.body.classList.remove('no-scroll'); // Remove the class when modal is closed
   }
 });
+
+const toDeposit = () => {
+  router.push("/wallet/deposit")
+  document.body.classList.remove('no-scroll'); 
+}
 </script>
 
 <template>
@@ -74,14 +79,14 @@ watch(showModal, (newVal) => {
           انتخاب روش واریز
         </span>
         <div class="flex gap-[2rem] mt-[1.5rem]">
-          <NuxtLink to="/wallet/deposit" class="bg-[#262626] flex items-center gap-4 py-6 px-4 rounded-2xl w-[25rem]">
+          <button @click="toDeposit" class="bg-[#262626] flex items-center gap-4 py-6 px-4 rounded-2xl w-[25rem]">
             <IconsTomanDepositModal></IconsTomanDepositModal>
             <div class="flex flex-col items-start flex-1 text-start">
               <span class="text-white">واریز تومان</span>
               <span class="text-[#676767] self-start whitespace-nowrap">شارژ کیف پول از طریق کارت بانکی</span>
             </div>
             <IconsDepositModalLeftArrow></IconsDepositModalLeftArrow>
-          </NuxtLink>
+          </button>
 
           <button @click="$emit('depositCrypto')"
             class="bg-[#262626] flex items-center gap-4 py-6 px-4 rounded-2xl w-[25rem]">
