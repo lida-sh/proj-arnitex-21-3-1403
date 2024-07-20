@@ -2,7 +2,11 @@
     <ul class="steps steps-vertical">
         <li v-for="(item, index) in list"
             class="step step-primary text-white text-justify font-medium leading-5 justify-start"
-            :class="[{ 'counter': !numberStep }, classItem]">{{ item.title }}</li>
+            :class="[{ 'counter': !numberStep }, classItem]">
+            <p>
+                {{ item.title }}
+            </p>
+        </li>
 
     </ul>
 

@@ -1,6 +1,6 @@
 <template>
     <div class=" pb-7 border-b border-[#343434]">
-        <div class=" px-4">
+        <div>
             <UiButtonTabButtonDashboard class="flex-1" :list="data" v-model="TabIndex">
             </UiButtonTabButtonDashboard>
         </div>

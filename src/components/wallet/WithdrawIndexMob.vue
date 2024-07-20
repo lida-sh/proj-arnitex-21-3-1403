@@ -1,7 +1,7 @@
 <template>
      <div class=" pb-3 flex justify-center items-center">
-          <div class="">
-            <UiButtonTabButtonDashboard class="flex-1" :list="data" v-model="TabIndex">
+          <div class="w-full">
+            <UiButtonTabButtonDashboard class="w-full" :list="data" v-model="TabIndex">
             </UiButtonTabButtonDashboard>
           </div>
         </div>

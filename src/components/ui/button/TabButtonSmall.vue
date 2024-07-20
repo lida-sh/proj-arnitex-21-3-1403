@@ -14,11 +14,10 @@ const changeIndex = (index: number) => {
 	<div class="inline-block">
 		<div v-if="list && list.length > 0"
 			class="bg-[#171717] py-[3px] px-[3px] rounded-[10px] flex justify-between text-white">
-			<button @click="changeIndex(index)" :class="{ active: selectedIndex === index }"
-				v-for="(item, index) in list" :key="item.id" class="text-xs font-normal ">
+			<button @click="changeIndex(index)" :class="{ active: selectedIndex === index }" v-for="(item, index) in list"
+				:key="item.id" class="text-xs font-normal ">
 				<div class="outer p-[1px]">
-					<div
-						class="inner px-[14px] py-[7px] flex items-center justify-center leading-4 whitespace-nowrap">
+					<div class="inner px-[14px] py-[7px] flex items-center justify-center leading-4 whitespace-nowrap">
 						{{ item.title }}
 					</div>
 				</div>
@@ -43,5 +42,6 @@ const changeIndex = (index: number) => {
 	transition: background-color 0.3s ease-in;
 	background-color: #000;
 	border-radius: 10px;
+	color: rgb(241, 122, 62);
 }
 </style>

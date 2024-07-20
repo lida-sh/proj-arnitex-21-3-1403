@@ -40,5 +40,6 @@ const changeIndex = (index: number) => {
   transition: background-color 0.3s ease-in;
   background-color: #000;
   border-radius: 20px;
+	color: rgb(255, 112, 40);
 }
 </style>

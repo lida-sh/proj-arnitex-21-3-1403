@@ -44,7 +44,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+
 import img from '../../assets/images/nody-لوگوی-صادرات-1628414003 1.png'
 
 const bankOptions = ref([
