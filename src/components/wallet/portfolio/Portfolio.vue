@@ -22,7 +22,7 @@
           <div class="w-full mt-3 flex flex-col dashboard-card pt-[0.625rem] pb-[0.875rem]">
             <div class="flex items-center gap-[2rem] px-[2rem]">
               <span class="text-white text-[16px]"> نمودار سود و زیان</span>
-              <UiButtonTabButton class="flex-1" :list="data" v-model="tabIndex"></UiButtonTabButton>
+              <UiButtonTabButton class="flex-1" :list="chartdata" v-model="tabIndex"></UiButtonTabButton>
             </div>
 
             <div class="w-full h-auto flex justify-center items-center mt-[0.5rem]">
@@ -73,6 +73,19 @@ const data = ref([
   {
     id: 1,
     title: "۷ روزه"
+  }, {
+    id: 2,
+    title: "۳۰ روزه"
+  }, {
+    id: 3,
+    title: "۹۰ روزه"
+  }
+])
+
+const chartdata = ref([
+  {
+    id: 1,
+    title: "۱۵ روزه"
   }, {
     id: 2,
     title: "۳۰ روزه"
