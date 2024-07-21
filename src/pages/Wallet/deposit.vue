@@ -7,5 +7,8 @@
 definePageMeta({
     layout: "dashboard",
 });
+useHead({
+    title: 'آرنیتکس | واریز',
+})
 
 </script>

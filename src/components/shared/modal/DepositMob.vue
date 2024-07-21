@@ -11,10 +11,10 @@ const route = useRoute();
 
 
 const handlePopState = () => {
-	if (window.location.hash === `#${props.name}`) {
+  if (window.location.hash === `#${props.name}`) {
     showModal.value = true;
-  }else{
-		showModal.value = false;
+  } else {
+    showModal.value = false;
   }
 };
 
@@ -25,7 +25,7 @@ onMounted(() => {
   window.addEventListener('popstate', handlePopState);
 });
 onBeforeUnmount(() => {
-	window.removeEventListener('popstate', handlePopState);
+  window.removeEventListener('popstate', handlePopState);
 });
 
 
@@ -39,6 +39,7 @@ watch(showModal, (newVal) => {
     // 'closing modal'
     document.body.classList.remove('no-scroll'); // Remove the class when modal is closed
     if (window.location.hash === `#${props.name}`) {
+      console.log("mob", window.location.hash);
       if (window.history.length > 1) {
         window.history.back();
         // 'going back'
@@ -50,7 +51,10 @@ watch(showModal, (newVal) => {
   }
 });
 
-
+const toDeposit = () => {
+  router.push("/wallet/deposit")
+  document.body.classList.remove('no-scroll'); 
+}
 
 </script>
 
@@ -70,7 +74,8 @@ watch(showModal, (newVal) => {
         </div>
 
         <div class="flex flex-col mt-7 gap-4">
-          <button class="bg-[#262626] rounded-xl py-6 px-5 flex items-center gap-4">
+          <button  @click="toDeposit"
+            class="bg-[#262626] rounded-xl py-6 px-5 flex items-center gap-4">
             <IconsSharedTomanMob></IconsSharedTomanMob>
             <div class="flex flex-col items-start gap-2 flex-1">
               <span class="text-white text-xs leading-4 font-normal">واریز تومان</span>

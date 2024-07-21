@@ -15,7 +15,7 @@ const changeIndex = (index: number) => {
 		<div dir="ltr" v-if="list && list.length > 0"
 			class="bg-[#171717] py-[5px] px-[6px] rounded-[16px] flex justify-between text-white">
 			<button @click="changeIndex(index)" :class="{ active: selectedIndex === index }"
-				v-for="(item, index) in list" :key="item.id" class="text-xs font-normal ">
+				v-for="(item, index) in list" :key="item.id" class="text-xs flex-1 font-normal ">
 				<div class="outer p-[1px]">
 					<div
 						class="inner px-[29px] lg:px-[55px] py-[11px] flex items-center justify-center leading-[29px] whitespace-nowrap">
@@ -43,5 +43,6 @@ const changeIndex = (index: number) => {
 	transition: background-color 0.3s ease-in;
 	background-color: #000;
 	border-radius: 20px;
+	color: rgb(255, 112, 40);
 }
 </style>

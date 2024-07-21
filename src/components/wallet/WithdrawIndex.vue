@@ -1,6 +1,6 @@
 <template>
     <div class=" pb-7 border-b border-[#343434]">
-        <div class=" px-4">
+        <div>
             <UiButtonTabButtonDashboard class="flex-1" :list="data" v-model="TabIndex">
             </UiButtonTabButtonDashboard>
         </div>
@@ -10,7 +10,7 @@
     <WalletWithdrawalCryptocurrency v-if="TabIndex == 0"></WalletWithdrawalCryptocurrency>
 </template>
 <script setup>
-const TabIndex = ref(0)
+const TabIndex = ref(1)
 
 const data = ref([
     {

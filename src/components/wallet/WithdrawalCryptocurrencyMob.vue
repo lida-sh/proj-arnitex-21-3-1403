@@ -57,7 +57,7 @@
           <h1 class="pt-8">سوالات متداول</h1>
           <div class="w-full pt-5">
             <AppCollaps noStyleBg :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
-              :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px]  border-white h-[4.5rem]']"
+              :backgroundClassTitle="['bg-[#171717] !px-4 py-3 rounded-3xl border-b-[0.4px] border-[#676767] h-[4.5rem]']"
               :withTitleIcon="false">
               <template #title="{ isOpen }">
                 <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">
@@ -74,7 +74,7 @@
 
           <div class="w-full pt-8">
             <AppCollaps noStyleBg :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
-              :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px]  border-white h-[4.5rem]']"
+              :backgroundClassTitle="['bg-[#171717] !px-4 py-3 rounded-3xl border-b-[0.4px] border-[#676767] h-[4.5rem]']"
               :withTitleIcon="false">
               <template #title="{ isOpen }">
                 <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">

@@ -54,7 +54,7 @@ watch(showModal, (newVal) => {
 
 
 const coinList = ref([
-  {
+{
     name: 'بیت کوین',
     symbol: 'BTC',
     image: '/bitcoin-logo.png',
@@ -68,7 +68,7 @@ const coinList = ref([
     name: 'بیت کوین',
     symbol: 'BTC',
     image: '/bitcoin-logo.png',
-  }, {
+  },  {
     name: 'بیت کوین',
     symbol: 'BTC',
     image: '/bitcoin-logo.png',
@@ -82,7 +82,7 @@ const coinList = ref([
     name: 'بیت کوین',
     symbol: 'BTC',
     image: '/bitcoin-logo.png',
-  }, {
+  },  {
     name: 'بیت کوین',
     symbol: 'BTC',
     image: '/bitcoin-logo.png',
@@ -109,10 +109,10 @@ const toDepositCrypto = () => {
 
   <Transition :duration="650" name="nested">
 
-    <div class="outer fixed bg-black backdrop-blur-[1px] bg-opacity-70 inset-0 z-[3000] select-none" v-if="showModal"
+    <div class="outer fixed bg-black flex items-center justify-center backdrop-blur-[1px] bg-opacity-70 inset-0 z-[3000] select-none" v-if="showModal"
       @click.self="showModal = false">
 
-      <div class="inner bg-[#171717] fixed bottom-0 left-0 right-0 pb-10 rounded-t-2xl px-4 pt-7">
+      <div class="inner bg-[#171717] w-5/6 max-w-[822px] pb-5 rounded-2xl px-4 pt-7">
         <div class="flex justify-between items-center">
           <h4 class="font-bold text-base leading-7 flex-1 text-white">انتخاب رمز ارز</h4>
           <button class="p-1" @click="showModal = false">
@@ -128,8 +128,7 @@ const toDepositCrypto = () => {
             </IconsSharedSelectCoinSearchMob>
           </div>
           <ul class="max-h-64 overflow-auto">
-            <li @click="toDepositCrypto" v-for="item in coinList" :key="item"
-              class="flex items-center hover:bg-[#000000] px-2 gap-4 border-solid border-b-[1px] border-[#BBBBBB]">
+            <li @click="toDepositCrypto" v-for="item in coinList" :key="item" class="flex items-center cursor-pointer hover:bg-[#000000] px-2 gap-4 border-solid border-b-[1px] border-[#BBBBBB]">
               <img class="w-10 h-10 object-contain" :src="item.image" alt="">
               <div class="flex flex-col items-start flex-1">
                 <span class="text-white font-normal text-base leading-7">{{ item.name }}</span>

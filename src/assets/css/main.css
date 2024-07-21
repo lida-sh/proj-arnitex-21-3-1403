@@ -95,6 +95,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.modal{
+  backdrop-filter: blur(1px);
+}
+
 body {
   /* @apply overflow-y-scroll; */
   @apply overflow-x-hidden;

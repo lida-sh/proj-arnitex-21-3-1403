@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { ref, computed } from "vue";
+import { ref } from "vue";
 
 export const useAssetsPageStore = defineStore("assets-page", () => {
   const currencyList = [
@@ -31,11 +31,16 @@ export const useAssetsPageStore = defineStore("assets-page", () => {
     currency.value = currencyList[newValue];
   });
 
+  const depositModal = ref(false);
+  const selectCoinModal = ref(false);
+
   return {
     currencyList,
     currency,
     setToman,
     setTether,
     currencyIndex,
+    depositModal,
+    selectCoinModal,
   };
 });

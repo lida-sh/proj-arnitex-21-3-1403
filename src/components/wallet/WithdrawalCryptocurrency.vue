@@ -3,30 +3,43 @@
     <div class="w-full text-[#fff] z-[100] relative">
       <div class="w-full flex gap-12 ">
         <div class="flex-1 px-8">
-          <div class=" py-3 relative">
-            <p class="text-[16px] leading-[28px] font-normal pb-3">انتخاب ارز دیجیتال</p>
-            <input type="text" name="" id=""
-              class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] focus:border-white focus:ring-0">
-            <IconsDashboardArrowBig class=" left-5 absolute bottom-8"></IconsDashboardArrowBig>
+          <div class="pb-7 relative">
+            <p class="text-[16px] leading-[28px] font-normal pb-2">انتخاب ارز دیجیتال</p>
+            <div class="relative">
+              <input type="text" name="" id=""
+                class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] focus:border-white focus:ring-0">
+              <IconsDashboardArrowBig class="cursor-pointer left-4 absolute top-1/2 -translate-y-1/2">
+              </IconsDashboardArrowBig>
+            </div>
           </div>
 
-          <div class=" pb-8 relative">
-            <p class="text-[16px] leading-[28px] font-normal pb-3"> میزان برداشت (BTC)</p>
-            <input type="text" name="" id=""
-              class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] focus:border-white focus:ring-0">
-            <span class=" left-5 absolute bottom-12 text-[16px] font-normal leading-[22px]">BTC</span>
+          <div class="pb-7 relative">
+            <p class="text-[16px] leading-[28px] font-normal pb-2"> میزان برداشت (BTC)</p>
+
+            <div class="relative">
+              <input type="text" name="" id="" placeholder="نوع شبکه را انتخاب کنید."
+                class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] focus:border-white focus:ring-0">
+              <span
+                class="cursor-pointer left-4 absolute top-1/2 -translate-y-1/2 text-[16px] font-normal leading-[22px]">BTC</span>
+            </div>
           </div>
 
-          <div class=" pb-8 relative">
-            <p class="text-[16px] leading-[28px] font-normal pb-3"> نوع شبکه</p>
-            <input type="text" name="" id=""
-              class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] placeholder-[#676767] focus:border-white focus:ring-0"
-              placeholder="نوع شبکه را انتخاب کنید.">
-            <IconsDashboardArrowBig class=" left-5 absolute bottom-14"></IconsDashboardArrowBig>
+          <div class="pb-7 relative">
+            <p class="text-[16px] leading-[28px] font-normal pb-2"> نوع شبکه</p>
+            <div class="relative">
+              <input type="text" name="" id="" placeholder="نوع شبکه را انتخاب کنید."
+                class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] focus:border-white focus:ring-0">
+              <div class="cursor-pointer left-4 py-2 px-1 absolute top-1/2 -translate-y-1/2">
+                <IconsDashboardArrowBig></IconsDashboardArrowBig>
+              </div>
+
+              
+            </div>
+
           </div>
 
-          <div class=" pb-8">
-            <p class="text-[16px] leading-[28px] font-normal pb-3"> آدرس مقصد</p>
+          <div class="pb-7">
+            <p class="text-[16px] leading-[28px] font-normal pb-2"> آدرس مقصد</p>
 
             <input type="text" name="" id=""
               class="bg-[#000] w-full h-[56px] rounded-2xl border-[#676767] placeholder-[#676767] focus:border-white focus:ring-0"
@@ -57,8 +70,9 @@
             <UiStepper :list="listStep" class-item="text-xs"></UiStepper>
           </div>
           <div class="w-full pt-8">
-            <AppCollaps noStyleBg :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
-              :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px]  border-white h-[4.5rem]']"
+            <AppCollaps class="!px-6" noStyleBg
+              :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
+              :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px] border-[#7d7d7d] h-[4.5rem]']"
               :withTitleIcon="false">
               <template #title="{ isOpen }">
                 <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">
@@ -68,14 +82,15 @@
                   <IconsDashboardArrowUp v-else></IconsDashboardArrowUp>
                 </div>
               </template>
-              <p class="text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
+              <p class="-mx-8 text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
                 اطلاعات وارد شده را بررسی کنید تا در صورت وجود اشتباه، آن را تصحیح نمایید. </p>
             </AppCollaps>
           </div>
 
           <div class="w-full pt-6">
-            <AppCollaps noStyleBg :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
-              :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px]  border-white h-[4.5rem]']"
+            <AppCollaps class="!px-6" noStyleBg
+              :backgroundClassContent="['bg-[#262626] px-[1.563rem] rounded-b-3xl -mt-[16px]']"
+              :backgroundClassTitle="['bg-[#171717] px-6 py-3 rounded-3xl border-b-[0.4px] border-[#7d7d7d] h-[4.5rem]']"
               :withTitleIcon="false">
               <template #title="{ isOpen }">
                 <div class="flex items-center justify-between w-full" :class="{ '': isOpen }">
@@ -85,7 +100,7 @@
                   <IconsDashboardArrowUp v-else></IconsDashboardArrowUp>
                 </div>
               </template>
-              <p class="text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
+              <p class="-mx-8 text-sm font-normal leading-[26px] text-white pt-8 pb-[1.063rem] rounded-b-3xl">
                 اطلاعات وارد شده را بررسی کنید تا در صورت وجود اشتباه، آن را تصحیح نمایید. </p>
             </AppCollaps>
           </div>

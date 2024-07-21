@@ -19,6 +19,15 @@ const refresh = () => {
 const assetsStore = useAssetsPageStore();
 const depositModal = ref(false)
 
+const depositCryptoCallBack = () => {
+  depositModal.value = false;
+  setTimeout(() => {
+    showSelectCoinModal.value = true;
+  }, 100);
+}
+
+const showSelectCoinModal = ref(false);
+
 </script>
 
 <template>
@@ -81,9 +90,9 @@ const depositModal = ref(false)
     </div>
 
     <div>
-      <SharedModalDeposit name="deposit" v-model:show-modal="depositModal">
-        <p>This is a modal content</p>
+      <SharedModalDeposit name="deposit" v-model:show-modal="depositModal" @deposit-crypto="depositCryptoCallBack">
       </SharedModalDeposit>
+      <SharedModalSelectCoin v-model:showModal="showSelectCoinModal"></SharedModalSelectCoin>
     </div>
 
   </div>

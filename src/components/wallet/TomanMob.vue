@@ -1,21 +1,21 @@
 <template>
-    <div class="px-8 mt-[1.188rem] w-full flex flex-col">
+    <div class="px-4 mt-[1.188rem] w-full flex flex-col">
         <label class="text-white text-base font-normal leading-7 mb-3">مبلغ واریزی (تومان)</label>
         <input type="text" v-model="depositAmount"
-            class="rtl w-full h-[2.75rem] border-[0.5px] border-[#C7C7C7] focus:ring-0 text-[11px] font-normal leading-4 placeholder-[#C7C7C7] text-[#676767] focus:border-[#676767] bg-[#171717] rounded-lg mb-[1.813rem]"
+            class="rtl w-full h-[2.75rem] border-[0.5px] border-[#C7C7C7] focus:ring-0 text-[11px] font-normal leading-4 placeholder-[#C7C7C7] text-[#fff] focus:border-[#676767] bg-[#171717] rounded-lg mb-[1.813rem]"
             placeholder="مبلغ را وارد کنید (حداقل مبلغ ۵۰،۰۰۰ تومان است)">
-        <div class="flex items-center mb-[1.875rem]">
-            <div class="flex-1 flex items-center justify-center">
+        <div class="flex items-center justify-between mb-[1.875rem]">
+            <div class="flex items-center justify-center">
                 <div @click="setDepositAmount(500000)"
                     class="h-10 rounded-lg text-xs md:text-base font-normal leading-7 text-white border-[0.5px] border-[#C7C7C7] px-4 py-1.5 numDir">
                     ۵ ، ۰۰۰ ، ۰۰۰</div>
             </div>
-            <div class="flex-1 flex items-center justify-center">
+            <div class="flex items-center justify-center">
                 <div @click="setDepositAmount(20000000)"
                     class="h-10 rounded-lg text-xs md:text-base font-normal leading-7 text-white border-[0.5px] border-[#C7C7C7] px-4 py-1.5 numDir">
                     ۲۰ ، ۰۰۰ ، ۰۰۰</div>
             </div>
-            <div class="flex-1 flex items-center justify-center">
+            <div class="flex items-center justify-center">
                 <div @click="setDepositAmount(25000000)"
                     class="h-10 rounded-lg text-xs md:text-base font-normal leading-7 text-white border-[0.5px] border-[#C7C7C7] px-4 py-1.5 numDir">
                     ۲۵ ، ۰۰۰ ، ۰۰۰</div>
@@ -23,65 +23,23 @@
 
         </div>
         <!-- <label class="text-sm leading-5 font-normal text-white">شماره کارت</label> -->
-        <select
-            class="rtl w-full align-middle h-11 border-none text-white focus:ring-0 text-[11px] font-normal leading-7  bg-[#171717] rounded-xl mb-3">
-            <option value="">شماره کارت مورد نظر را انتخاب کنید.</option>
-            <option></option>
-            <option></option>
-            <option></option>
-        </select>
-        <div class="relative w-full bg-[#171717] rounded-2xl mb-[1.813rem]">
-            <div  class="h-[5.5rem] flex items-center px-7 cursor-pointer">
-                <div @click="toggleMenuCarts" v-if="!selectedItem.cardNumber" class="flex items-center justify-between">
-                    <p  class="text-[#676767] text-base font-normal leading-7">شماره کارت
-                        مورد نظر را انتخاب کنید.</p>
-                </div>
-                
-                <div class="flex items-center relative">
-                    <div v-if="selectedItem.cardNumber" class="w-14" @click.stop="toggleCartMenu">
-                        <IconsDashboardOptions></IconsDashboardOptions>
-                    </div>
-                    <div v-if="selectedItem.cardNumber" class="flex items-center relative">
-                        <img src="~/assets/images/saderat-logo.png" :alt="selectedItem.bankName" class="">
-                        <span class="text-xs font-bold leading-[23px] text-white mr-4">{{ selectedItem.bankName
-                            }}</span>
-                        <span class="text-base font-normal leading-7 text-white mr-[1.875rem]">{{
-                            selectedItem.cardNumber }}</span>
-                    </div>
 
-                    <div ref="targetCartMenu"
-                        class="w-[12.688rem] h-0 invisible absolute -right-7 top-16 bg-[#171717] rounded-2xl px-[1.125rem] flex flex-col py-1">
-                        <div @click="deletCart"
-                            class="flex items-center gap-[0.625rem] text-xs font-bold leading-[23px] text-white py-2 border-b border-[#262626]">
-                            <IconsWalletTrash></IconsWalletTrash>
-                            <span class="">حذف کارت</span>
-                        </div>
-                        <div class="flex items-center gap-[0.625rem] text-xs font-bold leading-[23px] text-white py-2">
-                            <IconsWalletAccountManagment></IconsWalletAccountManagment>
-                            <span @click="manageAccounts" class="">مدیریت حساب‌ها</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div ref="targetCarts" class="bsolute h-0 invisible inset-x-0 top-10 flex flex-col">
-                <div class="flex items-center px-[0.813rem] py-3 border-b border-[#262626] last:border-none"
-                    v-for="(item, index) in cartItems" :key="index" @click="selectItem(item)">
-                    <img src="~/assets/images/saderat-logo.png" :alt="item.bankName" class="">
-                    <span class="text-xs font-bold leading-[23px] text-white mr-4">{{ item.bankName }}</span>
-                    <span class="text-base font-normal leading-7 text-white mr-[1.875rem]">{{ item.cardNumber }}</span>
-                </div>
-            </div>
 
+        <div class="relative mb-[1.813rem] text-white">
+          <UiDropDownBankCart :options="bankOptions"></UiDropDownBankCart>
         </div>
+
         <div class="flex justify-end mb-[1.813rem]">
             <button @click="plusCart"
                 class="w-[5.875rem] h-10 border-[0.5px] border-[#FF7028] rounded-xl flex items-center justify-center bg-[#171717]">
                 <div class="text-[#FF7028] text-[11px] font-normal leading-4 flex items-center justify-center gap-2">
                     <IconsWalletPlusMob></IconsWalletPlusMob>
-                     کارت</div>
+                    کارت
+                </div>
             </button>
         </div>
-        <div class="bg-[#171717] px-6 py-[1.875rem] flex flex-col w-full rounded-2xl mb-[3.188rem] border-1 border-[#C7C7C7]">
+        <div
+            class="bg-[#171717] px-6 py-[1.875rem] flex flex-col w-full rounded-2xl mb-[3.188rem] border-1 border-[#C7C7C7]">
             <div class="bg-black w-full py-4 px-[1.563rem] flex justify-between items-center rounded-2xl mb-4">
                 <IconsDashboardDepositHour24Mob></IconsDashboardDepositHour24Mob>
                 <div class="flex flex-col text-white text-xs font-normal leading-[22px]">
@@ -124,8 +82,8 @@
                         <div class="col-span-3 flex items-center justify-center border-l border-[#262626]">موفق
                         </div>
                         <div class="col-span-3 flex items-center justify-center">
-                                <IconsDashboardDepositArrowDown></IconsDashboardDepositArrowDown>
-                            </div>
+                            <IconsDashboardDepositArrowDown></IconsDashboardDepositArrowDown>
+                        </div>
                     </div>
                     <div :id="`details-${index}`"
                         class="max-h-0 flex flex-col text-[11px] text-white font-normal leading-4 bg-[#171717]  rounded-b-xl transition-all duration-500 ease-in-out"
@@ -339,17 +297,54 @@ const deletCart = () => {
     selectedItem.value = {}
     closeCartMenu()
 };
-const manageAccounts = ()=>{
+const manageAccounts = () => {
     closeMenuCarts()
     closeCartMenu()
 }
+
+
+import img from '../../assets/images/nody-لوگوی-صادرات-1628414003 1.png'
+
+const bankOptions = ref([
+    {
+        id: 1,
+        cardNumber: '6037-6975-5327-5844',
+        bankName: 'بانک صادرات',
+        bankLogo: img,
+    },
+    {
+        id: 2,
+        cardNumber: '6037-6975-5327-5944',
+        bankName: 'سش',
+        bankLogo: img,
+    },
+    {
+        id: 3,
+        cardNumber: '6037-6975-5327-5555',
+        bankName: 'سلام',
+        bankLogo: img,
+    },
+    {
+        id: 4,
+        cardNumber: '6037-6975-5327-5555',
+        bankName: 'سلام',
+        bankLogo: img,
+    },
+    {
+        id: 5,
+        cardNumber: '6037-6975-5327-5555',
+        bankName: 'سلام',
+        bankLogo: img,
+    },
+])
+
 </script>
 <style scoped>
 select {
     background-position: left 1.5rem center;
-    background-image:url("~/assets/images/ArrowSelect.svg");
+    background-image: url("~/assets/images/ArrowSelect.svg");
     background-size: 1em 1em;
-    
+
 }
 
 select>option {

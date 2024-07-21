@@ -1,5 +1,5 @@
 <template>
-    <div class="px-8 mt-[1.438rem]">
+    <div class="px-4 mt-[1.438rem]">
         <select
             class="rtl w-full align-middle shrink h-11 border border-[#676767] focus:ring-0 text-base font-normal leading-7 text-[#676767] focus:border-[#676767] bg-[#171717] rounded-2xl mb-[1.125rem]">
             <option value="">شماره شبای مورد نظر خود را انتخاب کنید.</option>
